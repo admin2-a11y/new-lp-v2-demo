@@ -1614,3 +1614,70 @@ details[open] .kuchikomi_header::after {
     margin-top: 28px !important;
   }
 }
+html,
+body,
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary,
+ul.select_box > li,
+.modal-btn,
+.modal-back,
+.modal-submit,
+.rentcheck label span {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+select,
+textarea,
+button {
+  font-size: 16px !important;
+}
+
+@media screen and (max-width: 768px) {
+  input,
+  select,
+  textarea,
+  button,
+  .modal-btn,
+  .modal-back,
+  .modal-submit {
+    font-size: 16px !important;
+  }
+}
+
+.select_modal,
+#serch2_Modal {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#serch2_Modal.active,
+.select_modal.active {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#follow-banner {
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+}
+
+#page_top,
+.nav.arroe_top {
+  bottom: calc(18px + env(safe-area-inset-bottom)) !important;
+}
+
+a:active,
+button:active,
+summary:active,
+ul.select_box > li:active,
+.rentcheck label span:active,
+.modal-btn:active,
+.modal-back:active,
+.modal-submit:active {
+  filter: brightness(.96);
+}
