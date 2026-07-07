@@ -1224,3 +1224,65 @@ details[open] .kuchikomi_header::after {
     width: 100%;
   }
 }
+.v3-redirect {
+  min-height: calc(100dvh - 56px);
+  min-height: calc(100vh - 56px);
+  width: min(100%, 560px);
+  margin: 0 auto;
+  padding: 56px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.v3-redirect-logo {
+  width: min(220px, 72vw);
+  max-height: 72px;
+  object-fit: contain;
+}
+
+.v3-spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid var(--v3-accent-weak);
+  border-top-color: var(--v3-accent);
+  border-radius: 50%;
+  animation: v3-spin .8s linear infinite;
+}
+
+@keyframes v3-spin {
+  to { transform: rotate(360deg); }
+}
+
+.v3-redirect h1 {
+  margin: 0;
+  color: var(--v3-text);
+  font-size: clamp(22px, 5vw, 30px);
+}
+
+.v3-redirect .banner {
+  margin: 0;
+  display: block;
+}
+
+.v3-redirect .banner img {
+  width: min(300px, 82vw);
+  height: auto;
+  border: 1px solid var(--v3-border);
+  border-radius: var(--v3-radius-sm);
+  box-shadow: var(--v3-shadow);
+}
+
+#fallback-message {
+  margin: 0;
+  color: var(--v3-text-sub);
+  font-size: 14px;
+}
+
+#fallback-message a {
+  font-weight: 700;
+  text-decoration: underline;
+}

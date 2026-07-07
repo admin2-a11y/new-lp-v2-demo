@@ -224,39 +224,6 @@
     }
 </script>
 
-<style>
-    body {
-        text-align: center;
-        font-family: Arial, sans-serif;
-        margin: 50px;
-    }
-
-    .loading {
-        margin-top: 20px;
-    }
-
-    .banner {
-        margin: 20px;
-        display: inline-block;
-    }
-
-    .banner img {
-        width: 300px;
-        height: auto;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    .banners {
-        display: none;
-        /* デフォルトは非表示 */
-    }
-
-    .banners.active {
-        display: block;
-        /* 有効な場合のみ表示 */
-    }
-</style>
 
 <body class="beginner search-results">
     
@@ -270,31 +237,15 @@
             <p class="pr_text"> このページにはPRリンクが含まれています </p>
         </div>
     </div>
-</header>    <div class="content1" style="padding-top: 20px;">
-        <h2 id="loading-message">選択されたサイトへ移動中です。</h2>
-        <img src="./images/loading.gif" alt="Loading" class="loading">
-
-        
+</header>    <main class="v3-redirect" aria-live="polite">
+        <img src="./images/logo.png" alt="__BRAND_NAME__" class="v3-redirect-logo">
+        <div class="v3-spinner" aria-hidden="true"></div>
+        <h1 id="loading-message">選択されたサイトへ移動中です。</h1>
         <div id="single-banner" style="display: none;"></div>
-
         <p id="fallback-message" style="display: none;">
-            ページが移動しない時は<a id="fallback-link" href="#">こちら</a>をクリックして下さい。
+            移動しない場合は<a id="fallback-link" href="#">こちら</a>をクリックして下さい。
         </p>
-
-        
-        
-<div class="timer_in_box">
-    <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
-    <div class="timerbox">
-        <p class="timer"></p>
-    </div>
-    <div class="over"> ＼審査は申込み順に対応！／<br> いま申込で<span class="timerbox">最短<span>10</span>時</span>に借入完了も！
-    </div>
-</div>
-        
-        <script src="./js/timer.js" defer></script>
-    </div>
-    </div>
+    </main>
     <script>
         const item = getRedirectItem();
         const redirectUrl = linkMap[item]?.url;
