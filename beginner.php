@@ -196,10 +196,11 @@
 </header>	<span id="top"></span>
 	<div id="mainvisual" class="v3-hero v3-hero-beginner">
         <div class="v3-hero-inner">
-            <p class="v3-hero-badge">最短20分で借入まで</p>
-            <h1>はじめてでも安心。あなたに合うカードローンが30秒でわかる</h1>
+            <p class="v3-hero-badge"><i class="fas fa-clock" aria-hidden="true"></i>最短20分で借入まで</p>
+            <h1>はじめてでも安心。あなたに合うカードローンが<span class="v3-highlight">30秒</span>でわかる</h1>
             <p class="v3-hero-copy">大手3社を条件で比較・診断は無料</p>
-            <button type="button" class="v3-hero-cta" onclick="if(event){ event.stopPropagation(); } var first=document.querySelector('ul.select_box li'); if(first){ first.click(); } return false;">かんたん30秒診断をはじめる</button>
+            <button type="button" class="v3-hero-cta" onclick="if(event){ event.stopPropagation(); } var first=document.querySelector('ul.select_box li'); if(first){ first.click(); } return false;">かんたん30秒診断をはじめる<i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+            <p class="v3-partner-strip">対応3社: アコム / SMBCモビット / プロミス</p>
             <ul class="v3-hero-trust" aria-label="診断の特徴">
                 <li>来店不要</li>
                 <li>スマホ完結</li>

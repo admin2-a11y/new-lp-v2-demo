@@ -1833,3 +1833,88 @@ details.kuchikomi .kuchikomi_content ul p {
   color: var(--v3-text-sub) !important;
   font-size: 11px !important;
 }
+
+/* P1 hero polish */
+#mainvisual.v3-hero {
+  padding: 38px 18px 30px !important;
+  background: linear-gradient(180deg, var(--v3-accent-weak) 0%, #fff 78%, #fff 100%) !important;
+}
+
+.v3-hero-inner {
+  max-width: 760px;
+}
+
+.v3-hero-badge {
+  margin-bottom: 12px;
+  padding: 7px 15px;
+  background: var(--v3-accent) !important;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 18px rgba(16,24,40,.12);
+}
+
+.v3-hero-badge i {
+  font-size: 12px;
+}
+
+.v3-hero h1 {
+  max-width: 720px;
+  font-size: clamp(26px, 7vw, 38px) !important;
+  line-height: 1.35 !important;
+}
+
+.v3-hero h1 .v3-highlight {
+  color: var(--v3-accent);
+}
+
+.v3-hero-copy {
+  margin-top: 12px !important;
+}
+
+.v3-hero-cta {
+  width: min(100%, 420px) !important;
+  min-height: 60px !important;
+  margin-top: 22px !important;
+  box-shadow: 0 14px 24px rgba(16,24,40,.16);
+}
+
+.v3-hero-cta:active {
+  transform: translateY(2px);
+  box-shadow: 0 8px 14px rgba(16,24,40,.14);
+}
+
+.v3-partner-strip {
+  width: fit-content;
+  max-width: 100%;
+  margin: 12px auto 0 !important;
+  padding: 7px 12px;
+  border: 1px solid var(--v3-accent-weak);
+  border-radius: var(--v3-radius-pill);
+  background: rgba(255,255,255,.82);
+  color: var(--v3-accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+@media screen and (max-width: 768px) {
+  #mainvisual.v3-hero {
+    padding: 24px 14px 22px !important;
+  }
+
+  .v3-hero-copy {
+    font-size: 14px !important;
+  }
+
+  .v3-hero-cta {
+    margin-top: 18px !important;
+    padding: 0 18px !important;
+    font-size: 15px !important;
+  }
+
+  .v3-hero-trust {
+    margin-top: 12px !important;
+  }
+}
