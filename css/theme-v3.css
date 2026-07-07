@@ -2258,3 +2258,31 @@ section.CardListSearch__compareWrapper > h2 {
     margin-right: auto !important;
   }
 }
+
+/* Entry modal banner */
+.select_modal_body .v3-entry-modal-head {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff !important;
+  overflow: hidden;
+}
+
+.select_modal_body .v3-entry-modal-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.select_modal_body .v3-entry-modal-head + .select_modal_inner {
+  padding-top: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .select_modal_body .v3-entry-modal-head {
+    padding: 0 !important;
+  }
+
+  .select_modal_body .v3-entry-modal-head + .select_modal_inner {
+    padding-top: 14px;
+  }
+}
