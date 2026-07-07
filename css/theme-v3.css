@@ -1,0 +1,174 @@
+:root {
+  --v3-accent: #185FA5;
+  --v3-accent-strong: #0C447C;
+  --v3-accent-weak: #E6F1FB;
+  --v3-amber: #EF9F27;
+  --v3-amber-text: #633806;
+  --v3-text: #1B1B18;
+  --v3-text-sub: #75736C;
+  --v3-bg: #FFFFFF;
+  --v3-bg-alt: #F6F7F9;
+  --v3-border: #E8EAED;
+  --v3-radius: 16px;
+  --v3-radius-sm: 10px;
+  --v3-radius-pill: 999px;
+  --v3-shadow: 0 1px 3px rgba(16,24,40,.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--v3-bg);
+}
+
+body,
+body.custom-background,
+body.experience,
+body.beginner {
+  margin: 0;
+  background: var(--v3-bg) !important;
+  background-image: none !important;
+  color: var(--v3-text);
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--v3-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--v3-accent-strong);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.ttl01,
+.content1_ttl {
+  color: var(--v3-text);
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+p,
+li,
+dd,
+dt,
+th,
+td,
+label,
+input,
+select,
+button,
+textarea {
+  font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+.button,
+.c-button,
+.transition a,
+.btn_red {
+  min-height: 52px;
+  border-radius: var(--v3-radius-pill) !important;
+  border: 1px solid transparent;
+  background: var(--v3-accent);
+  color: #fff !important;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1.35;
+  box-shadow: none;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.button:hover,
+.c-button:hover,
+.transition a:hover,
+.btn_red:hover {
+  background: var(--v3-accent-strong);
+  color: #fff !important;
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+.button:active,
+.c-button:active,
+.transition a:active,
+.btn_red:active {
+  transform: translateY(1px);
+}
+
+input,
+select,
+textarea,
+button {
+  font-size: 16px;
+}
+
+#contents,
+.main,
+.inner,
+.content1,
+#content1,
+#recommend,
+#flow,
+.hikaku_box {
+  max-width: 100%;
+}
+
+.inner,
+#search_box,
+.topbox,
+#content1,
+#recommend,
+#flow,
+.hikaku_box .topbox {
+  width: min(100%, 1000px);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  .inner,
+  #search_box,
+  .topbox,
+  #content1,
+  #recommend,
+  #flow,
+  .hikaku_box .topbox {
+    width: min(100%, calc(100vw - 24px));
+  }
+}
