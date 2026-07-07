@@ -194,11 +194,19 @@
         </div>
     </div>
 </header>	<span id="top"></span>
-	<div id="mainvisual">
-		<div class="maincatch">
-			<img src="./images/beginner/header_beginner.jpg">
-		</div>
-	</div>
+	<div id="mainvisual" class="v3-hero v3-hero-beginner">
+        <div class="v3-hero-inner">
+            <p class="v3-hero-badge">最短20分で借入まで</p>
+            <h1>はじめてでも安心。あなたに合うカードローンが3問でわかる</h1>
+            <p class="v3-hero-copy">大手3社を条件で比較・診断は無料</p>
+            <button type="button" class="v3-hero-cta" onclick="var first=document.querySelector('ul.select_box li'); if(first){ first.click(); }">かんたん30秒診断をはじめる</button>
+            <ul class="v3-hero-trust" aria-label="診断の特徴">
+                <li>来店不要</li>
+                <li>スマホ完結</li>
+                <li>診断無料</li>
+            </ul>
+        </div>
+    </div>
 	<span id="content2"></span>
 	<div id="search_box">
 		<h2 class="ttl01">
