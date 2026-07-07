@@ -627,7 +627,7 @@
 			<div class="ht40"></div>
 <div class="topbox topboxNew case">
     
-            <div style="text-align: center;"><img src="./images/rank1_catch.png"></div>
+            <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -635,7 +635,7 @@
                 <a target="_blank" href="./redirect.php?item=acom">アコム</a>
             </h3>
         </div>
-        <div class="subcatch"><img src="./images/hitokoto_point__acom.png"></div>
+        <div class="subcatch"><div class="v3-point">アコムはスピードと使いやすさで選びやすい定番カードローンです</div></div>
     </div>
     
     <div class="basic is-flex is-align-start reco_item">
@@ -646,44 +646,11 @@
             </a>
         </div>
         
-        <table class="info reco_table">
-            <tr>
-                <th colspan="2">融資時間</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle" colspan="2">
-                    <span>最短20分<span class="caution">※2</span></span>
-                </td>
-            </tr>
-            <tr>
-                <th>実質年率</th>
-                <th>限度額</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>2.4%～17.9%</span>
-                </td>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最大800万円</span>
-                </td>
-            </tr>
-            <tr>
-                <th>審査時間</th>
-                <th>利用可能コンビニ</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最短20分<span class="caution">※2</span></span>
-                </td>
-                <td class="iconset">
-                    <div class="is-flex is-align-center is-justify-center">
-                        <div>
-                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="info reco_table v3-metrics">
+            <div class="v3-metric"><span>融資時間</span><strong><span>最短20分<span class="caution">※2</span></span></strong></div>
+            <div class="v3-metric"><span>実質年率</span><strong><span>2.4%～17.9%</span></strong></div>
+            <div class="v3-metric"><span>限度額</span><strong><span>最大800万円</span></strong></div>
+        </div>
     </div>
     
     <details class="points">
@@ -766,7 +733,7 @@
                 <a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a>
             </h3>
         </div>
-        <div class="subcatch"><img src="./images/hitokoto_point__mobit.png"></div>
+        <div class="subcatch"><div class="v3-point">SMBCモビットはWEB完結で電話連絡や郵送物を抑えたい方に向いています</div></div>
     </div>
     
     <div class="basic is-flex is-align-start reco_item">
@@ -777,44 +744,11 @@
             </a>
         </div>
         
-        <table class="info reco_table">
-            <tr>
-                <th colspan="2">融資時間</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle" colspan="2">
-                    <span>最短15分※</span>
-                </td>
-            </tr>
-            <tr>
-                <th>実質年率</th>
-                <th>限度額</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isCircle">
-                    <span>3.0％～18.0％</span>
-                </td>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最大800万円</span>
-                </td>
-            </tr>
-            <tr>
-                <th>審査時間</th>
-                <th>利用可能コンビニ</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>10秒簡易審査※</span>
-                </td>
-                <td class="iconset">
-                    <div class="is-flex is-align-center is-justify-center">
-                        <div>
-                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="info reco_table v3-metrics">
+            <div class="v3-metric"><span>融資時間</span><strong><span>最短15分※</span></strong></div>
+            <div class="v3-metric"><span>実質年率</span><strong><span>3.0％～18.0％</span></strong></div>
+            <div class="v3-metric"><span>限度額</span><strong><span>最大800万円</span></strong></div>
+        </div>
     </div>
     
     <details class="points">
@@ -881,7 +815,7 @@
                 <a target="_blank" href="./redirect.php?item=promise">プロミス</a>
             </h3>
         </div>
-        <div class="subcatch"><img src="./images/hitokoto_point__promise.png"></div>
+        <div class="subcatch"><div class="v3-point">プロミスはスマホからスピード重視で進めたい方に向いています</div></div>
     </div>
     
     <div class="basic is-flex is-align-start reco_item">
@@ -892,44 +826,11 @@
             </a>
         </div>
         
-        <table class="info reco_table">
-            <tr>
-                <th colspan="2">融資時間</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle" colspan="2">
-                    <span>最短3分</span>
-                </td>
-            </tr>
-            <tr>
-                <th>実質年率</th>
-                <th>限度額</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>2.5％~18.0％</span>
-                </td>
-                <td class="icon01_small isCircle">
-                    <span>最大800万円</span>
-                </td>
-            </tr>
-            <tr>
-                <th>審査時間</th>
-                <th>利用可能コンビニ</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最短3分</span>
-                </td>
-                <td class="iconset">
-                    <div class="is-flex is-align-center is-justify-center">
-                        <div>
-                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="info reco_table v3-metrics">
+            <div class="v3-metric"><span>融資時間</span><strong><span>最短3分</span></strong></div>
+            <div class="v3-metric"><span>実質年率</span><strong><span>2.5％~18.0％</span></strong></div>
+            <div class="v3-metric"><span>限度額</span><strong><span>最大800万円</span></strong></div>
+        </div>
     </div>
     
     <details class="points">
@@ -1162,7 +1063,7 @@
 			<div class="ht40"></div>
 <div class="topbox topboxNew case">
     
-            <div style="text-align: center;"><img src="./images/rank1_catch.png"></div>
+            <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -1170,7 +1071,7 @@
                 <a target="_blank" href="./redirect.php?item=acom">アコム</a>
             </h3>
         </div>
-        <div class="subcatch"><img src="./images/hitokoto_point__acom.png"></div>
+        <div class="subcatch"><div class="v3-point">アコムはスピードと使いやすさで選びやすい定番カードローンです</div></div>
     </div>
     
     <div class="basic is-flex is-align-start reco_item">
@@ -1181,44 +1082,11 @@
             </a>
         </div>
         
-        <table class="info reco_table">
-            <tr>
-                <th colspan="2">融資時間</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle" colspan="2">
-                    <span>最短20分<span class="caution">※2</span></span>
-                </td>
-            </tr>
-            <tr>
-                <th>実質年率</th>
-                <th>限度額</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>2.4%～17.9%</span>
-                </td>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最大800万円</span>
-                </td>
-            </tr>
-            <tr>
-                <th>審査時間</th>
-                <th>利用可能コンビニ</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最短20分<span class="caution">※2</span></span>
-                </td>
-                <td class="iconset">
-                    <div class="is-flex is-align-center is-justify-center">
-                        <div>
-                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="info reco_table v3-metrics">
+            <div class="v3-metric"><span>融資時間</span><strong><span>最短20分<span class="caution">※2</span></span></strong></div>
+            <div class="v3-metric"><span>実質年率</span><strong><span>2.4%～17.9%</span></strong></div>
+            <div class="v3-metric"><span>限度額</span><strong><span>最大800万円</span></strong></div>
+        </div>
     </div>
     
     <details class="points">
@@ -1301,7 +1169,7 @@
                 <a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a>
             </h3>
         </div>
-        <div class="subcatch"><img src="./images/hitokoto_point__mobit.png"></div>
+        <div class="subcatch"><div class="v3-point">SMBCモビットはWEB完結で電話連絡や郵送物を抑えたい方に向いています</div></div>
     </div>
     
     <div class="basic is-flex is-align-start reco_item">
@@ -1312,44 +1180,11 @@
             </a>
         </div>
         
-        <table class="info reco_table">
-            <tr>
-                <th colspan="2">融資時間</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle" colspan="2">
-                    <span>最短15分※</span>
-                </td>
-            </tr>
-            <tr>
-                <th>実質年率</th>
-                <th>限度額</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isCircle">
-                    <span>3.0％～18.0％</span>
-                </td>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最大800万円</span>
-                </td>
-            </tr>
-            <tr>
-                <th>審査時間</th>
-                <th>利用可能コンビニ</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>10秒簡易審査※</span>
-                </td>
-                <td class="iconset">
-                    <div class="is-flex is-align-center is-justify-center">
-                        <div>
-                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="info reco_table v3-metrics">
+            <div class="v3-metric"><span>融資時間</span><strong><span>最短15分※</span></strong></div>
+            <div class="v3-metric"><span>実質年率</span><strong><span>3.0％～18.0％</span></strong></div>
+            <div class="v3-metric"><span>限度額</span><strong><span>最大800万円</span></strong></div>
+        </div>
     </div>
     
     <details class="points">
@@ -1416,7 +1251,7 @@
                 <a target="_blank" href="./redirect.php?item=promise">プロミス</a>
             </h3>
         </div>
-        <div class="subcatch"><img src="./images/hitokoto_point__promise.png"></div>
+        <div class="subcatch"><div class="v3-point">プロミスはスマホからスピード重視で進めたい方に向いています</div></div>
     </div>
     
     <div class="basic is-flex is-align-start reco_item">
@@ -1427,44 +1262,11 @@
             </a>
         </div>
         
-        <table class="info reco_table">
-            <tr>
-                <th colspan="2">融資時間</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle" colspan="2">
-                    <span>最短3分</span>
-                </td>
-            </tr>
-            <tr>
-                <th>実質年率</th>
-                <th>限度額</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>2.5％~18.0％</span>
-                </td>
-                <td class="icon01_small isCircle">
-                    <span>最大800万円</span>
-                </td>
-            </tr>
-            <tr>
-                <th>審査時間</th>
-                <th>利用可能コンビニ</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最短3分</span>
-                </td>
-                <td class="iconset">
-                    <div class="is-flex is-align-center is-justify-center">
-                        <div>
-                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="info reco_table v3-metrics">
+            <div class="v3-metric"><span>融資時間</span><strong><span>最短3分</span></strong></div>
+            <div class="v3-metric"><span>実質年率</span><strong><span>2.5％~18.0％</span></strong></div>
+            <div class="v3-metric"><span>限度額</span><strong><span>最大800万円</span></strong></div>
+        </div>
     </div>
     
     <details class="points">
@@ -1540,7 +1342,7 @@
 	<section>
 		<div class="topbox topboxNew case">
     
-            <div style="text-align: center;"><img src="./images/rank1_catch.png"></div>
+            <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -1548,7 +1350,7 @@
                 <a target="_blank" href="./redirect.php?item=acom">アコム</a>
             </h3>
         </div>
-        <div class="subcatch"><img src="./images/hitokoto_point__acom.png"></div>
+        <div class="subcatch"><div class="v3-point">アコムはスピードと使いやすさで選びやすい定番カードローンです</div></div>
     </div>
     
     <div class="basic is-flex is-align-start reco_item">
@@ -1559,44 +1361,11 @@
             </a>
         </div>
         
-        <table class="info reco_table">
-            <tr>
-                <th colspan="2">融資時間</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle" colspan="2">
-                    <span>最短20分<span class="caution">※2</span></span>
-                </td>
-            </tr>
-            <tr>
-                <th>実質年率</th>
-                <th>限度額</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>2.4%～17.9%</span>
-                </td>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最大800万円</span>
-                </td>
-            </tr>
-            <tr>
-                <th>審査時間</th>
-                <th>利用可能コンビニ</th>
-            </tr>
-            <tr>
-                <td class="icon01_small isDoubleCircle">
-                    <span>最短20分<span class="caution">※2</span></span>
-                </td>
-                <td class="iconset">
-                    <div class="is-flex is-align-center is-justify-center">
-                        <div>
-                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="info reco_table v3-metrics">
+            <div class="v3-metric"><span>融資時間</span><strong><span>最短20分<span class="caution">※2</span></span></strong></div>
+            <div class="v3-metric"><span>実質年率</span><strong><span>2.4%～17.9%</span></strong></div>
+            <div class="v3-metric"><span>限度額</span><strong><span>最大800万円</span></strong></div>
+        </div>
     </div>
     
     <details class="points">
