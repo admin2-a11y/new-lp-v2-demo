@@ -634,3 +634,150 @@ ul.select_box .slider_value {
     width: min(94vw, 420px) !important;
   }
 }
+.c-compareTableWrapper {
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.c-compareTableWrapper::after {
+  content: "横にスクロールできます";
+  position: sticky;
+  right: 8px;
+  bottom: 8px;
+  float: right;
+  margin-top: -28px;
+  padding: 5px 10px;
+  border-radius: var(--v3-radius-pill);
+  background: rgba(255,255,255,.92);
+  color: var(--v3-text-sub);
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: var(--v3-shadow);
+  pointer-events: none;
+}
+
+.c-compareTable {
+  width: max(100%, 720px) !important;
+  border: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  background: #fff !important;
+}
+
+.c-compareTable th,
+.c-compareTable td {
+  min-width: 150px;
+  padding: 14px 12px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--v3-border) !important;
+  background: #fff !important;
+  color: var(--v3-text) !important;
+  font-size: 14px !important;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  scroll-snap-align: start;
+}
+
+.c-compareTable th:first-child,
+.c-compareTable tbody th,
+.c-compareTable thead th {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 112px;
+  background: #fff !important;
+  color: var(--v3-text-sub) !important;
+  font-weight: 700 !important;
+  box-shadow: 1px 0 0 var(--v3-border);
+}
+
+.c-compareTable thead td {
+  font-weight: 700;
+}
+
+.c-compareTable thead img {
+  width: 120px;
+  max-height: 66px;
+  object-fit: contain;
+  border-radius: var(--v3-radius-sm);
+}
+
+.c-compareTable td.isDoubleCircle,
+.c-compareTable td.isCircle,
+.reco_table td.isDoubleCircle,
+.reco_table td.isCircle {
+  color: var(--v3-text) !important;
+  font-weight: 700 !important;
+}
+
+.c-compareTable td.isDoubleCircle::before,
+.c-compareTable td.isCircle::before,
+.reco_table td.isDoubleCircle::before,
+.reco_table td.isCircle::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  padding: 0 6px;
+  border-radius: var(--v3-radius-pill);
+  background: var(--v3-accent-weak);
+  color: var(--v3-accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.c-compareTable td.isDoubleCircle::before,
+.reco_table td.isDoubleCircle::before {
+  content: "◎";
+}
+
+.c-compareTable td.isCircle::before,
+.reco_table td.isCircle::before {
+  content: "○";
+}
+
+.c-compareTable .c-button {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 14px;
+  border-radius: var(--v3-radius-pill) !important;
+  background: var(--v3-accent) !important;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.caution {
+  color: var(--v3-text-sub) !important;
+  font-size: 12px !important;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .c-compareTable {
+    width: 720px !important;
+  }
+
+  .c-compareTable th,
+  .c-compareTable td {
+    min-width: 146px;
+    padding: 12px 10px !important;
+  }
+
+  .c-compareTable th:first-child,
+  .c-compareTable tbody th,
+  .c-compareTable thead th {
+    min-width: 104px;
+  }
+}
