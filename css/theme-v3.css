@@ -1741,3 +1741,95 @@ body > header {
 #ranking2 .ranking2_content a p {
   margin: 0 !important;
 }
+
+/* ==== review fixes ==== */
+#searchTOP {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+#searchTOP h3 {
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--v3-text) !important;
+  font-size: 15px !important;
+  font-weight: 700;
+  text-align: left !important;
+}
+
+#searchTOP h3 span {
+  color: var(--v3-text-sub) !important;
+  font-size: 12px !important;
+  font-weight: 400;
+}
+
+#searchTOP .rentcheck span {
+  width: 100% !important;
+  min-height: 48px;
+  margin: 0 !important;
+  padding: 10px 8px !important;
+  border: 1px solid var(--v3-border) !important;
+  background: #fff !important;
+  color: var(--v3-text) !important;
+  border-radius: var(--v3-radius-pill) !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px !important;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+#searchTOP .rentcheck input[type="checkbox"]:checked + span {
+  border-color: var(--v3-accent) !important;
+  background: var(--v3-accent) !important;
+  color: #fff !important;
+}
+
+#searchTOP .rentcheck input[type="checkbox"]:checked + span::before {
+  content: "✓";
+  display: inline !important;
+  margin-right: 5px;
+}
+
+.after_box ul li {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap;
+}
+
+details.points:not([open]) .points_content,
+details.kuchikomi:not([open]) .kuchikomi_content {
+  display: none !important;
+}
+
+details.points .points_content ul p::before,
+details.points .points_content ul p::after,
+details.kuchikomi .kuchikomi_content ul p::before,
+details.kuchikomi .kuchikomi_content ul p::after {
+  content: none !important;
+}
+
+details.points .points_content ul,
+details.points .points_content ul p,
+details.kuchikomi .kuchikomi_content ul,
+details.kuchikomi .kuchikomi_content ul p {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.v3-table-hint {
+  margin: 0 0 8px !important;
+  color: var(--v3-text-sub) !important;
+  font-size: 12px !important;
+  text-align: right;
+}
+
+.v3-hero-note {
+  margin: 10px 0 0 !important;
+  color: var(--v3-text-sub) !important;
+  font-size: 11px !important;
+}

@@ -530,6 +530,7 @@
     <div class="c-compareTableWrapper u-mb-0 is-open">
         <section class="topbox topboxNew hikaku CardListSearch__compareWrapper">
                             <h2>初めての方に<BR>おすすめのカードローンを徹底比較</h2>
+            <p class="v3-table-hint">横にスクロールして3社を比較 →</p>
             
             <div class="c-compareTableWrapper">
                 <table class="c-compareTable">
@@ -1196,6 +1197,10 @@
                     progress.querySelector('span').textContent = '質問 ' + currentIndex + ' / ' + items.length;
                     progress.querySelector('i').style.width = Math.round(currentIndex / items.length * 100) + '%';
                 }
+                var heading = modal.querySelector('.modal-header h2');
+                if (heading && /^Q\d+\./.test(heading.textContent)) {
+                    heading.textContent = heading.textContent.replace(/^Q\d+\./, '').trim();
+                }
             }
             if (window.jQuery) {
                 window.jQuery(window).on('load', function() { setTimeout(updateDiagnosisState, 0); });
@@ -1204,6 +1209,10 @@
                 });
             } else {
                 document.addEventListener('DOMContentLoaded', updateDiagnosisState);
+            }
+            var v3Heading = document.querySelector('#serch2_Modal .modal-header h2');
+            if (v3Heading && window.MutationObserver) {
+                new MutationObserver(function() { setTimeout(updateDiagnosisState, 0); }).observe(v3Heading, { childList: true, characterData: true, subtree: true });
             }
         })();
     </script>
