@@ -609,9 +609,14 @@ ul.select_box .slider_value {
 }
 
 .select_modal_body .select_modal_inner .select_modal_btn1 {
-  border-color: var(--v3-border) !important;
-  background: #fff !important;
-  color: var(--v3-accent) !important;
+  border-color: #9fdb42 !important;
+  background: linear-gradient(180deg, #ecff9d 0%, #baf04b 100%) !important;
+  color: #21550f !important;
+  box-shadow: 0 6px 0 #79b628 !important;
+}
+
+.select_modal_body .select_modal_inner .select_modal_btn1 span {
+  color: #366b1c !important;
 }
 
 .v3-modal-note {
