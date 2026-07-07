@@ -828,7 +828,7 @@ summary::-webkit-details-marker {
     font-size: 12.5px;
     padding: 2px 0 2px 15px;
     margin-bottom: 5px;
-    background: radial-gradient(rgba(148,248,161,, 0.3) 0%, rgba(248, 210, 148, 0) 70%);
+    background: radial-gradient(rgba(148,248,161, 0.3) 0%, rgba(248, 210, 148, 0) 70%);
   }
 }
 .topboxNew details.kuchikomi {

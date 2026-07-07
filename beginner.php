@@ -146,10 +146,10 @@
 			$(window).scroll(function() {
 				var top = $(window).scrollTop();
 				if (mvh < top) {
-					$('header').css('background-color', 'rgba(252,128,3,,0.8)');
+					$('header').css('background-color', 'rgba(252,128,3,0.8)');
 					$('.btn_menu span').css('background-color', 'rgba(255,255,255,1)');
 				} else {
-					$('header').css('background-color', 'rgba(252,128,3,,1)');
+					$('header').css('background-color', 'rgba(252,128,3,1)');
 					$('.btn_menu span').css('background-color', 'rgba(255,255,255,1)');
 				}
 			});
@@ -269,7 +269,7 @@
 							<option id="annual_income_5" value="a5_5">700万円以上</option>
 						</select>
 					</li><li>
-						<label for="select_s5">Q5.現在の職業は？</label>
+						<label for="select_s6">Q5.現在の職業は？</label>
 						<p>なし</p>
 						<select name="how_many_loans_dis" id="select_s6">
 							<option value="">なし</option>
@@ -1748,7 +1748,7 @@
             <li><a href="./operationinfo.php">運営社情報</a></li>
         </ul>
     </div>
-    <div class="copyright"><small>Copyright &#995511; __BRAND_NAME__ All Rights Reserved.</small></div>
+    <div class="copyright"><small>Copyright &copy; __BRAND_NAME__ All Rights Reserved.</small></div>
 </footer>
 <div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>	
 </body>

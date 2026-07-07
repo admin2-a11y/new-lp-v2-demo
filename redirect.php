@@ -146,10 +146,10 @@
 			$(window).scroll(function() {
 				var top = $(window).scrollTop();
 				if (mvh < top) {
-					$('header').css('background-color', 'rgba(252,128,3,,0.8)');
+					$('header').css('background-color', 'rgba(252,128,3,0.8)');
 					$('.btn_menu span').css('background-color', 'rgba(255,255,255,1)');
 				} else {
-					$('header').css('background-color', 'rgba(252,128,3,,1)');
+					$('header').css('background-color', 'rgba(252,128,3,1)');
 					$('.btn_menu span').css('background-color', 'rgba(255,255,255,1)');
 				}
 			});

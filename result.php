@@ -145,10 +145,10 @@
 			$(window).scroll(function() {
 				var top = $(window).scrollTop();
 				if (mvh < top) {
-					$('header').css('background-color', 'rgba(252,128,3,,0.8)');
+					$('header').css('background-color', 'rgba(252,128,3,0.8)');
 					$('.btn_menu span').css('background-color', 'rgba(255,255,255,1)');
 				} else {
-					$('header').css('background-color', 'rgba(252,128,3,,1)');
+					$('header').css('background-color', 'rgba(252,128,3,1)');
 					$('.btn_menu span').css('background-color', 'rgba(255,255,255,1)');
 				}
 			});
@@ -1046,7 +1046,7 @@
                                     $sliderValueDisplay.text(selectedText);
 
                                     $modalButtons.removeAttr('style'); // 全てのスタイルをリセット
-                                    $modalButtons.eq(sliderValue).css('background', 'rgba(241,228,215,, 0.19)'); // 現在の項目にスタイル適用
+                                    $modalButtons.eq(sliderValue).css('background', 'rgba(241,228,215, 0.19)'); // 現在の項目にスタイル適用
 
                                     $select.prop('selectedIndex', sliderValue).change(); // <select> のインデックスを同期
 
@@ -1255,7 +1255,7 @@
             <li><a href="./operationinfo.php">運営社情報</a></li>
         </ul>
     </div>
-    <div class="copyright"><small>Copyright &#995511; __BRAND_NAME__ All Rights Reserved.</small></div>
+    <div class="copyright"><small>Copyright &copy; __BRAND_NAME__ All Rights Reserved.</small></div>
 </footer>
 <div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>    
 </body>
