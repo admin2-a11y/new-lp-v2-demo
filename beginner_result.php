@@ -199,7 +199,7 @@
             <section>
                 <div class="inner">
                     <div class="after_box">
-                        <h1>あなたの条件に合うカードローン <span>3</span>件</h1>
+                        <h1>あなたの条件に合う<br class="v3-sp-br">カードローン <span>3</span>件</h1>
                         <div class="box_in">
                             <div class="top">
                                 <ul>

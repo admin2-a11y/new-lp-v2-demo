@@ -172,3 +172,23 @@
 - F4確認: index / beginner / beginner_result で比較表ヒント表示、比較表は内部横スクロールのみ。
 - P1確認: 375pxスクリーンショットでH1とCTAがファーストビュー内に収まり、ヒーロー注記/対応3社チップ表示OK。
 - コンソール: 上記ブラウザQA中のerrorログなし。
+
+## 校正対応（第3ラウンド）
+
+コミット: `fix: 第3ラウンド指摘対応`
+
+### 対応内容
+
+- G1: `details.points` / `details.kuchikomi` の閉状態をフラットなバーに戻し、旧CSSの絶対配置と余白を theme-v3 / theme-v3-green の `/* ==== round3 fixes ==== */` で上書き。
+- G2: `.v3-table-hint` の旧リボン点滅アニメーションと疑似要素を停止。
+- G3: FV画像2枚とエントリーモーダルバナーを長辺1200px・品質82で再圧縮し、APP1メタデータなしに更新。FV画像2枚には `fetchpriority="high"` を追加。
+- G4: `result.php` / `beginner_result.php` の結果H1にモバイル専用改行 `br.v3-sp-br` を追加し、「カードローン」の途中改行を防止。
+- G5: `prefers-reduced-motion: reduce` 時に常時アニメーションとトランジションを抑制。
+
+### 画像圧縮結果
+
+| ファイル | 圧縮前 | 圧縮後 | 寸法 | APP1 |
+|---|---:|---:|---|---|
+| `images/hero-experience-firstview.jpg` | 315,586 bytes | 138,331 bytes | 1200x724 | なし |
+| `images/hero-beginner-firstview.jpg` | 286,302 bytes | 120,510 bytes | 1200x712 | なし |
+| `images/entry-modal-banner.jpg` | 264,385 bytes | 115,467 bytes | 1200x720 | なし |

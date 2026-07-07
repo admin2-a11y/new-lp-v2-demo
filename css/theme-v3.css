@@ -2287,7 +2287,77 @@ section.CardListSearch__compareWrapper > h2 {
     padding: 0 !important;
   }
 
-  .select_modal_body .v3-entry-modal-head + .select_modal_inner {
+.select_modal_body .v3-entry-modal-head + .select_modal_inner {
     padding-top: 14px;
+  }
+}
+
+/* ==== round3 fixes ==== */
+details.points .points_header,
+details.kuchikomi .kuchikomi_header {
+  position: static !important;
+  transform: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+details.points:not([open]),
+details.kuchikomi:not([open]) {
+  height: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+  padding: 0 !important;
+}
+
+details.points:not([open]) summary,
+details.kuchikomi:not([open]) summary {
+  min-height: 52px !important;
+}
+
+details.points:not([open]) .points_header,
+details.kuchikomi:not([open]) .kuchikomi_header {
+  min-height: 52px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+details.points:not([open]) .points_header p,
+details.kuchikomi:not([open]) .kuchikomi_header p {
+  margin: 0 !important;
+}
+
+.v3-table-hint {
+  animation: none !important;
+  background: transparent !important;
+}
+
+.v3-table-hint::before,
+.v3-table-hint::after {
+  content: none !important;
+}
+
+.v3-sp-br {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .v3-sp-br {
+    display: block;
+  }
+
+  .after_box h1 {
+    font-size: clamp(24px, 6vw, 36px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

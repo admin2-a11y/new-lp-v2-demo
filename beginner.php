@@ -198,7 +198,7 @@
         <div class="v3-hero-inner">
             <h1 class="v3-sr-only">初めて借りる人にオススメ 人気のカードローンがわかる</h1>
             <div class="v3-hero-media">
-                <img src="./images/hero-beginner-firstview.jpg" width="1628" height="966" alt="15社から厳選 初めて借りる人にオススメ 人気のカードローンがわかる。バレない、WEB完結、初回最大30日間金利ゼロ。">
+                <img src="./images/hero-beginner-firstview.jpg" width="1200" height="712" fetchpriority="high" alt="15社から厳選 初めて借りる人にオススメ 人気のカードローンがわかる。バレない、WEB完結、初回最大30日間金利ゼロ。">
             </div>
             <button type="button" class="v3-hero-cta" onclick="if(event){ event.stopPropagation(); } var first=document.querySelector('ul.select_box li'); if(first){ first.click(); } return false;">かんたん30秒診断をはじめる<i class="fas fa-arrow-right" aria-hidden="true"></i></button>
             <p class="v3-hero-note">※借入までの時間はお申込時間や審査状況などにより異なります</p>
