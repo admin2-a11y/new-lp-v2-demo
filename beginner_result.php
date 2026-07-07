@@ -1009,7 +1009,8 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h2>TITLE</h2>
-                            <span class="modalClose">×</span>
+                    <div class="v3-modal-progress" aria-live="polite"><span>質問 1 / 1</span><b><i style="width:0%"></i></b></div>
+                    <span class="modalClose">×</span>
                         </div>
                         <div class="modal-body">
                             <p></p>
@@ -1294,6 +1295,45 @@
     <div class="copyright"><small>Copyright &copy; __BRAND_NAME__ All Rights Reserved.</small></div>
 </footer>
 <div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>    
+    <script>
+        (function v3EnhanceDiagnosis() {
+            function updateDiagnosisState() {
+                var items = Array.prototype.slice.call(document.querySelectorAll('ul.select_box > li'));
+                items.forEach(function(item) {
+                    var select = item.querySelector('select');
+                    var label = item.querySelector('p');
+                    if (!select || !label) return;
+                    var value = (select.value || '').trim();
+                    var text = (label.textContent || '').trim();
+                    if (!value && (text === '未回答' || text === 'なし' || text === 'こだわらない' || text === '')) {
+                        label.textContent = 'タップして選択 ▼';
+                        text = label.textContent;
+                    }
+                    item.classList.toggle('v3-answered', text !== 'タップして選択 ▼' && text !== '未回答' && text !== 'なし');
+                });
+                var modal = document.getElementById('serch2_Modal');
+                if (!modal || !items.length) return;
+                var currentName = window.jQuery ? window.jQuery(modal).data('name') : '';
+                var currentSelect = currentName ? document.querySelector('select[name="' + currentName + '"]') : null;
+                var currentItem = currentSelect ? currentSelect.closest('li') : null;
+                var currentIndex = currentItem ? items.indexOf(currentItem) + 1 : 1;
+                if (currentIndex < 1) currentIndex = 1;
+                var progress = modal.querySelector('.v3-modal-progress');
+                if (progress) {
+                    progress.querySelector('span').textContent = '質問 ' + currentIndex + ' / ' + items.length;
+                    progress.querySelector('i').style.width = Math.round(currentIndex / items.length * 100) + '%';
+                }
+            }
+            if (window.jQuery) {
+                window.jQuery(window).on('load', function() { setTimeout(updateDiagnosisState, 0); });
+                window.jQuery(document).on('click change', 'ul.select_box li, #serch2_Modal .modal-btn, #serch2_Modal .modal-back, #serch2_Modal .modal-submit, select', function() {
+                    setTimeout(updateDiagnosisState, 0);
+                });
+            } else {
+                document.addEventListener('DOMContentLoaded', updateDiagnosisState);
+            }
+        })();
+    </script>
 </body>
 
 <script src="./js/timer.js" defer></script>
