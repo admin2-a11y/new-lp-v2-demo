@@ -2201,3 +2201,60 @@ section.CardListSearch__compareWrapper > h2 {
     padding: 18px !important;
   }
 }
+
+/* Experience first view image */
+.v3-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+#mainvisual.v3-hero.v3-hero-experience {
+  padding: 0 0 28px !important;
+  background: #fff !important;
+}
+
+.v3-hero-experience .v3-hero-inner {
+  width: 100%;
+  max-width: none;
+}
+
+.v3-hero-experience .v3-hero-media {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--v3-accent-weak);
+}
+
+.v3-hero-experience .v3-hero-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.v3-hero-experience .v3-hero-cta {
+  margin-top: 18px !important;
+}
+
+@media screen and (max-width: 768px) {
+  #mainvisual.v3-hero.v3-hero-experience {
+    padding-bottom: 20px !important;
+  }
+
+  .v3-hero-experience .v3-hero-cta {
+    width: min(calc(100% - 28px), 420px) !important;
+    margin-top: 14px !important;
+  }
+
+  .v3-hero-experience .v3-hero-note {
+    width: min(calc(100% - 28px), 720px);
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
