@@ -521,7 +521,7 @@
 	<section>
 		
 		<div style="text-align: center;">
-			<img src="./images/beginner/beginner_title_flow.png" alt="初めてのカードローン 絶対に知るべき4つのコツ" width="1000px">
+			<img src="./images/beginner/beginner_title_flow.png" alt="初めてのカードローン 絶対に知るべき4つのコツ" width="1000" style="max-width:100%;height:auto;">
 		</div>
 		<div id="flow" class="flow_cont">
 			<div class="toggle-section">
@@ -595,7 +595,7 @@
 		<div id="content1" class="ranking">
 			<h2 class="content1_ttl">
 				<img src="images/beginner/beginner_title_osusume_ranking.png" alt="厳選！ 4つのコツを満たした カードローンおすすめランキング"
-					width="1000px">
+					width="1000" style="max-width:100%;height:auto;">
 			</h2>
 		</div>
 		
@@ -681,7 +681,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -812,7 +812,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -927,7 +927,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -1153,13 +1153,13 @@
     </section>
 	
 	<section>
-		<div class="inner"><img src="./images/beginner/beginner_kakujitsu_3point.png" width="1000px">
+		<div class="inner"><img src="./images/beginner/beginner_kakujitsu_3point.png" width="1000" style="max-width:100%;height:auto;">
 		</div>
 	</section>
 	
 	<div class="ht40"></div>
 	<section>
-		<div class="inner"><img src="./images/beginner/title_sokujitu.png" width="1000px">
+		<div class="inner"><img src="./images/beginner/title_sokujitu.png" width="1000" style="max-width:100%;height:auto;">
 		</div>
 		<div id="recommend2" class="btm_arrow02">
 			<div class="ht40"></div>
@@ -1216,7 +1216,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -1347,7 +1347,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -1462,7 +1462,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -1537,7 +1537,7 @@
 	<div class="ht40"></div>
 	
 	<section>
-		<div class="inner"><img src="./images/beginner/beginner_3point.png" width="1000px">
+		<div class="inner"><img src="./images/beginner/beginner_3point.png" width="1000" style="max-width:100%;height:auto;">
 		</div>
 	</section>
 	<section>
@@ -1594,7 +1594,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>

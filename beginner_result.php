@@ -316,7 +316,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -447,7 +447,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -562,7 +562,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
@@ -799,7 +799,7 @@
                 <td class="iconset">
                     <div class="is-flex is-align-center is-justify-center">
                         <div>
-                            <img src="./images/convini.webp" width="200px">
+                            <img src="./images/convini.webp" width="200" style="max-width:100%;height:auto;">
                         </div>
                     </div>
                 </td>
