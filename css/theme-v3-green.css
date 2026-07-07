@@ -1286,3 +1286,74 @@ details[open] .kuchikomi_header::after {
   font-weight: 700;
   text-decoration: underline;
 }
+.v3-operation {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 40px 18px 56px;
+}
+
+.v3-back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: 14px;
+  color: var(--v3-accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.v3-operation-card {
+  padding: 28px;
+  border: 1px solid var(--v3-border);
+  border-radius: var(--v3-radius);
+  background: #fff;
+  box-shadow: var(--v3-shadow);
+}
+
+.v3-operation-card h1 {
+  margin: 0 0 22px;
+  color: var(--v3-text);
+  font-size: clamp(28px, 5vw, 38px);
+}
+
+.v3-operation-card dl {
+  margin: 0;
+  display: grid;
+  gap: 0;
+}
+
+.v3-operation-card dl > div {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 18px;
+  padding: 16px 0;
+  border-top: 1px solid var(--v3-border);
+}
+
+.v3-operation-card dt {
+  color: var(--v3-text-sub);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.v3-operation-card dd {
+  margin: 0;
+  color: var(--v3-text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media screen and (max-width: 768px) {
+  .v3-operation {
+    padding: 28px 14px 42px;
+  }
+
+  .v3-operation-card {
+    padding: 20px;
+  }
+
+  .v3-operation-card dl > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

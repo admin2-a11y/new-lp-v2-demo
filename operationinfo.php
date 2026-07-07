@@ -194,30 +194,36 @@
         </div>
     </div>
 </header>    <div id="contents">
-        <div class="ht40"></div>
-        <div class="operation_info">
-            <section>
-                <h2>運営会社情報</h2>
-                <h3>運営会社</h3>
-                <p>__COMPANY_NAME__</p>
-
-                <h3>住所</h3>
-                <p>__COMPANY_ADDRESS__</p>
-
-                <h3>事業内容</h3>
-                <p>__BUSINESS_DESCRIPTION__</p>
-
-                <h3>設立</h3>
-                <p>__ESTABLISHED__</p>
-
-                <h3>お問い合わせ</h3>
-                <p>当サイトに関するお問い合わせは以下にお願いいたします。<br>
-                    <a href="mailto:__COMPANY_EMAIL__">__COMPANY_EMAIL__</a>
-                </p>
+        <main class="operation_info v3-operation">
+            <a class="v3-back-link" href="./index.html">← トップに戻る</a>
+            <section class="v3-operation-card">
+                <h1>運営会社情報</h1>
+                <dl>
+                    <div>
+                        <dt>運営会社</dt>
+                        <dd>__COMPANY_NAME__</dd>
+                    </div>
+                    <div>
+                        <dt>住所</dt>
+                        <dd>__COMPANY_ADDRESS__</dd>
+                    </div>
+                    <div>
+                        <dt>事業内容</dt>
+                        <dd>__BUSINESS_DESCRIPTION__</dd>
+                    </div>
+                    <div>
+                        <dt>設立</dt>
+                        <dd>__ESTABLISHED__</dd>
+                    </div>
+                    <div>
+                        <dt>お問い合わせ</dt>
+                        <dd>当サイトに関するお問い合わせは以下にお願いいたします。<br>
+                            <a href="mailto:__COMPANY_EMAIL__">__COMPANY_EMAIL__</a>
+                        </dd>
+                    </div>
+                </dl>
             </section>
-
-        </div>
-
+        </main>
     </div>
     <footer id="footer">
     <div class="footerbox">
