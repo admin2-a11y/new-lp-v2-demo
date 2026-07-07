@@ -172,3 +172,67 @@ button {
     width: min(100%, calc(100vw - 24px));
   }
 }
+body > header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 56px;
+  background: rgba(255,255,255,.98) !important;
+  border-bottom: 1px solid var(--v3-border);
+  box-shadow: none;
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+body > header #headerinner {
+  width: min(100%, 1120px);
+  min-height: 56px;
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+}
+
+body > header .headerLeft {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+body > header .headerLeft img {
+  width: auto;
+  max-width: 190px;
+  max-height: 38px;
+  display: block;
+}
+
+body > header .pr_text {
+  margin: 0;
+  color: var(--v3-text-sub);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  body > header #headerinner {
+    padding: 0 12px;
+  }
+
+  body > header .headerLeft {
+    gap: 10px;
+  }
+
+  body > header .headerLeft img {
+    max-width: 148px;
+    max-height: 34px;
+  }
+
+  body > header .pr_text {
+    max-width: 46vw;
+    font-size: 10px;
+  }
+}
