@@ -1681,3 +1681,63 @@ ul.select_box > li:active,
 .modal-submit:active {
   filter: brightness(.96);
 }
+body > header {
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+  max-width: none !important;
+}
+
+.topbox.case a,
+.c-compareTable a,
+.v3-footer-bottom a,
+.v3-redirect a,
+.v3-operation-card a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.reco_item .img.reco a,
+.c-compareTable thead a {
+  justify-content: center;
+}
+
+.rank-title a {
+  min-height: 44px;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .topbox.case a,
+  .c-compareTable a,
+  .v3-footer-bottom a,
+  .v3-redirect a,
+  .v3-operation-card a {
+    min-height: 44px;
+  }
+}
+.topbox.case .transition a,
+.topbox.case .transition.mobile a,
+.topbox.case .transition.pc a {
+  min-height: 54px !important;
+  padding: 12px 18px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.v3-back-link {
+  min-height: 44px !important;
+}
+#ranking2 .ranking2_content a {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px !important;
+}
+
+#ranking2 .ranking2_content a p {
+  margin: 0 !important;
+}
