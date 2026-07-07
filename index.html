@@ -189,15 +189,13 @@
 <header>
     <div id="headerinner">
         <div class="headerLeft">
-            <img src="./images/logo.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__">
             <p class="pr_text"> このページにはPRリンクが含まれています </p>
         </div>
     </div>
 </header>    <div class="select_modal">
         <div class="select_modal_body active">
-            <header>
-                <img src="./images/mordalhead.png" width="100%">
-            </header>
+            <header class="v3-modal-head"><h2>カードローンの利用経験を教えてください</h2></header>
             <div class="select_modal_inner">
                 <p> Q.カードローンの利用は </p>
                 <p class="v3-modal-note">回答に合わせて最適な診断に切り替えます</p>
@@ -599,21 +597,21 @@
                             <th></th>
                                                             <td>
                                     <a target="_blank" href="./redirect.php?item=acom">
-                                                                                    <img src="./images/banner_acom2.jpg" alt="アコム">
+                                                                                    <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム">
                                         <br>
                                         <span>アコム</span>
                                     </a>
                                 </td>
                                                             <td>
                                     <a target="_blank" href="./redirect.php?item=mobit">
-                                                                                    <img src="./images/banner_mobit.jpg" alt="SMBCモビット">
+                                                                                    <img loading="lazy" height="333" width="400" src="./images/banner_mobit.jpg" alt="SMBCモビット">
                                         <br>
                                         <span>SMBCモビット</span>
                                     </a>
                                 </td>
                                                             <td>
                                     <a target="_blank" href="./redirect.php?item=promise">
-                                                                                    <img src="./images/promise.gif" alt="プロミス">
+                                                                                    <img loading="lazy" height="300" width="300" src="./images/promise.gif" alt="プロミス">
                                         <br>
                                         <span>プロミス</span>
                                     </a>
@@ -706,7 +704,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
             </a>
         </div>
         
@@ -781,7 +779,7 @@
             
             <div class="img reco">
                 <a target="_blank" href="./redirect.php?item=mobit">
-                    <img src="images/banner_mobit.jpg">
+                    <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg">
                 </a>
             </div>
             
@@ -848,7 +846,7 @@
             
             <div class="img reco">
                 <a target="_blank" href="./redirect.php?item=promise">
-                    <img src="images/banner_promise.jpg">
+                    <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg">
                 </a>
             </div>
             
@@ -904,7 +902,11 @@
 
         
         <div id="flow">
-            <p class="flow_img"><img src="./images/step.jpg" alt="最短で借りるための３ステップ" width="1000" style="max-width:100%;height:auto;" /></p>
+            <div class="v3-steps" aria-label="最短で借りるための3ステップ">
+                <div><span>1</span><strong>申込</strong><p>スマホから必要事項を入力して申込。</p></div>
+                <div><span>2</span><strong>審査</strong><p>本人確認後、審査結果を確認。</p></div>
+                <div><span>3</span><strong>借入</strong><p>契約後、振込やATMで借入。</p></div>
+            </div>
             <p class="flow_note"> ※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。<br>
                 ※お申し込みの状況によってはご希望に添えない場合もあります。 <br>
                 ※申し込みのカードローンによっては内容や条件が異なります。 <br>
@@ -913,8 +915,7 @@
         
         <span id="content0"></span>
         <div id="recommend">
-            <p style="text-align: center;"><img src="./images/experience/title_osusume.png" width="1000" style="max-width:100%;height:auto;"
-                    alt="当サイトオススメのカードローン" /></p>
+            <h2 class="v3-section-title">当サイトオススメのカードローン</h2>
             <div class="topbox topboxNew case">
     
             <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
@@ -932,7 +933,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
             </a>
         </div>
         
@@ -973,7 +974,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img src="./images/kuchikomi_acom1.png"></li>
+                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png"></li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -1016,7 +1017,7 @@
         
         
         <div id="follow-banner" style="display: none;">
-            <img src="./images/btn_follow_experience.png" alt="検索box" id="btn-follow">
+            <img loading="lazy" height="170" width="170" src="./images/btn_follow_experience.png" alt="検索box" id="btn-follow">
         </div>
         <a href="#top" class="nav arroe_top"></a>
     </div>
@@ -1064,7 +1065,7 @@
         <footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
-            <img src="./images/logo.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__">
             <p>カードローン選びに必要な情報を、比較しやすく整理してお届けします。</p>
         </div>
         <div class="v3-footer-sections">

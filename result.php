@@ -188,7 +188,7 @@
 <header>
     <div id="headerinner">
         <div class="headerLeft">
-            <img src="./images/logo.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__">
             <p class="pr_text"> このページにはPRリンクが含まれています </p>
         </div>
     </div>
@@ -272,7 +272,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
             </a>
         </div>
         
@@ -313,7 +313,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img src="./images/kuchikomi_acom1.png"></li>
+                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png"></li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -369,7 +369,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=mobit">
-                <img src="images/banner_mobit.jpg">
+                <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg">
             </a>
         </div>
         
@@ -405,7 +405,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img src="./images/kuchikomi_mobit1.png"></li>
+                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png"></li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -451,7 +451,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=promise">
-                <img src="images/banner_promise.jpg">
+                <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg">
             </a>
         </div>
         
@@ -490,7 +490,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img src="./images/kuchikomi_promise1.png"></li>
+                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png"></li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -526,9 +526,7 @@
 <section>
     <div class="inner">
         <div class="optimal_recommend">
-            <div style="text-align: center;">
-                <img src="./images/result/title_kuchikomi.png">
-            </div>
+            <h2 class="v3-section-title">リアルな体験談</h2>
             <span class="optimal_ttl">今すぐお金が必要…！ <br> けど周りにはバレたくない…！ <br>
             </span>
             <sapn
@@ -551,7 +549,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
             </a>
         </div>
         
@@ -592,7 +590,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img src="./images/kuchikomi_acom1.png"></li>
+                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png"></li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -1055,7 +1053,7 @@
         <footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
-            <img src="./images/logo.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__">
             <p>カードローン選びに必要な情報を、比較しやすく整理してお届けします。</p>
         </div>
         <div class="v3-footer-sections">

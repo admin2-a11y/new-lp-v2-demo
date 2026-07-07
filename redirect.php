@@ -233,12 +233,12 @@
 <header>
     <div id="headerinner">
         <div class="headerLeft">
-            <img src="./images/logo.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__">
             <p class="pr_text"> このページにはPRリンクが含まれています </p>
         </div>
     </div>
 </header>    <main class="v3-redirect" aria-live="polite">
-        <img src="./images/logo.png" alt="__BRAND_NAME__" class="v3-redirect-logo">
+        <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__" class="v3-redirect-logo">
         <div class="v3-spinner" aria-hidden="true"></div>
         <h1 id="loading-message">選択されたサイトへ移動中です。</h1>
         <div id="single-banner" style="display: none;"></div>
@@ -258,7 +258,7 @@
 <footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
-            <img src="./images/logo.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__">
             <p>カードローン選びに必要な情報を、比較しやすく整理してお届けします。</p>
         </div>
         <div class="v3-footer-sections">

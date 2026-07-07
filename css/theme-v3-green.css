@@ -1515,3 +1515,102 @@ details[open] .kuchikomi_header::after {
     justify-items: start;
   }
 }
+.v3-modal-head {
+  padding: 22px 22px 0;
+  background: transparent !important;
+  text-align: center;
+}
+
+.v3-modal-head h2 {
+  margin: 0;
+  color: var(--v3-text);
+  font-size: 20px;
+}
+
+.v3-section-title {
+  width: min(100%, 1000px);
+  margin: 36px auto 20px !important;
+  color: var(--v3-text) !important;
+  font-size: clamp(26px, 5vw, 38px) !important;
+  line-height: 1.35;
+  text-align: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 16px !important;
+}
+
+.v3-steps,
+.v3-point-grid {
+  width: min(100%, 1000px);
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.v3-steps > div,
+.v3-point-grid > div {
+  min-height: 150px;
+  padding: 18px;
+  border: 1px solid var(--v3-border);
+  border-radius: var(--v3-radius);
+  background: #fff;
+  box-shadow: var(--v3-shadow);
+}
+
+.v3-steps span,
+.v3-point-grid span {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--v3-accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.v3-steps strong,
+.v3-point-grid strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--v3-text);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.v3-steps p,
+.v3-point-grid p {
+  margin: 0;
+  color: var(--v3-text-sub);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.v3-catch-text {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  margin: 8px 0 12px;
+  padding: 7px 12px;
+  border-radius: var(--v3-radius-pill);
+  background: var(--v3-accent-weak);
+  color: var(--v3-accent-strong);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .v3-steps,
+  .v3-point-grid {
+    grid-template-columns: 1fr;
+    width: min(100%, calc(100vw - 28px));
+  }
+
+  .v3-section-title {
+    margin-top: 28px !important;
+  }
+}
