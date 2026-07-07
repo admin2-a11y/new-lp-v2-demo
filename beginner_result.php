@@ -199,7 +199,7 @@
             <section>
                 <div class="inner">
                     <div class="after_box">
-                        <h1>絞り込み検索結果<span>3</span>件</h1>
+                        <h1>あなたの条件に合うカードローン <span>3</span>件</h1>
                         <div class="box_in">
                             <div class="top">
                                 <ul>
@@ -245,8 +245,11 @@
             </section>
             
             <section>
-                <div class="inner" style="text-align: center;">
-                    <img src="./images/result/result_after.png">
+                <div class="inner">
+                    <div class="v3-result-note">
+                        <strong>診断結果にもとづくおすすめ順です</strong>
+                        <p>条件に近い3社を比較し、申込前に詳細を確認できます。</p>
+                    </div>
                 </div>
             </section>
             
@@ -783,6 +786,7 @@
             </p>
         </div>
     </section>
+            <h2 class="v3-research-title">条件を変えてもう一度診断</h2>
             <div id="search_box">
                 <h2 class="ttl01">
                     <i class="fas fa-search"></i> 条件を変更する
