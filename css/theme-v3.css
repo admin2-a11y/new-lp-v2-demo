@@ -1918,3 +1918,183 @@ details.kuchikomi .kuchikomi_content ul p {
     margin-top: 12px !important;
   }
 }
+
+/* P2 card density and color polish */
+.v3-rank-badge {
+  padding: 7px 13px;
+  background: var(--v3-amber) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 18px rgba(16,24,40,.10);
+}
+
+.v3-rank-badge span {
+  background: #fff !important;
+  color: var(--v3-amber-text) !important;
+}
+
+.v3-rank-badge b {
+  color: #fff !important;
+}
+
+.rank-title {
+  margin-bottom: 8px !important;
+}
+
+.rank-title h3 {
+  font-size: 20px !important;
+  line-height: 1.35 !important;
+}
+
+.v3-point {
+  padding: 10px 13px 10px 14px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--v3-accent-weak);
+  color: var(--v3-accent-strong);
+}
+
+.v3-point::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  background: var(--v3-accent-weak);
+  transform: rotate(45deg);
+}
+
+.v3-metric {
+  min-height: 72px;
+  padding: 10px;
+}
+
+.v3-metric > span {
+  color: var(--v3-text-sub);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.v3-metric strong,
+.v3-metric strong span {
+  color: var(--v3-text) !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+}
+
+.topbox.case .transition a,
+.topbox.case .transition.mobile a,
+.topbox.case .transition.pc a,
+.after_box .btn_red,
+.after_box .btn_g,
+.c-compareTable .c-button {
+  background: var(--v3-accent) !important;
+  border-color: var(--v3-accent) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.topbox.case .transition a:hover,
+.topbox.case .transition.mobile a:hover,
+.topbox.case .transition.pc a:hover,
+.after_box .btn_red:hover,
+.after_box .btn_g:hover,
+.c-compareTable .c-button:hover {
+  background: var(--v3-accent-strong) !important;
+  border-color: var(--v3-accent-strong) !important;
+}
+
+.topbox.case .timer_in_box {
+  flex-wrap: wrap;
+  border-color: rgba(239,159,39,.36) !important;
+  background: #FFF7E8 !important;
+}
+
+.topbox.case .timer_in_box .over {
+  width: 100%;
+  margin-top: 6px !important;
+  padding: 7px 10px !important;
+  border-radius: var(--v3-radius-pill) !important;
+  background: var(--v3-amber) !important;
+  color: #fff !important;
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  text-align: center;
+}
+
+.topbox.case .timer_in_box .over span,
+.topbox.case .timer_in_box .over .timerbox,
+.topbox.case .timer_in_box .over .timerbox span {
+  color: #fff !important;
+}
+
+.points_header,
+.kuchikomi_header {
+  padding-right: 106px !important;
+}
+
+.points_header::before,
+.kuchikomi_header::before {
+  content: "タップで開く";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  color: var(--v3-text-sub);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+details[open] .points_header::before,
+details[open] .kuchikomi_header::before {
+  content: "閉じる";
+}
+
+.points_header::after,
+.kuchikomi_header::after {
+  right: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .topbox.case {
+    padding: 14px !important;
+  }
+
+  .v3-rank-badge {
+    margin-bottom: 10px;
+  }
+
+  .v3-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .v3-metric:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .v3-metric {
+    min-height: 64px !important;
+    padding: 8px 9px !important;
+    gap: 4px;
+  }
+
+  .v3-metric > span {
+    font-size: 11px !important;
+  }
+
+  .v3-metric strong,
+  .v3-metric strong span {
+    font-size: 17px !important;
+  }
+
+  .points_header,
+  .kuchikomi_header {
+    min-height: 46px;
+    padding: 12px 96px 12px 0 !important;
+  }
+}
