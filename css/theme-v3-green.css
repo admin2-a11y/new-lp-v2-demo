@@ -2098,3 +2098,106 @@ details[open] .kuchikomi_header::before {
     padding: 12px 96px 12px 0 !important;
   }
 }
+
+/* P3 spacing rhythm */
+.v3-section-title {
+  margin: 0 auto 24px !important;
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+}
+
+#content1,
+#recommend,
+.hikaku_box,
+section.CardListSearch__compareWrapper {
+  margin-top: 64px !important;
+  margin-bottom: 64px !important;
+}
+
+#flow {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 64px 0 !important;
+  padding: 64px max(18px, calc((100vw - 1000px) / 2)) !important;
+  background: var(--v3-bg-alt) !important;
+}
+
+#flow > .v3-section-title,
+#flow > .v3-steps,
+#flow > .flow_note {
+  width: min(100%, 1000px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#flow .v3-steps {
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+}
+
+section.CardListSearch__compareWrapper {
+  padding: 40px 18px !important;
+  background: var(--v3-bg-alt) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+section.CardListSearch__compareWrapper > h2,
+section.CardListSearch__compareWrapper > .v3-table-hint,
+section.CardListSearch__compareWrapper > .c-compareTableWrapper {
+  width: min(100%, 1000px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+section.CardListSearch__compareWrapper > h2 {
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+  font-size: 22px !important;
+  line-height: 1.4 !important;
+}
+
+#recommend,
+#content1 {
+  background: #fff !important;
+}
+
+.after_box {
+  margin-top: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+.after_box + #content1,
+.after_box + #recommend {
+  margin-top: 48px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .v3-section-title {
+    margin: 0 auto 24px !important;
+    font-size: 22px !important;
+  }
+
+  #content1,
+  #recommend,
+  .hikaku_box,
+  section.CardListSearch__compareWrapper {
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
+  }
+
+  #flow {
+    margin: 48px 0 !important;
+    padding: 48px 14px !important;
+  }
+
+  section.CardListSearch__compareWrapper {
+    padding: 32px 14px !important;
+  }
+
+  .after_box {
+    margin-top: 12px !important;
+    margin-bottom: 20px !important;
+    padding: 18px !important;
+  }
+}
