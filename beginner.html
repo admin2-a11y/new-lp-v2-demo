@@ -1564,7 +1564,7 @@
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js?v=pages-demo-3" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=pages-demo-4" defer></script>
 </body>
 
 </html>

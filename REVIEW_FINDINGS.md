@@ -3,6 +3,7 @@
 ## 結論
 - 条件付き合格
 - P0は見つかりませんでした。総合P1 5件は修正済みです。P2は一部対応済み、一部は改善余地として残っています。
+- 2026-07-08 LPO2確認: 入口ポップアップをファーストビュー中心にし、女性ナビゲーター案内と短い思考余白を追加。320 / 375 / 390 / 414pxで横スクロールなし、入口クリック遷移、診断モーダルの女性ナビ表示、console error 0件を確認。
 - `lp-compliance-reviewer` / `$lp-compliance-review` はユーザー指示により未実施です。広告文言の適法性断定レビューはしていません。
 - 旧総合Findingsのうち、`redirect.php` fallback、FV alt/注記、結果ページ職業label、`icon_clock.png`、`select_s3` 欠番明記は対応済みとして除外します。
 - アンケートの指定id/name、`ul.select_box` 順序、`.select_modal` / `.select_modal_btn1` / `.select_modal_btn2` / `#serch2_Modal`、`.rentcheck input[name="cat[]"]` valueは維持。PR表記・注釈・プレースホルダーも残っています。

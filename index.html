@@ -200,13 +200,22 @@
                 <h2 class="v3-sr-only">現在のご状況をお選びください</h2>
                 <img class="v3-entry-modal-banner" src="./images/entry-modal-banner.jpg" width="1200" height="720" alt="あなたにぴったりのカードローンをご紹介します。現在のご状況をお選びください。">
             </header>
-            <div class="select_modal_inner">                <p class="v3-modal-note">回答に合わせて最適な診断に切り替えます</p>
+            <div class="select_modal_inner">
+                <div class="v3-entry-guide" aria-label="女性ナビゲーターからのご案内">
+                    <div class="v3-entry-guide-avatar" aria-hidden="true">女性<br>ナビ</div>
+                    <div class="v3-entry-guide-bubble">
+                        <span>こんにちは。カードローン診断ナビゲーターです。</span>
+                        <strong>まずは現在のご状況を教えてください。</strong>
+                    </div>
+                </div>
+                <p class="v3-modal-note">回答に合わせて最適な診断に切り替えます</p>
                 <p class="button select_modal_btn2">経験がある<span>カードローンを使ったことがある・使っている</span></p>
                 <p class="button select_modal_btn1">はじめて<span>カードローンを使ったことがない</span></p>
             </div>
         </div>
         <div class="select_modal_load">
-            <p> あなたに最適なカードローンを探しています……<br>
+            <p><span data-entry-loading-message>ご状況に合わせて質問を準備しています</span><br>
+                <span class="v3-entry-loading-steps" aria-hidden="true"><i></i><i></i><i></i></span>
                 <br><img src="./images/loading.gif" alt="Loading" class="load" data-eio="l" width="50" height="50">
             </p>
         </div>
@@ -1031,32 +1040,50 @@
                 container_load = $('.select_modal_load'),
                 param = location.search;
 
+            function showEntryLoading(messages) {
+                var message = container_load.find('[data-entry-loading-message]');
+                container_body.removeClass('active');
+                container_load.addClass('active');
+                if (!message.length) return;
+                messages.forEach(function(text, index) {
+                    setTimeout(function() {
+                        message.text(text);
+                    }, index * 520);
+                });
+            }
+
             if (!param.match('select_modal=2')) {
                 container.addClass('active');
             }
 
             btn1.on('click', function() {
-                container_body.removeClass('active');
-                container_load.addClass('active');
+                showEntryLoading([
+                    'はじめての方向けの質問を準備しています',
+                    '見やすい順番に整理しています',
+                    'まもなく診断を開始します'
+                ]);
                 setTimeout(function() {
                     location.replace("beginner.php" + param);
-                }, 1200);
+                }, 1850);
             });
             btn2.on('click', function() {
-                container_body.removeClass('active');
-                container_load.addClass('active');
+                showEntryLoading([
+                    'ご経験に合わせた質問を準備しています',
+                    '比較しやすい条件を整理しています',
+                    'まもなく診断を開始します'
+                ]);
                 setTimeout(function() {
                     if (param) {
                         location.replace(location.search + "&select_modal=2");
                     } else {
                         location.replace(location.search + "?select_modal=2");
                     }
-                }, 1200);
+                }, 1850);
             });
 
             $(document).on('click', function(e) {
                 if (!$(e.target).closest('.select_modal_body').length) {
-                    container.removeClass('active');
+                    return;
                 }
             });
         });
@@ -1177,7 +1204,7 @@
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js?v=pages-demo-3" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=pages-demo-4" defer></script>
 </body>
 
 </html>

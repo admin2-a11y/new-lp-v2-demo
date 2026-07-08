@@ -39,6 +39,47 @@
     }
   }
 
+  var diagnosisGuideState = {
+    title: '',
+    timer: null
+  };
+
+  function ensureDiagnosisGuide() {
+    var modal = document.getElementById('serch2_Modal');
+    if (!modal) return;
+    var body = modal.querySelector('.modal-body');
+    if (!body) return;
+
+    var guide = modal.querySelector('.v3-chat-guide');
+    if (!guide) {
+      guide = document.createElement('div');
+      guide.className = 'v3-chat-guide';
+      guide.setAttribute('aria-live', 'polite');
+      guide.innerHTML = '<span class="v3-chat-avatar" aria-hidden="true">女性<br>ナビ</span><p><b>女性ナビゲーター</b><span data-v3-chat-guide-text>条件に近い候補を整理していきます。</span><i class="v3-typing" aria-hidden="true"><em></em><em></em><em></em></i></p>';
+      body.insertBefore(guide, body.firstChild);
+    }
+
+    var heading = modal.querySelector('.modal-header h2');
+    var title = heading ? heading.textContent.replace(/\s+/g, ' ').trim() : '';
+    if (!title || title === diagnosisGuideState.title) return;
+
+    diagnosisGuideState.title = title;
+    var text = guide.querySelector('[data-v3-chat-guide-text]');
+    if (text) {
+      text.textContent = title.indexOf('絞り込む') !== -1
+        ? 'いくつか質問します。近いものを選んでください。'
+        : 'いただいた回答を確認しながら、次の質問へ進みます。';
+    }
+
+    guide.classList.add('is-thinking');
+    modal.classList.add('v3-chat-thinking');
+    window.clearTimeout(diagnosisGuideState.timer);
+    diagnosisGuideState.timer = window.setTimeout(function () {
+      guide.classList.remove('is-thinking');
+      modal.classList.remove('v3-chat-thinking');
+    }, 720);
+  }
+
   function focusFirstModalControl() {
     var activeModal = document.querySelector('#serch2_Modal.active, .select_modal.active');
     if (!activeModal) return;
@@ -128,10 +169,21 @@
       var loading = document.querySelector('.select_modal_load');
       if (body) body.classList.remove('active');
       if (loading) loading.classList.add('active');
+      var loadingText = document.querySelector('[data-entry-loading-message]');
+      var messages = [
+        'はじめての方向けの質問を準備しています',
+        '見やすい順番に整理しています',
+        'まもなく診断を開始します'
+      ];
+      messages.forEach(function (message, index) {
+        window.setTimeout(function () {
+          if (loadingText) loadingText.textContent = message;
+        }, index * 520);
+      });
 
       setTimeout(function () {
         window.location.replace('beginner.html' + window.location.search);
-      }, 1200);
+      }, 1850);
     }, true);
   }
 
@@ -139,6 +191,7 @@
     enableGitHubPagesDemoRouting();
     enhancePseudoButtons(document);
     enhanceDialogs();
+    ensureDiagnosisGuide();
     addTopCardCtas();
     enhanceBannerAlts();
     focusFirstModalControl();
