@@ -223,3 +223,32 @@
 - アンケート回帰: 経験者フロー `/` → `result.php`、初心者フロー `/beginner.php` → `beginner_result.php` への送信遷移OK。
 - タイマー確認: 診断ボックス上部の「までに申込」は維持。ランキングカード内の `.timerbox::after` は `none`。
 - 既存404: 旧CSS由来の `css/images/icon_clock.png` が404。今回の第4ラウンド差分由来ではないため、既存CSS不変ルールを優先して未変更。
+
+## 校正対応（第5ラウンド）
+
+コミット: `fix: 第5ラウンド指摘対応`
+
+### 対応内容
+
+- H1: 第4ラウンドで入れた結果条件チップの2列固定を解除し、内容に応じた自然幅と `max-width: 100%` / `overflow: hidden` / `text-overflow: ellipsis` に変更。長い回答値でも横スクロールしないよう調整。
+- H2: 旧CSS由来の `#contents` 上部オフセットを `margin-top: 12px !important` で上書き。結果ページのヘッダー下余白を圧縮。
+- docs: `CODEX_PROMPT_FIX4.md` を今回コミット対象に含める。
+
+### 実測結果
+
+| 項目 | 修正前 | 修正後 | 確認幅 |
+|---|---:|---:|---|
+| 長い条件URLの横スクロール | 12px | 0px | 390px |
+| `result.php` `.after_box` 上端 | 153px | 69px | 375px |
+| `result.php` 1位カード上端 | 433px | 384px | 375px |
+| `beginner_result.php` `.after_box` 上端 | 57px | 69px | 375px |
+| `beginner_result.php` 1位カード上端 | 337px | 384px | 375px |
+
+### 動作確認結果
+
+- ローカル配信: `http://127.0.0.1:8099/` で確認。
+- 長い条件URL: `loan_speed_dis=a3_1` / `loan_speed_dis=a3_4` と `borrow_limit_dis=a2_3` の組み合わせで 375 / 390 / 414px の横スクロール0。
+- レスポンシブ: 320 / 375 / 390 / 414pxで index, beginner, result, beginner_result, operationinfo, redirect の横スクロール0。
+- アンケート回帰: 経験者フロー `/` → `result.php`、初心者フロー `/beginner.php` → `beginner_result.php` への送信遷移OK。
+- operationinfo / redirect: `#contents` 変更後も横スクロールなし。operationinfo の本文開始はヘッダー下約69pxで不自然な詰まりなし。
+- 既存404: 旧CSS由来の `css/images/icon_clock.png` が404。今回の第5ラウンド差分由来ではないため、既存CSS不変ルールを優先して未変更。

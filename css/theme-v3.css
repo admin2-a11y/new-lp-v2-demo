@@ -2458,6 +2458,7 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   }
 
   #contents {
+    margin-top: 12px !important;
     padding-top: 0 !important;
   }
 
@@ -2505,10 +2506,20 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   }
 
   .after_box ul li {
+    flex: 0 1 auto !important;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     min-height: 28px !important;
     padding: 6px 8px !important;
     font-size: 12px !important;
     line-height: 1.25 !important;
+  }
+
+  .after_box ul li span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .after_box .mid {
@@ -2580,8 +2591,8 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   }
 
   .after_box ul li {
-    flex: 1 1 calc(50% - 3px) !important;
-    max-width: calc(50% - 3px);
+    flex: 0 1 auto !important;
+    max-width: 100%;
   }
 }
 
