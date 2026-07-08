@@ -4,6 +4,9 @@
     el.dataset.v3A11yReady = '1';
     el.setAttribute('role', 'button');
     el.setAttribute('tabindex', '0');
+    if (el.classList && el.classList.contains('modalClose') && !el.getAttribute('aria-label')) {
+      el.setAttribute('aria-label', '閉じる');
+    }
     el.addEventListener('keydown', function (event) {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
@@ -60,7 +63,7 @@
 
   function addTopCardCtas() {
     document.querySelectorAll('.topbox.case').forEach(function (card, index) {
-      if (index > 0 || card.querySelector('.v3-card-top-cta')) return;
+      if (index > 0 || card.querySelector('.v3-card-top-cta, .v3-lpo-fast-cta')) return;
       var link = card.querySelector('.rank-title a[href*="redirect.php"], h3 a[href*="redirect.php"], .osusume_btn_area a[href*="redirect.php"]');
       var metrics = card.querySelector('.v3-metrics');
       if (!link || !metrics) return;
@@ -69,7 +72,7 @@
       cta.href = link.href;
       cta.target = link.target || '_blank';
       cta.rel = 'noopener';
-      cta.textContent = '公式サイトで詳細を見る';
+      cta.textContent = '公式サイトで申込条件を確認する';
       var basic = metrics.closest('.basic');
       (basic || metrics).insertAdjacentElement('afterend', cta);
     });

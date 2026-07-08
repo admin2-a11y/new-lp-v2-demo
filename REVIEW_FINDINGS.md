@@ -286,3 +286,75 @@
   - 経験者/初心者の診断回答から結果ページ遷移、結果ページCTAからredirect、外部公式URL到達、fallbackリンクを通しで確認。
   - ブランド名、運営者情報、メールアドレス、GTM発火、アフィリエイト成果計測、PR表記・注釈・広告文言を最終目視してください。
 
+## LPO Review（2026-07-08 追加改善）
+
+### 結論
+
+- 条件付き合格。390px想定の診断後ファーストビューは、H1、条件チップ、黄色帯、No.1商品名、赤線付き理由、主要スペック、上部CTAまで表示できる状態に改善済み。
+- P0/P1は現時点で見つかりません。P2はCSS整理、320pxでの上部CTA位置、実公開URLでのCDN/console確認が残ります。
+
+### Findings
+
+- [P2] css/theme-v3.css / css/theme-v3-green.css — LPO用モバイル上書きCSSに重複が残っている
+  - 影響: 表示上のP0/P1ではありませんが、Performance/SEO観点ではCSS肥大化と保守性低下につながります。
+  - 推奨修正: 次回整理時に `LPO mobile result final overrides` と `LPO mobile result first-view hardening` を1ブロックへ統合してください。
+
+- [P2] result.html / beginner_result.html 320px — 上部CTAは初期画面直下寄り
+  - 影響: 390/414pxではCTAが初期画面内に入りますが、320pxでは `fastCtaTop` が約877pxで、1スクロール弱必要です。
+  - 推奨修正: 320pxまで完全に収める場合は、信頼情報の折りたたみ、条件変更ボタンの小型化、サブキャッチ短縮を追加検討してください。
+
+## Design / CVR Review（2026-07-08 LPO追加）
+
+- 結論: P0/P1なし。診断後結果ページは、重要箇所の黄色帯、赤線理由、スペック直下CTAにより「誰向けの結果か」「なぜ1位か」「どこを押すか」が改善されています。
+- P2: 320pxではCTAが初期画面直下寄りのため、極小端末まで厳密に収めるなら追加圧縮余地があります。
+
+## Banner / Image Review（2026-07-08 LPO追加）
+
+- 結論: P0/P1なし。公式アフィリエイトバナー画像自体は編集・差し替えなし。
+- P2: 結果ページ上部ではCV導線優先で1位カード冒頭の公式バナーをCSS非表示にしています。公式バナーを必ず上部で見せる運用方針がある場合は、人間確認が必要です。
+
+## QA Check（2026-07-08 LPO追加）
+
+- 実施環境: Python静的サーバー `http://127.0.0.1:8121/` + Headless Chrome（ローカルネットワーク制限あり）。
+- 確認済みページ: `result.html`, `beginner_result.html`
+- 確認済み幅: 320 / 375 / 390 / 414 / 768 / 1280px
+- 結果: 横スクロールなし。390/414pxで上部CTAは初期画面内。
+- 未確認: 外部CDN到達が必要な状態でのconsole error。ローカル環境では `ERR_NETWORK_ACCESS_DENIED` によりjQuery未読込エラーが出たため、GitHub Pages実URLで再確認してください。
+
+## Accessibility Review（2026-07-08 LPO追加）
+
+- 結論: P0/P1なし。追加CTAはテキストリンクで、44px前後のタップ領域を確保しています。
+- P2: 黄色帯・赤線理由・CTAは色だけに依存せずテキストもあります。次回、CSS重複整理とあわせてフォーカスリングの最終目視を推奨します。
+
+## Performance / SEO Review（2026-07-08 LPO追加）
+
+- 結論: P0/P1なし。結果ページtitle/alt/footerの公開デモ上の `__BRAND_NAME__` 表示を自然化し、初心者比較表にcaption/th scope/更新日注記を追加済み。
+- P2: CSS重複と外部ライブラリ依存は残ります。GTM/アフィリエイトURL等のプレースホルダーは本番前に実値化が必要です。
+
+## Final Review（2026-07-08 LPO追加）
+
+- 結論: 条件付き合格。アンケートid/name/order、`.select_modal*`、`#serch2_Modal`、`.rentcheck input[name="cat[]"]`、redirect.phpの転送ロジック、PR表記、注釈、公式バナー/口コミ画像ファイルは保全されています。
+- P0: なし。
+- P1: なし。
+- P2: CSS重複整理、320pxでのCTA完全収め、GitHub Pages実URLでのconsole/CDN確認。
+
+## Release Check（2026-07-08 LPO追加）
+
+- 結論: 条件付き公開可。
+- ブロッカー: コード上のP0/P1はなし。ただし本番公開前に `GTM-XXXXXXX`、`__AFFILIATE_URL_*__`、運営者情報プレースホルダーを実値化してください。
+- 公開前の人間確認: GitHub Pages実URLで `/?select_modal=2`、`result.html`、`beginner_result.html`、`redirect.html?item=acom`、`operationinfo.html` を320/375/390/414pxで確認。広告文言チェックはユーザー担当。
+- ロールバック方法: `theme-v3.css` / `theme-v3-green.css` と `js/v3-accessibility-cvr.js` 読み込みを外すと、今回のLPO見た目/補助CTAを戻せます。
+
+## Compliance / Copy Review
+
+- 今回スキップ。広告文言チェックはユーザー担当のため、`lp-compliance-reviewer` は通常フローから外しています。
+
+## Additional Review Fixes（2026-07-08）
+
+- 結論: 追加サブエージェント指摘のP0/P1は対応済み。現時点の残P0/P1はなし。
+- Performance/SEO: 公開HTML/PHP上の `__BRAND_NAME__` 残存を解消。主要バナー/口コミ画像のalt欠落を補完。
+- Accessibility: CTAの白文字コントラスト不足を解消するため、`.v3-lpo-fast-cta a` と結果ヘッダーCTAを濃色アクセント背景に統一。並び替えselectへ `name="sort"` / `aria-label="並び替え"` を追加。モーダル閉じるボタンはJSで `aria-label="閉じる"` を補完。
+- Design/Banner: 結果ヘッダー内に主CTAを追加し、320/375/390/414pxすべてで初期画面内に表示されることを確認。
+- Final Review: `operationinfo` の可視会社情報プレースホルダーを公開デモ向け自然文へ変更。強い広告表現を弱めた表現へ変更。`operationinfo.html` / `redirect.html` のフッター運営者情報リンクを `.html` に修正。
+- QA: `result.html`, `beginner_result.html`, `operationinfo.html`, `redirect.html` を 320 / 375 / 390 / 414pxで再確認し、横スクロールなし。`redirect.html` の実アフィリエイトURL未設定は本番前QAの残リスク。
+

@@ -325,3 +325,67 @@
 - 診断モーダル内にtabbable要素6件、`.modal-btn` / `.modalClose` に `role="button"` と `tabindex="0"` が付与されることを確認。
 - robots: index / beginner / result / beginner_result は `index, follow`、redirect / operationinfo は `noindex, nofollow`。
 - `rg`確認: プロダクトファイル内に `15社から厳選`、`<h2>TITLE</h2>` は検出なし。旧強表現はREVIEW_HANDOFF/REVIEW_FINDINGSの履歴記録内のみ。
+
+## LPO改善対応（2026-07-08）
+
+### 対応内容
+
+- 診断後結果ページ（`result.php` / `beginner_result.php` / 各`.html`ミラー）の上部に、黄色帯「入力条件に近い候補をおすすめ順で表示しています」を追加。
+- 結果ページ上部に更新日、比較対象3社、比較基準、運営者情報導線を追加。
+- 1位カード冒頭に赤線付き理由「当日中の条件確認に向いています」と、主要スペック直下CTA「公式サイトで申込条件を確認する」を追加。
+- 390px想定で結果ファーストビューにH1、条件チップ、黄色帯、No.1商品名、理由、主要スペック、CTA上部が入るよう、結果上部の余白とカード内表示を圧縮。
+- 既存CTA文言「詳細はこちら」を、結果ページ中心に「公式サイトで申込条件を確認する」「公式サイトで条件を確認する」「条件を確認」へ変更。
+- GitHub Pages用 `.html` ミラー（`result.html` / `beginner_result.html`）をPHP版と同期。
+- `js/v3-accessibility-cvr.js` の自動追加CTA文言を新CTAに揃え、HTML側で追加済みの上部CTAと二重追加されないように変更。
+- GitHub PagesのJSキャッシュ対策として、`v3-accessibility-cvr.js` の読み込みクエリを `pages-demo-3` に更新。
+- 初心者結果ページの比較表に `caption`、`th scope`、更新日/比較基準注記を追加。
+- 公開デモで見える結果ページの `__BRAND_NAME__` を、結果ページ内のtitle/alt/footer表示に限り「マネーローンナビ」へ自然化。GTM、アフィリエイトURL、redirect.phpのプレースホルダーは未変更。
+
+### 新規/変更した文言
+
+| 設置場所 | 文言 |
+|---|---|
+| 結果ページH1下 | 入力条件に近い候補をおすすめ順で表示しています |
+| 結果ページ信頼情報 | 更新日: 2026年7月8日 |
+| 結果ページ信頼情報 | 比較対象: アコム / SMBCモビット / プロミス |
+| 結果ページ信頼情報 | 比較基準: 融資時間・金利・無利息期間・Web完結・郵送物・在籍確認 |
+| 1位カード理由 | 当日中の条件確認に向いています |
+| 1位カード上部CTA | 公式サイトで申込条件を確認する |
+| CTA補足 | 申込前に公式サイトで対象条件・必要書類をご確認ください。 |
+| 比較表caption | カードローン3社の比較表（融資時間・金利・無利息期間・必要書類） |
+
+### 保全したもの
+
+- アンケートの `select_s1`〜`select_s8`、指定 `name`、`ul.select_box` の順序は未変更。
+- `.select_modal` / `.select_modal_btn1` / `.select_modal_btn2` / `#serch2_Modal` は未変更。
+- `.rentcheck input[name="cat[]"]` のvalueは未変更。
+- `redirect.php` の転送ロジック、`linkMap`、アフィリエイトURLプレースホルダー、PR表記、注釈は未変更。
+- 公式アフィリエイトバナー `banner_*.jpg` / `promise.gif`、口コミ画像 `kuchikomi_*.png` は編集・差し替えなし。スマホ結果上部では、CV導線優先のためCSSで1位カード冒頭の公式バナー表示を抑制。
+
+### 確認結果
+
+- ローカル配信: `http://127.0.0.1:8121/` のPython静的サーバーで `.html` ミラーを確認。
+- `result.html` / `beginner_result.html`: 320 / 375 / 390 / 414 / 768 / 1280pxで横スクロールなし。
+- 390px: H1、黄色帯、条件チップ、No.1商品名、赤線理由、主要スペック、上部CTA「公式サイトで申込条件を確認する」が初期画面内に入ることを確認。
+- 320px: 横スクロールなし。上部CTAは初期画面直下寄り（fastCtaTop 877px）まで近接。390px最優先要件は達成。
+- ローカルQAではネットワーク制限により外部CDN（jQuery等）が `ERR_NETWORK_ACCESS_DENIED` となり、consoleに `$ is not defined` が出ました。GitHub Pages/本番では外部CDN到達前提のため、実公開URLで再確認が必要です。
+
+### 追加レビューP1対応
+
+- Performance/SEO P0: 公開HTML/PHP上の `__BRAND_NAME__` を「マネーローンナビ」へ自然化。
+- Accessibility P1: `.v3-lpo-fast-cta a` の背景色をアンバーから濃色アクセントへ変更し、白文字コントラストを改善。
+- Accessibility P1: 結果ページの並び替えselectに `name="sort"` と `aria-label="並び替え"` を付与。
+- Accessibility P2: モーダル閉じるボタンにJSで `aria-label="閉じる"` を補完。
+- Accessibility P2: 主要バナー/口コミ画像にaltを補完。
+- Design/Banner P1: 結果ヘッダー内に主CTA `公式サイトで申込条件を確認する` を追加し、320/375/390/414pxすべてで初期画面内に表示。
+- Final Review P1: `operationinfo` の可視 `__COMPANY_*__` を公開デモ向け自然文に変更。本番では正式運営者情報へ差し替え予定。
+- Final Review P1: `在籍確認連絡は一切ない`、`内緒で借りれる`、`バレない`、`即日OK`、`即日融資可能` を弱めた表現へ変更。
+- Final Review P2: `operationinfo.html` / `redirect.html` 内のフッター運営者情報リンクを `.html` に変更。
+
+### 追加確認結果
+
+- `rg` で `__BRAND_NAME__` / `__COMPANY_` / 強い表現（`在籍確認連絡は一切ない`, `内緒で借りれる`, `バレない`, `即日OK`, `即日融資可能`）の残存なし。
+- `rg --pcre2` で主要バナー/口コミ画像のalt欠落なし。
+- Headless Chrome + `http://127.0.0.1:8121/`: `result.html`, `beginner_result.html`, `operationinfo.html`, `redirect.html` を 320 / 375 / 390 / 414pxで確認し、横スクロールなし。
+- 結果ヘッダー主CTA: 320pxでy=344〜403、375/390/414pxでy=240〜290。初期画面内に表示。
+- `operationinfo.html` / `redirect.html`: 可視プレースホルダーなし、フッターの `.php` リンクなし。

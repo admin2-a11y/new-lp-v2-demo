@@ -23,7 +23,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
-		<title>検索結果 | 初心者 | __BRAND_NAME__</title>
+		<title>カードローン診断結果 | 初心者向け | マネーローンナビ</title>
 		<meta name="description" content="はじめてカードローンを検討する方の診断結果ページです。条件に近い候補を比較し、申込前に特徴を確認できます。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -190,7 +190,7 @@
 <header>
     <div id="headerinner">
         <div class="headerLeft">
-            <img height="221" width="1080" src="./images/logo-green.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo-green.png" alt="マネーローンナビ">
             <p class="pr_text"> このページにはPRリンクが含まれています </p>
         </div>
     </div>
@@ -201,6 +201,7 @@
                 <div class="inner">
                     <div class="after_box">
                         <h1>あなたの条件に合う<br class="v3-sp-br">カードローン <span>3</span>件</h1>
+                        <p class="v3-lpo-result-band">入力条件に近い候補をおすすめ順で表示しています</p>
                         <div class="box_in">
                             <div class="top">
                                 <ul>
@@ -212,14 +213,16 @@
                                     
                                 </ul>
                             </div>
+                            <a class="v3-result-primary-cta" target="_blank" href="./redirect.php?item=acom">公式サイトで申込条件を確認する</a>
                             <div class="mid">
                                 <a class="btn_red btn_g" href="#search_box">条件を変更する<i
                                         class="fas fa-arrow-circle-right"></i></a>
+                                <a class="v3-result-operation-link" href="./operationinfo.php">運営者情報</a>
                                 <div class="order_change_pull">
                                     <p class="ttl">並び替え</p>
                                     
                                     <form action="#">
-                                        <select name="">
+                                        <select name="sort" aria-label="並び替え">
                                             <option>
                                                 オススメ</option>
                                             <option>
@@ -229,6 +232,11 @@
                                         </select>
                                     </form>
                                 </div>
+                            </div>
+                            <div class="v3-result-trust" aria-label="比較情報">
+                                <span>更新日: 2026年7月8日</span>
+                                <span>比較対象: アコム / SMBCモビット / プロミス</span>
+                                <span>比較基準: 融資時間・金利・無利息期間・Web完結・郵送物・在籍確認</span>
                             </div>
                             <div class="order_change">
                                 <script>
@@ -266,13 +274,17 @@
             </h3>
         </div>
         <div class="subcatch"><div class="v3-point">アコムはスピードと使いやすさで選びやすい定番カードローンです</div></div>
+        <p class="v3-lpo-rank-reason">当日中の条件確認に向いています</p>
+        <div class="v3-lpo-fast-cta">
+            <a target="_blank" href="./redirect.php?item=acom">公式サイトで申込条件を確認する</a>
+        </div>
     </div>
     
     <div class="basic is-flex is-align-start reco_item">
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
             </a>
         </div>
         
@@ -282,7 +294,6 @@
             <div class="v3-metric"><span>限度額</span><strong><span>最大800万円</span></strong></div>
         </div>
     </div>
-    
     <details class="points">
         <summary>
             <div class="points_header is-flex is-align-center is-justfy-center">
@@ -290,7 +301,7 @@
             </div>
             <div class="points_content">
                 <ul>
-                    <li> <span>勤務先への在籍確認連絡は一切ない</span>から、職場や家族に<span>内緒で借りれる！</span> カードレス契約も可能 </li>
+                    <li> <span>勤務先への在籍確認は原則電話なし</span>で進められる場合があり、周囲に<span>知られにくい方法も選べます</span> カードレス契約も可能 </li>
                     <li>審査結果が最短<span>20分</span>でわかる！</li>
                     <p> 21時までに申し込めば当日中に借りれる！ 土日祝も<span>24時間申込可能</span>！</p>
                     <li>返済額は<span>月々1,000円～</span>でOK！</li>
@@ -313,7 +324,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png"></li>
+                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png" alt="アコム利用者の口コミ例"></li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -332,14 +343,15 @@
     </div>
 </div>
     
+    <div class="v3-lpo-cta-note">申込前に公式サイトで対象条件・必要書類をご確認ください。</div>
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=acom"> 公式サイトで申込条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                             <BR>
             <span class="catch_top_recommend v3-catch-text">とりあえず迷ったらココ！</span>
-                <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+                <a target="_blank" href="./redirect.php?item=acom"> 公式サイトで申込条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -370,7 +382,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=mobit">
-                <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg">
+                <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
             </a>
         </div>
         
@@ -389,7 +401,7 @@
             <div class="points_content">
                 <ul>
                     <li><span>内緒で借りたいならコレ</span></li>
-                    <p>電話連絡や郵送物も原則ないからバレない。</p>
+                    <p>電話連絡や郵送物を抑えられる場合があります。</p>
                     <li><span>WEBで24時間申し込み</span></li>
                     <p>審査完了まで<span>10秒簡易審査</span>、スマホと証明書があればOK。</p>
                     <li><span>大手のSMBCグループだから安心</span></li>
@@ -406,7 +418,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png"></li>
+                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png" alt="SMBCモビット利用者の口コミ例"></li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -423,12 +435,12 @@
     </div>
 </div>    
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=mobit">詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=mobit">公式サイトで条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                     <span>事前に融資可能か10秒簡易審査</span>
-                        <a target="_blank" href="./redirect.php?item=mobit"> 詳細はこちら<i
+                        <a target="_blank" href="./redirect.php?item=mobit"> 公式サイトで条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -452,7 +464,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=promise">
-                <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg">
+                <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg" alt="プロミス公式サイトへ">
             </a>
         </div>
         
@@ -470,8 +482,8 @@
             </div>
             <div class="points_content">
                 <ul>
-                    <li>即日OK！<span>最短3分で審査完了</span></li>
-                    <li>21時までの申込みで<span>即日融資可能</span></li>
+                    <li>申込時間により当日利用も検討可能。<span>審査は最短3分</span></li>
+                    <li>21時までの申込みで<span>当日振込に対応できる場合があります</span></li>
                     
                     <li>30日間無利息もあり<span>お得に借りれる！</span></li>
 
@@ -491,7 +503,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png"></li>
+                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png" alt="プロミス利用者の口コミ例"></li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -508,12 +520,12 @@
     </div>
 </div>    
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=promise">詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=promise">公式サイトで条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                     <span>事前に融資可能か1秒で診断</span>
-                        <a target="_blank" href="./redirect.php?item=promise"> 詳細はこちら<i
+                        <a target="_blank" href="./redirect.php?item=promise"> 公式サイトで条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -535,9 +547,10 @@
             
             <div class="c-compareTableWrapper">
                 <table class="c-compareTable">
+                    <caption>カードローン3社の比較表（融資時間・金利・無利息期間・必要書類）</caption>
                     <thead>
                         <tr>
-                            <th></th>
+                            <th scope="col">比較項目</th>
                                                             <td>
                                     <a target="_blank" href="./redirect.php?item=acom">
                                                                                     <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム">
@@ -563,57 +576,57 @@
                     </thead>
                     <tbody>
                                                     <tr>
-                                <th>審査時間</th>
+                                <th scope="row">審査時間</th>
                                                                                                             <td class="isDoubleCircle">最短20分<span class="caution">※1</span></td>
                                                                                                                                                 <td class="isCircle">10秒<br>簡易審査</td>
                                                                                                                                                 <td class="isDoubleCircle">最短3分</td>
                                                                                                 </tr>
                                                     <tr>
-                                <th>融資時間</th>
+                                <th scope="row">融資時間</th>
                                                                                                             <td class="isDoubleCircle">最短20分<span class="caution">※1</span></td>
                                                                                                                                                 <td class="isDoubleCircle">最短15分</td>
                                                                                                                                                 <td class="isDoubleCircle">最短3分</td>
                                                                                                 </tr>
                                                     <tr>
-                                <th>金利</th>
+                                <th scope="row">金利</th>
                                                                                                             <td class="isDoubleCircle">2.4%～17.9%</td>
                                                                                                                                                 <td class="isCircle">3.0%〜18.0%</td>
                                                                                                                                                 <td class="isCircle">2.5％~18.0％</td>
                                                                                                 </tr>
                                                     <tr>
-                                <th>即日融資</th>
+                                <th scope="row">即日融資</th>
                                                                                                             <td class="isCircle">可能</td>
                                                                                                                                                 <td class="isCircle">可能</td>
                                                                                                                                                 <td class="isCircle">可能</td>
                                                                                                 </tr>
                                                     <tr>
-                                <th>無利息期間</th>
+                                <th scope="row">無利息期間</th>
                                                                                                             <td class="isCircle">初回契約翌日から30日間</td>
                                                                                                                                                 <td class="">なし</td>
                                                                                                                                                 <td class="isDoubleCircle">30日</td>
                                                                                                 </tr>
                                                     <tr>
-                                <th>必要書類</th>
+                                <th scope="row">必要書類</th>
                                                                                                             <td class="isCircle">身分証 ※2</td>
                                                                                                                                                 <td class="isCircle">身分証</td>
                                                                                                                                                 <td class="isCircle">身分証</td>
                                                                                                 </tr>
                                                     <tr>
-                                <th>返済</th>
+                                <th scope="row">返済</th>
                                                                                                             <td class="isDoubleCircle">月1,000円～</td>
                                                                                                                                                 <td class="isDoubleCircle">月1,000円～</td>
                                                                                                                                                 <td class="isDoubleCircle">月1,000円～</td>
                                                                                                 </tr>
                                                     <tr>
-                                <th>公式HP</th>
+                                <th scope="row">公式HP</th>
                                                                                                             <td class="">
-                                            <a target="_blank" href="./redirect.php?item=acom" class="c-button">詳細</a>
+                                            <a target="_blank" href="./redirect.php?item=acom" class="c-button">条件を確認</a>
                                         </td>
                                                                                                                                                 <td class="">
-                                            <a target="_blank" href="./redirect.php?item=mobit" class="c-button">詳細</a>
+                                            <a target="_blank" href="./redirect.php?item=mobit" class="c-button">条件を確認</a>
                                         </td>
                                                                                                                                                 <td class="">
-                                            <a target="_blank" href="./redirect.php?item=promise" class="c-button">詳細</a>
+                                            <a target="_blank" href="./redirect.php?item=promise" class="c-button">条件を確認</a>
                                         </td>
                                                                                                 </tr>
                                             </tbody>
@@ -624,6 +637,7 @@
                 <p class="caution">※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。</p>
                 <p class="caution">※21時（日曜日は18時）までのご契約手続き完了（審査・必要書類の確認含む）で、当日中にお振込みが可能です。</p>
                 <p class="caution">※一部金融機関および、メンテナンス時間等を除きます。</p>
+                <p class="caution">更新日: 2026年7月8日 / 比較基準: 融資時間・金利・無利息期間・Web完結・郵送物・在籍確認</p>
             </div>
         </section>
     </div>
@@ -655,7 +669,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
             </a>
         </div>
         
@@ -673,7 +687,7 @@
             </div>
             <div class="points_content">
                 <ul>
-                    <li> <span>勤務先への在籍確認連絡は一切ない</span>から、職場や家族に<span>内緒で借りれる！</span> カードレス契約も可能 </li>
+                    <li> <span>勤務先への在籍確認は原則電話なし</span>で進められる場合があり、周囲に<span>知られにくい方法も選べます</span> カードレス契約も可能 </li>
                     <li>審査結果が最短<span>20分</span>でわかる！</li>
                     <p> 21時までに申し込めば当日中に借りれる！ 土日祝も<span>24時間申込可能</span>！</p>
                     <li>返済額は<span>月々1,000円～</span>でOK！</li>
@@ -696,7 +710,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png"></li>
+                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png" alt="アコム利用者の口コミ例"></li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -716,13 +730,13 @@
 </div>
     
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=acom"> 公式サイトで申込条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                             <BR>
             <span class="catch_top_recommend v3-catch-text">とりあえず迷ったらココ！</span>
-                <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+                        <a target="_blank" href="./redirect.php?item=acom"> 公式サイトで申込条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -748,24 +762,24 @@
             <div id="tab_2">
                 <p class="active">金利</p>
                 <p>スピード</p>
-                <p>バレない<span class="caution">※</span></p>
+                <p>郵送物<span class="caution">※</span></p>
                 <p>人気</p>
             </div>
             <div class="active">
                 <div class="ranking2_container"><span class="ranking2_content active">
                 <p class="crown">アコム</p>
                 <a target="_blank" href="./redirect.php?item=acom">
-                    <p>詳細はこちら</p>
+                    <p>条件を確認</p>
                 </a>
               </span><span class="ranking2_content active">
                 <p class="crown2">SMBCモビット</p>
                 <a target="_blank" href="./redirect.php?item=mobit">
-                    <p>詳細はこちら</p>
+                    <p>条件を確認</p>
                 </a>
               </span><span class="ranking2_content active">
                 <p class="crown3">プロミス</p>
                 <a target="_blank" href="./redirect.php?item=promise">
-                    <p>詳細はこちら</p>
+                    <p>条件を確認</p>
                 </a>
               </span></div>            </div>
 
@@ -1105,7 +1119,7 @@
         <footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
-            <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo.png" alt="マネーローンナビ">
             <p>カードローン選びに必要な情報を、比較しやすく整理してお届けします。</p>
         </div>
         <div class="v3-footer-sections">
@@ -1119,7 +1133,7 @@
                     <li>利用規約やプライバシーポリシーを確認のうえ利用してください。</li>
                     <li>サイト運営はアフィリエイトプログラムに基づき、広告収益を得ています。</li>
                     <li>ランキングは当サイト調べ。</li>
-                    <li>__BRAND_NAME__では、アフィリエイトプログラムを利用し、事業社(アコム/アイフル/プロミス/SMBC)から委託を受け広告収益を得て運用しております。</li>
+                    <li>マネーローンナビでは、アフィリエイトプログラムを利用し、事業社(アコム/アイフル/プロミス/SMBC)から委託を受け広告収益を得て運用しております。</li>
                 </ul>
             </details>
             <details open>
@@ -1165,7 +1179,7 @@
         </div>
         <div class="v3-footer-bottom">
             <a href="./operationinfo.php">運営社情報</a>
-            <small>Copyright &copy; __BRAND_NAME__ All Rights Reserved.</small>
+            <small>Copyright &copy; マネーローンナビ All Rights Reserved.</small>
         </div>
     </div>
 </footer>
@@ -1217,7 +1231,7 @@
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js?v=pages-demo-2" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=pages-demo-3" defer></script>
 </body>
 
 <script src="./js/timer.js" defer></script>

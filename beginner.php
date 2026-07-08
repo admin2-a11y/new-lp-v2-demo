@@ -23,7 +23,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
-		<title>初心者向け | __BRAND_NAME__</title>
+		<title>初心者向け | マネーローンナビ</title>
 		<meta name="description" content="はじめてカードローンを検討する方向けに、大手3社を条件で比較できる無料診断ページです。借入希望額や重視したい条件から確認できます。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -190,7 +190,7 @@
 <header>
     <div id="headerinner">
         <div class="headerLeft">
-            <img height="221" width="1080" src="./images/logo-green.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo-green.png" alt="マネーローンナビ">
             <p class="pr_text"> このページにはPRリンクが含まれています </p>
         </div>
     </div>
@@ -635,7 +635,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
             </a>
         </div>
         
@@ -653,7 +653,7 @@
             </div>
             <div class="points_content">
                 <ul>
-                    <li> <span>勤務先への在籍確認連絡は一切ない</span>から、職場や家族に<span>内緒で借りれる！</span> カードレス契約も可能 </li>
+                    <li> <span>勤務先への在籍確認は原則電話なし</span>で進められる場合があり、周囲に<span>知られにくい方法も選べます</span> カードレス契約も可能 </li>
                     <li>審査結果が最短<span>20分</span>でわかる！</li>
                     <p> 21時までに申し込めば当日中に借りれる！ 土日祝も<span>24時間申込可能</span>！</p>
                     <li>返済額は<span>月々1,000円～</span>でOK！</li>
@@ -676,7 +676,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png"></li>
+                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png" alt="アコム利用者の口コミ例"></li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -733,7 +733,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=mobit">
-                <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg">
+                <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
             </a>
         </div>
         
@@ -752,7 +752,7 @@
             <div class="points_content">
                 <ul>
                     <li><span>内緒で借りたいならコレ</span></li>
-                    <p>電話連絡や郵送物も原則ないからバレない。</p>
+                    <p>電話連絡や郵送物を抑えられる場合があります。</p>
                     <li><span>WEBで24時間申し込み</span></li>
                     <p>審査完了まで<span>10秒簡易審査</span>、スマホと証明書があればOK。</p>
                     <li><span>大手のSMBCグループだから安心</span></li>
@@ -769,7 +769,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png"></li>
+                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png" alt="SMBCモビット利用者の口コミ例"></li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -815,7 +815,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=promise">
-                <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg">
+                <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg" alt="プロミス公式サイトへ">
             </a>
         </div>
         
@@ -833,8 +833,8 @@
             </div>
             <div class="points_content">
                 <ul>
-                    <li>即日OK！<span>最短3分で審査完了</span></li>
-                    <li>21時までの申込みで<span>即日融資可能</span></li>
+                    <li>申込時間により当日利用も検討可能。<span>審査は最短3分</span></li>
+                    <li>21時までの申込みで<span>当日振込に対応できる場合があります</span></li>
                     
                     <li>30日間無利息もあり<span>お得に借りれる！</span></li>
 
@@ -854,7 +854,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png"></li>
+                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png" alt="プロミス利用者の口コミ例"></li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -1005,7 +1005,7 @@
             <div id="tab_2">
                 <p class="active">金利</p>
                 <p>スピード</p>
-                <p>バレない<span class="caution">※</span></p>
+                <p>郵送物<span class="caution">※</span></p>
                 <p>人気</p>
             </div>
             <div class="active">
@@ -1074,7 +1074,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
             </a>
         </div>
         
@@ -1092,7 +1092,7 @@
             </div>
             <div class="points_content">
                 <ul>
-                    <li> <span>勤務先への在籍確認連絡は一切ない</span>から、職場や家族に<span>内緒で借りれる！</span> カードレス契約も可能 </li>
+                    <li> <span>勤務先への在籍確認は原則電話なし</span>で進められる場合があり、周囲に<span>知られにくい方法も選べます</span> カードレス契約も可能 </li>
                     <li>審査結果が最短<span>20分</span>でわかる！</li>
                     <p> 21時までに申し込めば当日中に借りれる！ 土日祝も<span>24時間申込可能</span>！</p>
                     <li>返済額は<span>月々1,000円～</span>でOK！</li>
@@ -1115,7 +1115,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png"></li>
+                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png" alt="アコム利用者の口コミ例"></li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -1172,7 +1172,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=mobit">
-                <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg">
+                <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
             </a>
         </div>
         
@@ -1191,7 +1191,7 @@
             <div class="points_content">
                 <ul>
                     <li><span>内緒で借りたいならコレ</span></li>
-                    <p>電話連絡や郵送物も原則ないからバレない。</p>
+                    <p>電話連絡や郵送物を抑えられる場合があります。</p>
                     <li><span>WEBで24時間申し込み</span></li>
                     <p>審査完了まで<span>10秒簡易審査</span>、スマホと証明書があればOK。</p>
                     <li><span>大手のSMBCグループだから安心</span></li>
@@ -1208,7 +1208,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png"></li>
+                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png" alt="SMBCモビット利用者の口コミ例"></li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -1254,7 +1254,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=promise">
-                <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg">
+                <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg" alt="プロミス公式サイトへ">
             </a>
         </div>
         
@@ -1272,8 +1272,8 @@
             </div>
             <div class="points_content">
                 <ul>
-                    <li>即日OK！<span>最短3分で審査完了</span></li>
-                    <li>21時までの申込みで<span>即日融資可能</span></li>
+                    <li>申込時間により当日利用も検討可能。<span>審査は最短3分</span></li>
+                    <li>21時までの申込みで<span>当日振込に対応できる場合があります</span></li>
                     
                     <li>30日間無利息もあり<span>お得に借りれる！</span></li>
 
@@ -1293,7 +1293,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png"></li>
+                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png" alt="プロミス利用者の口コミ例"></li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -1356,7 +1356,7 @@
         
         <div class="img reco">
             <a target="_blank" href="./redirect.php?item=acom">
-                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg">
+                <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
             </a>
         </div>
         
@@ -1374,7 +1374,7 @@
             </div>
             <div class="points_content">
                 <ul>
-                    <li> <span>勤務先への在籍確認連絡は一切ない</span>から、職場や家族に<span>内緒で借りれる！</span> カードレス契約も可能 </li>
+                    <li> <span>勤務先への在籍確認は原則電話なし</span>で進められる場合があり、周囲に<span>知られにくい方法も選べます</span> カードレス契約も可能 </li>
                     <li>審査結果が最短<span>20分</span>でわかる！</li>
                     <p> 21時までに申し込めば当日中に借りれる！ 土日祝も<span>24時間申込可能</span>！</p>
                     <li>返済額は<span>月々1,000円～</span>でOK！</li>
@@ -1397,7 +1397,7 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png"></li>
+                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png" alt="アコム利用者の口コミ例"></li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -1452,7 +1452,7 @@
 		<footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
-            <img height="221" width="1080" src="./images/logo.png" alt="__BRAND_NAME__">
+            <img height="221" width="1080" src="./images/logo.png" alt="マネーローンナビ">
             <p>カードローン選びに必要な情報を、比較しやすく整理してお届けします。</p>
         </div>
         <div class="v3-footer-sections">
@@ -1466,7 +1466,7 @@
                     <li>利用規約やプライバシーポリシーを確認のうえ利用してください。</li>
                     <li>サイト運営はアフィリエイトプログラムに基づき、広告収益を得ています。</li>
                     <li>ランキングは当サイト調べ。</li>
-                    <li>__BRAND_NAME__では、アフィリエイトプログラムを利用し、事業社(アコム/アイフル/プロミス/SMBC)から委託を受け広告収益を得て運用しております。</li>
+                    <li>マネーローンナビでは、アフィリエイトプログラムを利用し、事業社(アコム/アイフル/プロミス/SMBC)から委託を受け広告収益を得て運用しております。</li>
                 </ul>
             </details>
             <details open>
@@ -1512,7 +1512,7 @@
         </div>
         <div class="v3-footer-bottom">
             <a href="./operationinfo.php">運営社情報</a>
-            <small>Copyright &copy; __BRAND_NAME__ All Rights Reserved.</small>
+            <small>Copyright &copy; マネーローンナビ All Rights Reserved.</small>
         </div>
     </div>
 </footer>
@@ -1564,7 +1564,7 @@
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js?v=pages-demo-2" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=pages-demo-3" defer></script>
 </body>
 
 </html>
