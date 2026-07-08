@@ -1166,7 +1166,7 @@
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=pages-demo-2" defer></script>
 </body>
 
 <script src="./js/timer.js" defer></script>
@@ -1257,3 +1257,4 @@
 </script>
 
 </html>
+
