@@ -89,7 +89,51 @@
     });
   }
 
+  function isGitHubPagesDemo() {
+    return window.location.hostname.indexOf('github.io') !== -1;
+  }
+
+  function toDemoHtmlUrl(value) {
+    if (!value) return value;
+    return value
+      .replace(/beginner\.php/g, 'beginner.html')
+      .replace(/beginner_result\.php/g, 'beginner_result.html')
+      .replace(/result\.php/g, 'result.html')
+      .replace(/redirect\.php/g, 'redirect.html')
+      .replace(/operationinfo\.php/g, 'operationinfo.html');
+  }
+
+  function enableGitHubPagesDemoRouting() {
+    if (!isGitHubPagesDemo()) return;
+
+    document.querySelectorAll('form[action]').forEach(function (form) {
+      form.setAttribute('action', toDemoHtmlUrl(form.getAttribute('action')));
+    });
+    document.querySelectorAll('a[href]').forEach(function (link) {
+      link.setAttribute('href', toDemoHtmlUrl(link.getAttribute('href')));
+    });
+
+    document.addEventListener('click', function (event) {
+      var beginnerButton = event.target.closest && event.target.closest('.select_modal_btn1');
+      if (!beginnerButton) return;
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+
+      var container = document.querySelector('.select_modal');
+      var body = document.querySelector('.select_modal_body');
+      var loading = document.querySelector('.select_modal_load');
+      if (body) body.classList.remove('active');
+      if (loading) loading.classList.add('active');
+
+      setTimeout(function () {
+        window.location.replace('beginner.html' + window.location.search);
+      }, 1200);
+    }, true);
+  }
+
   function runEnhancements() {
+    enableGitHubPagesDemoRouting();
     enhancePseudoButtons(document);
     enhanceDialogs();
     addTopCardCtas();
