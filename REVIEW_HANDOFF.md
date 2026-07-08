@@ -192,3 +192,34 @@
 | `images/hero-experience-firstview.jpg` | 315,586 bytes | 138,331 bytes | 1200x724 | なし |
 | `images/hero-beginner-firstview.jpg` | 286,302 bytes | 120,510 bytes | 1200x712 | なし |
 | `images/entry-modal-banner.jpg` | 264,385 bytes | 115,467 bytes | 1200x720 | なし |
+
+## 校正対応（第4ラウンド）
+
+コミット: `fix: 第4ラウンドFV最適化`
+
+### 対応内容
+
+- M1: 結果ページのヘッダー下余白、`.after_box`、条件チップ、案内ブロック、カード前余白をモバイルで圧縮。375pxで1位カード冒頭がFV内に入るよう調整。
+- M2: TOP / beginner のヒーロー下部、CTA、注記、診断ボックス、Q1ピル、設問行、送信ボタン余白をモバイルで圧縮。アンケートの id/name/li 順序/JS は変更なし。
+- M3: `.timer_in_box > .timerbox::after` の直下指定へ変更し、カード内タイマーの「までに申込」混入を theme-v3 / theme-v3-green で抑止。
+- docs: `CODEX_PROMPT_FIX2.md` / `CODEX_PROMPT_FIX3.md` を今回コミット対象に含める。
+
+### 実測結果（375x812）
+
+| 項目 | 修正前 | 修正後 | 目標 |
+|---|---:|---:|---:|
+| index.html 送信ボタン下端 | 1049px | 854px | ≤860px |
+| beginner.php 送信ボタン下端 | 827px | 722px | ≤860px |
+| result.php 1位カード上端 | 720px | 433px | ≤480px |
+| beginner_result.php 1位カード上端 | 636px | 337px | ≤480px |
+| result.php 条件チップ高さ | 136px相当 | 64px | ≤76px |
+| 結果案内ブロック高さ | 123px | 40px | ≤44px |
+
+### 動作確認結果
+
+- ローカル配信: `http://127.0.0.1:8099/` で確認。
+- レスポンシブ: 320 / 375 / 390 / 414pxで index, beginner, result, beginner_result の `scrollWidth - clientWidth = 0`。
+- 達成基準: 375pxで `result.php` の `.topbox.case` 上端433px、`beginner_result.php` 上端337px。index の送信ボタン下端854px。
+- アンケート回帰: 経験者フロー `/` → `result.php`、初心者フロー `/beginner.php` → `beginner_result.php` への送信遷移OK。
+- タイマー確認: 診断ボックス上部の「までに申込」は維持。ランキングカード内の `.timerbox::after` は `none`。
+- 既存404: 旧CSS由来の `css/images/icon_clock.png` が404。今回の第4ラウンド差分由来ではないため、既存CSS不変ルールを優先して未変更。

@@ -388,7 +388,7 @@ body > header .pr_text {
   font-weight: 700;
 }
 
-.timer_in_box .timerbox::after {
+.timer_in_box > .timerbox::after {
   content: "までに申込";
   margin-left: 4px;
 }
@@ -2326,5 +2326,241 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==== round4 fixes ==== */
+@media screen and (max-width: 768px) {
+  #mainvisual.v3-hero.v3-hero-experience,
+  #mainvisual.v3-hero.v3-hero-beginner {
+    padding-bottom: 12px !important;
+  }
+
+  .v3-hero-experience .v3-hero-cta,
+  .v3-hero-beginner .v3-hero-cta,
+  .v3-hero-cta {
+    min-height: 52px !important;
+    margin-top: 10px !important;
+    padding: 0 18px !important;
+    font-size: 15px !important;
+  }
+
+  .v3-hero-experience .v3-hero-note,
+  .v3-hero-beginner .v3-hero-note,
+  .v3-hero-note {
+    margin-top: 4px !important;
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+
+  #search_box {
+    margin: 12px auto 18px !important;
+    padding: 12px !important;
+  }
+
+  #search_box h2.ttl01 {
+    margin-bottom: 8px !important;
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+  }
+
+  .timer_in_box {
+    margin-bottom: 10px !important;
+    padding: 7px 10px !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+  }
+
+  #searchTOP h3 {
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+  }
+
+  .rentcheck {
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
+  .rentcheck label {
+    min-height: 40px !important;
+  }
+
+  #searchTOP .rentcheck span,
+  .rentcheck label span {
+    min-height: 40px !important;
+    padding: 7px 6px !important;
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+    white-space: nowrap;
+  }
+
+  ul.select_box {
+    gap: 6px !important;
+    margin-top: 10px !important;
+  }
+
+  ul.select_box > li {
+    min-height: 56px !important;
+    padding: 8px 40px 8px 14px !important;
+  }
+
+  ul.select_box label {
+    margin-bottom: 2px !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+  }
+
+  ul.select_box p,
+  ul.select_box .slider_value {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+  }
+
+  .rentbtn button,
+  .rentbtn input[type="submit"] {
+    min-height: 52px !important;
+    margin-top: 12px !important;
+    font-size: 15px !important;
+  }
+
+  #contents {
+    padding-top: 0 !important;
+  }
+
+  #search_page {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  #search_page > section {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #search_page > section .inner {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .after_box {
+    margin: 0 auto 6px !important;
+    padding: 16px !important;
+  }
+
+  .after_box h1 {
+    margin-bottom: 10px !important;
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+    white-space: nowrap;
+    text-align: left !important;
+  }
+
+  .after_box h1 span {
+    margin: 0 2px !important;
+  }
+
+  .v3-sp-br {
+    display: none !important;
+  }
+
+  .after_box ul {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .after_box ul li {
+    min-height: 28px !important;
+    padding: 6px 8px !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+  }
+
+  .after_box .mid {
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+
+  .after_box .btn_red,
+  .after_box .btn_g {
+    width: auto !important;
+    min-height: 40px !important;
+    padding: 8px 14px !important;
+    border: 1px solid var(--v3-accent) !important;
+    background: #fff !important;
+    color: var(--v3-accent) !important;
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+  }
+
+  .v3-result-note {
+    min-height: 40px !important;
+    margin: 0 auto 4px !important;
+    padding: 9px 12px !important;
+    border-radius: var(--v3-radius-sm) !important;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .v3-result-note strong {
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+
+  .v3-result-note strong::before {
+    content: "✓";
+    margin-right: 6px;
+  }
+
+  .v3-result-note p {
+    display: none !important;
+  }
+
+  #search_page > section:nth-of-type(2) + .ht40 {
+    height: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #search_page .topbox.case {
+    margin-top: 0 !important;
+  }
+
+  .topbox.case .timer_in_box > .timerbox::after {
+    content: none !important;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  .rentcheck {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  #searchTOP .rentcheck span,
+  .rentcheck label span {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    font-size: 12px !important;
+  }
+
+  .after_box ul li {
+    flex: 1 1 calc(50% - 3px) !important;
+    max-width: calc(50% - 3px);
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .after_box h1 {
+    font-size: 16px !important;
+    white-space: normal;
+  }
+
+  .after_box ul li {
+    flex: 1 1 100% !important;
+    max-width: 100%;
+    white-space: normal;
   }
 }
