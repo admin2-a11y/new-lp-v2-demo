@@ -252,3 +252,76 @@
 - アンケート回帰: 経験者フロー `/` → `result.php`、初心者フロー `/beginner.php` → `beginner_result.php` への送信遷移OK。
 - operationinfo / redirect: `#contents` 変更後も横スクロールなし。operationinfo の本文開始はヘッダー下約69pxで不自然な詰まりなし。
 - 既存404: 旧CSS由来の `css/images/icon_clock.png` が404。今回の第5ラウンド差分由来ではないため、既存CSS不変ルールを優先して未変更。
+
+## lp-fixer対応（2026-07-08 REVIEW_FINDINGS P1/P2）
+
+### 対応内容
+
+- P1: `redirect.php` の `fallback-link` を `window.onload` 内で設定し、自動遷移と同じ正規化済み `item` / `redirectUrlWithParams` を使うよう修正。無効な `item` でもデフォルト先のfallbackが表示されます。
+- P1: `index.html` / `beginner.php` のFV画像altとFV注記を条件付き表現へ変更。FV画像内の「誰にもバレない」「バレない」は、既存画像の左下アイコン部分だけを「周囲に知られにくい」へ上書きしました。
+- P2: `result.php` / `beginner_result.php` の再診断フォームで、職業ラベルの `for` を `select_s6` に修正。
+- P2: 結果ページ上部CTAの `.after_box .btn_red, .after_box .btn_g` を、青/緑themeとも `min-height: 44px` に修正。
+- P2: 旧CSS参照の欠損 `css/images/icon_clock.png` を追加し、404を解消。
+- P2: `select_s3` はプロダクトHTMLを復元せず、`AGENTS.md` / `CODEX_TASKS.md` に欠番仕様として明記。
+- P2: `beginner.php` の初心者向け見出し/アコーディオン文言を、断定・強調を抑えた表現へ変更。
+
+### 新規/変更した文言
+
+| 設置場所 | 文言 |
+|---|---|
+| index.html FV alt | WEB完結やコンビニATMなど、来店せず進めやすい方法もあります。 |
+| beginner.php FV alt | WEB完結や初回無利息サービスなど、条件に合う選択肢を比較できます。 |
+| FV画像内アイコン | 周囲に知られにくい |
+| FV注記 | ※借入までの時間はお申込時間や審査状況などにより異なります。ご利用方法や状況によっては、ご家族や勤務先に確認が必要な場合があります |
+| beginner.php セクション見出し | 初めてのカードローン 申し込み前に知っておきたい4つのコツ |
+| beginner.php アコーディオン見出し | 1. 周囲に知られにくい方法で進めやすい場合があります |
+| AGENTS.md / CODEX_TASKS.md | `select_s3` は欠番。既存JS参照のみを理由にプロダクトHTMLへ無理に復元しない。 |
+
+### 確認結果
+
+- `git diff` で差分確認。アンケートのselect id/name、`.select_modal*`、`#serch2_Modal`、`.rentcheck input[name="cat[]"]` は変更していません。
+- `rg` でP1対象の旧FV alt文言（`誰にもバレない`, `バレない、WEB完結`）と初心者向け強表現（`絶対に知るべき`, `家族や友達にバレず`）が解消していることを確認。
+- `rg` で結果ページ職業ラベルの `for="select_s5"` 残存が対象箇所には無いことを確認（年収ラベルの `select_s5` は正しいため維持）。
+- `rg` で `css/style-main.css` / `css/style-main-green.css` の `icon_clock.png` 参照を確認し、`css/images/icon_clock.png` を追加。
+- FV画像2枚はAPP1/APP13メタデータなしを確認（`metadataMarkers=none`）。
+- PHPはローカルPATH上に無く、`php -S` 確認は未実施。
+- 代替のNode静的サーバー起動は権限付き実行が利用上限で拒否されたため未実施。
+- in-app Browserでの `file://` 表示確認もブラウザURLポリシーでブロックされたため未実施。今回は静的確認と画像目視確認まで。
+
+### レビュー担当に見てほしい箇所
+
+- FV画像左下アイコンの上書き品質と、FV注記がスマホ幅で長すぎないか。
+- `redirect.php` のfallbackが保存クエリ付きURLになること（ブラウザ実測は未実施）。
+
+## 追加専門レビュー後のP1対応（2026-07-08）
+
+### 対応内容
+
+- Design/Banner P1: FV画像とaltの「15社」訴求を、実画面に合わせて「大手3社を比較」へ変更。対象は独自FV画像2枚のみで、公式アフィリエイトバナー/口コミ画像は未編集。
+- Design P1: PC幅FVの画像高さを抑え、CTAと注記が1280x720内に収まるようtheme-v3/theme-v3-greenの最終上書きを追加。
+- Design P1: `js/v3-accessibility-cvr.js` を追加し、1位カード上部に「公式サイトで詳細を見る」CTAを挿入。
+- Accessibility P1: 入口/診断モーダルの疑似ボタンへ `role="button"` / `tabindex="0"` / Enter・Space操作、dialog属性、簡易フォーカストラップ、Esc閉じを追加。
+- Performance/SEO P1: 主要4ページのrobotsを `index, follow` へ変更。`redirect.php` / `operationinfo.php` の `noindex, nofollow` は維持。
+- P2対応: 結果ページ上部CTA高さ、fallbackボタン化、favicon追加、診断モーダル初期見出し、バナーalt補完、meta description、redirectバナー寸法を修正。
+
+### 新規/変更した文言
+
+| 設置場所 | 文言 |
+|---|---|
+| FV画像内コピー | 大手3社を比較 |
+| index.html FV alt | 大手3社を条件で比較。延滞経験ありでも相談しやすいカードローン。WEB完結やコンビニATMなど、来店せず進めやすい方法もあります。 |
+| beginner.php FV alt | 大手3社を条件で比較。初めて借りる人にオススメのカードローンがわかる。WEB完結や初回無利息サービスなど、条件に合う選択肢を比較できます。 |
+| 1位カード上部CTA | 公式サイトで詳細を見る |
+| redirect fallback | 移動先を開く |
+| 診断モーダル初期見出し | かんたん診断で絞り込む |
+| meta description | 各ページにページ内容に合わせた説明文を追加 |
+
+### 動作確認結果
+
+- Headless Edge + 一時Node静的サーバーで 320 / 375 / 390 / 414 / 768 / 1280px の主要ページ横スクロール0、主要console errorなし。
+- 1280x720で index / beginner のFV CTA下端569px、注記下端600px。
+- result / beginner_result の「条件を変更する」は768px実測61px。
+- redirect fallbackは768/1280px実測48px、文言「移動先を開く」。
+- 診断モーダル内にtabbable要素6件、`.modal-btn` / `.modalClose` に `role="button"` と `tabindex="0"` が付与されることを確認。
+- robots: index / beginner / result / beginner_result は `index, follow`、redirect / operationinfo は `noindex, nofollow`。
+- `rg`確認: プロダクトファイル内に `15社から厳選`、`<h2>TITLE</h2>` は検出なし。旧強表現はREVIEW_HANDOFF/REVIEW_FINDINGSの履歴記録内のみ。

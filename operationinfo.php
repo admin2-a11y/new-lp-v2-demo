@@ -24,6 +24,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>媒体運営者情報 | おすすめカードローン __BRAND_NAME__</title>
+		<meta name="description" content="__BRAND_NAME__ の媒体運営者情報、所在地、事業内容、お問い合わせ先を掲載しています。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

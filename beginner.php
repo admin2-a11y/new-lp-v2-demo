@@ -24,6 +24,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>初心者向け | __BRAND_NAME__</title>
+		<meta name="description" content="はじめてカードローンを検討する方向けに、大手3社を条件で比較できる無料診断ページです。借入希望額や重視したい条件から確認できます。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +52,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js" defer></script>
 		<script src="./js/query-keeper.js" defer></script>
-		<meta name='robots' content='noindex, nofollow' />
+		<meta name='robots' content='index, follow' />
 		<style>
 			img:is([sizes="auto" i], [sizes^="auto," i]) {
 				contain-intrinsic-size: 3000px 1500px
@@ -198,10 +199,10 @@
         <div class="v3-hero-inner">
             <h1 class="v3-sr-only">初めて借りる人にオススメ 人気のカードローンがわかる</h1>
             <div class="v3-hero-media">
-                <img src="./images/hero-beginner-firstview.jpg" width="1200" height="712" fetchpriority="high" alt="15社から厳選 初めて借りる人にオススメ 人気のカードローンがわかる。バレない、WEB完結、初回最大30日間金利ゼロ。">
+                <img src="./images/hero-beginner-firstview.jpg" width="1200" height="712" fetchpriority="high" alt="大手3社を条件で比較。初めて借りる人にオススメのカードローンがわかる。WEB完結や初回無利息サービスなど、条件に合う選択肢を比較できます。">
             </div>
             <button type="button" class="v3-hero-cta" onclick="if(event){ event.stopPropagation(); } var first=document.querySelector('ul.select_box li'); if(first){ first.click(); } return false;">かんたん30秒診断をはじめる<i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-            <p class="v3-hero-note">※借入までの時間はお申込時間や審査状況などにより異なります</p>
+            <p class="v3-hero-note">※借入までの時間はお申込時間や審査状況などにより異なります。ご利用方法や状況によっては、ご家族や勤務先に確認が必要な場合があります</p>
         </div>
     </div>
 	<span id="content2"></span>
@@ -297,7 +298,7 @@
 		<div id="serch2_Modal">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h2>TITLE</h2>
+					<h2>かんたん診断で絞り込む</h2>
                     <div class="v3-modal-progress" aria-live="polite"><span>質問 1 / 1</span><b><i style="width:0%"></i></b></div>
                     <span class="modalClose">×</span>
 				</div>
@@ -514,11 +515,11 @@
 	</div>
 	<section>
 		
-		<h2 class="v3-section-title">初めてのカードローン 絶対に知るべき4つのコツ</h2>
+		<h2 class="v3-section-title">初めてのカードローン 申し込み前に知っておきたい4つのコツ</h2>
 		<div id="flow" class="flow_cont">
 			<div class="toggle-section">
 				<button class="toggle-btn">
-					1. 家族や友達にバレず、安心して利用できる！ <span class="icon">＋</span>
+					1. 周囲に知られにくい方法で進めやすい場合があります <span class="icon">＋</span>
 				</button>
 				<div class="toggle-content">
 					<p>本サイトで紹介しているカードローンは、<span>保証人なし</span>で利用可能です。そのため、家族にお金の<span>心配をかけることもありません。</span><span class="notes">※1</span></p>
@@ -1563,6 +1564,7 @@
             }
         })();
     </script>
+<script src="./js/v3-accessibility-cvr.js" defer></script>
 </body>
 
 </html>

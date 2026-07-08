@@ -24,6 +24,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>ローディング | __BRAND_NAME__</title>
+		<meta name="description" content="選択したカードローン公式サイトへ移動するための中継ページです。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -206,10 +207,17 @@
             singleBannerContainer.innerHTML = `
             <div class="banner">
                 <a href="${redirectUrlWithParams}">
-                    <img src="${redirectData.banner}" alt="${redirectData.alt}" width="300">
+                    <img src="${redirectData.banner}" alt="${redirectData.alt}" width="300" height="250">
                 </a>
             </div>`;
             singleBannerContainer.style.display = 'block';
+
+            const fallbackLink = document.getElementById('fallback-link');
+            const fallbackMessage = document.getElementById('fallback-message');
+            if (fallbackLink && fallbackMessage) {
+                fallbackLink.href = redirectUrlWithParams;
+                fallbackMessage.style.display = 'block';
+            }
 
             setTimeout(() => {
                 location.href = redirectUrlWithParams;
@@ -243,17 +251,9 @@
         <h1 id="loading-message">選択されたサイトへ移動中です。</h1>
         <div id="single-banner" style="display: none;"></div>
         <p id="fallback-message" style="display: none;">
-            移動しない場合は<a id="fallback-link" href="#">こちら</a>をクリックして下さい。
+            移動しない場合は<a id="fallback-link" href="#">移動先を開く</a>をクリックして下さい。
         </p>
     </main>
-    <script>
-        const item = getRedirectItem();
-        const redirectUrl = linkMap[item]?.url;
-        if (redirectUrl) {
-            document.getElementById('fallback-link').href = redirectUrl;
-            document.getElementById('fallback-message').style.display = 'block';
-        }
-    </script>
 
 <footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">

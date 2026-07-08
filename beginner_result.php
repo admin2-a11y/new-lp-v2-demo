@@ -24,6 +24,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>検索結果 | 初心者 | __BRAND_NAME__</title>
+		<meta name="description" content="はじめてカードローンを検討する方の診断結果ページです。条件に近い候補を比較し、申込前に特徴を確認できます。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +52,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js" defer></script>
 		<script src="./js/query-keeper.js" defer></script>
-		<meta name='robots' content='noindex, nofollow' />
+		<meta name='robots' content='index, follow' />
 		<style>
 			img:is([sizes="auto" i], [sizes^="auto," i]) {
 				contain-intrinsic-size: 3000px 1500px
@@ -841,7 +842,7 @@
                                     <option id="annual_income_5" value="a5_5">700万円以上</option>
                                 </select>
                             </li><li>
-                                <label for="select_s5">Q5.現在の職業は？</label>
+                                <label for="select_s6">Q5.現在の職業は？</label>
                                 <p>なし</p>
                                 <select name="how_many_loans_dis" id="select_s6">
                                     <option value="">なし</option>
@@ -879,7 +880,7 @@
                 <div id="serch2_Modal">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h2>TITLE</h2>
+                            <h2>かんたん診断で絞り込む</h2>
                     <div class="v3-modal-progress" aria-live="polite"><span>質問 1 / 1</span><b><i style="width:0%"></i></b></div>
                     <span class="modalClose">×</span>
                         </div>
@@ -1216,6 +1217,7 @@
             }
         })();
     </script>
+<script src="./js/v3-accessibility-cvr.js" defer></script>
 </body>
 
 <script src="./js/timer.js" defer></script>
