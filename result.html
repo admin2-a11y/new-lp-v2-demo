@@ -179,7 +179,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3.css?v=mnavi92" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=mnavi93" type="text/css" media="screen">
 	</head>
 <body class="experience search-results">
     
@@ -246,6 +246,10 @@
                                 <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
                             </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>申込前に条件や必要書類を確認でき、スマホで進めやすかったという声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline>
+                                <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
+                                <div class="v3-result-deadline-timer" aria-live="polite"></div>
+                            </div>
                             <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-cta">公式サイトで申込条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by アコム株式会社<br>※お申込時間や審査状況によりご希望に添えない場合があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
@@ -277,6 +281,10 @@
                                 <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
                             </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>Webで手続きを進められる点や、郵送物を抑えられる点を重視する声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline>
+                                <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
+                                <div class="v3-result-deadline-timer" aria-live="polite"></div>
+                            </div>
                             <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※お申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
@@ -308,6 +316,10 @@
                                 <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
                             </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>スマホで比較しながら、返済額や無利息期間を確認できたという声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline>
+                                <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
+                                <div class="v3-result-deadline-timer" aria-live="polite"></div>
+                            </div>
                             <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※無利息期間の適用には条件があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
@@ -339,6 +351,10 @@
                                 <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
                             </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>申込前に診断で目安を確認でき、条件を比較しやすかったという声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline>
+                                <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
+                                <div class="v3-result-deadline-timer" aria-live="polite"></div>
+                            </div>
                             <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by アイフル株式会社<br>※システムメンテナンスの時間帯や一部金融機関を除きます。※一例であり、結果を保証するものではありません。</p>
                         </article>
@@ -1264,7 +1280,7 @@
 <script src="./js/v3-accessibility-cvr.js?v=pages-demo-5" defer></script>
 </body>
 
-<script src="./js/timer.js" defer></script>
+<script src="./js/timer.js?v=mnavi93" defer></script>
 
 <script>
     $(document).ready(function() {

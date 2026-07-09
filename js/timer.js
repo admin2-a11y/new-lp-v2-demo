@@ -53,19 +53,16 @@ function countdownTimer_page_timer() {
 countdownTimer_page_timer();
 
 function countdownTimer(elem) {
-	let startDate = new Date();
-	startDate.setHours(9, 30, 0);
 	let endDate = new Date();
 	endDate.setHours(20, 59, 59);
 
 	function updateTimer() {
 		let nowDate = new Date();
-		startDate.setDate(nowDate.getDate());
 		endDate.setDate(nowDate.getDate());
 		let period = endDate - nowDate;
 		let addZero = (n) => ('0' + n).slice(-2);
 
-		if (period >= 0 && nowDate >= startDate) {
+		if (period >= 0) {
 			let hour = Math.floor(period / (1000 * 60 * 60));
 			period -= (hour * (1000 * 60 * 60));
 			let minutes = Math.floor(period / (1000 * 60));
@@ -76,7 +73,7 @@ function countdownTimer(elem) {
                           <span>${addZero(minutes)}</span>分
                           <span>${addZero(second)}</span>秒`;
 
-			let str = '<span>本日中</span>に借りるなら';
+			let str = '<span>本日中</span>に借入をする場合';
 			elem.parentNode.previousElementSibling.style.display = 'block';
 			elem.parentNode.style.display = 'block';
 			elem.parentNode.parentNode.lastElementChild.style.display = 'none';
@@ -85,16 +82,58 @@ function countdownTimer(elem) {
 
 			setTimeout(updateTimer, 1000);
 		} else {
-			elem.parentNode.previousElementSibling.style.display = 'none';
-			elem.parentNode.style.display = 'none';
-			elem.parentNode.parentNode.lastElementChild.style.display = 'block';
-			setTimeout(updateTimer, 1000);
+			elem.parentNode.previousElementSibling.style.display = 'block';
+			elem.parentNode.previousElementSibling.innerHTML = '<span>本日中</span>に借入をする場合';
+			elem.parentNode.style.display = 'block';
+			elem.parentNode.parentNode.lastElementChild.style.display = 'none';
+			elem.innerHTML = '<span class="end">申込は24時間対応OK</span>';
+			setTimeout(updateTimer, 60000);
 		}
 	}
 	updateTimer();
 }
 
 document.querySelectorAll('.timer').forEach(countdownTimer);
+
+function initV3SamedayDeadlineTimers() {
+	document.querySelectorAll('[data-v3-sameday-deadline]').forEach(function(box) {
+		if (box.dataset.v3DeadlineReady === '1') return;
+		box.dataset.v3DeadlineReady = '1';
+		let timer = box.querySelector('.v3-result-deadline-timer');
+		if (!timer) return;
+		let hourSetting = Number(box.dataset.deadlineHour || 20);
+		let minuteSetting = Number(box.dataset.deadlineMinute || 59);
+		let secondSetting = Number(box.dataset.deadlineSecond || 59);
+		let addZero = function(n) { return ('0' + n).slice(-2); };
+
+		function update() {
+			let nowDate = new Date();
+			let endDate = new Date();
+			endDate.setHours(hourSetting, minuteSetting, secondSetting, 999);
+			let period = endDate - nowDate;
+			if (period >= 0) {
+				box.classList.remove('is-ended');
+				let hour = Math.floor(period / (1000 * 60 * 60));
+				period -= (hour * (1000 * 60 * 60));
+				let minutes = Math.floor(period / (1000 * 60));
+				period -= (minutes * (1000 * 60));
+				let second = Math.floor(period / 1000);
+				timer.innerHTML = '残り <span class="h">' + addZero(hour) + '</span><em>時間</em>' +
+					'<span class="m">' + addZero(minutes) + '</span><em>分</em>' +
+					'<span class="s">' + addZero(second) + '</span><em>秒</em>';
+				setTimeout(update, 1000);
+			} else {
+				box.classList.add('is-ended');
+				timer.innerHTML = '<span class="end">申込は24時間対応OK</span>';
+				setTimeout(update, 60000);
+			}
+		}
+
+		update();
+	});
+}
+
+initV3SamedayDeadlineTimers();
 
 function countdownTimer_flow() {
 	let endDate = new Date();

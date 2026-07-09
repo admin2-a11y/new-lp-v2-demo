@@ -5949,6 +5949,18 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   font-size: 10px;
 }
 
+.timer_in_box .timerbox .end {
+  display: inline-block !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  background: #191919 !important;
+  color: #fff100 !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+}
+
 .v3-result-lenders-title {
   margin: 0 0 10px;
   padding: 10px 12px;
@@ -7291,6 +7303,93 @@ body.search-results .v3-result-lender-cta::after {
 /* ==== Final flow to recommendation breathing room ==== */
 #flow {
   margin-bottom: 12px !important;
+}
+
+/* ==== Result same-day deadline timer ==== */
+.v3-result-deadline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px 10px;
+  margin: 10px 0 12px;
+  padding: 8px 10px;
+  border: 1px solid #f4a13d;
+  border-radius: 999px;
+  background: #fff8e7;
+  color: #2b1c0d;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.v3-result-deadline-label span {
+  color: #f04b1f;
+  font-weight: 900;
+}
+
+.v3-result-deadline-timer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  color: #191919;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.v3-result-deadline-timer span:not(.end) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  margin: 0 1px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: #191919;
+  color: #fff100;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.v3-result-deadline-timer em {
+  color: #191919;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.v3-result-deadline.is-ended {
+  border-color: #d7dfe8;
+  background: #f6f8fb;
+}
+
+.v3-result-deadline-timer .end {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #191919;
+  color: #fff100;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+@media screen and (min-width: 769px) {
+  .v3-result-deadline {
+    justify-content: space-between;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 9px 14px;
+  }
+
+  .v3-result-deadline-timer span:not(.end) {
+    min-width: 28px;
+    font-size: 16px;
+  }
 }
 
 /* ==== Final desktop first-view / survey layout ==== */
