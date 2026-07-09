@@ -6952,6 +6952,13 @@ html body.experience #recommend + #follow-banner {
 #hikaku .v3-tab-compare-cta,
 .hikaku_box .c-compareTable .c-button,
 #hikaku .c-button,
+.v3-lender-cta,
+#search_box #search_table button[type="submit"],
+.rentbtn button[type="submit"],
+#serch2_Modal .modal-submit,
+.topbox.case .transition a,
+.topbox.case .v3-lpo-fast-cta a,
+.after_box .v3-result-primary-cta,
 body.search-results .v3-result-lender-cta,
 body.search-results .topbox.case .transition a,
 body.search-results .topbox.case .v3-lpo-fast-cta a {
