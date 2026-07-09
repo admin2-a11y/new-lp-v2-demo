@@ -5252,7 +5252,7 @@ body.beginner.search-results .v3-result-lender-head {
   grid-template-columns: minmax(0, 43%) minmax(0, 1fr) !important;
   gap: 10px !important;
   align-items: center !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 18px !important;
 }
 
 body.beginner.search-results .v3-result-lender-banner img {
@@ -5287,8 +5287,38 @@ body.beginner.search-results .v3-result-lender-summary h3 {
 }
 
 body.beginner.search-results .v3-result-lender-summary h3 a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
   color: inherit !important;
   text-decoration: none !important;
+}
+
+body.beginner.search-results .v3-result-lender-card:nth-child(-n+3) .v3-result-lender-summary h3 a::before {
+  content: "\f521" !important;
+  display: inline-flex !important;
+  width: 22px !important;
+  height: 22px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 22px !important;
+  font-family: "Font Awesome 5 Free" !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0 2px 4px rgba(0, 0, 0, .14) !important;
+}
+
+body.beginner.search-results .v3-result-lender-card:nth-child(1) .v3-result-lender-summary h3 a::before {
+  color: #d8a400 !important;
+}
+
+body.beginner.search-results .v3-result-lender-card:nth-child(2) .v3-result-lender-summary h3 a::before {
+  color: #aeb8c2 !important;
+}
+
+body.beginner.search-results .v3-result-lender-card:nth-child(3) .v3-result-lender-summary h3 a::before {
+  color: #b87333 !important;
 }
 
 body.beginner.search-results .v3-result-lender-group {
@@ -5303,7 +5333,7 @@ body.beginner.search-results .v3-result-lender-group {
 }
 
 body.beginner.search-results .v3-result-lender-point {
-  margin: 0 0 10px !important;
+  margin: 4px 0 10px !important;
   padding: 12px 10px 10px !important;
   border: 2px solid #19b78b !important;
   border-radius: 8px !important;
