@@ -180,7 +180,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=mnavi97" type="text/css" media="screen">
 	</head>
 <body class="beginner search-results">
     
@@ -197,7 +197,80 @@
 </header>    <span id="top"></span>
     <div id="contents">
         <div class="main" id="search_page">
-            <section>
+            <section class="v3-result-lenders v3-result-lenders-beginner" aria-labelledby="v3-result-lenders-title">
+                <div class="inner">
+                    <div class="v3-result-filter-summary" aria-label="絞り込み検索結果">
+                        <h1 class="v3-result-filter-title">はじめて向け診断結果 <span>4</span>件</h1>
+                        <div class="v3-result-filter-body">
+                            <span class="v3-result-filter-item"><b>借入限度額</b><span id="selected-amount">指定なし</span></span>
+                            <span class="v3-result-filter-item"><b>融資スピード</b><span id="selected-time">指定なし</span></span>
+                            <span class="v3-result-filter-item"><b>借入方法</b><span id="selected-method">指定なし</span></span>
+                            <span class="v3-result-filter-item"><b>重視する点</b><span id="selected-company-size">指定なし</span></span>
+                        </div>
+                        <div class="v3-result-filter-actions">
+                            <a href="#search_box" class="v3-result-filter-change">条件を変更する <i class="fas fa-arrow-circle-right"></i></a>
+                            <label class="v3-result-filter-sort">並び替え
+                                <select name="sort" aria-label="並び替え">
+                                    <option>オススメ</option>
+                                    <option>融資が早い</option>
+                                    <option>限度額が高い</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <h2 id="v3-result-lenders-title" class="v3-result-lenders-title">はじめてでも比較しやすいカードローン</h2>
+                    <div class="v3-result-lender-list">
+                        <article class="v3-result-lender-card is-first">
+                            <div class="v3-result-lender-head">
+                                <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ"></a>
+                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.1</p><h3><a target="_blank" href="./redirect.php?item=acom">アコム</a></h3><p class="v3-result-lender-group">三菱UFJフィナンシャル・グループ</p></div>
+                            </div>
+                            <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>スマホから申込条件を確認しやすい候補です</li><li>Web申込、来店不要、カードレス契約も選べます</li><li>はじめての契約なら無利息期間も確認できます</li></ul></div>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>融資時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>借入限度額</dt><dd>1万円〜800万円</dd></div><div><dt>実質年率</dt><dd>2.4%〜17.9%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <div class="v3-result-review"><b>口コミ例</b><p>申込前に条件や必要書類を確認でき、スマホで進めやすかったという声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
+                            <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-cta">公式サイトで申込条件を確認する</a>
+                            <p class="v3-result-lender-note">【PR】Sponsored by アコム株式会社<br>※お申込時間や審査状況によりご希望に添えない場合があります。※一例であり、結果を保証するものではありません。</p>
+                        </article>
+                        <article class="v3-result-lender-card">
+                            <div class="v3-result-lender-head">
+                                <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_promise.jpg" alt="プロミス公式サイトへ"></a>
+                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.2</p><h3><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3><p class="v3-result-lender-group">SMBCコンシューマーファイナンス株式会社</p></div>
+                            </div>
+                            <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>スマホからスピード重視で進めたい方に向いています</li><li>郵送物なし、カードレスで進めたい方も確認できます</li><li>30日間無利息の条件も申込前に確認できます</li></ul></div>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短3分</dd></div><div><dt>融資時間</dt><dd>最短3分</dd></div><div><dt>借入限度額</dt><dd>最大500万円</dd></div><div><dt>実質年率</dt><dd>2.5%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <div class="v3-result-review"><b>口コミ例</b><p>スマホで比較しながら、返済額や無利息期間を確認できたという声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
+                            <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
+                            <p class="v3-result-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※無利息期間の適用には条件があります。※一例であり、結果を保証するものではありません。</p>
+                        </article>
+                        <article class="v3-result-lender-card">
+                            <div class="v3-result-lender-head">
+                                <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ"></a>
+                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.3</p><h3><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3><p class="v3-result-lender-group">アイフル株式会社</p></div>
+                            </div>
+                            <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>申込前に1秒診断で目安を確認したい方に向いています</li><li>Web申込、来店不要、カードレスで進めたい方も確認できます</li><li>急ぎの借入を検討する前に条件を確認できます</li></ul></div>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <div class="v3-result-review"><b>口コミ例</b><p>申込前に診断で目安を確認でき、条件を比較しやすかったという声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
+                            <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
+                            <p class="v3-result-lender-note">【PR】Sponsored by アイフル株式会社<br>※システムメンテナンスの時間帯や一部金融機関を除きます。※一例であり、結果を保証するものではありません。</p>
+                        </article>
+                        <article class="v3-result-lender-card">
+                            <div class="v3-result-lender-head">
+                                <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-banner"><img loading="lazy" width="400" height="333" src="./images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ"></a>
+                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.4</p><h3><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3><p class="v3-result-lender-group">三井住友カード株式会社</p></div>
+                            </div>
+                            <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>WEB完結で進めたい方に向いています</li><li>電話連絡や郵送物を抑えたい場合に確認しやすい候補です</li><li>カードレスで使いたい方も条件を確認できます</li></ul></div>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>10秒簡易審査</dd></div><div><dt>融資時間</dt><dd>最短15分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <div class="v3-result-review"><b>口コミ例</b><p>Webで手続きを進められる点や、郵送物を抑えられる点を重視する声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
+                            <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
+                            <p class="v3-result-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※お申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。※一例であり、結果を保証するものではありません。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>            <section>
                 <div class="inner">
                     <div class="after_box">
                         <h1>あなたの条件に合う<br class="v3-sp-br">カードローン <span>3</span>件</h1>
@@ -1234,7 +1307,7 @@
 <script src="./js/v3-accessibility-cvr.js?v=pages-demo-5" defer></script>
 </body>
 
-<script src="./js/timer.js" defer></script>
+<script src="./js/timer.js?v=mnavi97" defer></script>
 
 <script>
     $(document).ready(function() {

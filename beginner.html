@@ -180,7 +180,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css?v=mnavi38" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=mnavi97" type="text/css" media="screen">
 	</head>
 <body class="beginner">
 	
@@ -1536,7 +1536,7 @@
 	</div>
 	<script src="./js/follow_banner.js" defer></script>
 	
-	<script src="./js/timer.js" defer></script>
+	<script src="./js/timer.js?v=mnavi97" defer></script>
 		<footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
