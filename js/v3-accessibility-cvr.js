@@ -1,4 +1,6 @@
 (function () {
+  var staticResultSubmitReady = false;
+
   function makeButtonLike(el) {
     if (!el || el.dataset.v3A11yReady === '1') return;
     el.dataset.v3A11yReady = '1';
@@ -123,7 +125,8 @@
     var labels = [
       ['banner_acom', 'アコム公式サイトへ'],
       ['banner_mobit', 'SMBCモビット公式サイトへ'],
-      ['banner_promise', 'プロミス公式サイトへ']
+      ['banner_promise', 'プロミス公式サイトへ'],
+      ['banner_aiful', 'アイフル公式サイトへ']
     ];
     document.querySelectorAll('.topbox.case a[href*="redirect.php"] img').forEach(function (img) {
       if (img.getAttribute('alt')) return;
@@ -137,6 +140,13 @@
     return window.location.hostname.indexOf('github.io') !== -1;
   }
 
+  function isStaticDemoHost() {
+    return isGitHubPagesDemo() ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname === 'localhost' ||
+      /\.html$/.test(window.location.pathname);
+  }
+
   function toDemoHtmlUrl(value) {
     if (!value) return value;
     return value
@@ -148,7 +158,7 @@
   }
 
   function enableGitHubPagesDemoRouting() {
-    if (!isGitHubPagesDemo()) return;
+    if (!isStaticDemoHost()) return;
 
     document.querySelectorAll('form[action]').forEach(function (form) {
       form.setAttribute('action', toDemoHtmlUrl(form.getAttribute('action')));
@@ -187,8 +197,59 @@
     }, true);
   }
 
+  function serializeFormToUrl(form) {
+    var action = toDemoHtmlUrl(form.getAttribute('action') || window.location.pathname);
+    var url = new URL(action, window.location.href);
+    new FormData(form).forEach(function (value, key) {
+      url.searchParams.append(key, value);
+    });
+    return url;
+  }
+
+  function showDiagnosisLoading() {
+    var container = document.querySelector('.select_modal');
+    var body = document.querySelector('.select_modal_body');
+    var loading = document.querySelector('.select_modal_load');
+    if (!container || !loading) return;
+    container.classList.add('active');
+    if (body) body.classList.remove('active');
+    loading.classList.add('active');
+  }
+
+  function enableStaticResultSubmit() {
+    if (!isStaticDemoHost()) return;
+    if (staticResultSubmitReady) return;
+    staticResultSubmitReady = true;
+
+    document.addEventListener('submit', function (event) {
+      var form = event.target;
+      if (!form || !form.matches('form[action*="result.php"], form[action*="result.html"], form[action*="beginner_result.php"], form[action*="beginner_result.html"]')) return;
+      event.preventDefault();
+      var url = serializeFormToUrl(form);
+      showDiagnosisLoading();
+      setTimeout(function () {
+        window.location.href = url.toString();
+      }, 450);
+    }, true);
+
+    document.addEventListener('click', function (event) {
+      var button = event.target.closest && event.target.closest('form[action*="result.php"] button[type="submit"], form[action*="result.html"] button[type="submit"], form[action*="beginner_result.php"] button[type="submit"], form[action*="beginner_result.html"] button[type="submit"], #serch2_Modal .modal-submit');
+      if (!button) return;
+      var form = button.closest('form') || document.querySelector('#search_box form');
+      if (!form) return;
+      event.preventDefault();
+      event.stopPropagation();
+      var url = serializeFormToUrl(form);
+      showDiagnosisLoading();
+      setTimeout(function () {
+        window.location.href = url.toString();
+      }, 450);
+    }, true);
+  }
+
   function runEnhancements() {
     enableGitHubPagesDemoRouting();
+    enableStaticResultSubmit();
     enhancePseudoButtons(document);
     enhanceDialogs();
     ensureDiagnosisGuide();

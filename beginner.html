@@ -23,14 +23,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
-		<title>初心者向け | マネーローンナビ</title>
+		<title>マネーローンナビ</title>
 		<meta name="description" content="はじめてカードローンを検討する方向けに、大手3社を条件で比較できる無料診断ページです。借入希望額や重視したい条件から確認できます。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-		<link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
+		<link rel="shortcut icon" href="./favicon.ico?v=mnavi9" type="image/vnd.microsoft.icon">
 		
 		<link rel="stylesheet" href="./css/style-green.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="./css/animate.css" media="all">
@@ -67,8 +67,8 @@
 				background-attachment: scroll;
 			}
 		</style>
-		<link rel="icon" href="./images/icon-green.png" />
-		<link rel="apple-touch-icon" href="./images/icon-green.png" />
+		<link rel="icon" href="./images/icon-green.png?v=mnavi9" />
+		<link rel="apple-touch-icon" href="./images/icon-green.png?v=mnavi9" />
 		<meta name='robots' content='max-image-preview:large' />
 		<link rel='dns-prefetch' href='https://use.fontawesome.com/' />
 		
@@ -180,7 +180,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=mnavi38" type="text/css" media="screen">
 	</head>
 <body class="beginner">
 	
@@ -201,14 +201,12 @@
             <div class="v3-hero-media">
                 <img src="./images/hero-beginner-firstview.jpg" width="1200" height="712" fetchpriority="high" alt="大手3社を条件で比較。初めて借りる人にオススメのカードローンがわかる。WEB完結や初回無利息サービスなど、条件に合う選択肢を比較できます。">
             </div>
-            <button type="button" class="v3-hero-cta" onclick="if(event){ event.stopPropagation(); } var first=document.querySelector('ul.select_box li'); if(first){ first.click(); } return false;">かんたん30秒診断をはじめる<i class="fas fa-arrow-right" aria-hidden="true"></i></button>
-            <p class="v3-hero-note">※借入までの時間はお申込時間や審査状況などにより異なります。ご利用方法や状況によっては、ご家族や勤務先に確認が必要な場合があります</p>
         </div>
     </div>
 	<span id="content2"></span>
 	<div id="search_box">
 		<h2 class="ttl01">
-			<i class="fas fa-search"></i> かんたん診断で絞り込む
+			<i class="fas fa-search"></i> あなたにぴったりのカードローンを探す
 		</h2>
 		<div class="timer_in_box">
 			<div class="remaining" style="display: block;"><span>今日中</span>に借りるなら</div>
@@ -218,7 +216,7 @@
 			<div class="over"></div>
 		</div>
 		<div id="searchTOP">
-			<form id="form" action="./beginner_result.php" method="get">
+			<form id="form" action="./beginner_result.html" method="get">
 				<input name="s" type="hidden" />
 				<input type="hidden" name="post_type" value="post">
 				<ul class="select_box"><li class="selected">
@@ -340,7 +338,7 @@
 					$('#select_s3, #select_s4, #select_s5').parent().css('display', 'list-item');
 				} else if ($('#select_s4').siblings('p').text() !== $('#select_s4 option:selected').text()) {
 					$('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
-					$('#select_s3, #select_s4').parent().css('display', 'list-item');
+					$('#select_s3').parent().css('display', 'list-item');
 				}
 			});
 
@@ -513,72 +511,144 @@
 			});
 		</script>
 	</div>
-	<section>
-		
-		<h2 class="v3-section-title">初めてのカードローン 申し込み前に知っておきたい4つのコツ</h2>
-		<div id="flow" class="flow_cont">
-			<div class="toggle-section">
-				<button class="toggle-btn">
-					1. 周囲に知られにくい方法で進めやすい場合があります <span class="icon">＋</span>
-				</button>
-				<div class="toggle-content">
-					<p>本サイトで紹介しているカードローンは、<span>保証人なし</span>で利用可能です。そのため、家族にお金の<span>心配をかけることもありません。</span><span class="notes">※1</span></p>
-				</div>
-			</div>
-
-			<div class="toggle-section">
-				<button class="toggle-btn">
-					2. 初めてのご利用なら最大30日間利息ゼロ！ <span class="icon">＋</span>
-				</button>
-				<div class="toggle-content">
-					<p>本サイトで紹介しているカードローンは「初めてのご利用で最大30日間利息0円」で、<span>初めての方でも安心</span>してご利用可能です。</p>
-				</div>
-			</div>
-
-			<div class="toggle-section">
-				<button class="toggle-btn">
-					3. 毎月1,000円から無理なく返済！ <span class="icon">＋</span>
-				</button>
-				<div class="toggle-content">
-					<p>月々の返済額が1,000円の少額からでも大丈夫なので、<span>自分のペースで無理なく</span>ご返済いただけます。</p>
-				</div>
-			</div>
-
-			<div class="toggle-section">
-				<button class="toggle-btn">
-					4. 最短3分で借入完了！ <span class="icon">＋</span>
-				</button>
-				<div class="toggle-content">
-					<p>スマホと<span>本人確認書類のみ</span>で<span>簡単WEB申込・最短3分</span>で借り入れいただけます。<span class="notes">※2</span> 24時間、土日祝も対応。</p>
-				</div>
-			</div>
-			<div class="notes">
-				<p>
-					※1 ご利用方法や状況によっては、ご家族や勤務先に通知が届く場合がございます。詳細は事前にご確認のうえ、ご利用ください。
-				</p>
-				<p>
-					※2 申し込みのカードローンによっては内容や条件が異なります。
-				</p>
-			</div>
+	<section id="beginner-tips" class="v3-beginner-tips">
+		<h2>初めてのカードローン<br>絶対に知るべき4つのコツ</h2>
+		<div class="v3-beginner-tips-list">
+			<details>
+				<summary>1. 周囲に知られにくい方法を選ぶ！</summary>
+				<p>Web完結やカードレス、郵送物なしの条件を確認すると、周囲に知られにくい形で進めやすくなります。</p>
+			</details>
+			<details>
+				<summary>2. 初めてのご利用なら無利息期間を確認！</summary>
+				<p>初回契約の方向けに、一定期間利息がかからないサービスが用意されている場合があります。</p>
+			</details>
+			<details>
+				<summary>3. 返済額と返済方法を事前に見る！</summary>
+				<p>毎月の返済額やATM・口座振込などの返済方法を先に確認して、無理のない使い方を選びましょう。</p>
+			</details>
+			<details>
+				<summary>4. 借入までの時間は条件で変わる！</summary>
+				<p>申込時間、審査状況、契約手続き、金融機関の対応時間によって借入までの時間は異なります。</p>
+			</details>
 		</div>
-		<script>
-			$(document).ready(function() {
-				$(".toggle-content").hide();
+		<p class="v3-beginner-tips-note">※1 ご利用方法や状況によっては、ご家族や勤務先に通知が届く場合がございます。詳細は事前にご確認のうえ、ご利用ください。</p>
+		<p class="v3-beginner-tips-note">※2 申し込みのカードローンによっては内容や条件が異なります。</p>
+	</section>
+	<section id="beginner-recommend" class="v3-beginner-lender-section">
+		<h2 class="v3-section-title">初めての方におすすめのカードローン</h2>
+		<div class="v3-lender-card-list">
+			<section class="v3-lender-card">
+				<h3><span class="v3-lender-rank">1</span><a target="_blank" href="./redirect.php?item=acom">アコム</a></h3>
+				<p class="v3-lender-point"><span>POINT</span>初めてでもWebから申込条件を確認しやすい定番カードローンです。</p>
+				<div class="v3-lender-main">
+					<a target="_blank" href="./redirect.php?item=acom" class="v3-lender-banner">
+						<img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
+					</a>
+					<ul class="v3-lender-tags">
+						<li>来店不要</li>
+						<li>Web申込可</li>
+						<li>急ぎの借入</li>
+						<li>収入証明不要</li>
+						<li>土日祝可</li>
+						<li>バレない</li>
+					</ul>
+				</div>
+				<dl class="v3-lender-specs">
+					<div><dt>金利</dt><dd>2.4%～17.9%</dd></div>
+					<div><dt>無利息期間</dt><dd>最大30日</dd></div>
+					<div><dt>借入限度額</dt><dd>最大800万円</dd></div>
+					<div><dt>融資時間</dt><dd>最短20分※1</dd></div>
+					<div><dt>審査時間</dt><dd>最短20分※1</dd></div>
+					<div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+				</dl>
+				<a target="_blank" href="./redirect.php?item=acom" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+				<p class="v3-lender-note">【PR】Sponsored by アコム株式会社<br>※1 お申込時間や審査によりご希望に添えない場合がございます。<br>※アコムでのご契約がはじめてのお客さまはご契約の翌日から30日間金利0円。<br>※一例であり、結果を保証するものではありません。</p>
+			</section>
 
-				$(".toggle-btn").on("click", function() {
-					var content = $(this).next(".toggle-content");
-					var icon = $(this).find(".icon");
+			<section class="v3-lender-card">
+				<h3><span class="v3-lender-rank">2</span><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3>
+				<p class="v3-lender-point"><span>POINT</span>郵送物なし＆カードレスで進めたい方におすすめです。</p>
+				<div class="v3-lender-main">
+					<a target="_blank" href="./redirect.php?item=promise" class="v3-lender-banner">
+						<img loading="lazy" height="250" width="300" src="images/banner_promise.jpg" alt="プロミス公式サイトへ">
+					</a>
+					<ul class="v3-lender-tags">
+						<li>来店不要</li>
+						<li>Web申込可</li>
+						<li>カードレス</li>
+						<li>郵送物なし</li>
+						<li>土日祝可</li>
+						<li>コンビニ対応</li>
+					</ul>
+				</div>
+				<dl class="v3-lender-specs">
+					<div><dt>金利</dt><dd>2.5%～18.0%</dd></div>
+					<div><dt>無利息期間</dt><dd>30日</dd></div>
+					<div><dt>借入限度額</dt><dd>最大500万円</dd></div>
+					<div><dt>融資時間</dt><dd>最短3分</dd></div>
+					<div><dt>審査時間</dt><dd>最短3分</dd></div>
+					<div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+				</dl>
+				<a target="_blank" href="./redirect.php?item=promise" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+				<p class="v3-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※お申込時間や審査によりご希望に添えない場合がございます。<br>※無利息期間30日を適用する場合は、メールアドレス登録とWeb明細利用の登録が必要です。<br>※一例であり、結果を保証するものではありません。</p>
+			</section>
 
-					content.slideToggle(300, function() {
-						if (content.is(":visible")) {
-							icon.text("−");
-						} else {
-							icon.text("＋");
-						}
-					});
-				});
-			});
-		</script>
+			<section class="v3-lender-card">
+				<h3><span class="v3-lender-rank">3</span><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3>
+				<p class="v3-lender-point"><span>POINT</span>1秒診断で、申込前に目安をすばやく確認できます。</p>
+				<div class="v3-lender-main">
+					<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-banner">
+						<img loading="lazy" height="250" width="300" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ">
+					</a>
+					<ul class="v3-lender-tags">
+						<li>来店不要</li>
+						<li>Web申込可</li>
+						<li>急ぎの借入</li>
+						<li>収入証明不要</li>
+						<li>土日祝可</li>
+						<li>バレない</li>
+					</ul>
+				</div>
+				<dl class="v3-lender-specs">
+					<div><dt>金利</dt><dd>3.0%～18.0%</dd></div>
+					<div><dt>無利息期間</dt><dd>最大30日</dd></div>
+					<div><dt>借入限度額</dt><dd>最大800万円</dd></div>
+					<div><dt>融資時間</dt><dd>WEBで最短14分※</dd></div>
+					<div><dt>審査時間</dt><dd>WEBで最短14分※</dd></div>
+					<div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+				</dl>
+				<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+				<p class="v3-lender-note">【PR】Sponsored by アイフル株式会社<br>※お申込時間や審査状況によりご希望に添えない場合があります。<br>※システムメンテナンスの時間帯や一部金融機関を除きます。<br>※一例であり、結果を保証するものではありません。</p>
+			</section>
+
+			<section class="v3-lender-card">
+				<h3><span class="v3-lender-rank">4</span><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3>
+				<p class="v3-lender-point"><span>POINT</span>WEB完結で、周囲に知られにくく進めたい方におすすめです。</p>
+				<div class="v3-lender-main">
+					<a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-banner">
+						<img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
+					</a>
+					<ul class="v3-lender-tags">
+						<li>来店不要</li>
+						<li>Web申込可</li>
+						<li>カードレス</li>
+						<li>郵送物なし</li>
+						<li>土日祝可</li>
+						<li>バレない</li>
+					</ul>
+				</div>
+				<dl class="v3-lender-specs">
+					<div><dt>金利</dt><dd>3.0%～18.0%</dd></div>
+					<div><dt>無利息期間</dt><dd>なし</dd></div>
+					<div><dt>借入限度額</dt><dd>最大800万円</dd></div>
+					<div><dt>融資時間</dt><dd>最短15分※</dd></div>
+					<div><dt>審査時間</dt><dd>10秒簡易審査</dd></div>
+					<div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+				</dl>
+				<a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+				<p class="v3-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br>※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。<br>※一例であり、結果を保証するものではありません。</p>
+			</section>
+		</div>
 	</section>
 
 	<div class="ht40"></div>
@@ -997,46 +1067,64 @@
     </div>
 </section>	<div class="ht40"></div>
 	
-	    <section>
-        <div id="ranking2" class="topbox">
-            <h2> 結局どれがいいかわからない・・・ <BR>迷ったらコレ！ <BR>
+	    <section class="v3-beginner-rank-section">
+        <div id="ranking2" class="topbox v3-beginner-select-ranking">
+            <h2>結局どれがいいかわからない・・・<br>迷ったらコレ！<br>
                 <span>-各ポイント別おすすめカードローン早見表-</span>
             </h2>
-            <div id="tab_2">
-                <p class="active">金利</p>
-                <p>スピード</p>
-                <p>郵送物<span class="caution">※</span></p>
-                <p>人気</p>
+            <div id="tab_2" class="v3-beginner-rank-tabs" role="tablist" aria-label="比較ポイント">
+                <button type="button" class="active" data-beginner-rank-tab="rate" aria-selected="true">金利</button>
+                <button type="button" data-beginner-rank-tab="speed" aria-selected="false">スピード</button>
+                <button type="button" data-beginner-rank-tab="privacy" aria-selected="false">バレにくさ<span class="caution">※</span></button>
+                <button type="button" data-beginner-rank-tab="popular" aria-selected="false">人気</button>
             </div>
-            <div class="active">
-                <div class="ranking2_container"><span class="ranking2_content active">
-                <p class="crown">アコム</p>
-                <a target="_blank" href="./redirect.php?item=acom">
-                    <p>詳細はこちら</p>
-                </a>
-              </span><span class="ranking2_content active">
-                <p class="crown2">SMBCモビット</p>
-                <a target="_blank" href="./redirect.php?item=mobit">
-                    <p>詳細はこちら</p>
-                </a>
-              </span><span class="ranking2_content active">
-                <p class="crown3">プロミス</p>
-                <a target="_blank" href="./redirect.php?item=promise">
-                    <p>詳細はこちら</p>
-                </a>
-              </span></div>            </div>
-
+            <div class="v3-beginner-rank-panels">
+                <div class="ranking2_container active" data-beginner-rank-panel="rate">
+                    <span class="ranking2_content active"><p class="crown">アコム</p><a target="_blank" href="./redirect.php?item=acom"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown2">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown3">プロミス</p><a target="_blank" href="./redirect.php?item=promise"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown4">アイフル</p><a target="_blank" href="./redirect.php?item=aiful"><p>詳細はこちら</p></a></span>
+                </div>
+                <div class="ranking2_container" data-beginner-rank-panel="speed">
+                    <span class="ranking2_content active"><p class="crown">プロミス</p><a target="_blank" href="./redirect.php?item=promise"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown2">アイフル</p><a target="_blank" href="./redirect.php?item=aiful"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown3">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown4">アコム</p><a target="_blank" href="./redirect.php?item=acom"><p>詳細はこちら</p></a></span>
+                </div>
+                <div class="ranking2_container" data-beginner-rank-panel="privacy">
+                    <span class="ranking2_content active"><p class="crown">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown2">アコム</p><a target="_blank" href="./redirect.php?item=acom"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown3">プロミス</p><a target="_blank" href="./redirect.php?item=promise"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown4">アイフル</p><a target="_blank" href="./redirect.php?item=aiful"><p>詳細はこちら</p></a></span>
+                </div>
+                <div class="ranking2_container" data-beginner-rank-panel="popular">
+                    <span class="ranking2_content active"><p class="crown">アコム</p><a target="_blank" href="./redirect.php?item=acom"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown2">プロミス</p><a target="_blank" href="./redirect.php?item=promise"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown3">アイフル</p><a target="_blank" href="./redirect.php?item=aiful"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown4">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit"><p>詳細はこちら</p></a></span>
+                </div>
+            </div>
         </div>
         <script>
-            $(document).ready(function() {
-                $('#tab_2 p').on('click', function() {
-                    $('#tab_2 p').removeClass('active');
-                    $(this).addClass('active'); // クリックされたタブにクラスを追加
-                    $('#ranking2 > div:not(#tab_2)').removeClass('active');
-                    const index = $(this).index();
-                    $('#ranking2 > div:not(#tab_2)').eq(index).addClass('active');
+            (function() {
+                var root = document.getElementById('ranking2');
+                if (!root) return;
+                var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-beginner-rank-tab]'));
+                var panels = Array.prototype.slice.call(root.querySelectorAll('[data-beginner-rank-panel]'));
+                tabs.forEach(function(tab) {
+                    tab.addEventListener('click', function() {
+                        var target = tab.getAttribute('data-beginner-rank-tab');
+                        tabs.forEach(function(item) {
+                            var active = item === tab;
+                            item.classList.toggle('active', active);
+                            item.setAttribute('aria-selected', active ? 'true' : 'false');
+                        });
+                        panels.forEach(function(panel) {
+                            panel.classList.toggle('active', panel.getAttribute('data-beginner-rank-panel') === target);
+                        });
+                    });
                 });
-            });
+            })();
         </script>
         <div class="remarksbox" style="padding-top: 10px;">
             <p style="font-size:75%; color:#999; padding:10px"> ※ご利用方法や状況によっては、ご家族や勤務先に通知が届く場合がございます。詳細は事前にご確認のうえ、ご利用ください。
@@ -1527,7 +1615,10 @@
                     if (!select || !label) return;
                     var value = (select.value || '').trim();
                     var text = (label.textContent || '').trim();
-                    if (!value && (text === '未回答' || text === 'なし' || text === 'こだわらない' || text === '')) {
+                    if (!value && (select.id === 'select_s1' || select.id === 'select_s2')) {
+                        label.textContent = 'こだわらない';
+                        text = label.textContent;
+                    } else if (!value && (text === '未回答' || text === 'なし' || text === 'こだわらない' || text === '')) {
                         label.textContent = 'タップして選択 ▼';
                         text = label.textContent;
                     }

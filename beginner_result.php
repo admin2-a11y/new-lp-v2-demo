@@ -23,14 +23,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
-		<title>カードローン診断結果 | 初心者向け | マネーローンナビ</title>
+		<title>マネーローンナビ</title>
 		<meta name="description" content="はじめてカードローンを検討する方の診断結果ページです。条件に近い候補を比較し、申込前に特徴を確認できます。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-		<link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
+		<link rel="shortcut icon" href="./favicon.ico?v=mnavi9" type="image/vnd.microsoft.icon">
 		
 		<link rel="stylesheet" href="./css/style-green.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="./css/animate.css" media="all">
@@ -67,8 +67,8 @@
 				background-attachment: scroll;
 			}
 		</style>
-		<link rel="icon" href="./images/icon-green.png" />
-		<link rel="apple-touch-icon" href="./images/icon-green.png" />
+		<link rel="icon" href="./images/icon-green.png?v=mnavi9" />
+		<link rel="apple-touch-icon" href="./images/icon-green.png?v=mnavi9" />
 		<meta name='robots' content='max-image-preview:large' />
 		<link rel='dns-prefetch' href='https://use.fontawesome.com/' />
 		

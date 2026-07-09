@@ -23,14 +23,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
-		<title>媒体運営者情報 | おすすめカードローン マネーローンナビ</title>
+		<title>マネーローンナビ</title>
 		<meta name="description" content="マネーローンナビ の媒体運営者情報、所在地、事業内容、お問い合わせ先を掲載しています。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-		<link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
+		<link rel="shortcut icon" href="./favicon.ico?v=mnavi9" type="image/vnd.microsoft.icon">
 		
 		<link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="./css/animate.css" media="all">
@@ -67,8 +67,8 @@
 				background-attachment: scroll;
 			}
 		</style>
-		<link rel="icon" href="./images/icon.png" />
-		<link rel="apple-touch-icon" href="./images/icon.png" />
+		<link rel="icon" href="./images/icon.png?v=mnavi9" />
+		<link rel="apple-touch-icon" href="./images/icon.png?v=mnavi9" />
 		<meta name='robots' content='max-image-preview:large' />
 		<link rel='dns-prefetch' href='https://use.fontawesome.com/' />
 		
