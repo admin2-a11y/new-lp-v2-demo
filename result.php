@@ -179,7 +179,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3.css?v=mnavi90" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=mnavi91" type="text/css" media="screen">
 	</head>
 <body class="experience search-results">
     
@@ -776,10 +776,10 @@
             </p>
         </div>
     </section>
-            <h2 class="v3-research-title">条件を変えてもう一度診断</h2>
+            <h2 class="v3-research-title">再度条件を変更して探す</h2>
             <div id="search_box">
                 <h2 class="ttl01">
-                    <i class="fas fa-search"></i> 条件を変更する
+                    <i class="fas fa-search"></i> 再度条件を変更して探す
                 </h2>
                 <div id="searchTOP">
                     <form id="form" action="./result.php" method="get">
@@ -1261,7 +1261,7 @@
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js?v=pages-demo-4" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=pages-demo-5" defer></script>
 </body>
 
 <script src="./js/timer.js" defer></script>

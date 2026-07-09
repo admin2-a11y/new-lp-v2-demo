@@ -6975,6 +6975,13 @@ body.search-results .v3-result-lender-cta::after {
   color: #f04b1f !important;
 }
 
+/* ==== Final guide navigator removal ==== */
+.v3-entry-guide,
+.v3-chat-guide,
+.v3-section-character {
+  display: none !important;
+}
+
 /* ==== Final single-line search heading ==== */
 #search_box h2.ttl01 {
   display: flex !important;
