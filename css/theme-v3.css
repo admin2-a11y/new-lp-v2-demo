@@ -6971,6 +6971,16 @@ html body.experience #recommend + #follow-banner {
   }
 }
 
+/* ==== Final result duplicate cleanup ==== */
+body.search-results #search_page > .v3-result-lenders + .ht40,
+body.search-results #search_page > .v3-result-lenders + .ht40 + .topbox.case,
+body.search-results #search_page > .v3-result-lenders + .ht40 + .topbox.case + .topbox.case,
+body.search-results #search_page > .v3-result-lenders + .ht40 + .topbox.case + .topbox.case + .topbox.case,
+body.search-results #search_page > .v3-result-lenders + .ht40 + .topbox.case + .topbox.case + .topbox.case + section,
+body.search-results #search_page > .v3-result-lenders + .ht40 + .topbox.case + .topbox.case + .topbox.case + section + section {
+  display: none !important;
+}
+
 /* ==== Final CTA orange override ==== */
 .hikaku_box .v3-tab-compare-cta,
 #hikaku .v3-tab-compare-cta,
