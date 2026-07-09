@@ -12,7 +12,12 @@ function countdownTimer_page_timer() {
 	let addZero = function (n) { return ('0' + n).slice(-2); }
 	let elem = document.getElementById('timerTop');
 	if (!elem) return; // 見つからない場合、処理を終了
-	if (nowDate >= startDate_page_timer) {
+	let timerWrap = elem.closest('.timer_in_box');
+	if (nowDate >= startDate_page_timer && nowDate <= endDate_page_timer) {
+		if (timerWrap) {
+			timerWrap.classList.remove('is-countdown-hidden');
+			timerWrap.style.removeProperty('display');
+		}
 		period = Math.max(0, period);
 		let hour = Math.floor(period / (1000 * 60 * 60));
 		period -= (hour * (1000 * 60 * 60));
@@ -35,6 +40,10 @@ function countdownTimer_page_timer() {
 		elem.innerHTML = str + insert;
 		setTimeout(countdownTimer_page_timer, 10);
 	} else {
+		if (timerWrap) {
+			timerWrap.classList.add('is-countdown-hidden');
+			timerWrap.style.setProperty('display', 'none', 'important');
+		}
 		elem.parentNode.previousElementSibling.style.display = 'none';
 		elem.parentNode.style.display = 'none';
 		elem.parentNode.parentNode.lastElementChild.style.display = 'flex';

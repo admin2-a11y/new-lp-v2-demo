@@ -6166,6 +6166,7 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
 }
 
 .v3-result-lender-cta {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6181,6 +6182,7 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   line-height: 1.25;
   text-align: center;
   text-decoration: none !important;
+  animation: v3-result-cta-nudge 1.8s ease-in-out infinite;
 }
 
 .v3-result-lender-cta::after {
@@ -6195,6 +6197,26 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   background: #fff;
   color: #ed101c;
   line-height: 1;
+}
+
+@keyframes v3-result-cta-nudge {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: inset 0 -4px 0 rgba(125, 0, 0, .35);
+  }
+  45% {
+    transform: translateY(-2px);
+    box-shadow: inset 0 -4px 0 rgba(125, 0, 0, .35), 0 7px 14px rgba(237, 16, 28, .22);
+  }
+  62% {
+    transform: translateY(1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v3-result-lender-cta {
+    animation: none !important;
+  }
 }
 
 .v3-result-lender-note {
@@ -6989,6 +7011,11 @@ html body.experience #recommend + #follow-banner {
 .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
   min-width: 24px !important;
   font-size: 19px !important;
+}
+
+#search_box .timer_in_box.is-countdown-hidden,
+.timer_in_box.is-countdown-hidden:has(#timerTop) {
+  display: none !important;
 }
 
 .timer_in_box:has(#timerTop) #timerTop em {
