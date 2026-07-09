@@ -4453,6 +4453,18 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   line-height: 1 !important;
 }
 
+.timer_in_box .timerbox span.cs {
+  min-width: 24px !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+  background: #191919 !important;
+  color: #fff100 !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+}
+
 .timer_in_box .timerbox em,
 .timer_in_box .timerbox b {
   color: #5a320f !important;
@@ -7355,6 +7367,14 @@ body.search-results .v3-result-lender-cta::after {
   line-height: 1.1;
 }
 
+.v3-result-deadline-timer .cs {
+  min-width: 26px !important;
+  background: #e60012 !important;
+  color: #fff100 !important;
+  font-size: 17px !important;
+  transform: translateY(-1px);
+}
+
 .v3-result-deadline-timer em {
   color: #191919;
   font-size: 10px;
@@ -7389,6 +7409,11 @@ body.search-results .v3-result-lender-cta::after {
   .v3-result-deadline-timer span:not(.end) {
     min-width: 28px;
     font-size: 16px;
+  }
+
+  .v3-result-deadline-timer .cs {
+    min-width: 30px !important;
+    font-size: 18px !important;
   }
 }
 

@@ -68,10 +68,12 @@ function countdownTimer(elem) {
 			let minutes = Math.floor(period / (1000 * 60));
 			period -= (minutes * (1000 * 60));
 			let second = Math.floor(period / 1000);
+			period -= (second * 1000);
+			let centisecond = Math.floor(period / 10);
 
 			let insert = `残り<span>${addZero(hour)}</span>時間
                           <span>${addZero(minutes)}</span>分
-                          <span>${addZero(second)}</span>秒`;
+                          <span>${addZero(second)}</span>秒<span class="cs">${addZero(centisecond)}</span>`;
 
 			let str = '<span>本日中</span>に借入をする場合';
 			elem.parentNode.previousElementSibling.style.display = 'block';
@@ -80,7 +82,7 @@ function countdownTimer(elem) {
 			elem.parentNode.previousElementSibling.innerHTML = str;
 			elem.innerHTML = insert;
 
-			setTimeout(updateTimer, 1000);
+			setTimeout(updateTimer, 10);
 		} else {
 			elem.parentNode.previousElementSibling.style.display = 'block';
 			elem.parentNode.previousElementSibling.innerHTML = '<span>本日中</span>に借入をする場合';
@@ -118,10 +120,13 @@ function initV3SamedayDeadlineTimers() {
 				let minutes = Math.floor(period / (1000 * 60));
 				period -= (minutes * (1000 * 60));
 				let second = Math.floor(period / 1000);
+				period -= (second * 1000);
+				let centisecond = Math.floor(period / 10);
 				timer.innerHTML = '残り <span class="h">' + addZero(hour) + '</span><em>時間</em>' +
 					'<span class="m">' + addZero(minutes) + '</span><em>分</em>' +
-					'<span class="s">' + addZero(second) + '</span><em>秒</em>';
-				setTimeout(update, 1000);
+					'<span class="s">' + addZero(second) + '</span><em>秒</em>' +
+					'<span class="cs">' + addZero(centisecond) + '</span>';
+				setTimeout(update, 10);
 			} else {
 				box.classList.add('is-ended');
 				timer.innerHTML = '<span class="end">申込は24時間対応OK</span>';
