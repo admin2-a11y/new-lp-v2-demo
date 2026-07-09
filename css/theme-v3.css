@@ -7293,6 +7293,132 @@ body.search-results .v3-result-lender-cta::after {
   margin-bottom: 12px !important;
 }
 
+/* ==== Final desktop first-view / survey layout ==== */
+@media screen and (min-width: 769px) {
+  body.experience #mainvisual.v3-hero.v3-hero-experience {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 18px 24px 16px !important;
+    background: #f6fbff !important;
+    box-sizing: border-box !important;
+  }
+
+  body.experience .v3-hero-experience .v3-hero-inner {
+    width: min(100%, 980px) !important;
+    max-width: 980px !important;
+    margin: 0 auto !important;
+  }
+
+  body.experience .v3-hero-experience .v3-hero-media {
+    width: 100% !important;
+    max-width: 980px !important;
+    margin: 0 auto !important;
+    border-radius: 0 0 10px 10px !important;
+    background: #fff !important;
+  }
+
+  body.experience .v3-hero-experience .v3-hero-media img {
+    width: 100% !important;
+    max-width: 980px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  body.experience #mainvisual.v3-hero.v3-hero-experience + #content2 + #search_box,
+  body.experience #search_box {
+    width: min(calc(100% - 48px), 720px) !important;
+    max-width: 720px !important;
+    margin: 18px auto 26px !important;
+    padding: 18px 22px 20px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.experience #search_box h2.ttl01 {
+    margin-bottom: 12px !important;
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+  }
+
+  body.experience #search_box .timer_in_box:has(#timerTop) {
+    max-width: 560px !important;
+    margin: 0 auto 14px !important;
+  }
+
+  body.experience #search_box #searchTOP form > h3 {
+    max-width: 620px !important;
+    margin: 10px auto 10px !important;
+    font-size: 15px !important;
+  }
+
+  body.experience #search_box .rentcheck {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    max-width: 620px !important;
+    margin: 0 auto 10px !important;
+  }
+
+  body.experience #search_box ul.select_box {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    max-width: 620px !important;
+    margin: 10px auto 0 !important;
+  }
+
+  body.experience #search_box ul.select_box > li {
+    min-height: 54px !important;
+    padding: 9px 42px 9px 14px !important;
+  }
+
+  body.experience #search_box ul.select_box label {
+    font-size: 14px !important;
+  }
+
+  body.experience #search_box ul.select_box p,
+  body.experience #search_box ul.select_box .slider_value {
+    font-size: 14px !important;
+  }
+
+  body.experience #search_box .rentbtn {
+    max-width: 420px !important;
+    margin: 16px auto 0 !important;
+  }
+
+  body.experience .select_modal_body {
+    width: min(calc(100% - 48px), 760px) !important;
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.experience .select_modal_body .v3-entry-modal-head {
+    display: flex !important;
+    justify-content: center !important;
+    background: #fff !important;
+  }
+
+  body.experience .select_modal_body .v3-entry-modal-banner {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  body.experience .select_modal_body .select_modal_inner {
+    max-width: 620px !important;
+    margin: 0 auto !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
 #flow .v3-sameday-flow-image figcaption {
   display: block !important;
   margin: 8px 6px 12px !important;
