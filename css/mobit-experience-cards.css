@@ -1,0 +1,25 @@
+/* Ensure the experienced recommendation cards remain visible after the legacy layout is removed. */
+body.experience #recommend {
+  display: block !important;
+  width: min(calc(100% - 24px), 760px) !important;
+  margin: 24px auto 0 !important;
+  box-sizing: border-box !important;
+}
+
+body.experience #recommend .v3-result-lender-list,
+body.experience #recommend .v3-recommend-result-list,
+body.experience #recommend .v3-result-lender-card {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+body.experience #recommend .v3-result-lender-card + .v3-result-lender-card {
+  margin-top: 18px !important;
+}
+
+@media screen and (max-width: 480px) {
+  body.experience #recommend {
+    width: min(calc(100% - 24px), 430px) !important;
+  }
+}
