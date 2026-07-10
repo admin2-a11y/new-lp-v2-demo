@@ -23,3 +23,23 @@ body.experience #recommend .v3-result-lender-card + .v3-result-lender-card {
     width: min(calc(100% - 24px), 430px) !important;
   }
 }
+
+
+/* Keep the full flow illustration directly after the three experienced-user cards. */
+body.experience #recommend + #flow {
+  display: block !important;
+  width: min(calc(100% - 24px), 760px) !important;
+  margin: 18px auto 14px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+body.experience #recommend + #flow .v3-sameday-flow-image,
+body.experience #recommend + #flow .v3-sameday-flow-image img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  height: auto !important;
+  margin: 0 auto !important;
+}

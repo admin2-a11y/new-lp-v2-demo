@@ -574,3 +574,20 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
     box-sizing: border-box !important;
   }
 }
+
+
+/* Beginner flow: stop after the two STEP3 panels and omit the completion/tip panels. */
+.beginner .v3-beginner-fastest-flow-image {
+  position: relative !important;
+  height: 0 !important;
+  padding: 0 0 97.04% !important;
+  overflow: hidden !important;
+}
+
+.beginner .v3-beginner-fastest-flow-image img {
+  position: absolute !important;
+  inset: 0 auto auto 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+}
