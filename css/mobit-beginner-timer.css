@@ -154,6 +154,126 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   line-height: 1.55 !important;
 }
 
+.beginner .v3-beginner-retry-survey form {
+  display: grid !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.beginner .v3-beginner-retry-question {
+  padding: 10px !important;
+  border: 1px solid #b9dfd2 !important;
+  background: #fff !important;
+}
+
+.beginner .v3-beginner-retry-question > label,
+.beginner .v3-beginner-retry-question legend {
+  display: block !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  color: #164f42 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  line-height: 1.35 !important;
+}
+
+.beginner .v3-beginner-retry-question fieldset {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.beginner .v3-beginner-retry-question legend small {
+  color: #667c75 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+}
+
+.beginner .v3-beginner-retry-options {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 6px !important;
+}
+
+.beginner .v3-beginner-retry-options label {
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.beginner .v3-beginner-retry-options input {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.beginner .v3-beginner-retry-options span {
+  display: flex !important;
+  min-height: 34px !important;
+  padding: 5px 4px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid #cfe3db !important;
+  border-radius: 4px !important;
+  background: #f8fcfa !important;
+  color: #21463c !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+}
+
+.beginner .v3-beginner-retry-options input:checked + span {
+  border-color: #0b8d70 !important;
+  background: #0b8d70 !important;
+  color: #fff !important;
+}
+
+.beginner .v3-beginner-retry-select {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 1.15fr !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.beginner .v3-beginner-retry-select label {
+  margin: 0 !important;
+}
+
+.beginner .v3-beginner-retry-select select {
+  width: 100% !important;
+  min-height: 40px !important;
+  padding: 7px 8px !important;
+  border: 1px solid #9acbbb !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+  color: #173f35 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+.beginner .v3-beginner-retry-survey button {
+  display: flex !important;
+  width: min(100%, 330px) !important;
+  min-height: 52px !important;
+  margin: 3px auto 0 !important;
+  padding: 10px 18px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border: 2px solid #08775e !important;
+  border-radius: 999px !important;
+  background: #0b8d70 !important;
+  box-shadow: 0 4px 0 #075b49 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+}
+
 .beginner .v3-beginner-retry-survey a {
   display: flex !important;
   width: min(100%, 330px) !important;
@@ -191,6 +311,19 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   }
 
   .beginner .v3-beginner-retry-survey a {
+    font-size: 14px !important;
+  }
+
+  .beginner .v3-beginner-retry-question > label,
+  .beginner .v3-beginner-retry-question legend {
+    font-size: 13px !important;
+  }
+
+  .beginner .v3-beginner-retry-options span {
+    font-size: 10px !important;
+  }
+
+  .beginner .v3-beginner-retry-survey button {
     font-size: 14px !important;
   }
 }

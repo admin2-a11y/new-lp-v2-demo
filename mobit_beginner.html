@@ -1332,7 +1332,45 @@
 	<section class="v3-beginner-retry-survey" aria-labelledby="retry-survey-title">
 		<h2 id="retry-survey-title">条件を変えてもう一度診断</h2>
 		<p>希望条件を選び直して、おすすめのカードローンを確認できます。</p>
-		<a href="./mobit_beginner.html#search_box"><i class="fas fa-redo-alt" aria-hidden="true"></i>もう一度アンケートに回答する</a>
+		<form action="./mobit_beginner_result.html" method="get">
+			<input name="s" type="hidden">
+			<input name="post_type" type="hidden" value="post">
+			<input name="order_by_recommended_dis_2" type="hidden" value="ASC">
+			<div class="v3-beginner-retry-question">
+				<fieldset>
+					<legend>Q1. 現在借り入れ中の会社は？ <small>複数選択可</small></legend>
+					<div class="v3-beginner-retry-options">
+						<label><input type="checkbox" name="cat[]" value="a1_1"><span>アコム</span></label>
+						<label><input type="checkbox" name="cat[]" value="a1_2"><span>プロミス</span></label>
+						<label><input type="checkbox" name="cat[]" value="a1_0"><span>アイフル</span></label>
+						<label><input type="checkbox" name="cat[]" value="a1_3"><span>SMBCモビット</span></label>
+						<label><input type="checkbox" name="cat[]" value="a1_4"><span>レイク</span></label>
+						<label><input type="checkbox" name="cat[]" value="a1_11"><span>その他</span></label>
+					</div>
+				</fieldset>
+			</div>
+			<div class="v3-beginner-retry-question v3-beginner-retry-select">
+				<label for="retry_select_s2">Q2. いつまでに借りたい？</label>
+				<select name="loan_speed_dis" id="retry_select_s2">
+					<option value="">こだわらない</option>
+					<option value="a3_1">1時間以内に借りたい</option>
+					<option value="a3_2">当日中に借りたい</option>
+					<option value="a3_3">3日以内に借りたい</option>
+					<option value="a3_4">1週間以内に借りたい</option>
+				</select>
+			</div>
+			<div class="v3-beginner-retry-question v3-beginner-retry-select">
+				<label for="retry_select_s1">Q3. いくら借りたい？</label>
+				<select name="borrow_limit_dis" id="retry_select_s1">
+					<option value="">こだわらない</option>
+					<option value="a2_1">10万円以下</option>
+					<option value="a2_2">11〜50万円</option>
+					<option value="a2_3">51万〜100万円</option>
+					<option value="a2_4">101万円以上</option>
+				</select>
+			</div>
+			<button type="submit"><i class="fas fa-search" aria-hidden="true"></i>この条件で再診断する</button>
+		</form>
 	</section>
 	<div class="osusume_btn_area">
 		<a href="#top">トップへもどる</a>
