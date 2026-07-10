@@ -19,8 +19,36 @@
         var now = new Date();
         document.querySelectorAll('[data-estimate-minutes]').forEach(function (node) {
             var minutes = Number(node.getAttribute('data-estimate-minutes') || '60');
+            var cutoffHour = Number(node.getAttribute('data-cutoff-hour') || '21');
             var estimated = new Date(now.getTime() + minutes * 60 * 1000);
-            node.textContent = '最短' + estimated.getHours() + '時台に借入完了も';
+            var cutoff = new Date(now.getTime());
+            cutoff.setHours(cutoffHour, 0, 0, 0);
+
+            if (now >= cutoff || estimated >= cutoff) {
+                node.textContent = '受付時間により翌日以降';
+                node.setAttribute('data-after-cutoff', 'true');
+                return;
+            }
+
+            node.removeAttribute('data-after-cutoff');
+            node.textContent = '最短' +
+                String(estimated.getHours()).padStart(2, '0') + '時' +
+                String(estimated.getMinutes()).padStart(2, '0') + '分ごろに借入完了も';
+        });
+    }
+
+    function enableStaticDemoRouting() {
+        var isStaticDemo = window.location.hostname.indexOf('github.io') !== -1 ||
+            window.location.hostname === '127.0.0.1' ||
+            window.location.hostname === 'localhost' ||
+            window.location.protocol === 'file:';
+
+        if (!isStaticDemo) {
+            return;
+        }
+
+        document.querySelectorAll('a[href*="redirect.php"]').forEach(function (link) {
+            link.setAttribute('href', (link.getAttribute('href') || '').replace('redirect.php', 'redirect.html'));
         });
     }
 
@@ -78,7 +106,9 @@
     document.addEventListener('DOMContentLoaded', function () {
         updateSelectLabels();
         updateEstimateTimes();
+        window.setInterval(updateEstimateTimes, 30000);
         renderResultChips();
         protectLegacyModalShell();
+        enableStaticDemoRouting();
     });
 })();

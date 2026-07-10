@@ -7,8 +7,8 @@
     <link rel="shortcut icon" href="./favicon.ico?v=mnavi9" type="image/vnd.microsoft.icon">
     <link rel="icon" href="./images/icon-green.png?v=mobit1">
     <link rel="apple-touch-icon" href="./images/icon-green.png?v=mobit1">
-    <link rel="stylesheet" href="./css/theme-mobit.css">
-    <script src="./js/mobit.js" defer></script>
+    <link rel="stylesheet" href="./css/theme-mobit.css?v=mobit4">
+    <script src="./js/mobit.js?v=mobit4" defer></script>
     <title>診断結果 | SMBCモビット推しカードローン比較</title>
     <meta name="description" content="診断条件に近いカードローン候補を、SMBCモビットを主推奨に比較できます。">
 </head>
@@ -51,10 +51,83 @@
         <section class="mobit-section mobit-compare" aria-labelledby="compare-title">
             <div class="mobit-section-head">
                 <p class="mobit-kicker">比較表</p>
-                <h2 id="compare-title">モビットを1位に、主要カードローンを横断比較</h2>
-                <p>金利、融資時間、審査時間、Web完結、郵送物、電話連絡、無利息期間を同じ軸で確認できます。</p>
+                <h2 id="compare-title">おすすめカードローンを徹底比較</h2>
+                <p>融資時間、金利、即日融資、無利息期間、必要書類、返済額の目安を同じ軸で確認できます。</p>
             </div>
-            <div class="mobit-compare-grid" role="list">
+            <div class="mobit-table-frame">
+                <table class="mobit-compare-table">
+                    <caption>SMBCモビット、アイフル、アコムの主な条件比較</caption>
+                    <colgroup>
+                        <col class="mobit-compare-label">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">比較項目</th>
+                            <th scope="col" class="is-pick">
+                                <span class="mobit-table-badge">おすすめ</span>
+                                <img src="./images/banner_mobit.jpg" width="400" height="333" alt="">
+                                <strong>SMBCモビット</strong>
+                            </th>
+                            <th scope="col">
+                                <img src="./images/banner_aiful.jpg" width="400" height="333" alt="">
+                                <strong>アイフル</strong>
+                            </th>
+                            <th scope="col">
+                                <img src="./images/banner_acom.jpg" width="400" height="333" alt="">
+                                <strong>アコム</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">融資時間</th>
+                            <td class="is-pick"><span class="mobit-rating is-double" aria-label="特におすすめ"></span><strong>最短15分<small>※1</small></strong></td>
+                            <td><span class="mobit-rating is-double" aria-label="特におすすめ"></span><strong>Webで<br>最短14分<small>※2</small></strong></td>
+                            <td><span class="mobit-rating is-circle" aria-label="おすすめ"></span><strong>最短20分<small>※3</small></strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">金利</th>
+                            <td class="is-pick"><strong>3.0%〜<br>18.0%</strong></td>
+                            <td><strong>3.0%〜<br>18.0%</strong></td>
+                            <td><strong>2.4%〜<br>17.9%</strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">即日融資</th>
+                            <td class="is-pick"><span class="mobit-rating is-circle" aria-hidden="true"></span><strong>可能</strong></td>
+                            <td><span class="mobit-rating is-circle" aria-hidden="true"></span><strong>可能</strong></td>
+                            <td><span class="mobit-rating is-circle" aria-hidden="true"></span><strong>可能</strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">無利息期間</th>
+                            <td class="is-pick"><strong>なし</strong></td>
+                            <td><strong>最大30日</strong></td>
+                            <td><strong>30日<small>※4</small></strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">必要書類</th>
+                            <td class="is-pick"><strong>身分証</strong></td>
+                            <td><strong>身分証</strong></td>
+                            <td><strong>身分証<small>※5</small></strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">返済</th>
+                            <td class="is-pick"><strong>月1,000円〜</strong></td>
+                            <td><strong>月4,000円〜</strong></td>
+                            <td><strong>月1,000円〜</strong></td>
+                        </tr>
+                        <tr class="mobit-table-cta-row">
+                            <th scope="row">公式HP</th>
+                            <td class="is-pick"><a href="./redirect.php?item=mobit" target="_blank" rel="noopener">詳細</a></td>
+                            <td><a href="./redirect.php?item=aiful" target="_blank" rel="noopener">詳細</a></td>
+                            <td><a href="./redirect.php?item=acom" target="_blank" rel="noopener">詳細</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mobit-compare-grid" role="list" hidden aria-hidden="true">
                 <article class="mobit-compare-card is-recommended" role="listitem">
                     <div class="mobit-rank">1位 推奨</div>
                     <h3>SMBCモビット</h3>
@@ -112,7 +185,7 @@
                     <a class="mobit-cta mobit-cta-secondary" href="./redirect.php?item=promise" target="_blank" rel="noopener">プロミスを確認する</a>
                 </article>
             </div>
-            <p class="mobit-note">※申込時間、審査状況、契約手続き、金融機関の受付時間などにより、表示の時間どおりにならない場合があります。各サービスの条件は申込前に公式サイトでご確認ください。</p>
+            <p class="mobit-note mobit-compare-note">※1 申込内容や審査状況により異なります。※2 お申込時間や審査状況によりご希望にそえない場合があります。※3 お申込時間や審査によりご希望に添えない場合があります。※4 アコムでの契約がはじめての方。※5 契約内容により収入証明書類が必要な場合があります。各社の最新条件は申込前に公式サイトでご確認ください。</p>
         </section>
 
         <section class="mobit-section mobit-ranking" aria-labelledby="ranking-title">
@@ -139,12 +212,14 @@
                     </div>
                 </div>
                 <div class="mobit-metrics">
-                    <div><span>金利</span><strong>年3.0%〜18.0%</strong></div>
-                    <div><span>審査</span><strong>10秒簡易審査後、本審査</strong></div>
-                    <div><span>融資</span><strong>最短15分も可<small>※</small></strong></div>
+                    <div class="mobit-metric-wide"><span>融資時間</span><strong>最短15分<small>※1</small></strong></div>
+                    <div><span>実質年率</span><strong>3.0%〜18.0%</strong></div>
+                    <div><span>借入限度額</span><strong>最大800万円</strong></div>
+                    <div><span>審査時間</span><strong>最短15分<small>※1</small></strong></div>
+                    <div><span>利用可能コンビニ</span><strong>対応<small>※6</small></strong></div>
                 </div>
                 <div class="mobit-timing">
-                    <b>今申し込みで<span data-estimate-minutes="60">最短--時台に借入完了も</span></b>
+                    <b>今申し込みなら <span data-estimate-minutes="15" data-cutoff-hour="21">最短--時--分ごろに借入完了も</span></b>
                     <small>※審査・申込内容・受付時間により異なります。結果を保証するものではありません。</small>
                 </div>
                 <details class="mobit-more">
@@ -155,7 +230,7 @@
                     </div>
                 </details>
                 <details class="mobit-more">
-                    <summary>利用者の口コミ</summary>
+                    <summary>利用者の口コミをもっと見る</summary>
                     <div class="mobit-review">
                         <img src="./images/kuchikomi_mobit1.png" width="547" height="204" alt="SMBCモビット利用者の口コミ例">
                         <p>「Webで手続きを進めやすかった」「カードレスで確認できた点がよかった」といった声があります。口コミは個人の感想であり、審査結果や条件を保証するものではありません。</p>
@@ -174,13 +249,15 @@
                     <div class="mobit-card-media"><img src="./images/banner_aiful.jpg" width="400" height="333" alt="アイフル公式サイトへ"></div>
                 </div>
                 <div class="mobit-metrics">
-                    <div><span>金利</span><strong>年3.0%〜18.0%</strong></div>
-                    <div><span>審査</span><strong>Web申込で最短14分も可<small>※</small></strong></div>
-                    <div><span>無利息</span><strong>条件付き最大30日間</strong></div>
+                    <div class="mobit-metric-wide"><span>融資時間</span><strong>Webで最短14分<small>※2</small></strong></div>
+                    <div><span>実質年率</span><strong>3.0%〜18.0%</strong></div>
+                    <div><span>借入限度額</span><strong>最大800万円</strong></div>
+                    <div><span>審査時間</span><strong>Webで最短14分<small>※2</small></strong></div>
+                    <div><span>利用可能コンビニ</span><strong>対応<small>※6</small></strong></div>
                 </div>
-                <div class="mobit-timing"><b>今申し込みで<span data-estimate-minutes="75">最短--時台に借入完了も</span></b><small>※審査・契約手続きにより翌日以降となる場合があります。</small></div>
+                <div class="mobit-timing"><b>今申し込みなら <span data-estimate-minutes="14" data-cutoff-hour="21">最短--時--分ごろに借入完了も</span></b><small>※審査・契約手続きにより翌日以降となる場合があります。</small></div>
                 <details class="mobit-more"><summary>オススメをもっと見る</summary><div><p>Web申込でスピード感を重視したい場合に比較しやすい候補です。無利息期間の条件も申込前に確認しておくと判断しやすくなります。</p></div></details>
-                <details class="mobit-more"><summary>利用者の口コミ</summary><div><p>「申込前に無利息期間を確認できて安心した」「スマホで進められて手間を抑えられた」という声があります。口コミは個人の感想です。</p></div></details>
+                <details class="mobit-more"><summary>利用者の口コミをもっと見る</summary><div><p>「申込前に無利息期間を確認できて安心した」「スマホで進められて手間を抑えられた」という声があります。口コミは個人の感想です。</p></div></details>
                 <a class="mobit-cta mobit-cta-secondary" href="./redirect.php?item=aiful" target="_blank" rel="noopener">アイフルを確認する</a>
             </article>
 
@@ -194,17 +271,19 @@
                     <div class="mobit-card-media"><img src="./images/banner_acom.jpg" width="400" height="333" alt="アコム公式サイトへ"></div>
                 </div>
                 <div class="mobit-metrics">
-                    <div><span>金利</span><strong>年2.4%〜17.9%</strong></div>
-                    <div><span>審査</span><strong>最短20分も可<small>※</small></strong></div>
-                    <div><span>無利息</span><strong>条件付き30日間</strong></div>
+                    <div class="mobit-metric-wide"><span>融資時間</span><strong>最短20分<small>※3</small></strong></div>
+                    <div><span>実質年率</span><strong>2.4%〜17.9%</strong></div>
+                    <div><span>借入限度額</span><strong>最大800万円</strong></div>
+                    <div><span>審査時間</span><strong>最短20分<small>※3</small></strong></div>
+                    <div><span>利用可能コンビニ</span><strong>対応<small>※6</small></strong></div>
                 </div>
-                <div class="mobit-timing"><b>今申し込みで<span data-estimate-minutes="90">最短--時台に借入完了も</span></b><small>※審査・申込時間により異なります。</small></div>
+                <div class="mobit-timing"><b>今申し込みなら <span data-estimate-minutes="20" data-cutoff-hour="21">最短--時--分ごろに借入完了も</span></b><small>※審査・申込時間により異なります。</small></div>
                 <details class="mobit-more"><summary>オススメをもっと見る</summary><div><p>Web申込やカードレス契約を確認できます。初回契約時の無利息条件も見ながら、モビットと比較してください。</p></div></details>
-                <details class="mobit-more"><summary>利用者の口コミ</summary><div class="mobit-review"><img src="./images/kuchikomi_acom1.png" width="547" height="204" alt="アコム利用者の口コミ例"><p>「条件を比較してから申し込めた」という声があります。口コミは個人の感想です。</p></div></details>
+                <details class="mobit-more"><summary>利用者の口コミをもっと見る</summary><div class="mobit-review"><img src="./images/kuchikomi_acom1.png" width="547" height="204" alt="アコム利用者の口コミ例"><p>「条件を比較してから申し込めた」という声があります。口コミは個人の感想です。</p></div></details>
                 <a class="mobit-cta mobit-cta-secondary" href="./redirect.php?item=acom" target="_blank" rel="noopener">アコムを確認する</a>
             </article>
 
-            <article class="mobit-lender-card">
+            <article class="mobit-lender-card" hidden aria-hidden="true">
                 <div class="mobit-card-ribbon is-muted">4位</div>
                 <div class="mobit-card-main">
                     <div class="mobit-card-copy">
