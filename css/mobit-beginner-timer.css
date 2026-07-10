@@ -416,47 +416,6 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   }
 }
 
-/* Responsive replacement for the three quick-point cards. */
-.beginner .v3-beginner-fast-points {
-  width: min(100%, 430px) !important;
-  margin: 18px auto 8px !important;
-  padding: 0 !important;
-  background: transparent !important;
-  box-sizing: border-box !important;
-}
-
-.beginner .v3-beginner-fast-points-image {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.beginner .v3-beginner-fast-points-image img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  border-radius: 8px !important;
-}
-
-.beginner .v3-beginner-fast-points-transcript {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-@media screen and (min-width: 769px) {
-  .beginner .v3-beginner-fast-points {
-    width: min(calc(100% - 48px), 760px) !important;
-    max-width: 760px !important;
-  }
-}
-
 /* Highlight the current-loan question without changing the option structure. */
 .beginner #search_box #searchTOP form > h3 {
   display: flex !important;
@@ -555,5 +514,34 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
     transform: none !important;
     max-width: calc(100% - 58px) !important;
     font-size: 18px !important;
+  }
+}
+
+
+/* Keep only the application and contract flow from the supplied illustration. */
+.beginner .v3-beginner-fastest-flow-image {
+  aspect-ratio: 1149 / 1115 !important;
+  overflow: hidden !important;
+}
+
+/* Center the full beginner hero artwork on desktop without changing shared themes. */
+@media screen and (min-width: 769px) {
+  .beginner #mainvisual.v3-hero.v3-hero-beginner {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-inner,
+  .beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-media {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-media img {
+    width: min(100%, 1200px) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
   }
 }
