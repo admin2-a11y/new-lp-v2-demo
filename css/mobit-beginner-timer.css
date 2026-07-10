@@ -545,3 +545,32 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
     margin: 0 auto !important;
   }
 }
+
+
+/* Put every beginner content block on the same mobile column. */
+@media screen and (max-width: 768px) {
+  .beginner #search_box,
+  .beginner #beginner-tips,
+  .beginner #beginner-recommend,
+  .beginner .v3-beginner-rank-section,
+  .beginner .v3-compare2,
+  .beginner .v3-beginner-repeat-lender-section,
+  .beginner .v3-beginner-fastest-flow,
+  .beginner .v3-beginner-retry-survey {
+    width: min(calc(100% - 24px), 430px) !important;
+    max-width: 430px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .beginner #beginner-tips .v3-beginner-tips-image,
+  .beginner #beginner-tips .v3-beginner-tips-image img,
+  .beginner #beginner-recommend .v3-result-lender-list,
+  .beginner .v3-beginner-repeat-lender-section .v3-result-lender-list,
+  .beginner .v3-beginner-rank-section .v3-beginner-select-ranking {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+  }
+}
