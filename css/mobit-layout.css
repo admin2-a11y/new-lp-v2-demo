@@ -28,7 +28,9 @@
   }
 
   #recommend .v3-lender-card-list,
+  #recommend .v3-recommend-result-list,
   #beginner-recommend .v3-lender-card-list,
+  #beginner-recommend .v3-recommend-result-list,
   #recommend .v3-lender-card,
   #beginner-recommend .v3-lender-card,
   .v3-beginner-rank-section .v3-beginner-select-ranking,
