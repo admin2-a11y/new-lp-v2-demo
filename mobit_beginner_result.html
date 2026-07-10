@@ -890,8 +890,17 @@
                     <form id="form" action="./mobit_beginner_result.html" method="get">
                         <input name="s" type="hidden" />
                         <input type="hidden" name="post_type" value="post">
+				<h3>Q1.現在借り入れ中の会社は？<span>（複数選択可）</span></h3>
+				<div class="rentcheck">
+					<label><input type="checkbox" value="a1_1" name="cat[]"><span>アコム</span></label>
+					<label><input type="checkbox" value="a1_2" name="cat[]"><span>プロミス</span></label>
+					<label><input type="checkbox" value="a1_0" name="cat[]"><span>アイフル</span></label>
+					<label><input type="checkbox" value="a1_3" name="cat[]"><span>SMBCモビット</span></label>
+					<label><input type="checkbox" value="a1_4" name="cat[]"><span>レイク</span></label>
+					<label><input type="checkbox" value="a1_11" name="cat[]"><span>その他</span></label>
+				</div>
                         <ul class="select_box"><li class="selected">
-                                <label for="select_s2">Q1.いつまでに借りたい？</label>
+                                <label for="select_s2">Q2.いつまでに借りたい？</label>
                                 <p>こだわらない</p>
                                 <select name="loan_speed_dis" id="select_s2">
                                     <option value="">こだわらない</option>
@@ -901,7 +910,7 @@
                                     <option id="loan_speed_4" value="a3_4">1週間以内に借りたい</option>
                                 </select>
                             </li><li class="">
-                                <label for="select_s1">Q2.いくら借りたい？</label>
+                                <label for="select_s1">Q3.いくら借りたい？</label>
                                 <p>こだわらない</p>
                                 <select name="borrow_limit_dis" id="select_s1">
                                     <option value="">こだわらない</option>
@@ -911,7 +920,7 @@
                                     <option id="borrow_limit_4" value="a2_4">101万円以上</option>
                                 </select>
                             </li><li>
-                                <label for="select_s4">Q3.どのように借りたい？</label>
+                                <label for="select_s4">Q4.どのように借りたい？</label>
                                 <p>未回答</p>
                                 <select name="how_dis" data-id="how_dis" id="select_s4">
                                     <option value="">こだわらない</option>
@@ -919,7 +928,7 @@
                                     <option id="how_2" value="a4_2">口座振込</option>
                                 </select>
                             </li><li>
-                                <label for="select_s5">Q4.現在の年収は？</label>
+                                <label for="select_s5">Q5.現在の年収は？</label>
                                 <p>未回答</p>
                                 <select name="annual_income_dis" data-id="annual_income_dis" id="select_s5">
                                     <option value="">未回答</option>
@@ -930,7 +939,7 @@
                                     <option id="annual_income_5" value="a5_5">700万円以上</option>
                                 </select>
                             </li><li>
-                                <label for="select_s6">Q5.現在の職業は？</label>
+                                <label for="select_s6">Q6.現在の職業は？</label>
                                 <p>なし</p>
                                 <select name="how_many_loans_dis" id="select_s6">
                                     <option value="">なし</option>
@@ -944,7 +953,7 @@
                                     <option id="job_8" value="a6_8">無職</option>
                                 </select>
                             </li><li>
-                                <label for="select_s7">Q6.利用にあたって重視したい点は？</label>
+                                <label for="select_s7">Q7.利用にあたって重視したい点は？</label>
                                 <p>なし</p>
                                 <select name="focous_dis" id="select_s7">
                                     <option value="">なし</option>
