@@ -328,6 +328,53 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   }
 }
 
+/* Keep the first-view timer light and compact. */
+.beginner #search_box h2.ttl01 {
+  margin-bottom: 5px !important;
+  font-size: 17px !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) {
+  width: min(calc(100% - 20px), 420px) !important;
+  margin-bottom: 9px !important;
+  padding: 8px 8px 7px !important;
+  border-color: #f0df9a !important;
+  background: #fffdf0 !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) .remaining {
+  margin-bottom: 3px !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop > div,
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop > div.timerTopParts {
+  font-size: 11px !important;
+  line-height: 1.15 !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+  min-width: 21px !important;
+  min-height: 20px !important;
+  padding: 1px 2px !important;
+  font-size: 18px !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop em {
+  font-size: 11px !important;
+}
+
+@media screen and (max-width: 374px) {
+  .beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
+  .beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+    min-width: 19px !important;
+    min-height: 19px !important;
+    font-size: 16px !important;
+  }
+}
+
 /* Responsive replacement for the shortest borrowing-flow cards. */
 .beginner .v3-beginner-fastest-flow {
   width: min(100%, 430px) !important;
