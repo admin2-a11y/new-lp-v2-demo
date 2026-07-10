@@ -1,0 +1,42 @@
+/* Keep the survey and the content below it on one visual axis. */
+@media screen and (min-width: 481px) {
+  #search_box,
+  .hikaku_box .v3-tab-compare,
+  .hikaku_box .CardListSearch__compareWrapper,
+  #flow,
+  #recommend,
+  #beginner-tips,
+  #beginner-recommend,
+  .v3-beginner-rank-section,
+  html body.beginner .v3-beginner-rank-section {
+    width: min(calc(100% - 10px), 760px) !important;
+    max-width: 760px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  #flow .v3-sameday-flow-image,
+  #flow .v3-sameday-flow-image img,
+  #beginner-tips .v3-beginner-tips-image,
+  #beginner-tips .v3-beginner-tips-image img {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  #recommend .v3-lender-card-list,
+  #beginner-recommend .v3-lender-card-list,
+  #recommend .v3-lender-card,
+  #beginner-recommend .v3-lender-card,
+  .v3-beginner-rank-section .v3-beginner-select-ranking,
+  html body.beginner .v3-beginner-rank-section .v3-beginner-select-ranking {
+    width: 100% !important;
+    max-width: none !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+}
