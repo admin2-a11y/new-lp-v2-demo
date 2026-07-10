@@ -49,6 +49,40 @@
   }
 }
 
+/* Pulse the question currently awaiting an answer, matching experienced flow. */
+body.beginner #search_box ul.select_box > li.v3-current-question,
+body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
+  border: 2px solid #ff7624 !important;
+  background: #fff9f3 !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 118, 36, .20) !important;
+  outline: 0 !important;
+  filter: none !important;
+  transition: none !important;
+  animation: mobit-beginner-question-glow 1.65s ease-in-out infinite !important;
+  z-index: 1 !important;
+}
+
+@keyframes mobit-beginner-question-glow {
+  0%, 100% {
+    border-color: #ff7624;
+    background-color: #fff9f3;
+    box-shadow: inset 0 0 0 1px rgba(255, 118, 36, .20);
+  }
+
+  50% {
+    border-color: #ffb078;
+    background-color: #fff0e5;
+    box-shadow: inset 0 0 0 3px rgba(255, 118, 36, .34);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.beginner #search_box ul.select_box > li.v3-current-question,
+  body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
+    animation-duration: 2.8s !important;
+  }
+}
+
 /* Highlight the current-loan question without changing the option structure. */
 .beginner #search_box #searchTOP form > h3 {
   display: flex !important;
