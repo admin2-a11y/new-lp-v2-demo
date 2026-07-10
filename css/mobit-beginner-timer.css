@@ -48,3 +48,42 @@
     font-size: 11px !important;
   }
 }
+
+/* Highlight the current-loan question without changing the option structure. */
+.beginner #search_box #searchTOP form > h3 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  margin: 8px 0 !important;
+  padding: 9px 10px !important;
+  border: 2px solid #16856b !important;
+  border-radius: 8px !important;
+  background: #effbf6 !important;
+  color: #123f34 !important;
+  box-shadow: 0 2px 0 rgba(22, 133, 107, .16) !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+}
+
+.beginner #search_box #searchTOP form > h3 span {
+  color: #667c75 !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+@media screen and (max-width: 374px) {
+  .beginner #search_box #searchTOP form > h3 {
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+
+  .beginner #search_box #searchTOP form > h3 span {
+    font-size: 10px !important;
+  }
+}
