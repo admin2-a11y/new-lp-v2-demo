@@ -58,28 +58,30 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   outline: 0 !important;
   filter: none !important;
   transition: none !important;
-  animation: mobit-beginner-question-glow 1.65s ease-in-out infinite !important;
+  animation: mobit-beginner-question-glow 1s ease-in-out infinite !important;
   z-index: 1 !important;
 }
 
 @keyframes mobit-beginner-question-glow {
   0%, 100% {
+    opacity: 1;
     border-color: #ff7624;
     background-color: #fff9f3;
     box-shadow: inset 0 0 0 1px rgba(255, 118, 36, .20);
   }
 
   50% {
-    border-color: #ffb078;
-    background-color: #fff0e5;
-    box-shadow: inset 0 0 0 3px rgba(255, 118, 36, .34);
+    opacity: .72;
+    border-color: #ff3d00;
+    background-color: #ffe3d1;
+    box-shadow: inset 0 0 0 5px rgba(255, 118, 36, .42);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   body.beginner #search_box ul.select_box > li.v3-current-question,
   body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
-    animation-duration: 2.8s !important;
+    animation: none !important;
   }
 }
 
