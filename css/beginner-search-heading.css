@@ -20,3 +20,28 @@
     font-size: 14px !important;
   }
 }
+
+/* Highlight the active loan-speed question like the experienced survey. */
+body.beginner #search_box ul.select_box > li.selected:has(#select_s2) {
+  border: 2px solid #ff7624 !important;
+  background: #fff9f3 !important;
+  box-shadow: 0 0 0 2px rgba(255, 118, 36, .14), 0 0 10px rgba(255, 118, 36, .28) !important;
+  animation: beginner-loan-speed-glow 1.65s ease-in-out infinite !important;
+}
+
+@keyframes beginner-loan-speed-glow {
+  0%, 100% {
+    border-color: #ff7624;
+    box-shadow: 0 0 0 1px rgba(255, 118, 36, .10), 0 0 5px rgba(255, 118, 36, .18);
+  }
+  50% {
+    border-color: #ff9b5f;
+    box-shadow: 0 0 0 4px rgba(255, 118, 36, .16), 0 0 15px rgba(255, 118, 36, .38);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.beginner #search_box ul.select_box > li.selected:has(#select_s2) {
+    animation: none !important;
+  }
+}
