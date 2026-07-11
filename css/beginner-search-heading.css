@@ -1,0 +1,22 @@
+/* Keep the beginner search heading readable on narrow phones. */
+.beginner #search_box h2.ttl01 {
+  white-space: nowrap !important;
+}
+
+@media screen and (max-width: 414px) {
+  .beginner #search_box h2.ttl01 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    font-size: 15px !important;
+  }
+
+  .beginner #search_box h2.ttl01 i {
+    margin-right: 3px !important;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .beginner #search_box h2.ttl01 {
+    font-size: 14px !important;
+  }
+}
