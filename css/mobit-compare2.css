@@ -472,20 +472,21 @@
   box-sizing: border-box;
   border: 4px solid #f21524;
   pointer-events: none;
-  animation: mobit-featured-outline-blink 1.05s steps(2, end) infinite;
+  will-change: opacity, border-color, box-shadow;
+  animation: mobit-featured-outline-blink 4.2s ease-in-out infinite;
 }
 
 @keyframes mobit-featured-outline-blink {
-  0%, 49% {
+  0%, 100% {
     border-color: #f21524;
     box-shadow: 0 0 0 2px rgba(242, 21, 36, .18), 0 0 14px rgba(242, 21, 36, .55);
     opacity: 1;
   }
 
-  50%, 100% {
-    border-color: rgba(242, 21, 36, .18);
-    box-shadow: none;
-    opacity: .22;
+  50% {
+    border-color: rgba(242, 21, 36, .68);
+    box-shadow: 0 0 0 1px rgba(242, 21, 36, .10), 0 0 8px rgba(242, 21, 36, .22);
+    opacity: .72;
   }
 }
 
