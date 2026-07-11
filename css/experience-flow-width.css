@@ -38,3 +38,41 @@
     height: auto !important;
   }
 }
+
+/* Match experienced lender cards to the comparison table column. */
+@media screen and (min-width: 769px) {
+  body.experience #recommend {
+    width: min(calc(100% - 48px), 760px) !important;
+    max-width: 760px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  body.experience #recommend .v3-lender-card-list,
+  body.experience #recommend .v3-lender-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.experience #recommend {
+    width: min(calc(100% - 24px), 430px) !important;
+    max-width: 430px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  body.experience #recommend .v3-lender-card-list,
+  body.experience #recommend .v3-lender-card {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+  }
+}
