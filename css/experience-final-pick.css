@@ -1,0 +1,30 @@
+/* Closing recommendation for experienced users. */
+body.experience .v3-experience-final-pick {
+  width: min(calc(100% - 48px), 760px);
+  margin: 20px auto 28px;
+  padding: 20px;
+  border: 2px solid #15886d;
+  background: #f3fffa;
+  box-shadow: 0 6px 18px rgba(15, 110, 86, .12);
+  box-sizing: border-box;
+  text-align: center;
+}
+body.experience .v3-experience-final-pick__eyebrow { margin: 0 0 5px; color: #176d59; font-size: 18px; font-weight: 900; }
+body.experience .v3-experience-final-pick h2 { margin: 0 0 16px; color: #111; font-size: 28px; line-height: 1.25; }
+body.experience .v3-experience-final-pick__body { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 18px; align-items: center; text-align: left; }
+body.experience .v3-experience-final-pick__banner img { display: block; width: 100%; height: auto; }
+body.experience .v3-experience-final-pick__body p { margin: 0 0 12px; color: #263c36; font-size: 15px; font-weight: 700; line-height: 1.7; }
+body.experience .v3-experience-final-pick__body ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; list-style: none; }
+body.experience .v3-experience-final-pick__body li { padding: 7px 4px; background: #51b52d; color: #fff; font-size: 12px; font-weight: 800; text-align: center; }
+body.experience .v3-experience-final-pick__cta { display: grid; width: min(100%, 520px); min-height: 54px; margin: 18px auto 12px; place-items: center; border-radius: 999px; background: #ff642d; box-shadow: inset 0 -4px 0 rgba(144, 38, 0, .35); color: #fff !important; font-size: 17px; font-weight: 900; text-decoration: none !important; }
+body.experience .v3-experience-final-pick__note { margin: 0; color: #78827f; font-size: 10px; line-height: 1.55; text-align: left; }
+@media screen and (max-width: 768px) {
+  body.experience .v3-experience-final-pick { width: min(calc(100% - 24px), 430px); padding: 16px 12px; }
+  body.experience .v3-experience-final-pick__eyebrow { font-size: 16px; }
+  body.experience .v3-experience-final-pick h2 { font-size: 24px; }
+  body.experience .v3-experience-final-pick__body { grid-template-columns: 120px minmax(0, 1fr); gap: 10px; }
+  body.experience .v3-experience-final-pick__body p { font-size: 12px; line-height: 1.55; }
+  body.experience .v3-experience-final-pick__body ul { grid-template-columns: 1fr; gap: 4px; }
+  body.experience .v3-experience-final-pick__body li { padding: 5px 3px; font-size: 10px; }
+  body.experience .v3-experience-final-pick__cta { min-height: 50px; font-size: 15px; }
+}
