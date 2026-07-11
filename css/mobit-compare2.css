@@ -473,7 +473,7 @@
   border: 4px solid #f21524;
   pointer-events: none;
   will-change: opacity, border-color, box-shadow;
-  animation: mobit-featured-outline-blink 4.2s ease-in-out infinite;
+  animation: mobit-featured-outline-blink 3s ease-in-out infinite;
 }
 
 @keyframes mobit-featured-outline-blink {
@@ -484,9 +484,9 @@
   }
 
   50% {
-    border-color: rgba(242, 21, 36, .68);
-    box-shadow: 0 0 0 1px rgba(242, 21, 36, .10), 0 0 8px rgba(242, 21, 36, .22);
-    opacity: .72;
+    border-color: rgba(242, 21, 36, .40);
+    box-shadow: 0 0 0 1px rgba(242, 21, 36, .06), 0 0 4px rgba(242, 21, 36, .12);
+    opacity: .52;
   }
 }
 
