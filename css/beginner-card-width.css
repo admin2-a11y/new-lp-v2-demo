@@ -1,0 +1,30 @@
+/* Keep every beginner lender card on the same horizontal axis. */
+body.beginner #beginner-recommend .v3-lender-card-list {
+  display: grid !important;
+  width: 100% !important;
+  max-width: none !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  align-items: stretch !important;
+  justify-items: stretch !important;
+  box-sizing: border-box !important;
+}
+
+body.beginner #beginner-recommend .v3-lender-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  justify-self: stretch !important;
+  box-sizing: border-box !important;
+}
+
+body.beginner #beginner-recommend .v3-lender-main,
+body.beginner #beginner-recommend .v3-lender-specs,
+body.beginner #beginner-recommend .v3-lender-point,
+body.beginner #beginner-recommend .v3-lender-cta,
+body.beginner #beginner-recommend .v3-lender-note {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
