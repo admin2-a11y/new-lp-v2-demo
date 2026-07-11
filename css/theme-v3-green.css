@@ -4109,6 +4109,43 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   box-sizing: border-box !important;
 }
 
+.beginner .v3-beginner-tips.v3-beginner-tips--image {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.beginner .v3-beginner-tips--image .v3-beginner-tips-image {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.beginner .v3-beginner-tips--image .v3-beginner-tips-image img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 8px !important;
+}
+
+.beginner .v3-beginner-tips--image .v3-beginner-tips-transcript {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media screen and (min-width: 769px) {
+  .beginner .v3-beginner-tips.v3-beginner-tips--image {
+    width: min(calc(100% - 48px), 760px) !important;
+    max-width: 760px !important;
+  }
+}
+
 .beginner .v3-beginner-tips h2 {
   margin: 0 -12px 14px !important;
   padding: 16px 14px 15px !important;
@@ -4190,6 +4227,12 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
     padding-left: 10px !important;
     padding-right: 10px !important;
     background: linear-gradient(180deg, #0aa792 0 82px, #bfe6dc 82px 100%) !important;
+  }
+
+  .beginner .v3-beginner-tips.v3-beginner-tips--image {
+    width: 100% !important;
+    padding: 0 !important;
+    background: transparent !important;
   }
 
   .beginner .v3-beginner-tips h2 {
@@ -4414,6 +4457,355 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   color: #9a9a9a !important;
   font-size: 10px !important;
   line-height: 1.6 !important;
+}
+
+/* ==== Beginner: experienced comparison table ==== */
+.beginner .v3-beginner-legacy-compare {
+  display: none !important;
+}
+
+.beginner .v3-beginner-experience-compare {
+  width: 100% !important;
+  margin: 12px auto 18px !important;
+  padding: 0 !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare {
+  width: min(100%, 430px) !important;
+  margin: 0 auto !important;
+  padding: 0 0 10px !important;
+  border: 1px solid #b9e3d8 !important;
+  background: #eaf8f4 !important;
+  box-sizing: border-box !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-title {
+  margin: 0 !important;
+  padding: 13px 8px 12px !important;
+  background: #fff !important;
+  color: #174b43 !important;
+  font-weight: 900 !important;
+  line-height: 1.18 !important;
+  text-align: center !important;
+  letter-spacing: 0 !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-title span {
+  display: block !important;
+  color: #174b43 !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-title strong {
+  position: relative !important;
+  display: inline-block !important;
+  width: auto !important;
+  margin: 2px auto 0 !important;
+  padding: 0 4px 3px !important;
+  background: linear-gradient(transparent 62%, #fff05b 62%) !important;
+  color: #008c80 !important;
+  font-size: 34px !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-title strong::before,
+.beginner .v3-beginner-experience-compare .v3-tab-compare-title strong::after {
+  content: "✦" !important;
+  position: absolute !important;
+  top: 6px !important;
+  color: #f6c400 !important;
+  font-size: 15px !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-title strong::before {
+  left: -23px !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-title strong::after {
+  right: -23px !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 4px !important;
+  padding: 0 0 7px !important;
+  background: #fff !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-tabs button {
+  min-height: 42px !important;
+  margin: 0 !important;
+  border: 1px solid #c9e6df !important;
+  border-bottom: 0 !important;
+  border-radius: 4px 4px 0 0 !important;
+  background: #fff !important;
+  color: #174b43 !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-tabs button.is-active {
+  border-color: #0aa792 !important;
+  background: #0aa792 !important;
+  color: #fff !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-tablewrap {
+  padding: 0 4px !important;
+  background: #eaf8f4 !important;
+  overflow: visible !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table {
+  display: table !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+  border-collapse: collapse !important;
+  background: #fff !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table caption {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table thead {
+  display: table-header-group !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  clip: auto !important;
+  overflow: visible !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table tbody {
+  display: table-row-group !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table tr {
+  display: table-row !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table th,
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table td {
+  display: table-cell !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 5px 2px !important;
+  border: 1px solid #c9e6df !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  color: #111 !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table thead th {
+  padding: 4px 2px !important;
+  background: #dff5ef !important;
+  color: #174b43 !important;
+  font-size: 9px !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table th:first-child {
+  width: 28% !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table th:nth-child(2),
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table th:nth-child(3),
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table th:nth-child(4) {
+  width: 16% !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table th:nth-child(5) {
+  width: 24% !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table tbody tr:first-child th,
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table tbody tr:first-child td {
+  background: #eaf8f4 !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-product {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  place-items: center !important;
+  gap: 2px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: #111 !important;
+  text-decoration: none !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-product img {
+  display: block !important;
+  width: min(100%, 72px) !important;
+  height: 42px !important;
+  object-fit: contain !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-product span {
+  display: block !important;
+  width: 100% !important;
+  color: #111 !important;
+  font-size: 9px !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: anywhere !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-compare-mark {
+  position: relative !important;
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  margin: 0 auto 2px !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-compare-mark.is-circle,
+.beginner .v3-beginner-experience-compare .v3-compare-mark.is-double {
+  border: 3px solid #ff1f2d !important;
+  border-radius: 50% !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-compare-mark.is-double::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 5px !important;
+  border: 2px solid #ff1f2d !important;
+  border-radius: 50% !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-compare-mark.is-triangle::before {
+  content: "△" !important;
+  display: block !important;
+  color: #ff1f2d !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  line-height: 28px !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-table td strong {
+  display: block !important;
+  color: #111 !important;
+  font-size: 9.5px !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-footnote {
+  font-size: .65em !important;
+  vertical-align: super !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-cta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 46px !important;
+  padding: 6px 4px !important;
+  border-radius: 6px !important;
+  background: linear-gradient(180deg, #ff7a32 0%, #f04b1f 100%) !important;
+  box-shadow: 0 4px 0 #b83212 !important;
+  color: #fff !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+}
+
+.beginner .v3-beginner-experience-compare .v3-tab-compare-note {
+  margin: 8px 10px 0 !important;
+  color: #6f827e !important;
+  font-size: 8.5px !important;
+  line-height: 1.45 !important;
+}
+
+@media screen and (min-width: 769px) {
+  .beginner .v3-beginner-experience-compare .v3-tab-compare {
+    width: min(calc(100% - 48px), 760px) !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-product img {
+    width: min(100%, 92px) !important;
+    height: 54px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-table th,
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-table td {
+    padding: 8px 5px !important;
+    font-size: 12px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-table td strong {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-title span {
+    font-size: 18px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-title strong {
+    font-size: 31px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-tabs button {
+    min-height: 38px !important;
+    font-size: 14px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-table th,
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-table td {
+    padding: 4px 1px !important;
+    font-size: 9px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-product img {
+    width: min(100%, 62px) !important;
+    height: 38px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-compare-mark {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-table td strong {
+    font-size: 8.5px !important;
+  }
+
+  .beginner .v3-beginner-experience-compare .v3-tab-compare-cta {
+    min-height: 42px !important;
+    font-size: 11px !important;
+  }
 }
 
 @media screen and (max-width: 374px) {
@@ -5726,4 +6118,156 @@ body.beginner.search-results .rentbtn button[type="submit"] i {
     min-height: 44px !important;
     font-size: 16px !important;
   }
+}
+.beginner .v3-beginner-old-tab-compare {
+    display: none !important;
+}
+
+.beginner .v3-beginner-quick-ranking {
+    width: min(100%, 720px);
+    margin: 0 auto;
+    border: 1px solid #d7d7d7;
+    background: #fff;
+    color: #1b1b1b;
+}
+
+.beginner .v3-beginner-quick-ranking h2 {
+    margin: 0;
+    padding: 22px 12px 0;
+    border: 0;
+    background: #fff;
+    color: #1b1b1b;
+    font-size: clamp(18px, 4.6vw, 25px);
+    line-height: 1.25;
+    text-align: center;
+}
+
+.beginner .v3-beginner-ranking-lead {
+    margin: 2px 8px 14px;
+    color: #63b954;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.beginner .v3-beginner-ranking-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.beginner .v3-beginner-ranking-tabs button {
+    min-width: 0;
+    min-height: 52px;
+    padding: 8px 2px;
+    border: 0;
+    border-right: 1px solid #d5d5d5;
+    border-radius: 0;
+    background: #f4f4f4;
+    color: #202020;
+    font-size: clamp(13px, 3.7vw, 18px);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.beginner .v3-beginner-ranking-tabs button:last-child {
+    border-right: 0;
+}
+
+.beginner .v3-beginner-ranking-tabs button.is-active {
+    background: #86c971;
+    color: #fff;
+}
+
+.beginner .v3-beginner-ranking-tabs small {
+    font-size: 9px;
+}
+
+.beginner .v3-beginner-ranking-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.beginner .v3-beginner-ranking-list li {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr) minmax(118px, 38%);
+    align-items: center;
+    gap: 10px;
+    min-height: 88px;
+    padding: 12px 14px;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.beginner .v3-beginner-rank-number {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 50%;
+    background: #cfd4da;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.beginner .v3-beginner-ranking-list .is-rank-1 .v3-beginner-rank-number {
+    background: #ffc72e;
+}
+
+.beginner .v3-beginner-ranking-list .is-rank-3 .v3-beginner-rank-number {
+    background: #df9967;
+}
+
+.beginner .v3-beginner-ranking-list strong {
+    min-width: 0;
+    font-size: clamp(17px, 4.8vw, 25px);
+    line-height: 1.2;
+}
+
+.beginner .v3-beginner-ranking-list a {
+    display: grid;
+    min-height: 52px;
+    place-items: center;
+    padding: 8px;
+    border-radius: 7px;
+    background: #ff7a2e;
+    color: #fff;
+    font-size: clamp(14px, 4vw, 19px);
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+}
+
+.beginner .v3-beginner-ranking-notes {
+    padding: 12px 14px;
+    background: #fafafa;
+    color: #777;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.beginner .v3-beginner-ranking-notes p {
+    margin: 2px 0;
+}
+
+.beginner #search_box.v3-beginner-ranking-survey {
+    width: min(calc(100% - 20px), 720px);
+    margin: 16px auto 24px;
+}
+
+@media (max-width: 374px) {
+    .beginner .v3-beginner-ranking-list li {
+        grid-template-columns: 42px minmax(0, 1fr) 108px;
+        gap: 7px;
+        padding: 10px 8px;
+    }
+
+    .beginner .v3-beginner-rank-number {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
 }
