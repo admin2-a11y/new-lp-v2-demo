@@ -2,7 +2,7 @@
 'use strict';
 function countdownTimer_page_timer() {
 	let startDate_page_timer = new Date();
-	startDate_page_timer.setHours(9, 30, 0, 0);
+	startDate_page_timer.setHours(0, 0, 0, 0);
 	let endDate_page_timer = new Date();
 	endDate_page_timer.setHours(20, 59, 59, 990);
 	let nowDate = new Date();
@@ -53,6 +53,7 @@ function countdownTimer_page_timer() {
 countdownTimer_page_timer();
 
 function countdownTimer(elem) {
+	let timerWrap = elem.closest('.timer_in_box');
 	let endDate = new Date();
 	endDate.setHours(20, 59, 59);
 
@@ -63,6 +64,10 @@ function countdownTimer(elem) {
 		let addZero = (n) => ('0' + n).slice(-2);
 
 		if (period >= 0) {
+			if (timerWrap) {
+				timerWrap.classList.remove('is-countdown-hidden');
+				timerWrap.style.removeProperty('display');
+			}
 			let hour = Math.floor(period / (1000 * 60 * 60));
 			period -= (hour * (1000 * 60 * 60));
 			let minutes = Math.floor(period / (1000 * 60));
@@ -84,11 +89,11 @@ function countdownTimer(elem) {
 
 			setTimeout(updateTimer, 10);
 		} else {
-			elem.parentNode.previousElementSibling.style.display = 'block';
-			elem.parentNode.previousElementSibling.innerHTML = '<span>本日中</span>に借入をする場合';
-			elem.parentNode.style.display = 'block';
-			elem.parentNode.parentNode.lastElementChild.style.display = 'none';
-			elem.innerHTML = '<span class="end">申込は24時間対応OK</span>';
+			if (timerWrap) {
+				timerWrap.classList.add('is-countdown-hidden');
+				timerWrap.style.setProperty('display', 'none', 'important');
+			}
+			elem.innerHTML = '';
 			setTimeout(updateTimer, 60000);
 		}
 	}
@@ -114,6 +119,8 @@ function initV3SamedayDeadlineTimers() {
 			endDate.setHours(hourSetting, minuteSetting, secondSetting, 999);
 			let period = endDate - nowDate;
 			if (period >= 0) {
+				box.hidden = false;
+				box.style.removeProperty('display');
 				box.classList.remove('is-ended');
 				let hour = Math.floor(period / (1000 * 60 * 60));
 				period -= (hour * (1000 * 60 * 60));
@@ -128,8 +135,10 @@ function initV3SamedayDeadlineTimers() {
 					'<span class="cs">' + addZero(centisecond) + '</span>';
 				setTimeout(update, 10);
 			} else {
+				box.hidden = true;
 				box.classList.add('is-ended');
-				timer.innerHTML = '<span class="end">申込は24時間対応OK</span>';
+				box.style.setProperty('display', 'none', 'important');
+				timer.innerHTML = '';
 				setTimeout(update, 60000);
 			}
 		}
