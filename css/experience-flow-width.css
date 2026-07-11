@@ -1,0 +1,40 @@
+/* Match the experienced flow guide to the main content column. */
+@media screen and (min-width: 769px) {
+  body.experience #flow {
+    width: min(calc(100% - 48px), 760px) !important;
+    max-width: 760px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body.experience #flow .v3-sameday-flow-image,
+  body.experience #flow .v3-sameday-flow-image img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 760px !important;
+    height: auto !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.experience #flow,
+  body.experience #flow .v3-sameday-flow-image {
+    width: min(calc(100% - 24px), 430px) !important;
+    max-width: 430px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  body.experience #flow .v3-sameday-flow-image img {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+  }
+}
