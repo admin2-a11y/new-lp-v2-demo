@@ -2828,11 +2828,15 @@ section.CardListSearch__compareWrapper > h2 {
   overflow: hidden;
 }
 
+.select_modal_body {
+  overflow: hidden !important;
+}
+
 .select_modal_body .v3-entry-modal-banner {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 0 0 22px 22px;
+  border-radius: 22px;
 }
 
 .select_modal_body .v3-entry-modal-head + .select_modal_inner {
