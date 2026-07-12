@@ -203,7 +203,7 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 
 .v4-recommend {
   position: relative;
-  margin: 20px 14px 30px;
+  margin: 34px 14px 30px !important;
   padding: 30px 20px 6px;
   border: 2px solid #ff9800;
   border-radius: 5px;
@@ -511,7 +511,7 @@ body.result-v2 .osusume_btn_area { display: none !important; }
   .v4-conveni dd { min-height: 29px; }
   .v4-conveni img { width: min(100%, 94px); }
   .v4-expand { margin-inline: 10px; }
-  .v4-recommend { margin: 16px 10px 20px; padding: 25px 14px 3px; }
+  .v4-recommend { margin: 34px 10px 20px !important; padding: 25px 14px 3px; }
   .v4-recommend-title { padding: 4px 14px; font-size: 15px; font-weight: 700; line-height: 22px; }
   .v4-check-badge { min-width: 40px; padding: 1px 5px; font-size: 8px; }
   .v4-points-preview { max-height: 58px; }
