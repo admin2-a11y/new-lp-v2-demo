@@ -186,7 +186,7 @@
         <link rel="stylesheet" href="./css/mobit-layout.css?v=mnavi1" type="text/css" media="screen">
         <link rel="stylesheet" href="./css/mobit-card.css?v=mnavi1" type="text/css" media="screen">
         <link rel="stylesheet" href="./css/mobit-compare2.css?v=mnavi1" type="text/css" media="screen">
-	<link rel="stylesheet" href="./css/beginner-search-heading.css?v=mnavi1" type="text/css" media="screen">
+	<link rel="stylesheet" href="./css/beginner-search-heading.css?v=q3pulse1" type="text/css" media="screen">
 	<link rel="stylesheet" href="./css/beginner-desktop-width.css?v=mnavi1" type="text/css" media="screen">
 </head>
 <body class="beginner">
@@ -1382,7 +1382,7 @@
                 var currentSelect = currentName ? document.querySelector('select[name="' + currentName + '"]') : null;
                 var currentItem = items.filter(function(item) {
                     var select = item.querySelector('select');
-                    if (!select || (select.id !== 'select_s2' && select.id !== 'select_s1')) return false;
+                    if (!select || (select.id !== 'select_s2' && select.id !== 'select_s1' && select.id !== 'select_s4')) return false;
                     return !(select.value || '').trim() && item.offsetParent !== null;
                 })[0] || null;
                 if (currentItem) {
