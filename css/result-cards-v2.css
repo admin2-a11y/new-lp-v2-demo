@@ -184,7 +184,7 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 }
 
 .v4-lender-name a { color: #151515; text-decoration: none; }
-.v4-lender-group { margin: 0 0 10px; color: #397b4e; font-size: 12px; font-weight: 700; }
+.v4-lender-group { margin: 0 0 10px; color: #397b4e; font-size: 14px; font-weight: 800; }
 
 .v4-specs {
   display: grid;
@@ -196,8 +196,8 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 .v4-specs div { min-width: 0; border-right: 1px solid #d6dbe0; border-bottom: 1px solid #d6dbe0; text-align: center; }
 .v4-specs div:nth-child(2n) { border-right: 0; }
 .v4-specs div:nth-last-child(-n+2) { border-bottom: 0; }
-.v4-specs dt { padding: 5px 4px; background: #f0f2f4; color: #555; font-size: 11px; font-weight: 700; }
-.v4-specs dd { margin: 0; padding: 7px 4px; font-size: 14px; font-weight: 800; line-height: 1.3; }
+.v4-specs dt { padding: 5px 4px; background: #f0f2f4; color: #444; font-size: 12px; font-weight: 800; }
+.v4-specs dd { margin: 0; padding: 7px 4px; font-size: 15px; font-weight: 900; line-height: 1.3; }
 .v4-conveni dd { display: flex; align-items: center; justify-content: center; min-height: 42px; }
 .v4-conveni img { width: min(100%, 112px); height: auto; }
 
@@ -280,7 +280,8 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 .v4-points-more[open] .v4-more-close { display: inline; }
 .v4-points-more[open] { display: flex; flex-direction: column; }
 .v4-points-more[open] .v4-points { order: 1; }
-.v4-points-more[open] summary { left: 50%; order: 2; margin: 8px 0 2px; transform: translateX(-50%); }
+.v4-points-more[open] summary { display: none; }
+.v4-recommend:has(.v4-points-more[open]) { padding-bottom: 8px; }
 .v4-more-close::before { content: "↑ "; }
 .v4-points-more .v4-points { text-align: left; }
 .v4-recommend:has(.v4-points-more[open]) { cursor: pointer; }
@@ -316,7 +317,7 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 .v4-points li { position: relative; margin: 0; padding: 8px 0 8px 25px; border-bottom: 1px dashed #e8e8e8; line-height: 1.55; }
 .v4-points li::before { content: "✓"; position: absolute; top: 7px; left: 1px; color: #ff9518; font-size: 19px; font-weight: 900; line-height: 1; transform: rotate(-7deg); }
 .v4-points li:last-child { border-bottom: 0; }
-.v4-points strong { display: block; color: #d95012; font-weight: 700; }
+.v4-points strong { display: block; color: #d95012; font-size: 15px; font-weight: 800; }
 .v4-points span { display: block; color: #555; font-size: 13px; }
 
 .v4-review-box {
@@ -413,7 +414,9 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 .v4-review-more[open] .v4-more-close { display: inline; }
 .v4-review-more[open] { display: flex; flex-direction: column; }
 .v4-review-more[open] .v4-review { order: 1; }
-.v4-review-more[open] summary { left: 50%; order: 2; margin-top: 8px; transform: translateX(-50%); }
+.v4-review-more[open] summary { display: none; }
+.v4-review-more[open] .v4-review { margin-top: 0; }
+.v4-review-box:has(.v4-review-more[open]) { padding-bottom: 8px; }
 .v4-review-more .v4-review { text-align: left; }
 .v4-review-box:has(.v4-review-more[open]) { cursor: pointer; }
 .v4-review-box:has(.v4-review-more[open]):hover { background: #fbfff8; }
@@ -430,7 +433,7 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
   line-height: 1.45;
   overflow-wrap: anywhere;
 }
-.v4-review-text { margin: 0; line-height: 1.65; }
+.v4-review-text { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.65; }
 .v4-review small { display: block; margin-top: 8px; color: #777; font-size: 10px; }
 
 .v4-cta-wrap { padding: 4px 14px 14px; text-align: center; }
@@ -483,22 +486,23 @@ body.result-v2 .osusume_btn_area { display: none !important; }
   .v4-lender-head { grid-template-columns: 48% minmax(0, 1fr); gap: 7px; padding: 8px; }
   .v4-lender-rank { font-size: 10px; }
   .v4-lender-name { font-size: 18px; }
-  .v4-lender-group { margin-bottom: 4px; font-size: 9px; line-height: 1.25; }
-  .v4-specs dt { padding: 2px; font-size: 8px; line-height: 1.2; }
-  .v4-specs dd { padding: 4px 2px; font-size: 10px; line-height: 1.2; }
+  .v4-lender-group { margin-bottom: 5px; font-size: 10.5px; font-weight: 800; line-height: 1.3; }
+  .v4-specs dt { padding: 3px 2px; font-size: 9px; line-height: 1.2; }
+  .v4-specs dd { padding: 5px 2px; font-size: 11.5px; line-height: 1.25; }
   .v4-conveni dd { min-height: 29px; }
   .v4-conveni img { width: min(100%, 94px); }
   .v4-expand { margin-inline: 10px; }
   .v4-recommend { margin: 16px 10px 20px; padding: 25px 14px 3px; }
-  .v4-recommend-title { padding: 3px 13px; font-size: 13px; line-height: 21px; }
+  .v4-recommend-title { padding: 4px 14px; font-size: 15px; font-weight: 700; line-height: 22px; }
   .v4-check-badge { min-width: 40px; padding: 1px 5px; font-size: 8px; }
   .v4-points-preview { max-height: 58px; }
   .v4-points li { padding-top: 5px; padding-bottom: 5px; font-size: 12px; }
   .v4-points li::before { top: 5px; font-size: 17px; }
-  .v4-points span { font-size: 11px; line-height: 1.4; }
+  .v4-points strong { font-size: 13px; }
+  .v4-points span { font-size: 12px; line-height: 1.45; }
   .v4-points-more summary { padding: 2px 18px; font-size: 10px; }
   .v4-review-box { margin: 0 10px 12px; padding: 24px 12px 4px; }
-  .v4-review-title { padding: 3px 13px; font-size: 13px; line-height: 21px; }
+  .v4-review-title { padding: 4px 14px; font-size: 15px; font-weight: 800; line-height: 22px; }
   .v4-review-layout { grid-template-columns: 58px minmax(0, 1fr); gap: 8px; }
   .v4-review-avatar, .v4-review-avatar img { width: 58px; height: 58px; }
   .v4-review-avatar { height: max-content; }
@@ -507,7 +511,7 @@ body.result-v2 .osusume_btn_area { display: none !important; }
   .v4-review-facts span { padding: 3px 4px; font-size: 8.5px; line-height: 1.25; }
   .v4-review-preview { max-height: 54px; }
   .v4-review-meta { margin-bottom: 5px; padding: 4px 6px; font-size: 10px; line-height: 1.35; }
-  .v4-review-text { font-size: 11px; line-height: 1.45; }
+  .v4-review-text { font-size: 12.5px; font-weight: 700; line-height: 1.5; }
   .v4-review-more summary { padding: 2px 18px; font-size: 10px; }
   .v4-cta-wrap { padding: 0 10px 11px; }
   .v4-countdown { gap: 3px 6px; margin-bottom: 9px; font-size: 10px; }
