@@ -32,7 +32,8 @@ body.beginner:not(.search-results) #search_box ul.select_box > li.v3-current-que
   border: 2px solid #ff7624 !important;
   background: #fff9f3 !important;
   box-shadow: 0 0 0 2px rgba(255, 118, 36, .14), 0 0 10px rgba(255, 118, 36, .28) !important;
-  animation: beginner-loan-speed-glow 1.2s ease-in-out infinite !important;
+  will-change: opacity, transform;
+  animation: beginner-loan-speed-glow .9s ease-in-out infinite !important;
 }
 
 body.beginner:not(.search-results) #search_box ul.select_box > li.selected:not(.v3-current-question) {
@@ -56,12 +57,12 @@ body.beginner:not(.search-results) #search_box .rentbtn button[type="submit"] {
 
 @keyframes beginner-loan-speed-glow {
   0%, 100% {
-    border-color: #ff7624;
-    box-shadow: 0 0 0 1px rgba(255, 118, 36, .12), 0 0 5px rgba(255, 118, 36, .20);
+    opacity: 1;
+    transform: scale(1);
   }
   50% {
-    border-color: #ff4f0f;
-    box-shadow: 0 0 0 5px rgba(255, 118, 36, .20), 0 0 18px rgba(255, 89, 22, .48);
+    opacity: .68;
+    transform: scale(.992);
   }
 }
 
