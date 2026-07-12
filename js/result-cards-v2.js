@@ -76,11 +76,11 @@
                 <div class="v4-review-copy">
                   <div class="v4-review-facts"><span>借入額：${lender.reviewAmount}</span><span>借入までの時間：${lender.reviewTime}</span></div>
                   <div class="v4-review-preview v4-review-bubble"><p class="v4-review-text">${lender.review}</p></div>
-                  <details class="v4-review-more">
-                    <summary><span class="v4-more-open">もっと見る</span><span class="v4-more-close">閉じる</span></summary>
-                    <div class="v4-review v4-review-bubble"><p class="v4-review-text">${lender.review}</p><small>※一例であり、結果を保証するものではありません。</small></div>
-                  </details>
                 </div>
+                <details class="v4-review-more">
+                  <summary><span class="v4-more-open">もっと見る</span><span class="v4-more-close">閉じる</span></summary>
+                  <div class="v4-review v4-review-bubble"><p class="v4-review-text">${lender.review}</p><small>※一例であり、結果を保証するものではありません。</small></div>
+                </details>
               </div>
             </section>
             <div class="v4-cta-wrap">
