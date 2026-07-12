@@ -7,32 +7,32 @@
       key: "mobit", name: "SMBCモビット", group: "三井住友カード株式会社", banner: "banner_mobit.jpg", width: 400, height: 333,
       catch: "10秒で簡易審査結果がわかる", cta: "10秒で簡易審査結果を確認する",
       specs: [["融資時間", "最短15分"], ["実質年率", "3.0％～18.0％"], ["利用限度額", "最大800万円"], ["事前審査", "10秒簡易審査"], ["利用方法", "振込・スマホATM"]],
-      points: [["お申込みから最短15分で融資", "急な出費で急いでいるときにも検討しやすい。"], ["10秒で簡易審査結果を確認", "本申込みの前に、借入可能性の目安を確認できる。"], ["WEB完結なら電話連絡・郵送物なし", "勤務先や家族に知られたくない人にも選びやすい。"], ["振込キャッシングは最短3分", "契約後、手続きから最短3分で口座へ振り込まれる。"], ["返済でVポイントが貯まる・使える", "貯めたVポイントを返済に利用できる。"]],
-      reviewMeta: "派遣社員・47歳／借入額50万～100万円未満", review: "友人から勧められ、普段利用している銀行と同じSMBCグループだったこともあり申し込みました。手続きが分かりやすく、説明も丁寧だったので、初めてでも進めやすかったです。", reviewImage: "review-mobit-image.png", reviewImageAlt: "利用者イメージ写真",
+      points: [["お申込みから最短15分で審査完了！", "お申し込みから最短15分で審査するから急な出費にも即対応！"], ["振込は最短3分", "ご契約後、最短3分で口座へ振り込まれる！"], ["原則電話連絡・郵送物なし", "面倒な電話連絡や郵送物はないから誰にもバレなくて安心！"], ["返済でVポイントが貯まる・使える", "返済の利息分でVポイントが貯まるからお得！"]],
+      reviewProfile: "職業：派遣<br>年齢：47歳", reviewAmount: "50万～100万円未満", reviewTime: "1時間以内", review: "事前に身分証明書を準備して申し込み。審査もスムーズに進みました！すべてスマホで完結できたので、誰にもバレずにすぐ着金。もっと早く利用すれば良かったです！", reviewImage: "review-mobit-v2.png", reviewPosition: "mobit", reviewImageAlt: "口コミ利用者",
       note: "※お申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。※WEB完結申込には条件があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     },
     {
       key: "acom", name: "アコム", group: "三菱UFJフィナンシャル・グループ", banner: "banner_acom2.jpg", width: 300, height: 250,
       catch: "はじめてなら30日間金利0円", cta: "はじめての方はこちらから申し込む",
       specs: [["融資時間", "最短20分"], ["実質年率", "2.4％～17.9％"], ["利用限度額", "最大800万円"], ["無利息期間", "契約日の翌日から30日間"], ["利用方法", "振込・コンビニATM"]],
-      points: [["最短20分で融資可能", "スマートフォンで申込みから契約まで進められる。"], ["はじめてなら30日間金利0円", "アコムを初めて契約する人は、契約日の翌日から30日間が対象。"], ["原則、勤務先への電話による在籍確認なし", "電話確認が必要な場合も、本人の同意なく実施しない。"], ["カードレス・郵送物なしを選択可能", "カードを持ち歩きたくない人や、郵送物を避けたい人に向いている。"], ["三菱UFJフィナンシャル・グループ", "知名度やグループ会社による安心感を伝えやすい。"]],
-      reviewMeta: "会社員・45歳／借入額100万～300万円未満", review: "急な出費があり、借入までのスピードを重視して申し込みました。手続きがスムーズで、返済もインターネットからできるため、ATMへ行かずに済む点が便利でした。",
+      points: [["はじめてなら金利0円期間あり！", "アコムを初めて利用する人は30日間金利0円！"], ["審査結果が最短20分でわかる！", "21時までに申し込めば当日中に口座に振込！土日祝も24時間申込可能。"], ["周りにバレずに借りられる！", "面倒な電話連絡や郵送物はないから誰にもバレなくて安心！"], ["三菱UFJフィナンシャル・グループで安心！", "知名度やグループ会社による安心感があります。"]],
+      reviewProfile: "職業：バイト<br>年齢：25歳", reviewAmount: "100万～300万円未満", reviewTime: "1時間以内", review: "金利0円期間に魅力を感じ申し込みました。カードローンは初めてでしたが審査もスムーズでした。スマホで完結できるので電話連絡や郵送物もなく周りにバレずに借入でき本当に助かりました。", reviewImage: "review-acom-v2.png", reviewPosition: "acom", reviewImageAlt: "口コミ利用者",
       note: "※アコムを初めて契約する方が無利息期間の対象です。※お申込時間や審査状況によりご希望に添えない場合があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     },
     {
       key: "promise", name: "プロミス", group: "SMBCコンシューマーファイナンス株式会社", banner: "banner_promise.jpg", width: 300, height: 250,
       catch: "Webなら最短3分で融資可能", cta: "1秒パパッと診断を試す",
       specs: [["融資時間", "最短3分"], ["実質年率", "2.5％～18.0％"], ["利用限度額", "最大800万円"], ["無利息期間", "初回借入の翌日から30日間"], ["事前診断", "1秒パパッと診断"]],
-      points: [["Web申込みなら最短3分で融資", "急いで借入先を探している人に訴求しやすい。"], ["初回借入の翌日から30日間無利息", "契約日ではなく、実際に初めて借りた日の翌日から開始される。"], ["原則、勤務先への電話連絡なし", "電話による確認が必要な場合も、本人の同意なく実施しない。"], ["Web完結なら郵送物なし", "アプリを利用したカードレスでの借入・返済にも対応。"], ["コンビニATMをスマートフォンで利用可能", "セブン銀行ATM・ローソン銀行ATMなどで取引できる。"]],
-  reviewMeta: "会社員・33歳／他社借入経験あり", review: "利用していたカードローンの限度額だけでは足りず、追加の借入先として申し込みました。申込みから手続きまでが早く、コンビニATMから返済できる点も使いやすいと感じました。", reviewImage: "review-promise-image.png", reviewImageAlt: "利用者イメージ写真",
+      points: [["即日OK！最短3分で審査完了！", "21時までの申込みで即日融資可能！"], ["30日間無利息もありお得に借りれる！", "初回借入の翌日から30日間、条件を満たす方は無利息で利用できます。"], ["1秒パパっと診断", "いくら借りられるかすぐチェックできる！"]],
+      reviewProfile: "職業：会社員<br>年齢：33歳", reviewAmount: "50万円未満", reviewTime: "1時間以内", review: "スマホで完結できるので審査から借入までがとにかく早い。誰にもバレずに借りることが出来ました。返済も月1000円からで良いのも助かってます。", reviewImage: "review-promise-v2.png", reviewPosition: "promise", reviewImageAlt: "口コミ利用者",
       note: "※無利息期間の適用にはメールアドレス登録とWeb明細利用の登録が必要です。※お申込時間や審査状況によりご希望に添えない場合があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     },
     {
       key: "aiful", name: "アイフル", group: "アイフル株式会社", banner: "banner_aiful.jpg", width: 300, height: 250,
       catch: "最短14分融資・1秒で事前診断", cta: "1秒診断で借入可能性を確認する",
       specs: [["融資時間", "最短14分"], ["実質年率", "3.0％～18.0％"], ["利用限度額", "最大800万円"], ["無利息期間", "契約日の翌日から最大30日間"], ["事前診断", "1秒診断"]],
-      points: [["申込みから融資まで最短14分", "Webから24時間365日申し込める。"], ["1秒診断で借入可能性を確認", "年齢・年収・他社借入金額などから簡易的に確認できる。"], ["はじめてなら最大30日間利息0円", "アイフルを初めて契約する人が対象。"], ["原則、勤務先への電話連絡なし", "申込みから借入・返済までWebで完結できる。"], ["毎月の返済は4,000円から", "10万円までの借入の場合。少額利用時の返済イメージを伝えやすい。"]],
-      reviewMeta: "会社員・54歳／借入額100万～300万円未満", review: "急な入院費が必要になり、初めてカードローンを利用しました。短期間で返済する予定だったため、30日間の無利息サービスを利用できた点に満足しています。", reviewImage: "review-aiful-image.png", reviewImageAlt: "利用者イメージ写真",
+      points: [["今日借りられる！申込みから融資まで最短14分", "Webから24時間365日申し込み可！すぐふりこみしてもらえる！申し込みも最短5分で完了！"], ["無利息で借りられる期間あり！", "はじめてなら最大30日間利息0円。"], ["原則、勤務先への電話連絡なし", "申込みから借入・返済までWebで完結できるので家族や職場にバレない。"], ["1秒診断で借入可能性を確認", "年齢・年収・他社借入金額などから簡易的に確認できます。"]],
+      reviewProfile: "職業：会社員<br>年齢：54歳", reviewAmount: "100万～300万円未満", reviewTime: "1時間以内", review: "急な出費があり、初めてカードローンを利用しました。短期間で返済する予定だったため、30日間の無利息サービスを利用できた点に満足しています。", reviewImage: "review-aiful-v2.png", reviewPosition: "aiful", reviewImageAlt: "口コミ利用者",
       note: "※アイフルを初めて契約する方が無利息期間の対象です。※お申込時間や審査状況によりご希望に添えない場合があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     }
   ];
@@ -71,12 +71,13 @@
             <section class="v4-review-box" aria-label="利用者の口コミ">
               <h4 class="v4-review-title">● 利用者の口コミは？</h4>
               <div class="v4-review-layout">
-                <figure class="v4-review-avatar"><img src="./images/${lender.reviewImage || "review-male-v2.png"}" width="180" height="180" alt="${lender.reviewImageAlt || "利用者イメージ（イラスト）"}" loading="lazy"><figcaption>${lender.reviewImage ? "写真はイメージ" : "利用者イメージ"}</figcaption></figure>
+                <figure class="v4-review-avatar is-${lender.reviewPosition || "default"}"><img src="./images/${lender.reviewImage || "review-male-v2.png"}" width="180" height="180" alt="${lender.reviewImageAlt || "口コミ利用者"}" loading="lazy"><figcaption>${lender.reviewProfile}</figcaption></figure>
                 <div class="v4-review-copy">
-                  <div class="v4-review-preview v4-review-bubble"><p class="v4-review-meta">${lender.reviewMeta}</p><p class="v4-review-text">${lender.review}</p></div>
+                  <div class="v4-review-facts"><span>借入額：${lender.reviewAmount}</span><span>借入までの時間：${lender.reviewTime}</span></div>
+                  <div class="v4-review-preview v4-review-bubble"><p class="v4-review-text">${lender.review}</p></div>
                   <details class="v4-review-more">
                     <summary><span class="v4-more-open">もっと見る</span><span class="v4-more-close">閉じる</span></summary>
-                    <div class="v4-review v4-review-bubble"><p class="v4-review-meta">${lender.reviewMeta}</p><p class="v4-review-text">${lender.review}</p><small>※一例であり、結果を保証するものではありません。</small></div>
+                    <div class="v4-review v4-review-bubble"><p class="v4-review-text">${lender.review}</p><small>※一例であり、結果を保証するものではありません。</small></div>
                   </details>
                 </div>
               </div>
