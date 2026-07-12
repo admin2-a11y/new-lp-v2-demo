@@ -186,7 +186,7 @@
         <link rel="stylesheet" href="./css/mobit-layout.css?v=mnavi1" type="text/css" media="screen">
         <link rel="stylesheet" href="./css/mobit-card.css?v=mnavi1" type="text/css" media="screen">
         <link rel="stylesheet" href="./css/mobit-compare2.css?v=softpulse1" type="text/css" media="screen">
-	<link rel="stylesheet" href="./css/beginner-search-heading.css?v=q3pulse3" type="text/css" media="screen">
+	<link rel="stylesheet" href="./css/beginner-search-heading.css?v=q3pulse4" type="text/css" media="screen">
 	<link rel="stylesheet" href="./css/beginner-desktop-width.css?v=mnavi1" type="text/css" media="screen">
 </head>
 <body class="beginner">
@@ -248,7 +248,7 @@
 						</select>
 					</li><li>
 						<label for="select_s4">Q3.どのように借りたい？</label>
-						<p>未回答</p>
+						<p>こだわらない</p>
 						<select name="how_dis" data-id="how_dis" id="select_s4">
 							<option value="">こだわらない</option>
 							<option id="how_1" value="a4_1">コンビニATM</option>
@@ -1303,7 +1303,7 @@
                     if (!select || !label) return;
                     var value = (select.value || '').trim();
                     var text = (label.textContent || '').trim();
-                    if (!value && (select.id === 'select_s1' || select.id === 'select_s2')) {
+                    if (!value && (select.id === 'select_s1' || select.id === 'select_s2' || select.id === 'select_s4')) {
                         label.textContent = 'こだわらない';
                         text = label.textContent;
                     } else if (!value && (text === '未回答' || text === 'なし' || text === 'こだわらない' || text === '')) {

@@ -42,8 +42,22 @@ body.beginner:not(.search-results) #search_box ul.select_box > li.selected:not(.
 
 body.beginner:not(.search-results) #search_box ul.select_box > li:nth-of-type(3) {
   display: list-item !important;
-  border-left: 4px solid #14876c !important;
-  background: linear-gradient(90deg, #e7f8f2, #fff 62%) !important;
+  border-left: 4px solid #0f6e56 !important;
+  background: linear-gradient(90deg, #e1f5ee, #fff 34%) !important;
+}
+
+body.beginner:not(.search-results) #search_box ul.select_box > li:nth-of-type(3) label {
+  color: #183f35 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+}
+
+body.beginner:not(.search-results) #search_box ul.select_box > li:nth-of-type(3) p {
+  color: #294f45 !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
 }
 
 body.beginner:not(.search-results) #search_box ul.select_box > li:nth-of-type(3).v3-current-question {
