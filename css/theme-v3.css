@@ -4453,6 +4453,20 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   line-height: 1 !important;
 }
 
+/* Beginner entry choice: keep the light lime tone consistent across layouts. */
+.select_modal_body .select_modal_inner .select_modal_btn1,
+.select-box-wrap .select_box .select_modal_btn1 {
+  background: #b7f98f !important;
+  background-image: none !important;
+  color: #111 !important;
+  box-shadow: 0 5px 0 #47733d !important;
+}
+
+.select_modal_body .select_modal_inner .select_modal_btn1 span,
+.select-box-wrap .select_box .select_modal_btn1 span {
+  color: #111 !important;
+}
+
 .timer_in_box .timerbox span.cs {
   min-width: 24px !important;
   padding: 2px 4px !important;
@@ -8392,5 +8406,50 @@ body.search-results .v3-result-lender-cta::after {
 @media screen and (max-width: 768px) {
   html body.experience {
     zoom: 1 !important;
+  }
+}
+
+/* ==== PC layout correction: keep the main columns centered ==== */
+@media screen and (min-width: 769px) {
+  /* The legacy result shell uses table layout, which makes the result page
+     expand to the browser width before the v3 column rules can apply. */
+  body.experience.search-results #contents {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body.experience.search-results #search_page {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body.experience.search-results .v3-result-lenders {
+    width: min(calc(100% - 48px), 808px) !important;
+    max-width: 808px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  body.experience.search-results .v3-result-lenders > .inner,
+  body.experience.search-results .v3-result-filter-summary,
+  body.experience.search-results .v3-result-lender-list,
+  body.experience.search-results .v3-result-lender-card {
+    width: 100% !important;
+    max-width: 808px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  /* Let the desktop flow illustration use the same centered content column. */
+  body.experience #flow .v3-sameday-flow-image,
+  body.experience #flow .v3-sameday-flow-image img {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
   }
 }

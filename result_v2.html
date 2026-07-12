@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 	<head>
 		
 		<script>
@@ -24,7 +23,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>マネーローンナビ</title>
-		<meta name="description" content="はじめてカードローンを検討する方の診断結果ページです。条件に近い候補を比較し、申込前に特徴を確認できます。">
+		<meta name="description" content="診断で選んだ条件に近いカードローン候補を比較できます。融資時間、実質年率、限度額を確認して申込前の検討に役立てられます。">
 		<!--FONTS-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +31,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 		<link rel="shortcut icon" href="./favicon.ico?v=mnavi9" type="image/vnd.microsoft.icon">
 		
-		<link rel="stylesheet" href="./css/style-green.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="./css/animate.css" media="all">
 		
 		
@@ -40,8 +39,8 @@
 
 		
 		
-		<link rel="stylesheet" type="text/css" href="./css/style-main-green.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style-main.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add.css" media="all">
 		<link rel="stylesheet" type="text/css" href="./css/colorbox.css">
 		
 		
@@ -67,8 +66,8 @@
 				background-attachment: scroll;
 			}
 		</style>
-		<link rel="icon" href="./images/icon-green.png?v=mnavi9" />
-		<link rel="apple-touch-icon" href="./images/icon-green.png?v=mnavi9" />
+		<link rel="icon" href="./images/icon.png?v=mnavi9" />
+		<link rel="apple-touch-icon" href="./images/icon.png?v=mnavi9" />
 		<meta name='robots' content='max-image-preview:large' />
 		<link rel='dns-prefetch' href='https://use.fontawesome.com/' />
 		
@@ -180,9 +179,11 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css?v=mnavi98" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=mnavi105" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/result-cards-v2.css?v=17" type="text/css" media="screen">
+		<script defer src="./js/result-cards-v2.js?v=16"></script>
 	</head>
-<body class="beginner search-results">
+<body class="experience search-results result-v2">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -190,22 +191,22 @@
 <header>
     <div id="headerinner">
         <div class="headerLeft">
-            <img height="221" width="1080" src="./images/logo-green.png" alt="マネーローンナビ">
+            <img height="221" width="1080" src="./images/logo.png" alt="マネーローンナビ">
             <p class="pr_text"> このページにはPRリンクが含まれています </p>
         </div>
     </div>
 </header>    <span id="top"></span>
     <div id="contents">
         <div class="main" id="search_page">
-            <section class="v3-result-lenders v3-result-lenders-beginner" aria-labelledby="v3-result-lenders-title">
+            <section class="v3-result-lenders" aria-labelledby="v3-result-lenders-title">
                 <div class="inner">
                     <div class="v3-result-filter-summary" aria-label="絞り込み検索結果">
-                        <h1 class="v3-result-filter-title">はじめて向け診断結果 <span>4</span>件</h1>
+                        <h1 class="v3-result-filter-title">絞り込み検索結果 <span>4</span>件</h1>
                         <div class="v3-result-filter-body">
+                            <span class="v3-result-filter-item"><b>職業</b><span>指定なし</span></span>
                             <span class="v3-result-filter-item"><b>借入限度額</b><span id="selected-amount">指定なし</span></span>
                             <span class="v3-result-filter-item"><b>融資スピード</b><span id="selected-time">指定なし</span></span>
                             <span class="v3-result-filter-item"><b>借入方法</b><span id="selected-method">指定なし</span></span>
-                            <span class="v3-result-filter-item"><b>重視する点</b><span id="selected-company-size">指定なし</span></span>
                         </div>
                         <div class="v3-result-filter-actions">
                             <a href="#search_box" class="v3-result-filter-change">条件を変更する <i class="fas fa-arrow-circle-right"></i></a>
@@ -218,119 +219,148 @@
                             </label>
                         </div>
                     </div>
-                    <h2 id="v3-result-lenders-title" class="v3-result-lenders-title">はじめてでも比較しやすいカードローン</h2>
+                    <div data-v4-result-cards></div>
+                    <h2 id="v3-result-lenders-title" class="v3-result-lenders-title">診断結果に近いカードローン</h2>
                     <div class="v3-result-lender-list">
-                        <article class="v3-result-lender-card rank-3">
+                        <article class="v3-result-lender-card is-first">
                             <div class="v3-result-lender-head">
-                                <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ"></a>
-                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.3</p><h3><a target="_blank" href="./redirect.php?item=acom">アコム</a></h3><p class="v3-result-lender-group">三菱UFJフィナンシャル・グループ</p></div>
+                                <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-banner">
+                                    <img loading="lazy" width="300" height="250" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
+                                </a>
+                                <div class="v3-result-lender-summary">
+                                    <p class="v3-result-lender-rank">おすすめ順 No.1</p>
+                                    <h3><a target="_blank" href="./redirect.php?item=acom">アコム</a></h3>
+                                    <p class="v3-result-lender-group">三菱UFJフィナンシャル・グループ</p>
+                                </div>
                             </div>
-                            <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>スマホから申込条件を確認しやすい候補です</li><li>Web申込、来店不要、カードレス契約も選べます</li><li>はじめての契約なら無利息期間も確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>融資時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>借入限度額</dt><dd>1万円〜800万円</dd></div><div><dt>実質年率</dt><dd>2.4%〜17.9%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <div class="v3-result-lender-point">
+                                <span>おすすめポイント</span>
+                                <ul>
+                                    <li>スピードと使いやすさを重視したい方に向いています</li>
+                                    <li>Web申込、来店不要、カードレス契約も選べます</li>
+                                    <li>はじめての契約なら無利息期間も確認できます</li>
+                                </ul>
+                            </div>
+                            <dl class="v3-result-lender-spec">
+                                <div><dt>審査時間</dt><dd>最短20分<span class="caution">※2</span></dd></div>
+                                <div><dt>融資時間</dt><dd>最短20分<span class="caution">※2</span></dd></div>
+                                <div><dt>借入限度額</dt><dd>1万円〜800万円</dd></div>
+                                <div><dt>実質年率</dt><dd>2.4%〜17.9%</dd></div>
+                                <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
+                            </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>申込前に条件や必要書類を確認でき、スマホで進めやすかったという声があります。</p></div>
-                            <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline>
+                                <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
+                                <div class="v3-result-deadline-timer" aria-live="polite"></div>
+                            </div>
                             <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-cta">公式サイトで申込条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by アコム株式会社<br>※お申込時間や審査状況によりご希望に添えない場合があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
-                        <article class="v3-result-lender-card rank-4">
+
+                        <article class="v3-result-lender-card">
                             <div class="v3-result-lender-head">
-                                <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_promise.jpg" alt="プロミス公式サイトへ"></a>
-                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.4</p><h3><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3><p class="v3-result-lender-group">SMBCコンシューマーファイナンス株式会社</p></div>
+                                <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-banner">
+                                    <img loading="lazy" width="400" height="333" src="./images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
+                                </a>
+                                <div class="v3-result-lender-summary">
+                                    <p class="v3-result-lender-rank">おすすめ順 No.2</p>
+                                    <h3><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3>
+                                    <p class="v3-result-lender-group">三井住友カード株式会社</p>
+                                </div>
                             </div>
-                            <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>スマホからスピード重視で進めたい方に向いています</li><li>郵送物なし、カードレスで進めたい方も確認できます</li><li>30日間無利息の条件も申込前に確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短3分</dd></div><div><dt>融資時間</dt><dd>最短3分</dd></div><div><dt>借入限度額</dt><dd>最大500万円</dd></div><div><dt>実質年率</dt><dd>2.5%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
-                            <div class="v3-result-review"><b>口コミ例</b><p>スマホで比較しながら、返済額や無利息期間を確認できたという声があります。</p></div>
-                            <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
-                            <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
-                            <p class="v3-result-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※無利息期間の適用には条件があります。※一例であり、結果を保証するものではありません。</p>
-                        </article>
-                        <article class="v3-result-lender-card rank-2">
-                            <div class="v3-result-lender-head">
-                                <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ"></a>
-                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.2</p><h3><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3><p class="v3-result-lender-group">アイフル株式会社</p></div>
+                            <div class="v3-result-lender-point">
+                                <span>おすすめポイント</span>
+                                <ul>
+                                    <li>WEB完結で進めたい方に向いています</li>
+                                    <li>電話連絡や郵送物を抑えたい場合に確認しやすい候補です</li>
+                                    <li>カードレスで使いたい方も条件を確認できます</li>
+                                </ul>
                             </div>
-                            <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>申込前に1秒診断で目安を確認したい方に向いています</li><li>Web申込、来店不要、カードレスで進めたい方も確認できます</li><li>急ぎの借入を検討する前に条件を確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
-                            <div class="v3-result-review"><b>口コミ例</b><p>申込前に診断で目安を確認でき、条件を比較しやすかったという声があります。</p></div>
-                            <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
-                            <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
-                            <p class="v3-result-lender-note">【PR】Sponsored by アイフル株式会社<br>※システムメンテナンスの時間帯や一部金融機関を除きます。※一例であり、結果を保証するものではありません。</p>
-                        </article>
-                        <article class="v3-result-lender-card is-first rank-1">
-                            <div class="v3-result-lender-head">
-                                <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-banner"><img loading="lazy" width="400" height="333" src="./images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ"></a>
-                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.1</p><h3><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3><p class="v3-result-lender-group">三井住友カード株式会社</p></div>
-                            </div>
-                            <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>WEB完結で進めたい方に向いています</li><li>電話連絡や郵送物を抑えたい場合に確認しやすい候補です</li><li>カードレスで使いたい方も条件を確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>10秒簡易審査</dd></div><div><dt>融資時間</dt><dd>最短15分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <dl class="v3-result-lender-spec">
+                                <div><dt>審査時間</dt><dd>10秒簡易審査</dd></div>
+                                <div><dt>融資時間</dt><dd>最短15分<span class="caution">※</span></dd></div>
+                                <div><dt>借入限度額</dt><dd>最大800万円</dd></div>
+                                <div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div>
+                                <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
+                            </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>Webで手続きを進められる点や、郵送物を抑えられる点を重視する声があります。</p></div>
-                            <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline>
+                                <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
+                                <div class="v3-result-deadline-timer" aria-live="polite"></div>
+                            </div>
                             <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※お申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
-                    </div>
-                </div>
-            </section>            <section>
-                <div class="inner">
-                    <div class="after_box">
-                        <h1>あなたの条件に合う<br class="v3-sp-br">カードローン <span>3</span>件</h1>
-                        <p class="v3-lpo-result-band">入力条件に近い候補をおすすめ順で表示しています</p>
-                        <div class="box_in">
-                            <div class="top">
-                                <ul>
-                                    <li>借りたい金額: <span id="selected-amount"></span></li>
-                                    <li>借りたい時期: <span id="selected-time"></span></li>
-                                    <li>借り方: <span id="selected-method"></span></li>
-                                    
-                                    
-                                    
-                                </ul>
-                            </div>
-                            <a class="v3-result-primary-cta" target="_blank" href="./redirect.php?item=acom">公式サイトで申込条件を確認する</a>
-                            <div class="mid">
-                                <a class="btn_red btn_g" href="#search_box">条件を変更する<i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                                <a class="v3-result-operation-link" href="./operationinfo.php">運営者情報</a>
-                                <div class="order_change_pull">
-                                    <p class="ttl">並び替え</p>
-                                    
-                                    <form action="#">
-                                        <select name="sort" aria-label="並び替え">
-                                            <option>
-                                                オススメ</option>
-                                            <option>
-                                                融資が早い</option>
-                                            <option>
-                                                限度額が高い</option>
-                                        </select>
-                                    </form>
+
+                        <article class="v3-result-lender-card">
+                            <div class="v3-result-lender-head">
+                                <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-banner">
+                                    <img loading="lazy" width="300" height="250" src="./images/banner_promise.jpg" alt="プロミス公式サイトへ">
+                                </a>
+                                <div class="v3-result-lender-summary">
+                                    <p class="v3-result-lender-rank">おすすめ順 No.3</p>
+                                    <h3><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3>
+                                    <p class="v3-result-lender-group">SMBCコンシューマーファイナンス株式会社</p>
                                 </div>
                             </div>
-                            <div class="v3-result-trust" aria-label="比較情報">
-                                <span>更新日: 2026年7月8日</span>
-                                <span>比較対象: アコム / SMBCモビット / プロミス</span>
-                                <span>比較基準: 融資時間・金利・無利息期間・Web完結・郵送物・在籍確認</span>
+                            <div class="v3-result-lender-point">
+                                <span>おすすめポイント</span>
+                                <ul>
+                                    <li>スマホからスピード重視で進めたい方に向いています</li>
+                                    <li>郵送物なし、カードレスで進めたい方も確認できます</li>
+                                    <li>30日間無利息の条件も申込前に確認できます</li>
+                                </ul>
                             </div>
-                            <div class="order_change">
-                                <script>
-                                    $("select[name='sort']").change(function() {
-                                        var href = $(this).val();
-                                        if (href != '') {
-                                            location.href = href;
-                                        }
-                                    });
-                                </script>
+                            <dl class="v3-result-lender-spec">
+                                <div><dt>審査時間</dt><dd>最短3分</dd></div>
+                                <div><dt>融資時間</dt><dd>最短3分</dd></div>
+                                <div><dt>借入限度額</dt><dd>最大500万円</dd></div>
+                                <div><dt>実質年率</dt><dd>2.5%〜18.0%</dd></div>
+                                <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
+                            </dl>
+                            <div class="v3-result-review"><b>口コミ例</b><p>スマホで比較しながら、返済額や無利息期間を確認できたという声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline>
+                                <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
+                                <div class="v3-result-deadline-timer" aria-live="polite"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section>
-                <div class="inner">
-                    <div class="v3-result-note">
-                        <strong>診断結果にもとづくおすすめ順です</strong>
-                        <p>条件に近い3社を比較し、申込前に詳細を確認できます。</p>
+                            <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
+                            <p class="v3-result-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※無利息期間の適用には条件があります。※一例であり、結果を保証するものではありません。</p>
+                        </article>
+
+                        <article class="v3-result-lender-card">
+                            <div class="v3-result-lender-head">
+                                <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner">
+                                    <img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ">
+                                </a>
+                                <div class="v3-result-lender-summary">
+                                    <p class="v3-result-lender-rank">おすすめ順 No.4</p>
+                                    <h3><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3>
+                                    <p class="v3-result-lender-group">アイフル株式会社</p>
+                                </div>
+                            </div>
+                            <div class="v3-result-lender-point">
+                                <span>おすすめポイント</span>
+                                <ul>
+                                    <li>1秒診断で申込前の目安を確認したい方に向いています</li>
+                                    <li>Web申込、来店不要、カードレスで進めたい方も確認できます</li>
+                                    <li>急ぎの借入を検討する前に条件を確認できます</li>
+                                </ul>
+                            </div>
+                            <dl class="v3-result-lender-spec">
+                                <div><dt>審査時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div>
+                                <div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div>
+                                <div><dt>借入限度額</dt><dd>最大800万円</dd></div>
+                                <div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div>
+                                <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
+                            </dl>
+                            <div class="v3-result-review"><b>口コミ例</b><p>申込前に診断で目安を確認でき、条件を比較しやすかったという声があります。</p></div>
+                            <div class="v3-result-deadline" data-v3-sameday-deadline>
+                                <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
+                                <div class="v3-result-deadline-timer" aria-live="polite"></div>
+                            </div>
+                            <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
+                            <p class="v3-result-lender-note">【PR】Sponsored by アイフル株式会社<br>※システムメンテナンスの時間帯や一部金融機関を除きます。※一例であり、結果を保証するものではありません。</p>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -422,9 +452,8 @@
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
-                            <BR>
-            <span class="catch_top_recommend v3-catch-text">とりあえず迷ったらココ！</span>
-                <a target="_blank" href="./redirect.php?item=acom"> 公式サイトで申込条件を確認する<i
+                    <span>とりあえず迷ったらココ！</span>
+                        <a target="_blank" href="./redirect.php?item=acom"> 公式サイトで申込条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -609,123 +638,16 @@
 </div>
  
 
-            <div class="ht40"></div>
-            
-            
-<section class="hikaku_box" id="hikaku">
-    <div class="c-compareTableWrapper u-mb-0 is-open">
-        <section class="topbox topboxNew hikaku CardListSearch__compareWrapper">
-                            <h2>初めての方に<BR>おすすめのカードローンを徹底比較</h2>
-            <p class="v3-table-hint">横にスクロールして3社を比較 →</p>
-            
-            <div class="c-compareTableWrapper">
-                <table class="c-compareTable">
-                    <caption>カードローン3社の比較表（融資時間・金利・無利息期間・必要書類）</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">比較項目</th>
-                                                            <td>
-                                    <a target="_blank" href="./redirect.php?item=acom">
-                                                                                    <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム">
-                                        <br>
-                                        <span>アコム</span>
-                                    </a>
-                                </td>
-                                                            <td>
-                                    <a target="_blank" href="./redirect.php?item=mobit">
-                                                                                    <img loading="lazy" height="333" width="400" src="./images/banner_mobit.jpg" alt="SMBCモビット">
-                                        <br>
-                                        <span>SMBCモビット</span>
-                                    </a>
-                                </td>
-                                                            <td>
-                                    <a target="_blank" href="./redirect.php?item=promise">
-                                                                                    <img loading="lazy" height="300" width="300" src="./images/promise.gif" alt="プロミス">
-                                        <br>
-                                        <span>プロミス</span>
-                                    </a>
-                                </td>
-                                                    </tr>
-                    </thead>
-                    <tbody>
-                                                    <tr>
-                                <th scope="row">審査時間</th>
-                                                                                                            <td class="isDoubleCircle">最短20分<span class="caution">※1</span></td>
-                                                                                                                                                <td class="isCircle">10秒<br>簡易審査</td>
-                                                                                                                                                <td class="isDoubleCircle">最短3分</td>
-                                                                                                </tr>
-                                                    <tr>
-                                <th scope="row">融資時間</th>
-                                                                                                            <td class="isDoubleCircle">最短20分<span class="caution">※1</span></td>
-                                                                                                                                                <td class="isDoubleCircle">最短15分</td>
-                                                                                                                                                <td class="isDoubleCircle">最短3分</td>
-                                                                                                </tr>
-                                                    <tr>
-                                <th scope="row">金利</th>
-                                                                                                            <td class="isDoubleCircle">2.4%～17.9%</td>
-                                                                                                                                                <td class="isCircle">3.0%〜18.0%</td>
-                                                                                                                                                <td class="isCircle">2.5％~18.0％</td>
-                                                                                                </tr>
-                                                    <tr>
-                                <th scope="row">即日融資</th>
-                                                                                                            <td class="isCircle">可能</td>
-                                                                                                                                                <td class="isCircle">可能</td>
-                                                                                                                                                <td class="isCircle">可能</td>
-                                                                                                </tr>
-                                                    <tr>
-                                <th scope="row">無利息期間</th>
-                                                                                                            <td class="isCircle">初回契約翌日から30日間</td>
-                                                                                                                                                <td class="">なし</td>
-                                                                                                                                                <td class="isDoubleCircle">30日</td>
-                                                                                                </tr>
-                                                    <tr>
-                                <th scope="row">必要書類</th>
-                                                                                                            <td class="isCircle">身分証 ※2</td>
-                                                                                                                                                <td class="isCircle">身分証</td>
-                                                                                                                                                <td class="isCircle">身分証</td>
-                                                                                                </tr>
-                                                    <tr>
-                                <th scope="row">返済</th>
-                                                                                                            <td class="isDoubleCircle">月1,000円～</td>
-                                                                                                                                                <td class="isDoubleCircle">月1,000円～</td>
-                                                                                                                                                <td class="isDoubleCircle">月1,000円～</td>
-                                                                                                </tr>
-                                                    <tr>
-                                <th scope="row">公式HP</th>
-                                                                                                            <td class="">
-                                            <a target="_blank" href="./redirect.php?item=acom" class="c-button">条件を確認</a>
-                                        </td>
-                                                                                                                                                <td class="">
-                                            <a target="_blank" href="./redirect.php?item=mobit" class="c-button">条件を確認</a>
-                                        </td>
-                                                                                                                                                <td class="">
-                                            <a target="_blank" href="./redirect.php?item=promise" class="c-button">条件を確認</a>
-                                        </td>
-                                                                                                </tr>
-                                            </tbody>
-                </table>
-
-                <p class="caution">※1 お申込時間や審査によりご希望に添えない場合がございます。</p>
-                    <p class="caution">※2 運転免許証、マイナンバーカード、パスポート、交付を受けていない方は資格確認書</p>
-                <p class="caution">※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。</p>
-                <p class="caution">※21時（日曜日は18時）までのご契約手続き完了（審査・必要書類の確認含む）で、当日中にお振込みが可能です。</p>
-                <p class="caution">※一部金融機関および、メンテナンス時間等を除きます。</p>
-                <p class="caution">更新日: 2026年7月8日 / 比較基準: 融資時間・金利・無利息期間・Web完結・郵送物・在籍確認</p>
-            </div>
-        </section>
-    </div>
-</section>            <div class="ht40"></div>
-            
-            <section>
-                <div class="inner">
-                    <div class="optimal_recommend">
-                        <h2 class="v3-section-title">リアルな体験談</h2>
-                        <span class="optimal_ttl">今すぐお金が必要…！ <br> けど周りにはバレたくない…！ <br>
-                        </span>
-                        <sapn
-                            style="font-size: large; text-align: center; display: block; width: 100%; padding-bottom: 1em;">
-                            そんな方にはこちらのカードローンがオススメです。 </sapn>
-                        <div class="topbox topboxNew case">
+<section>
+    <div class="inner">
+        <div class="optimal_recommend">
+            <h2 class="v3-section-title">リアルな体験談</h2>
+            <span class="optimal_ttl">今すぐお金が必要…！ <br> けど周りにはバレたくない…！ <br>
+            </span>
+            <sapn
+                style="font-size: large; text-align: center; display: block; width: 100%; padding-bottom: 1em;">
+                そんな方にはこちらのカードローンがオススメです。 </sapn>
+            <div class="topbox topboxNew case">
     
             <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
@@ -807,8 +729,7 @@
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
-                            <BR>
-            <span class="catch_top_recommend v3-catch-text">とりあえず迷ったらココ！</span>
+                    <span>とりあえず迷ったらココ！</span>
                         <a target="_blank" href="./redirect.php?item=acom"> 公式サイトで申込条件を確認する<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -823,9 +744,10 @@
             ※ 一例であり、結果を保証するものではありません。</p>
 
     </div>
-</div>                    </div>
-                </div>
-            </section>
+</div>        </div>
+    </div>
+</section>
+
             
                 <section>
         <div id="ranking2" class="topbox">
@@ -873,34 +795,40 @@
             </p>
         </div>
     </section>
-            <h2 class="v3-research-title">条件を変えてもう一度診断</h2>
+            <h2 class="v3-research-title">再度条件を変更して探す</h2>
             <div id="search_box">
                 <h2 class="ttl01">
-                    <i class="fas fa-search"></i> 条件を変更する
+                    <i class="fas fa-search"></i> 再度条件を変更して探す
                 </h2>
-                <div class="timer_in_box">
-                    <div class="remaining" style="display: block;"><span>今日中</span>に借りるなら</div>
-                    <div class="timerbox">
-                        <p id="timerTop"></p>
-                    </div>
-                    <div class="over"></div>
-                </div>
                 <div id="searchTOP">
-                    <form id="form" action="./beginner_result.html" method="get">
+                    <form id="form" action="./result.html" method="get">
                         <input name="s" type="hidden" />
                         <input type="hidden" name="post_type" value="post">
+                        <h3>Q1.現在借り入れ中の会社は？<span>（複数選択可）</span></h3>
+                        <div class="rentcheck">
+                    <label><input
+                                    type="checkbox" value="a1_1" name="cat[]" /><span>アコム</span></label><label><input
+                                    type="checkbox" value="a1_2" name="cat[]" /><span>プロミス</span></label><label><input type="checkbox" value="a1_0" name="cat[]" /><span>アイフル</span></label><label><input
+                                    type="checkbox" value="a1_3" name="cat[]" /><span>SMBCモビット</span></label><label><input
+                                    type="checkbox" value="a1_4" name="cat[]" /><span>レイク</span></label><label><input
+                                    type="checkbox" value="a1_11" name="cat[]" /><span>その他</span></label>
+                </div>
                         <ul class="select_box"><li class="selected">
-                                <label for="select_s2">Q1.いつまでに借りたい？</label>
+                                <label for="select_s2">Q2.いつまでに借りたい？</label>
                                 <p>こだわらない</p>
                                 <select name="loan_speed_dis" id="select_s2">
                                     <option value="">こだわらない</option>
+                                    
                                     <option id="loan_speed_1" value="a3_1">1時間以内に借りたい</option>
+                                    
                                     <option id="loan_speed_2" value="a3_2">当日中に借りたい</option>
+                                    
                                     <option id="loan_speed_3" value="a3_3">3日以内に借りたい</option>
+                                    
                                     <option id="loan_speed_4" value="a3_4">1週間以内に借りたい</option>
                                 </select>
                             </li><li class="">
-                                <label for="select_s1">Q2.いくら借りたい？</label>
+                                <label for="select_s1">Q3.いくら借りたい？</label>
                                 <p>こだわらない</p>
                                 <select name="borrow_limit_dis" id="select_s1">
                                     <option value="">こだわらない</option>
@@ -910,26 +838,34 @@
                                     <option id="borrow_limit_4" value="a2_4">101万円以上</option>
                                 </select>
                             </li><li>
-                                <label for="select_s4">Q3.どのように借りたい？</label>
+                                <label for="select_s4">Q4.どのように借りたい？</label>
                                 <p>未回答</p>
                                 <select name="how_dis" data-id="how_dis" id="select_s4">
                                     <option value="">こだわらない</option>
+                                    
                                     <option id="how_1" value="a4_1">コンビニATM</option>
+                                    
                                     <option id="how_2" value="a4_2">口座振込</option>
+                                    
                                 </select>
                             </li><li>
-                                <label for="select_s5">Q4.現在の年収は？</label>
+                                <label for="select_s5">Q5.現在の年収は？</label>
                                 <p>未回答</p>
                                 <select name="annual_income_dis" data-id="annual_income_dis" id="select_s5">
                                     <option value="">未回答</option>
+                                    
                                     <option id="annual_income_1" value="a5_1">120万円未満</option>
+                                    
                                     <option id="annual_income_2" value="a5_2">120万～300万円</option>
+                                    
                                     <option id="annual_income_3" value="a5_3">300万～500万円</option>
+                                    
                                     <option id="annual_income_4" value="a5_4">500万～700万円</option>
+                                    
                                     <option id="annual_income_5" value="a5_5">700万円以上</option>
                                 </select>
                             </li><li>
-                                <label for="select_s6">Q5.現在の職業は？</label>
+                                <label for="select_s6">Q6.現在の職業は？</label>
                                 <p>なし</p>
                                 <select name="how_many_loans_dis" id="select_s6">
                                     <option value="">なし</option>
@@ -943,14 +879,24 @@
                                     <option id="job_8" value="a6_8">無職</option>
                                 </select>
                             </li><li>
-                                <label for="select_s7">Q6.利用にあたって重視したい点は？</label>
+                                <label for="select_s7">Q7.会社規模は？</label>
                                 <p>なし</p>
-                                <select name="focous_dis" id="select_s7">
-                                    <option value="">なし</option>
-                                    <option id="focous_1" value="focous_1">無利息金利期間がある</option>
-                                    <option id="focous_2" value="focous_2">収入証明書が不要</option>
-                                    <option id="focous_3" value="focous_3">スマホで借りられる</option>
-                                    <option id="focous_4" value="focous_4">低金利</option>
+                                <select name="company_size_dis" id="select_s7">
+                                    <option value="">未回答</option>
+                                    <option id="company_size_1" value="a7_1">5人未満</option>
+                                    <option id="company_size_2" value="a7_2">5人以上</option>
+                                    <option id="company_size_3" value="a7_3">20人以上</option>
+                                    <option id="company_size_4" value="a7_4">50人以上/派遣社員</option>
+                                </select>
+                            </li><li>
+                                <label for="select_s8">Q8.勤続年数は？ </label>
+                                <p>未回答</p>
+                                <select name="duration_dis" id="select_s8">
+                                    <option value="">未回答</option>
+                                    <option id="duration_1" value="a8_1">半年未満</option>
+                                    <option id="duration_2" value="a8_2">半年以上～1年未満</option>
+                                    <option id="duration_3" value="a8_3">1年以上～3年未満</option>
+                                    <option id="duration_4" value="a8_4">3年以上</option>
                                 </select>
                             </li></ul>
                         <input type="checkbox" class="dispad_url_on" id="a999" name="dispad_url_on"
@@ -1009,7 +955,7 @@
                             $('#select_s3, #select_s4, #select_s5').parent().css('display', 'list-item');
                         } else if ($('#select_s4').siblings('p').text() !== $('#select_s4 option:selected').text()) {
                             $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
-                            $('#select_s3, #select_s4').parent().css('display', 'list-item');
+                            $('#select_s3').parent().css('display', 'list-item');
                         }
                     });
 
@@ -1017,7 +963,7 @@
                         const str1 = $('option:selected', this).text();
                         $(this).siblings('p').text(str1);
                     });
-                    $('#select_s4, #select_s5, #select_s6').change(function() {
+                    $('#select_s4, #select_s5, #select_s6,#select_s7,#select_s8').change(function() {
                         const str1 = $('option:selected', this).text();
                         $(this).siblings('p').text(str1);
                         $(this).parent().css('display', 'list-item');
@@ -1048,6 +994,45 @@
                             } else {
                                 container_body.html($('div', this).html().replace(/<input/g, '<input disabled hidden').replace(/label/g, 'p class="modal-check"').replace(/for=/g, 'data-for=').replace(/data-checked=\"true\"/g, 'style="background:#d7e3f130"').replace(/<\/label>/g, '<\/p>'));
                             }
+                            if ($(this).hasClass('form_slider')) {
+
+                                const $slider = $(this).find('input[type="range"]');
+                                const $select = $(this).find('select');
+                                const options = $select.find('option').map(function() {
+                                    return $(this).text();
+                                }).get();
+
+                                const initialValue = $select.prop('selectedIndex');
+
+                                container_title.text($(this).find('label').text());
+                                container_body.append(`    <input type="range" class="modal-slider" min="0" max="${options.length - 1}" step="1" value="${initialValue}"><p class="slider-value-display">${options[initialValue]}</p>
+            `);
+
+                                container_body.find('.modal-slider').on('input', function() {
+                                    const sliderValue = $(this).val(); // スライダーの現在値を取得
+                                    const $sliderValueDisplay = container_body.find('.slider-value-display'); // 値表示用
+                                    const $modalButtons = container_body.find('.modal-btn'); // モーダル内の選択肢ボタン
+                                    const $select = $('select[name="' + container.data('name') + '"]'); // 元の <select>
+
+                                    const selectedText = $modalButtons.eq(sliderValue).text(); // 対応するテキストを取得
+                                    $sliderValueDisplay.text(selectedText);
+
+                                    $modalButtons.removeAttr('style'); // 全てのスタイルをリセット
+                                    $modalButtons.eq(sliderValue).css('background', 'rgba(241,228,215, 0.19)'); // 現在の項目にスタイル適用
+
+                                    $select.prop('selectedIndex', sliderValue).change(); // <select> のインデックスを同期
+
+                                });
+                                container_body.find('.modal-slider').on('change', function() {
+                                    const sliderValue = $(this).val(); // スライダーの現在値を取得
+                                    const $modalButtons = container_body.find('.modal-btn'); // モーダル内の選択肢ボタン
+
+                                    $modalButtons.eq(sliderValue).click(); // ボタンのクリックイベントを発火
+                                });
+
+                            } else {
+                            }
+
                             if ($(this).index() === $(this).siblings().length) {
                                 container_body.append('<p class="modal-submit">この条件で探す</p>')
                             }
@@ -1170,15 +1155,7 @@
                         });
                     });
                     $(document).ready(function() {
-                        $('.rentcheck input[type="checkbox"]').on('click', function() {
-                            if ($(this).is(':checked')) {
-                                $(this).prop('checked', true); // チェックを付ける
-                            } else {
-                                $(this).prop('checked', false); // チェックを外す
-                            }
 
-                            console.log($(this).val() + " の状態: " + $(this).is(':checked'));
-                        });
                     });
                 </script>
             </div>
@@ -1187,7 +1164,6 @@
             </div>
             <a href="#top" class="nav arroe_top"></a>
         </div>
-    </div>
     </div>
         <footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
@@ -1307,7 +1283,7 @@
 <script src="./js/v3-accessibility-cvr.js?v=pages-demo-5" defer></script>
 </body>
 
-<script src="./js/timer.js?v=mnavi98" defer></script>
+<script src="./js/timer.js?v=mnavi99" defer></script>
 
 <script>
     $(document).ready(function() {
@@ -1392,6 +1368,66 @@
             }
         });
     });
+</script>
+<script>
+    (function() {
+        function onReady(callback) {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', callback);
+            } else {
+                callback();
+            }
+        }
+
+        function setText(id, text) {
+            var target = document.getElementById(id);
+            if (target) target.textContent = text;
+        }
+
+        function optionText(selectId, fallback) {
+            var select = document.getElementById(selectId);
+            if (!select) return fallback;
+            var option = select.options[select.selectedIndex];
+            var text = option ? option.textContent.trim() : '';
+            return text || fallback;
+        }
+
+        function checkboxLabel(value) {
+            var inputs = document.querySelectorAll('.rentcheck input[name="cat[]"]');
+            for (var i = 0; i < inputs.length; i += 1) {
+                if (inputs[i].value === value) {
+                    var label = inputs[i].closest('label');
+                    return label ? label.textContent.trim() : '';
+                }
+            }
+            return '';
+        }
+
+        onReady(function() {
+            var params = new URLSearchParams(window.location.search);
+            var catValues = params.getAll('cat[]');
+
+            document.querySelectorAll('.rentcheck input[name="cat[]"]').forEach(function(input) {
+                input.checked = catValues.indexOf(input.value) !== -1;
+            });
+
+            document.querySelectorAll('select[name]').forEach(function(select) {
+                if (params.has(select.name)) {
+                    select.value = params.get(select.name) || '';
+                }
+            });
+
+            var companies = catValues.map(checkboxLabel).filter(Boolean).join(' / ') || '指定なし';
+            setText('selected-companies', companies);
+            setText('selected-amount', optionText('select_s1', 'こだわらない'));
+            setText('selected-time', optionText('select_s2', 'こだわらない'));
+            setText('selected-method', optionText('select_s4', 'こだわらない'));
+            setText('selected-income', optionText('select_s5', '未回答'));
+            setText('selected-job', optionText('select_s6', 'なし'));
+            setText('selected-company-size', optionText('select_s7', '未回答'));
+            setText('selected-duration', optionText('select_s8', '未回答'));
+        });
+    })();
 </script>
 
 </html>

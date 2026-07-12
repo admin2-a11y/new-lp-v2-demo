@@ -1,5 +1,7 @@
 /* Keep the beginner search heading readable on narrow phones. */
 .beginner #search_box h2.ttl01 {
+  font-size: 19px !important;
+  line-height: 1.4 !important;
   white-space: nowrap !important;
 }
 
@@ -7,7 +9,7 @@
   .beginner #search_box h2.ttl01 {
     padding-right: 0 !important;
     padding-left: 0 !important;
-    font-size: 15px !important;
+    font-size: 17px !important;
   }
 
   .beginner #search_box h2.ttl01 i {
@@ -17,16 +19,24 @@
 
 @media screen and (max-width: 340px) {
   .beginner #search_box h2.ttl01 {
-    font-size: 14px !important;
+    font-size: 14.25px !important;
+  }
+
+  .beginner #search_box h2.ttl01 i {
+    margin-right: 0 !important;
   }
 }
 
-/* Highlight the active loan-speed question like the experienced survey. */
-body.beginner #search_box ul.select_box > li.selected:has(#select_s2) {
+/* Highlight whichever beginner question is currently active. */
+body.beginner #search_box ul.select_box > li.v3-current-question {
   border: 2px solid #ff7624 !important;
   background: #fff9f3 !important;
   box-shadow: 0 0 0 2px rgba(255, 118, 36, .14), 0 0 10px rgba(255, 118, 36, .28) !important;
   animation: beginner-loan-speed-glow 1.65s ease-in-out infinite !important;
+}
+
+body.beginner #search_box ul.select_box > li.selected:not(.v3-current-question) {
+  animation: none !important;
 }
 
 @keyframes beginner-loan-speed-glow {
@@ -41,7 +51,7 @@ body.beginner #search_box ul.select_box > li.selected:has(#select_s2) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.beginner #search_box ul.select_box > li.selected:has(#select_s2) {
+  body.beginner #search_box ul.select_box > li.v3-current-question {
     animation: none !important;
   }
 }

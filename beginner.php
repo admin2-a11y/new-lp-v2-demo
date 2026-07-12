@@ -180,7 +180,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css?v=mnavi98" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=questiontimer3" type="text/css" media="screen">
 	</head>
 <body class="beginner">
 	
@@ -1607,6 +1607,8 @@
 <div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>	
     <script>
         (function v3EnhanceDiagnosis() {
+            var lastChangedName = '';
+
             function updateDiagnosisState() {
                 var items = Array.prototype.slice.call(document.querySelectorAll('ul.select_box > li'));
                 items.forEach(function(item) {
@@ -1623,12 +1625,29 @@
                         text = label.textContent;
                     }
                     item.classList.toggle('v3-answered', text !== 'タップして選択 ▼' && text !== '未回答' && text !== 'なし');
+                    item.classList.remove('v3-current-question');
                 });
                 var modal = document.getElementById('serch2_Modal');
                 if (!modal || !items.length) return;
                 var currentName = window.jQuery ? window.jQuery(modal).data('name') : '';
+                currentName = currentName || lastChangedName;
                 var currentSelect = currentName ? document.querySelector('select[name="' + currentName + '"]') : null;
                 var currentItem = currentSelect ? currentSelect.closest('li') : null;
+                if (currentItem && currentSelect && (currentSelect.value || '').trim()) {
+                    var currentPosition = items.indexOf(currentItem);
+                    var nextItem = items.slice(currentPosition + 1).filter(function(item) {
+                        return item.offsetParent !== null;
+                    })[0];
+                    if (nextItem) currentItem = nextItem;
+                }
+                if (!currentItem) {
+                    currentItem = items.filter(function(item) {
+                        return item.offsetParent !== null;
+                    })[0] || items[0];
+                }
+                if (currentItem) {
+                    currentItem.classList.add('v3-current-question');
+                }
                 var currentIndex = currentItem ? items.indexOf(currentItem) + 1 : 1;
                 if (currentIndex < 1) currentIndex = 1;
                 var progress = modal.querySelector('.v3-modal-progress');
@@ -1643,7 +1662,10 @@
             }
             if (window.jQuery) {
                 window.jQuery(window).on('load', function() { setTimeout(updateDiagnosisState, 0); });
-                window.jQuery(document).on('click change', 'ul.select_box li, #serch2_Modal .modal-btn, #serch2_Modal .modal-back, #serch2_Modal .modal-submit, select', function() {
+                window.jQuery(document).on('click change', 'ul.select_box li, #serch2_Modal .modal-btn, #serch2_Modal .modal-back, #serch2_Modal .modal-submit, select', function(event) {
+                    if (event.type === 'change' && this.matches && this.matches('#search_box ul.select_box select')) {
+                        lastChangedName = this.name || '';
+                    }
                     setTimeout(updateDiagnosisState, 0);
                 });
             } else {

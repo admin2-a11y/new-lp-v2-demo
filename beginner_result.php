@@ -220,10 +220,10 @@
                     </div>
                     <h2 id="v3-result-lenders-title" class="v3-result-lenders-title">はじめてでも比較しやすいカードローン</h2>
                     <div class="v3-result-lender-list">
-                        <article class="v3-result-lender-card is-first">
+                        <article class="v3-result-lender-card rank-3">
                             <div class="v3-result-lender-head">
                                 <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ"></a>
-                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.1</p><h3><a target="_blank" href="./redirect.php?item=acom">アコム</a></h3><p class="v3-result-lender-group">三菱UFJフィナンシャル・グループ</p></div>
+                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.3</p><h3><a target="_blank" href="./redirect.php?item=acom">アコム</a></h3><p class="v3-result-lender-group">三菱UFJフィナンシャル・グループ</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>スマホから申込条件を確認しやすい候補です</li><li>Web申込、来店不要、カードレス契約も選べます</li><li>はじめての契約なら無利息期間も確認できます</li></ul></div>
                             <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>融資時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>借入限度額</dt><dd>1万円〜800万円</dd></div><div><dt>実質年率</dt><dd>2.4%〜17.9%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
@@ -232,10 +232,10 @@
                             <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-cta">公式サイトで申込条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by アコム株式会社<br>※お申込時間や審査状況によりご希望に添えない場合があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
-                        <article class="v3-result-lender-card">
+                        <article class="v3-result-lender-card rank-4">
                             <div class="v3-result-lender-head">
                                 <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_promise.jpg" alt="プロミス公式サイトへ"></a>
-                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.2</p><h3><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3><p class="v3-result-lender-group">SMBCコンシューマーファイナンス株式会社</p></div>
+                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.4</p><h3><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3><p class="v3-result-lender-group">SMBCコンシューマーファイナンス株式会社</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>スマホからスピード重視で進めたい方に向いています</li><li>郵送物なし、カードレスで進めたい方も確認できます</li><li>30日間無利息の条件も申込前に確認できます</li></ul></div>
                             <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短3分</dd></div><div><dt>融資時間</dt><dd>最短3分</dd></div><div><dt>借入限度額</dt><dd>最大500万円</dd></div><div><dt>実質年率</dt><dd>2.5%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
@@ -244,10 +244,10 @@
                             <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※無利息期間の適用には条件があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
-                        <article class="v3-result-lender-card">
+                        <article class="v3-result-lender-card rank-2">
                             <div class="v3-result-lender-head">
                                 <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner"><img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ"></a>
-                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.3</p><h3><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3><p class="v3-result-lender-group">アイフル株式会社</p></div>
+                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.2</p><h3><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3><p class="v3-result-lender-group">アイフル株式会社</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>申込前に1秒診断で目安を確認したい方に向いています</li><li>Web申込、来店不要、カードレスで進めたい方も確認できます</li><li>急ぎの借入を検討する前に条件を確認できます</li></ul></div>
                             <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
@@ -256,10 +256,10 @@
                             <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by アイフル株式会社<br>※システムメンテナンスの時間帯や一部金融機関を除きます。※一例であり、結果を保証するものではありません。</p>
                         </article>
-                        <article class="v3-result-lender-card">
+                        <article class="v3-result-lender-card is-first rank-1">
                             <div class="v3-result-lender-head">
                                 <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-banner"><img loading="lazy" width="400" height="333" src="./images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ"></a>
-                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.4</p><h3><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3><p class="v3-result-lender-group">三井住友カード株式会社</p></div>
+                                <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.1</p><h3><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3><p class="v3-result-lender-group">三井住友カード株式会社</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>WEB完結で進めたい方に向いています</li><li>電話連絡や郵送物を抑えたい場合に確認しやすい候補です</li><li>カードレスで使いたい方も条件を確認できます</li></ul></div>
                             <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>10秒簡易審査</dd></div><div><dt>融資時間</dt><dd>最短15分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
