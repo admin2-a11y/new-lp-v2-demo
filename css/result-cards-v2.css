@@ -461,6 +461,7 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
   color: #303030;
   font-size: 12px;
 }
+.v4-countdown[hidden] { display: none !important; }
 .v4-countdown > span { color: #eb321d; font-weight: 800; }
 .v4-countdown b { font-weight: 700; }
 .v4-countdown i { display: inline-block; min-width: 25px; margin: 0 2px; padding: 3px 4px; border-radius: 4px; background: #171717; color: #fff342; font-style: normal; font-variant-numeric: tabular-nums; }

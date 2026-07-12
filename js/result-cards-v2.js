@@ -144,11 +144,12 @@
   const countdowns = Array.from(mount.querySelectorAll("[data-v4-countdown]"));
   const updateCountdowns = () => {
     const now = new Date();
+    const isDisplayTime = now.getHours() < 21;
     const deadline = new Date(now);
     deadline.setHours(21, 0, 0, 0);
     const remaining = deadline.getTime() - now.getTime();
     countdowns.forEach((countdown) => {
-      if (remaining <= 0) {
+      if (!isDisplayTime || remaining <= 0) {
         countdown.hidden = true;
         return;
       }
@@ -159,7 +160,7 @@
       countdown.querySelector("[data-v4-seconds]").textContent = pad(totalSeconds % 60);
       countdown.querySelector("[data-v4-centiseconds]").textContent = pad(Math.floor((remaining % 1000) / 10));
     });
-    if (remaining <= 0) window.clearInterval(countdownTimer);
+    if (!isDisplayTime || remaining <= 0) window.clearInterval(countdownTimer);
   };
   const countdownTimer = window.setInterval(updateCountdowns, 50);
   updateCountdowns();
