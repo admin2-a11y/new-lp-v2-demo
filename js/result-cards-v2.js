@@ -167,11 +167,12 @@
   mount.querySelectorAll(".v4-recommend, .v4-review-box").forEach((box) => {
     box.addEventListener("click", (event) => {
       if (event.target.closest("summary")) return;
+      if (event.target.closest("a, button, input, select, textarea, label")) return;
       const details = box.querySelector("details");
-      if (!details || !details.open) return;
+      if (!details) return;
       const selection = window.getSelection();
       if (selection && selection.toString()) return;
-      details.open = false;
+      details.open = !details.open;
     });
   });
 })();
