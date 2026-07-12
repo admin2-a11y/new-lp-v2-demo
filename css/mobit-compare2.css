@@ -539,3 +539,27 @@ body.experience .v3-compare2-title-image img {
     margin-bottom: 6px;
   }
 }
+
+/* Double evaluation rings, except Aiful monthly repayment. */
+body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 43px;
+  height: 43px;
+  border: 2px solid rgba(255, 158, 26, .72);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+body.experience .v3-compare2-table tbody tr:nth-child(3) td:nth-child(3) .v3-compare2-value.is-ring::after {
+  content: none;
+}
+
+@media screen and (max-width: 480px) {
+  body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::after {
+    width: 33px;
+    height: 33px;
+    border-width: 1px;
+  }
+}
