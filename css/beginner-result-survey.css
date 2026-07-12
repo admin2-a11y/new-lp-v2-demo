@@ -1,0 +1,63 @@
+body.beginner.search-results #search_box ul.select_box > li,
+body.beginner.search-results #search_box ul.select_box > li.selected,
+body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
+  min-height: 72px;
+  border: 2px solid #56bfa8 !important;
+  background: #f7fffc !important;
+  box-shadow: 0 3px 0 rgba(20, 104, 87, .12) !important;
+  animation: none !important;
+}
+
+html body.beginner.search-results #search_box #searchTOP ul.select_box > li label {
+  left: 14px !important;
+  width: 48%;
+  max-width: none !important;
+  color: #155e52 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.35;
+}
+
+html body.beginner.search-results #search_box #searchTOP ul.select_box > li p {
+  left: 52% !important;
+  width: calc(48% - 50px);
+  max-width: none !important;
+  padding-right: 0;
+  color: #155e52 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+body.beginner.search-results #search_box ul.select_box > li::before {
+  right: 17px !important;
+  width: 11px !important;
+  height: 11px !important;
+  border: 0 !important;
+  border-right: 3px solid #159779 !important;
+  border-bottom: 3px solid #159779 !important;
+  border-radius: 1px !important;
+  background: none !important;
+  transform: translateY(-68%) rotate(45deg) !important;
+}
+
+@media (max-width: 374px) {
+  html body.beginner.search-results #search_box #searchTOP ul.select_box > li label {
+    left: 10px !important;
+    width: 49%;
+    font-size: 12px !important;
+  }
+
+  html body.beginner.search-results #search_box #searchTOP ul.select_box > li p {
+    left: 50% !important;
+    width: calc(50% - 48px);
+    font-size: 12px !important;
+  }
+
+  body.beginner.search-results #search_box ul.select_box > li::before {
+    right: 13px !important;
+  }
+}

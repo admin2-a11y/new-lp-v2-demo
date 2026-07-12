@@ -181,7 +181,8 @@
 			});
 		</script>
 		<link rel="stylesheet" href="./css/theme-v3-green.css?v=mnavi98" type="text/css" media="screen">
-	</head>
+		<link rel="stylesheet" href="./css/beginner-result-survey.css?v=survey-style-1" type="text/css" media="screen">
+</head>
 <body class="beginner search-results">
     
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
@@ -1262,10 +1263,10 @@
                     var value = (select.value || '').trim();
                     var text = (label.textContent || '').trim();
                     if (!value && (text === '未回答' || text === 'なし' || text === 'こだわらない' || text === '')) {
-                        label.textContent = 'タップして選択 ▼';
+                        label.textContent = 'タップして選択';
                         text = label.textContent;
                     }
-                    item.classList.toggle('v3-answered', text !== 'タップして選択 ▼' && text !== '未回答' && text !== 'なし');
+                    item.classList.toggle('v3-answered', text !== 'タップして選択' && text !== '未回答' && text !== 'なし');
                 });
                 var modal = document.getElementById('serch2_Modal');
                 if (!modal || !items.length) return;
