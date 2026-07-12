@@ -52,7 +52,9 @@
     modal.querySelectorAll('.v3-chat-guide').forEach(function (guide) {
       guide.remove();
     });
-    modal.classList.remove('v3-chat-thinking');
+    if (modal.classList.contains('v3-chat-thinking')) {
+      modal.classList.remove('v3-chat-thinking');
+    }
     window.clearTimeout(diagnosisGuideState.timer);
   }
 
