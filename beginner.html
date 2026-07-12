@@ -418,8 +418,8 @@
 				close.on('click', function() {
 					container.removeClass('active');
 				});
-				$(document).on('click', function(e) {
-					if (!$(e.target).closest('.modal-body').length) {
+				container.on('click', function(e) {
+					if (e.target === this) {
 						container.removeClass('active');
 					}
 				});
@@ -1174,7 +1174,7 @@
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js?v=pages-demo-5" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=survey-modal-fix-1" defer></script>
 </body>
 
 </html>
