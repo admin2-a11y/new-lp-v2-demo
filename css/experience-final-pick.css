@@ -40,3 +40,24 @@ body.experience .v3-experience-final-pick__note { margin: 0; color: #78827f; fon
   body.experience .v3-experience-final-pick__specs dd { min-height: 42px; font-size: 11px; }
   body.experience .v3-experience-final-pick__cta { min-height: 50px; font-size: 15px; }
 }
+
+/* Reuse the standard ranked lender card for the closing recommendation. */
+body.experience .v3-experience-final-pick {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+body.experience .v3-experience-final-pick__eyebrow {
+  margin: 0 0 10px !important;
+  padding: 12px 14px !important;
+  border-left: 5px solid #15886d !important;
+  background: #eafaf4 !important;
+  text-align: center !important;
+}
+body.experience .v3-experience-final-pick .v3-lender-card-list,
+body.experience .v3-experience-final-pick .v3-lender-card {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
