@@ -86,6 +86,17 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
 }
 
 /* Responsive replacement for the beginner tips accordion. */
+.v3-beginner-final-pick-label {
+  width: min(100% - 24px, 760px);
+  margin: 20px auto 10px;
+  color: #08765f;
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+  letter-spacing: 0;
+}
+
 .beginner .v3-beginner-tips.v3-beginner-tips--image {
   width: min(100%, 430px) !important;
   margin: 18px auto 8px !important;
