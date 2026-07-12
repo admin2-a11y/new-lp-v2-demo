@@ -317,8 +317,8 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 .v4-points li { position: relative; margin: 0; padding: 8px 0 8px 25px; border-bottom: 1px dashed #e8e8e8; line-height: 1.55; }
 .v4-points li::before { content: "✓"; position: absolute; top: 7px; left: 1px; color: #ff9518; font-size: 19px; font-weight: 900; line-height: 1; transform: rotate(-7deg); }
 .v4-points li:last-child { border-bottom: 0; }
-.v4-points strong { display: block; color: #d95012; font-size: 15px; font-weight: 800; }
-.v4-points span { display: block; color: #555; font-size: 13px; }
+.v4-points strong { display: block; color: #d95012; font-size: 16px; font-weight: 900; }
+.v4-points span { display: block; color: #444; font-size: 14px; font-weight: 700; }
 
 .v4-review-box {
   position: relative;
@@ -454,20 +454,39 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 .v4-cta-bubble {
   position: relative;
   z-index: 1;
-  display: table;
-  max-width: calc(100% - 28px);
-  margin: 0 auto -6px;
-  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  max-width: none;
+  margin: 0 auto 10px;
+  padding: 9px 18px;
   border: 2px solid var(--v4-cta);
   border-radius: 999px;
   background: #fff;
   color: #d94214;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.35;
+  text-align: center;
 }
 .v4-cta-bubble::after { content: ""; position: absolute; left: 50%; bottom: -7px; width: 10px; height: 10px; border-right: 2px solid var(--v4-cta); border-bottom: 2px solid var(--v4-cta); background: #fff; transform: translateX(-50%) rotate(45deg); }
-.v4-cta { display: flex; align-items: center; justify-content: center; min-height: 58px; padding: 10px 16px; border-radius: 7px; background: var(--v4-cta); box-shadow: 0 5px 0 #c7330d; color: #fff !important; font-size: clamp(16px, 3.5vw, 21px); font-weight: 800; line-height: 1.35; text-decoration: none !important; }
+.v4-cta { display: flex; position: relative; top: 0; align-items: center; justify-content: center; min-height: 58px; padding: 10px 16px; border-radius: 7px; background: var(--v4-cta); box-shadow: 0 6px 0 #c7330d; color: #fff !important; font-size: clamp(16px, 3.5vw, 21px); font-weight: 800; line-height: 1.35; text-decoration: none !important; animation: v4-cta-push 2s ease infinite; transition: top 0.2s, box-shadow 0.2s, background-color 0.4s; }
 .v4-cta::after { content: "›"; margin-left: 10px; font-size: 25px; }
+.v4-cta:hover,
+.v4-cta:focus-visible,
+.v4-cta:active { animation-play-state: paused; }
+
+@keyframes v4-cta-push {
+  0%, 20%, 40%, 100% { top: 0; box-shadow: 0 6px 0 #c7330d; }
+  10%, 30% { top: 3px; box-shadow: 0 0 0 #c7330d; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v4-cta { animation: none; }
+}
 .v4-lender-note { margin: 0; padding: 0 14px 14px; color: #858585; font-size: 10px; line-height: 1.55; }
 
 body.result-v2 .v3-result-lenders > .inner > .v3-result-lenders-title,
@@ -498,8 +517,8 @@ body.result-v2 .osusume_btn_area { display: none !important; }
   .v4-points-preview { max-height: 58px; }
   .v4-points li { padding-top: 5px; padding-bottom: 5px; font-size: 12px; }
   .v4-points li::before { top: 5px; font-size: 17px; }
-  .v4-points strong { font-size: 13px; }
-  .v4-points span { font-size: 12px; line-height: 1.45; }
+  .v4-points strong { font-size: 14px; font-weight: 900; }
+  .v4-points span { font-size: 13px; font-weight: 700; line-height: 1.5; }
   .v4-points-more summary { padding: 2px 18px; font-size: 10px; }
   .v4-review-box { margin: 0 10px 12px; padding: 24px 12px 4px; }
   .v4-review-title { padding: 4px 14px; font-size: 15px; font-weight: 800; line-height: 22px; }
@@ -516,7 +535,7 @@ body.result-v2 .osusume_btn_area { display: none !important; }
   .v4-cta-wrap { padding: 0 10px 11px; }
   .v4-countdown { gap: 3px 6px; margin-bottom: 9px; font-size: 10px; }
   .v4-countdown i { min-width: 21px; padding: 2px 3px; }
-  .v4-cta-bubble { padding: 4px 14px; font-size: 11px; }
+  .v4-cta-bubble { min-height: 42px; padding: 7px 10px; font-size: 15px; font-weight: 900; }
   .v4-cta { min-height: 50px; padding: 7px 12px; font-size: 16px; }
 }
 

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>マネーローンナビ デモ一覧</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f4f7fa;
+      color: #172033;
+      font-family: "Noto Sans JP", Meiryo, sans-serif;
+    }
+    main { width: min(100% - 24px, 920px); margin: 0 auto; padding: 28px 0 48px; }
+    h1 { margin: 0 0 8px; font-size: clamp(24px, 5vw, 36px); text-align: center; }
+    .lead { margin: 0 0 26px; color: #596477; text-align: center; }
+    .versions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    section { overflow: hidden; border: 1px solid #d8e0e9; border-radius: 8px; background: #fff; box-shadow: 0 5px 18px rgb(27 49 78 / 8%); }
+    section h2 { margin: 0; padding: 15px 18px; color: #fff; font-size: 21px; }
+    .acom h2 { background: #1769aa; }
+    .mobit h2 { background: #08785f; }
+    ul { display: grid; gap: 10px; margin: 0; padding: 16px; list-style: none; }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 54px;
+      padding: 11px 14px;
+      border: 1px solid #dce4ec;
+      border-radius: 6px;
+      color: #162c47;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    a::after { content: "›"; font-size: 25px; line-height: 1; }
+    a:hover, a:focus-visible { border-color: #ff672c; background: #fff7ef; outline: none; }
+    small { display: block; margin-top: 3px; color: #738092; font-size: 11px; font-weight: 500; }
+    @media (max-width: 640px) {
+      main { padding-top: 20px; }
+      .versions { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>マネーローンナビ デモ一覧</h1>
+    <p class="lead">アコム推し版・モビット推し版の各ページを確認できます。</p>
+    <div class="versions">
+      <section class="acom">
+        <h2>アコム推し版</h2>
+        <ul>
+          <li><a href="./index.html?select_modal=2"><span>経験者向け TOP<small>アンケート・比較コンテンツ</small></span></a></li>
+          <li><a href="./result.html"><span>経験者向け 結果<small>通常の商品カード</small></span></a></li>
+          <li><a href="./result_v2.html?v=34"><span>経験者向け 結果 V2<small>詳細・口コミ付きカード</small></span></a></li>
+          <li><a href="./beginner.html"><span>はじめて向け TOP<small>初心者向けアンケート</small></span></a></li>
+          <li><a href="./beginner_result.html"><span>はじめて向け 結果<small>通常の商品カード</small></span></a></li>
+          <li><a href="./beginner_result_v2.html"><span>はじめて向け 結果 V2<small>詳細・口コミ付きカード</small></span></a></li>
+        </ul>
+      </section>
+      <section class="mobit">
+        <h2>モビット推し版</h2>
+        <ul>
+          <li><a href="./mobit.html?select_modal=2"><span>経験者向け TOP<small>モビット優先の比較導線</small></span></a></li>
+          <li><a href="./mobit_result.html"><span>経験者向け 結果<small>モビット優先の商品カード</small></span></a></li>
+          <li><a href="./mobit_beginner.html"><span>はじめて向け TOP<small>初心者向けアンケート</small></span></a></li>
+          <li><a href="./mobit_beginner_result.html"><span>はじめて向け 結果<small>モビット優先の商品カード</small></span></a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -4,7 +4,7 @@
 
   const lenders = [
     {
-      key: "mobit", name: "SMBCモビット", group: "三井住友カード株式会社", banner: "banner_mobit.jpg", width: 400, height: 333,
+      key: "mobit", name: "SMBCモビット", group: "三井住友カード株式会社", banner: "banner_mobit.jpg", width: 400, height: 333, speedMinutes: 15, limitManYen: 800,
       catch: "10秒で簡易審査結果がわかる", cta: "10秒で簡易審査結果を確認する",
       specs: [["融資時間", "最短15分"], ["実質年率", "3.0％～18.0％"], ["利用限度額", "最大800万円"], ["事前審査", "10秒簡易審査"], ["利用方法", "振込・スマホATM"]],
       points: [["お申込みから最短15分で審査完了！", "お申し込みから最短15分で審査するから急な出費にも即対応！"], ["振込は最短3分", "ご契約後、最短3分で口座へ振り込まれる！"], ["原則電話連絡・郵送物なし", "面倒な電話連絡や郵送物はないから誰にもバレなくて安心！"], ["返済でVポイントが貯まる・使える", "返済の利息分でVポイントが貯まるからお得！"]],
@@ -12,7 +12,7 @@
       note: "※お申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。※WEB完結申込には条件があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     },
     {
-      key: "acom", name: "アコム", group: "三菱UFJフィナンシャル・グループ", banner: "banner_acom2.jpg", width: 300, height: 250,
+      key: "acom", name: "アコム", group: "三菱UFJフィナンシャル・グループ", banner: "banner_acom2.jpg", width: 300, height: 250, speedMinutes: 20, limitManYen: 800,
       catch: "はじめてなら30日間金利0円", cta: "はじめての方はこちらから申し込む",
       specs: [["融資時間", "最短20分"], ["実質年率", "2.4％～17.9％"], ["利用限度額", "最大800万円"], ["無利息期間", "契約日の翌日から30日間"], ["利用方法", "振込・コンビニATM"]],
       points: [["はじめてなら金利0円期間あり！", "アコムを初めて利用する人は30日間金利0円！"], ["審査結果が最短20分でわかる！", "21時までに申し込めば当日中に口座に振込！土日祝も24時間申込可能。"], ["周りにバレずに借りられる！", "面倒な電話連絡や郵送物はないから誰にもバレなくて安心！"], ["三菱UFJフィナンシャル・グループで安心！", "知名度やグループ会社による安心感があります。"]],
@@ -20,7 +20,7 @@
       note: "※アコムを初めて契約する方が無利息期間の対象です。※お申込時間や審査状況によりご希望に添えない場合があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     },
     {
-      key: "promise", name: "プロミス", group: "SMBCコンシューマーファイナンス株式会社", banner: "banner_promise.jpg", width: 300, height: 250,
+      key: "promise", name: "プロミス", group: "SMBCコンシューマーファイナンス株式会社", banner: "banner_promise.jpg", width: 300, height: 250, speedMinutes: 3, limitManYen: 800,
       catch: "Webなら最短3分で融資可能", cta: "1秒パパッと診断を試す",
       specs: [["融資時間", "最短3分"], ["実質年率", "2.5％～18.0％"], ["利用限度額", "最大800万円"], ["無利息期間", "初回借入の翌日から30日間"], ["事前診断", "1秒パパッと診断"]],
       points: [["即日OK！最短3分で審査完了！", "21時までの申込みで即日融資可能！"], ["30日間無利息もありお得に借りれる！", "初回借入の翌日から30日間、条件を満たす方は無利息で利用できます。"], ["1秒パパっと診断", "いくら借りられるかすぐチェックできる！"]],
@@ -28,7 +28,7 @@
       note: "※無利息期間の適用にはメールアドレス登録とWeb明細利用の登録が必要です。※お申込時間や審査状況によりご希望に添えない場合があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     },
     {
-      key: "aiful", name: "アイフル", group: "アイフル株式会社", banner: "banner_aiful.jpg", width: 300, height: 250,
+      key: "aiful", name: "アイフル", group: "アイフル株式会社", banner: "banner_aiful.jpg", width: 300, height: 250, speedMinutes: 14, limitManYen: 800,
       catch: "最短14分融資・1秒で事前診断", cta: "1秒診断で借入可能性を確認する",
       specs: [["融資時間", "最短14分"], ["実質年率", "3.0％～18.0％"], ["利用限度額", "最大800万円"], ["無利息期間", "契約日の翌日から最大30日間"], ["事前診断", "1秒診断"]],
       points: [["今日借りられる！申込みから融資まで最短14分", "Webから24時間365日申し込み可！すぐふりこみしてもらえる！申し込みも最短5分で完了！"], ["無利息で借りられる期間あり！", "はじめてなら最大30日間利息0円。"], ["原則、勤務先への電話連絡なし", "申込みから借入・返済までWebで完結できるので家族や職場にバレない。"], ["1秒診断で借入可能性を確認", "年齢・年収・他社借入金額などから簡易的に確認できます。"]],
@@ -43,9 +43,10 @@
   mount.innerHTML = `
     <section class="v4-result-cards" aria-labelledby="v4-result-heading">
       <h2 id="v4-result-heading" class="v4-result-heading">診断結果に近いカードローン</h2>
+      <p data-v4-sort-status aria-live="polite" style="display:none;margin:0 0 10px;text-align:center;color:#245a73;font-size:12px;font-weight:800;"></p>
       <div class="v4-lender-list">
         ${lenders.map((lender, index) => `
-          <article class="v4-lender-card">
+          <article class="v4-lender-card" data-v4-lender="${lender.key}">
             <div class="v4-lender-titlebar">
               <h3 class="v4-lender-name"><span class="v4-crown" aria-hidden="true">♛</span> <a href="./redirect.php?item=${lender.key}" target="_blank" rel="sponsored noopener">${lender.name}</a></h3>
               <p class="v4-lender-rank">おすすめ順 No.${index + 1}</p>
@@ -91,6 +92,53 @@
           </article>`).join("")}
       </div>
     </section>`;
+
+  const lenderList = mount.querySelector(".v4-lender-list");
+  const sortStatus = mount.querySelector("[data-v4-sort-status]");
+  const originalOrder = lenders.map((lender) => lender.key);
+  const sortLabels = { recommended: "オススメ", speed: "融資が早い", limit: "限度額が高い" };
+
+  const normalizeSort = (select) => {
+    const text = select.options[select.selectedIndex]?.textContent.trim() || "";
+    if (text === "融資が早い") return "speed";
+    if (text === "限度額が高い") return "limit";
+    return "recommended";
+  };
+
+  const applySort = (sortKey) => {
+    const orderIndex = new Map(originalOrder.map((key, index) => [key, index]));
+    const sorted = lenders.slice().sort((a, b) => {
+      if (sortKey === "speed") return a.speedMinutes - b.speedMinutes || orderIndex.get(a.key) - orderIndex.get(b.key);
+      if (sortKey === "limit") return b.limitManYen - a.limitManYen || orderIndex.get(a.key) - orderIndex.get(b.key);
+      return orderIndex.get(a.key) - orderIndex.get(b.key);
+    });
+
+    sorted.forEach((lender, index) => {
+      const card = lenderList.querySelector(`[data-v4-lender="${lender.key}"]`);
+      if (!card) return;
+      card.querySelector(".v4-lender-rank").textContent = `おすすめ順 No.${index + 1}`;
+      lenderList.appendChild(card);
+    });
+
+    if (sortStatus) {
+      sortStatus.style.display = "block";
+      sortStatus.textContent = sortKey === "recommended"
+        ? "オススメ順に戻しました"
+        : `${sortLabels[sortKey]}順に並べ替えました`;
+    }
+  };
+
+  document.querySelectorAll('select[name="sort"]').forEach((select) => {
+    select.addEventListener("change", () => {
+      const sortKey = normalizeSort(select);
+      document.querySelectorAll('select[name="sort"]').forEach((other) => {
+        if (other === select) return;
+        const option = Array.from(other.options).find((item) => item.textContent.trim() === sortLabels[sortKey]);
+        if (option) other.selectedIndex = option.index;
+      });
+      applySort(sortKey);
+    });
+  });
 
   const pad = (value) => String(value).padStart(2, "0");
   const countdowns = Array.from(mount.querySelectorAll("[data-v4-countdown]"));
