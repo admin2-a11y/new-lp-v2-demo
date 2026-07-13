@@ -1,6 +1,7 @@
 (() => {
   const mount = document.querySelector("[data-v4-result-cards]");
   if (!mount) return;
+  const redirectPage = /\.html$/.test(window.location.pathname) ? "./redirect.html" : "./redirect.php";
 
   const lenders = [
     {
@@ -74,12 +75,12 @@
         ${rankedLenders.map((lender, index) => `
           <article class="v4-lender-card" data-v4-lender="${lender.key}">
             <div class="v4-lender-titlebar">
-              <h3 class="v4-lender-name"><span class="v4-crown" aria-hidden="true">♛</span> <a href="./redirect.php?item=${lender.key}" target="_blank" rel="sponsored noopener">${lender.name}</a></h3>
+              <h3 class="v4-lender-name"><span class="v4-crown" aria-hidden="true">♛</span> <a href="${redirectPage}?item=${lender.key}" target="_blank" rel="sponsored noopener">${lender.name}</a></h3>
               <p class="v4-lender-rank">おすすめ順 No.${index + 1}</p>
             </div>
             <p class="v4-lender-catch">${lender.catch}</p>
             <div class="v4-lender-head">
-              <a class="v4-lender-banner" href="./redirect.php?item=${lender.key}" target="_blank" rel="sponsored noopener">
+              <a class="v4-lender-banner" href="${redirectPage}?item=${lender.key}" target="_blank" rel="sponsored noopener">
                 <img src="./images/${lender.banner}" width="${lender.width}" height="${lender.height}" alt="${lender.name}公式サイトへ" loading="lazy">
               </a>
               <div class="v4-lender-summary">
@@ -112,7 +113,7 @@
             <div class="v4-cta-wrap">
               <div class="v4-countdown" data-v4-countdown aria-live="polite"><span>本日中に借りるなら</span><b>残り <i data-v4-hours>00</i>時間<i data-v4-minutes>00</i>分<i data-v4-seconds>00</i>秒<i data-v4-centiseconds>00</i></b></div>
               <span class="v4-cta-bubble">${lender.cta}</span>
-              <a class="v4-cta" href="./redirect.php?item=${lender.key}" target="_blank" rel="sponsored noopener">詳しくはこちら</a>
+              <a class="v4-cta" href="${redirectPage}?item=${lender.key}" target="_blank" rel="sponsored noopener">詳しくはこちら</a>
             </div>
             <p class="v4-lender-note">【PR】Sponsored by ${lender.group}<br>${lender.note}</p>
           </article>`).join("")}
