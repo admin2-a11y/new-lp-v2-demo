@@ -93,6 +93,8 @@
     var loading = container.querySelector(".entry-modal_load");
     var loadingMessage = container.querySelector("[data-entry-loading-message]");
     var timers = [];
+    var entryMessageInterval = 650;
+    var entryRedirectDelay = 2100;
 
     function clearTimers() {
       timers.forEach(function (timer) { window.clearTimeout(timer); });
@@ -105,7 +107,7 @@
       messages.forEach(function (message, index) {
         timers.push(window.setTimeout(function () {
           if (loadingMessage) loadingMessage.textContent = message;
-        }, index * 140));
+        }, index * entryMessageInterval));
       });
     }
 
@@ -118,7 +120,7 @@
       showLoading(messages);
       timers.push(window.setTimeout(function () {
         window.location.replace(buildEntryTarget(window.location.href, choice, isStaticDocument()));
-      }, 450));
+      }, entryRedirectDelay));
     }
 
     var beginnerButton = container.querySelector(".entry-first");
