@@ -340,7 +340,19 @@ body.beginner .v4-spec-ring dd {
     radial-gradient(circle, transparent 0 17px, rgba(10, 154, 120, 0.26) 17.5px 19px, transparent 19.5px);
 }
 .v4-conveni dd { display: flex; align-items: center; justify-content: center; min-height: 42px; }
-.v4-conveni img { width: min(100%, 112px); height: auto; }
+.v4-conveni-logo-crop {
+  display: block;
+  width: min(100%, 120px);
+  aspect-ratio: 4.75 / 1;
+  overflow: hidden;
+}
+.v4-conveni-logo-crop img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  transform: translateY(-29%);
+}
 
 .v4-recommend {
   position: relative;
@@ -682,7 +694,7 @@ body.result-v2 .osusume_btn_area { display: none !important; }
   .v4-specs dt { padding: 3px 2px; font-size: 9px; line-height: 1.2; }
   .v4-specs dd { padding: 5px 2px; font-size: 11.5px; line-height: 1.25; }
   .v4-conveni dd { min-height: 29px; }
-  .v4-conveni img { width: min(100%, 94px); }
+  .v4-conveni-logo-crop { width: min(100%, 98px); }
   .v4-expand { margin-inline: 10px; }
   .v4-recommend { margin: 34px 10px 20px !important; padding: 25px 14px 3px; }
   .v4-recommend-title { padding: 4px 14px; font-size: 15px; font-weight: 700; line-height: 22px; }
