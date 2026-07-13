@@ -844,3 +844,6 @@ body.result-v2 .osusume_btn_area { display: none !important; }
     height: 58px;
   }
 }
+body.result-v2 #contents {
+  margin-top: 12px;
+}
