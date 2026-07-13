@@ -180,7 +180,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css?v=comparepush1" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=f17" type="text/css" media="screen">
 	</head>
 <body class="beginner search-results">
     

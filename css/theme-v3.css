@@ -1688,13 +1688,13 @@ details[open] .kuchikomi_header::after {
   box-shadow: var(--v3-shadow);
 }
 
-#fallback-message {
+#transfer-fallback-copy {
   margin: 0;
   color: var(--v3-text-sub);
   font-size: 14px;
 }
 
-#fallback-message a {
+#transfer-fallback-copy a {
   font-weight: 700;
   text-decoration: underline;
 }
@@ -2929,7 +2929,7 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
 
 @media screen and (min-width: 600px) {
   .v3-card-top-cta,
-  #fallback-link,
+  #transfer-fallback-link,
   .after_box .btn_red,
   .after_box .btn_g {
     min-height: 70px !important;
@@ -3069,7 +3069,7 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
 
 @media screen and (min-width: 600px) {
   .v3-card-top-cta,
-  #fallback-link,
+  #transfer-fallback-link,
   .after_box .btn_red,
   .after_box .btn_g {
     min-height: 56px !important;
@@ -3083,7 +3083,7 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   }
 }
 
-#fallback-link {
+#transfer-fallback-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;

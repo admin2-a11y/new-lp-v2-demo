@@ -180,56 +180,118 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=f17" type="text/css" media="screen">
 	</head>
 <script type="text/javascript">
-    const linkMap = {"acom":{"url":"__AFFILIATE_URL_ACOM__","banner":"./images/banner_acom.jpg","alt":"アコム"},"promise":{"url":"__AFFILIATE_URL_PROMISE__","banner":"./images/banner_promise.jpg","alt":"プロミス"},"mobit":{"url":"__AFFILIATE_URL_MOBIT__","banner":"./images/banner_mobit.jpg","alt":"SMBCモビット"},"aiful":{"url":"__AFFILIATE_URL_AIFUL__","banner":"./images/banner_aiful.jpg","alt":"アイフル"}};
+(() => {
+    "use strict";
 
-    function getRedirectItem() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get('item');
-    }
-
-    window.onload = function() {
-        let item = getRedirectItem();
-        if (!item || !linkMap[item]) {
-            item = Object.keys(linkMap)[0]; // デフォルトで最初の要素を選択
+    const destinationCatalog = Object.freeze({
+        acom: {
+            url: "__AFFILIATE_URL_ACOM__",
+            banner: "./images/banner_acom.jpg",
+            label: "アコム"
+        },
+        promise: {
+            url: "__AFFILIATE_URL_PROMISE__",
+            banner: "./images/banner_promise.jpg",
+            label: "プロミス"
+        },
+        mobit: {
+            url: "__AFFILIATE_URL_MOBIT__",
+            banner: "./images/banner_mobit.jpg",
+            label: "SMBCモビット"
+        },
+        aiful: {
+            url: "__AFFILIATE_URL_AIFUL__",
+            banner: "./images/banner_aiful.jpg",
+            label: "アイフル"
         }
-        const redirectData = linkMap[item];
-        let queryParams = getStoredQueryParams();
-        queryParams = queryParams.startsWith('?') ? queryParams.substring(1) : queryParams;
-        const redirectUrlWithParams = `${redirectData.url}&${queryParams}`;
-        if (redirectData) {
-            const loadingMessage = document.getElementById('loading-message');
-            loadingMessage.innerText = `${redirectData.alt}のサイトへ移動中です。`;
+    });
 
-            const singleBannerContainer = document.getElementById('single-banner');
-            singleBannerContainer.innerHTML = `
-            <div class="banner">
-                <a href="${redirectUrlWithParams}">
-                    <img src="${redirectData.banner}" alt="${redirectData.alt}" width="300" height="250">
-                </a>
-            </div>`;
-            singleBannerContainer.style.display = 'block';
+    const defaultDestination = "acom";
 
-            const fallbackLink = document.getElementById('fallback-link');
-            const fallbackMessage = document.getElementById('fallback-message');
-            if (fallbackLink && fallbackMessage) {
-                fallbackLink.href = redirectUrlWithParams;
-                fallbackMessage.style.display = 'block';
+    const resolveDestination = () => {
+        const requested = new URLSearchParams(window.location.search).get("item");
+        return destinationCatalog[requested] || destinationCatalog[defaultDestination];
+    };
+
+    const readSavedTracking = () => {
+        const combined = new URLSearchParams();
+
+        ["moneyLoanTrackingParams", "queryParams"].forEach((storageKey) => {
+            const stored = window.localStorage.getItem(storageKey);
+            if (!stored) {
+                return;
             }
 
-            setTimeout(() => {
-                location.href = redirectUrlWithParams;
-            }, 1000); // 1秒後に転送
-        } else {
-            document.getElementById('all-banners').classList.add('active');
+            new URLSearchParams(stored.replace(/^\?/, "")).forEach((value, key) => {
+                combined.set(key, value);
+            });
+        });
+
+        return combined.toString();
+    };
+
+    const appendTracking = (baseUrl, query) => {
+        if (!query) {
+            return baseUrl;
+        }
+
+        const separator = baseUrl.includes("?")
+            ? (/[?&]$/.test(baseUrl) ? "" : "&")
+            : "?";
+
+        return `${baseUrl}${separator}${query}`;
+    };
+
+    const renderTransfer = (destination, targetUrl) => {
+        const status = document.getElementById("transfer-status");
+        const bannerHost = document.getElementById("transfer-banner");
+        const fallbackLink = document.getElementById("transfer-fallback-link");
+        const fallbackCopy = document.getElementById("transfer-fallback-copy");
+
+        if (status) {
+            status.textContent = `${destination.label}のサイトへ移動中です。`;
+        }
+
+        if (bannerHost) {
+            const frame = document.createElement("div");
+            const link = document.createElement("a");
+            const image = document.createElement("img");
+
+            frame.className = "banner";
+            link.href = targetUrl;
+            image.src = destination.banner;
+            image.alt = destination.label;
+            image.width = 300;
+            image.height = 250;
+            link.append(image);
+            frame.append(link);
+            bannerHost.replaceChildren(frame);
+            bannerHost.hidden = false;
+        }
+
+        if (fallbackLink && fallbackCopy) {
+            fallbackLink.href = targetUrl;
+            fallbackCopy.hidden = false;
         }
     };
-    function getStoredQueryParams() {
-        const storedParams = localStorage.getItem('queryParams');
-        return storedParams ? `?${storedParams}` : '';
+
+    const beginTransfer = () => {
+        const destination = resolveDestination();
+        const targetUrl = appendTracking(destination.url, readSavedTracking());
+
+        renderTransfer(destination, targetUrl);
+        window.setTimeout(() => window.location.assign(targetUrl), 1000);
+    };
+
+    if (document.readyState === "complete") {
+        beginTransfer();
+    } else {
+        window.addEventListener("load", beginTransfer, { once: true });
     }
+})();
 </script>
 
 
@@ -248,10 +310,10 @@
 </header>    <main class="v3-redirect" aria-live="polite">
         <img height="221" width="1080" src="./images/logo.png" alt="マネーローンナビ" class="v3-redirect-logo">
         <div class="v3-spinner" aria-hidden="true"></div>
-        <h1 id="loading-message">選択されたサイトへ移動中です。</h1>
-        <div id="single-banner" style="display: none;"></div>
-        <p id="fallback-message" style="display: none;">
-            移動しない場合は<a id="fallback-link" href="#">移動先を開く</a>をクリックして下さい。
+        <h1 id="transfer-status">選択されたサイトへ移動中です。</h1>
+        <div id="transfer-banner" hidden></div>
+        <p id="transfer-fallback-copy" hidden>
+            移動しない場合は<a id="transfer-fallback-link" href="#">移動先を開く</a>をクリックして下さい。
         </p>
     </main>
 
