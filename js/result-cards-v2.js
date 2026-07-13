@@ -1,7 +1,7 @@
 (() => {
   const mount = document.querySelector("[data-v4-result-cards]");
   if (!mount) return;
-  const redirectPage = /\.html$/.test(window.location.pathname) ? "./redirect.html" : "./redirect.php";
+  const redirectPage = /\.php$/.test(window.location.pathname) ? "./redirect.php" : "./redirect.html";
 
   const lenders = [
     {
