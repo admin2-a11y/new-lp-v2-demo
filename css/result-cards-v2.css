@@ -652,12 +652,13 @@ body.experience .v4-review-meta {
   gap: 5px 10px;
   margin: 2px auto 14px;
   color: #303030;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 1.45;
 }
 .v4-countdown[hidden] { display: none !important; }
 .v4-countdown > span { color: #eb321d; font-weight: 800; }
 .v4-countdown b { font-weight: 700; }
-.v4-countdown i { display: inline-block; min-width: 25px; margin: 0 2px; padding: 3px 4px; border-radius: 4px; background: #171717; color: #fff342; font-style: normal; font-variant-numeric: tabular-nums; }
+.v4-countdown i { display: inline-block; min-width: 30px; margin: 0 2px; padding: 4px 5px; border-radius: 4px; background: #171717; color: #fff342; font-size: 15px; font-style: normal; font-variant-numeric: tabular-nums; }
 .v4-countdown i:last-child { background: #ec172c; }
 .v4-countdown.is-next-morning {
   gap: 4px;
@@ -770,8 +771,8 @@ body.result-v2 .osusume_btn_area { display: none !important; }
   .v4-review-more summary { padding: 2px 18px; font-size: 10px; }
   .v4-review-more[open] .v4-review-bubble::before { left: -8px; }
   .v4-cta-wrap { padding: 0 10px 11px; }
-  .v4-countdown { gap: 3px 6px; margin-bottom: 9px; font-size: 10px; }
-  .v4-countdown i { min-width: 21px; padding: 2px 3px; }
+  .v4-countdown { gap: 4px 7px; margin-bottom: 10px; font-size: 12px; }
+  .v4-countdown i { min-width: 26px; padding: 3px 4px; font-size: 13px; }
   .v4-cta-bubble { min-height: 42px; padding: 7px 10px; font-size: 15px; font-weight: 900; }
   .v4-cta { min-height: 50px; padding: 7px 12px; font-size: 16px; }
 }
