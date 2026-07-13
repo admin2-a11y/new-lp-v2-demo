@@ -9,7 +9,7 @@
       catch: "10秒簡易審査ですぐ結果がわかる！", cta: "10秒簡易審査を試す",
       specs: [["融資時間", "最短15分"], ["実質年率", "3.0％～18.0％"], ["利用限度額", "最大800万円"], ["事前審査", "10秒簡易審査"], ["利用方法", "振込・コンビニATM"]],
       points: [["お申込みから最短15分で審査完了！", "お申し込みから最短15分で審査するから急な出費にも即対応！"], ["振込は最短3分", "ご契約後、最短3分で口座へ振り込まれる！"], ["原則電話連絡・郵送物なし", "面倒な電話連絡や郵送物はないから誰にもバレなくて安心！"], ["返済でVポイントが貯まる・使える", "返済の利息分でVポイントが貯まるからお得！"]],
-      reviewProfile: "職業：派遣<br>年齢：47歳", reviewIncome: "400万円", reviewRating: 5, reviewAmount: "50万～100万円未満", reviewTime: "1時間以内", review: "事前に身分証明書を準備して申し込み。審査もスムーズに進みました！すべてスマホで完結できたので、誰にもバレずにすぐ着金。もっと早く利用すれば良かったです！", reviewImage: "review-mobit-v2.png", reviewPosition: "mobit", reviewImageAlt: "口コミ利用者",
+      reviewProfile: "職業：派遣<br>年齢：47歳", reviewIncome: "400万円", reviewRating: 5, reviewAmount: "50万未満", reviewTime: "1時間以内", review: "事前に身分証明書を準備して申し込み。審査もスムーズに進みました！すべてスマホで完結できたので、誰にもバレずにすぐ着金。もっと早く利用すれば良かったです！", reviewImage: "review-mobit-v2.png", reviewPosition: "mobit", reviewImageAlt: "口コミ利用者",
       note: "※お申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。※原則電話連絡なし。（WEB完結申込の場合）※口座への入金が完了する日時は金融機関によって異なります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     },
     {
@@ -24,17 +24,17 @@
       key: "promise", name: "プロミス", group: "SMBCコンシューマーファイナンス株式会社", banner: "banner_promise.jpg", width: 300, height: 250, speedMinutes: 3, limitManYen: 800,
       catch: "Webなら最短3分で融資可能", cta: "1秒パパッと診断を試す",
       specs: [["融資時間", "最短3分"], ["実質年率", "2.5％～18.0％"], ["利用限度額", "最大800万円"], ["無利息期間", "初回借入の翌日から30日間"], ["事前診断", "1秒パパッと診断"]],
-      points: [["即日OK！最短3分で審査完了！", "21時までの申込みで即日融資可能！"], ["30日間無利息もありお得に借りれる！", "初回借入の翌日から30日間、条件を満たす方は無利息で利用できます。"], ["1秒パパっと診断", "いくら借りられるかすぐチェックできる！"]],
+      points: [["即日可能！最短3分で審査完了！", "21時までの申込みで即日融資可能！"], ["30日間無利息もありお得に借りれる！", "初回借入の翌日から30日間、条件を満たす方は無利息で利用できます。"], ["1秒パパっと診断", "借り入れ可能かすぐチェックできる！"]],
       reviewProfile: "職業：会社員<br>年齢：33歳", reviewIncome: "300万円", reviewRating: 5, reviewAmount: "50万円未満", reviewTime: "1時間以内", review: "スマホで完結できるので審査から借入までがとにかく早い。誰にもバレずに借りることが出来ました。返済も月1000円からで良いのも助かってます。", reviewImage: "review-promise-v2.png", reviewPosition: "promise", reviewImageAlt: "口コミ利用者",
       note: "※無利息期間の適用にはメールアドレス登録とWeb明細利用の登録が必要です。※お申込時間や審査状況によりご希望に添えない場合があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     },
     {
       key: "aiful", name: "アイフル", group: "アイフル株式会社", banner: "banner_aiful.jpg", width: 300, height: 250, speedMinutes: 14, limitManYen: 800,
-      catch: "最短14分融資・1秒で事前診断", cta: "1秒診断で借り入れ可能か確認する",
-      specs: [["融資時間", "最短14分"], ["実質年率", "3.0％～18.0％"], ["利用限度額", "最大800万円"], ["無利息期間", "契約日の翌日から最大30日間"], ["事前診断", "1秒診断"]],
-      points: [["今日借りられる！申込みから融資まで最短14分", "Webから24時間365日申し込み可！すぐふりこみしてもらえる！申し込みも最短5分で完了！"], ["無利息で借りられる期間あり！", "はじめてなら最大30日間利息0円。"], ["原則、勤務先への電話連絡なし", "申込みから借入・返済までWebで完結できるので家族や職場にバレない。"], ["1秒診断で借入可能性を確認", "年齢・年収・他社借入金額などから簡易的に確認できます。"]],
+      catch: "最短14分※1融資・1秒で事前診断", cta: "1秒診断で借り入れ可能か確認する",
+      specs: [["融資時間", "最短14分※1"], ["実質年率", "3.0％～18.0％"], ["利用限度額", "最大800万円"], ["無利息期間", "初めての方なら最大30日間"], ["事前診断", "1秒診断"]],
+      points: [["今日借りられる！申込みから融資まで最短14分※1", "Webから24時間365日申し込み可！すぐ振り込みしてもらえる！"], ["無利息で借りられる期間あり！", "はじめてなら最大30日間利息0円。"], ["原則、勤務先への電話連絡なし", "申込みから借入・返済までWebで完結できるので家族や職場にバレない。"], ["1秒診断で借入可能性を確認", "年齢・年収・他社借入金額などから簡易的に確認できます。"]],
       reviewProfile: "職業：会社員<br>年齢：54歳", reviewIncome: "390万円", reviewRating: 5, reviewAmount: "100万～300万円未満", reviewTime: "1時間以内", review: "急な出費があり、初めてカードローンを利用しました。短期間で返済する予定だったため、30日間の無利息サービスを利用できた点に満足しています。", reviewImage: "review-aiful-v2.png", reviewPosition: "aiful", reviewImageAlt: "口コミ利用者",
-      note: "※アイフルを初めて契約する方が無利息期間の対象です。※お申込時間や審査状況によりご希望に添えない場合があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
+      note: "※1お申込時間や審査状況によりご希望に添えない場合があります。※サービス内容は公式サイトで最新情報をご確認ください。※一例であり、結果を保証するものではありません。"
     }
   ];
 
@@ -50,7 +50,7 @@
   const lendersByKey = new Map(lenders.map((lender) => [lender.key, lender]));
   const rankedLenders = variantOrder.map((key) => lendersByKey.get(key)).filter(Boolean);
 
-  const ringSpecLabels = new Set(["融資時間", "実質年率", "利用限度額", "事前審査", "事前診断", "利用方法"]);
+  const ringSpecLabels = new Set(["融資時間", "実質年率", "利用限度額", "無利息期間", "事前審査", "事前診断", "利用方法"]);
   const specMarkup = (specs) => specs.map(([label, value]) => {
     const ringClass = ringSpecLabels.has(label) ? " class=\"v4-spec-ring\"" : "";
     return `<div${ringClass}><dt>${label}</dt><dd>${value}</dd></div>`;
@@ -88,7 +88,6 @@
                 <img src="./images/${lender.banner}" width="${lender.width}" height="${lender.height}" alt="${lender.name}公式サイトへ" loading="lazy">
               </a>
               <div class="v4-lender-summary">
-                <p class="v4-lender-group">${lender.group}</p>
                 <dl class="v4-specs">${specMarkup(lender.specs)}<div class="v4-conveni"><dt>利用コンビニ</dt><dd><span class="v4-conveni-logo-crop"><img src="./images/convenience-store-logos.png" width="1774" height="887" alt="利用可能な提携コンビニATM：セブン-イレブン、ファミリーマート、ローソン、ミニストップ" loading="lazy"></span></dd></div></dl>
               </div>
             </div>
