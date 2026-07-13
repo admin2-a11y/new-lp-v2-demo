@@ -373,3 +373,141 @@
 - Final Review: `operationinfo` の可視会社情報プレースホルダーを公開デモ向け自然文へ変更。強い広告表現を弱めた表現へ変更。`operationinfo.html` / `redirect.html` のフッター運営者情報リンクを `.html` に修正。
 - QA: `result.html`, `beginner_result.html`, `operationinfo.html`, `redirect.html` を 320 / 375 / 390 / 414pxで再確認し、横スクロールなし。`redirect.html` の実アフィリエイトURL未設定は本番前QAの残リスク。
 
+# F12〜F23 トレース排除3フェーズ改修レビュー（2026-07-13）
+
+- レビュー対象: `new-lp-v2-fixes-20260713` の F12 `ec66709` 〜 F23 `ad48791`
+- 判定対象: F23完了コミット `ad487916577c6c16b550432b05018645fccfe809`。F23後のコミットおよび既存の未コミット変更は対象外。
+- 実施方法: 対象コミットを分離したdetached copyで、コミット監査、`.git`を除く全ファイルスキャン、参照整合、実ブラウザ操作、F22前後比較を実施。プロダクトファイルは変更していない。
+- 注記: トレース件数は本レビュー追記前の `ad48791` を基準とする。本追記は検出語を証跡として記載するため、追記後の文書自体には検出語が増える。
+
+## 結論（差し戻し）
+
+差し戻し。P0が2件ある。
+
+1. 正規の経験者直行URL `index.html?select_modal=2` が機能せず、主要導線2を破壊している。
+2. F19の「未使用ライブラリ削除」に保全対象の可視口コミ・広告文言変更が混入している。
+
+指定24ケースのレスポンシブ、V1表示、リンク・CSS参照、キャッシュバスター、F22前後の主要見た目には異常を認めなかった。一方、コミット単体の完了宣言、全ファイル痕跡ゼロ、HTML/PHPミラー同期にもP1が残る。
+
+## P0（導線破壊・保全対象の変更・痕跡の重大な残存）
+
+- [P0] `js/survey.js:38-46,71-78` — `select_modal=2` を受理せず経験者診断へ直行できない / `index.html?select_modal=2&utm_source=qa&utm_medium=review&gclid=GCLID123` を直開きすると入口モーダルが表示されたままになる。実装は `entry-modal=2` のみ生成・判定する / 主要導線2が仕様どおり開始できず、広告・計測側の既存リンクから経験者7問導線へ入れない / `select_modal=2` を正規キーとして生成・受理し、必要なら `entry-modal=2` を後方互換の別名として併存させる。正規URLのブラウザ回帰テストを追加する。
+
+- [P0] `mobit_result.html:431-440` — F19 `1ce5a3b` にタスク外の口コミ・広告文言変更が混入 / `1ce5a3b^..1ce5a3b` を確認すると、未使用ライブラリ削除とは無関係にアイフル口コミを旧画像参照から新しいHTMLプロフィール・星・借入額・借入時間・本文へ置換している。本文は既存V2コピーとも読点が一致しない / 保全対象の広告文言を承認なしで変更しており、表示内容・審査証跡を保証できない / 承認済みの正本へ完全一致で戻すか、人間の広告文言承認を得た別スコープのコミットとして切り出す。
+
+## P1（機能劣化・痕跡の部分残存）
+
+- [P1] F12 `ec66709` / 当時の `mobit_result.html:473` — 「口コミ画像排除」宣言に反して、削除済みの `images/kuchikomi_aiful1.png` 参照が残り、F12コミット単体では404だった / F19で遅れて解消済み / タスク単位の完了判定と回帰証跡が不正確 / 各フェーズコミットで削除資産の参照ゼロを検査する。
+
+- [P1] F13 `25865ba` / 当時の `css/colorbox.css:111` — `images/loading.gif` を削除したのに `url(./loading.gif)` が残った / F19でCSSごと削除されHEADでは解消済み / F13コミット単体で欠損リソース参照 / 削除コミット内でCSS `url()` まで検査する。
+
+- [P1] F15 `eab0568` — 「F12〜F14で削除した資産への参照0件」という回帰記録が上記2件を見逃した / F15の完了記録を信頼すると欠損参照を見落とす / 当時の結果を訂正し、履歴コミットをcheckoutした再現可能な検査を残す。
+
+- [P1] `REVIEW_HANDOFF.md:450` — F20 `ed4e7d0` がF15当時の成功記録 `index.html?select_modal=2` を `index.html?entry-modal=2` へ事後書換えした / 実際には正規URLが壊れているため、過去QAが新URLで実施済みだったように読める / 監査証跡が不正確 / 過去記録は改変せず、仕様変更・再検証結果を新節として追記する。
+
+- [P1] `CODEX_PROMPT.md`、`CODEX_PROMPT_FIX.md`、`CODEX_PROMPT_FIX2.md`、`CODEX_TASKS.md`、`REVIEW_FINDINGS.md`、`REVIEW_HANDOFF.md`、`tests/f22-css-contract.py` — F23の全ファイル痕跡0件宣言に反し、指定旧画像名が16行、指定旧JS/CSS名が18行残る / `rg -a --hidden --no-ignore -g '!**/.git/**'` で再現 / 実ファイル・実行参照ではないが、ユーザー指定の「全ファイルでヒットしたら未完」基準に不合格 / 履歴文書・契約テストも対象に削除・抽象化するか、スキャン対象の合意済み除外規則を明文化する。
+
+- [P1] `images/beginner-fast-borrowing-points.png`、`images/mobit-compare-title.png`、`images/illust-compare-guide.svg`、`images/illust-recommend-guide.svg`、`images/illust-survey-guide.svg` — HTML/PHP/CSS/JSから参照0件の画像が5件残る / F14/F23の「ほか未使用旧画像」排除が未完 / 同一コードベース由来の未使用素材と約2.7MBの不要配信物が残る / 用途を確認し、不要なら削除、必要なら利用根拠を記録する。
+
+- [P1] `result.html:194-311,362-653` と `result.php:194-311,362-677`、`beginner_result.html:143,188-784` と `beginner_result.php:187-882` — 4ミラー中2組が同期していない / 期待されるform action差を除いても、`result` は52追加・28削除相当、`beginner_result` は52追加・39削除相当。4社訴求、口コミ、詳細カード構造・コピーが異なり、初心者側はHTMLだけに `beginner-result-survey.css?v=f20`、PHPだけに再検索前カウントダウンがある。PHP側には `ul` 直下の `p` と余剰閉じタグもある / 配信方式により表示・広告コピー・DOMが変わる / 保全対象コピーの正本を人間が決めたうえで同期する。`redirect` と `operationinfo` の2組は自己リンク拡張子差を正規化すると一致。
+
+## P2（軽微）
+
+- [P2] `css/theme-mobit.css` — HTML/PHPからの参照が0件 / 表示不具合はないが、F20で更新した未使用CSSが残り保守対象を増やす / 利用予定がなければ別タスクで削除する。
+
+## コミット監査
+
+| タスク | コミット | 判定 | 宣言と実差分 |
+|---|---|---|---|
+| F12 | `ec66709` | 実施済み・当時未完 | 口コミ排除の大半は実施したが、削除済みアイフル画像参照が残存。F19で解消。 |
+| F13 | `25865ba` | 実施済み・当時未完 | 指定画像削除は実施したが、削除済みloading画像へのCSS参照が残存。F19で解消。 |
+| F14 | `d033860` | 実施済み・未完 | 宣言した30画像は削除。広義の未使用旧画像は5件残存。 |
+| F15 | `eab0568` | 実施済み・結果不正確 | 回帰記録がF12/F13の欠損参照2件を見逃した。 |
+| F16 | `9b8ec60` | 完了 | 3スクリプト置換と参照更新は宣言どおり。 |
+| F17 | `1ebe8b0` | 完了 | redirect再実装は宣言どおり。 |
+| F18 | `852bdbb` | 完了 | WordPress/CMS残骸削除は宣言どおり。 |
+| F19 | `1ce5a3b` | 実施済み・P0混入 | ライブラリ削除は完了したが、タスク外の口コミ・広告文言変更を含む。 |
+| F20 | `ed4e7d0` | 実施済み・P0発生 | 識別子移行は実施したが、正規の経験者直行URLを破壊し過去QA記録も書換えた。 |
+| F21 | `1f9129a` | 実施済み・P0継承 | 共通survey JS化は実施。F20の誤ったURL契約を継承し、テストも `entry-modal=2` のみ固定。 |
+| F22 | `7e6fa85` | 完了 | CSS再構成、静的契約、旧版との実ブラウザ見た目比較に合格。 |
+| F23 | `ad48791` | 実施済み・未完 | 宣言した旧ファイル実体は削除したが、全ファイル文字列痕跡、未使用画像、ブラウザ回帰に残課題。 |
+
+- 未実施タスク: なし。F12〜F23はすべて対応コミットが存在する。ただし上表の「当時未完」「未完」「P0発生/継承」は完了条件を満たしていない。
+- タスク外変更: F19のアイフル口コミ・広告文言変更。F20の過去QA記録書換え。
+
+## トレーススキャン結果（項目ごとに0件/残存を明記）
+
+スキャン条件: 110ファイルを `rg -a --hidden --no-ignore -g '!**/.git/**'` で走査。隠しファイル・バイナリも含む。
+
+- 識別子: すべて0件。`serch2_Modal` / `arroe_top` / `is-justfy-center` / `focous_dis` / `topboxNew` / `timer_in_box` / `dispad_url_on` / `rentcheck` / `select_s1`〜`select_s8` / `borrow_limit_dis` / `loan_speed_dis` / `how_dis` / `annual_income_dis` / `how_many_loans_dis` / `company_size_dis` / `duration_dis` / `order_by_recommended_dis_2`。
+- WordPress残骸: すべて0件。`EditURI` / `Prsd_xmlrpc` / `custom-background` / `wall_default` / `contain-intrinsic-size`。
+- redirect旧実装: すべて0件。`getRedirectItem` / `redirectUrlWithParams` / `single-banner` / 「デフォルトで最初の要素を選択」 / 「1秒後に転送」。
+- 旧ブランド: すべて0件。`loan-plus` / `mycardloan` / `morimori` / `ローンプラス` / `rextjapan` / `GTM-TQHV5GQ5`。
+- 指定旧画像のファイル実体: 0件。`kuchikomi_*.png` / `rank1.png` / `rank2.png` / `rank3.png` / `btn_follow_*.png` / `mordalhead.png` / `step.jpg` / `hitokoto_point__*.png` / `btm_arrow02_b.png` / `icon_check_ms*.png` / `loading.gif` / `convini.webp` / `review-people-lineup.png` / `images/experience/headertitle.png` は存在しない。
+- 指定旧画像名の文字列: 残存。16行・4ファイル（`CODEX_PROMPT.md:121-122`、`CODEX_TASKS.md:74,89,255-256`、`REVIEW_HANDOFF.md:23,68,98,100,102-104,107,403`、`REVIEW_FINDINGS.md:359`）。
+- 指定旧JS/CSSのファイル実体: 0件。`query-keeper.js` / `timer.js` / `follow_banner.js` / `colorbox.css` / `common.css` / `common-green.css` / `style_add.css` / `style_add-green.css` / `style-main.css` / `style-main-green.css` は存在しない。`deadline-timer.js` は `timer.js` の部分一致から除外して判定。
+- 指定旧JS/CSS名の文字列: 残存。18行・7ファイル（`CODEX_PROMPT_FIX.md:23`、`CODEX_PROMPT_FIX2.md:35`、`CODEX_TASKS.md:28,75`、`CODEX_PROMPT.md:58`、`tests/f22-css-contract.py:9-10,13-16`、`REVIEW_HANDOFF.md:289,561`、`REVIEW_FINDINGS.md:90,191,197,223,276`）。
+- 「ほか未使用旧画像」: 残存。上記P1の5画像は実装参照0件。
+
+## 参照整合チェック
+
+- HTML/PHP: 13 HTML + 5 PHPの計18ファイル、リンク・スクリプト・フォーム等1,037属性（ローカル参照814件）を検査。欠損0件、大小文字不一致0件。
+- CSS `url()`: 実参照6件を検査。欠損0件、大小文字不一致0件。削除画像への実行参照0件。
+- 4ミラー: `redirect.html/php` と `operationinfo.html/php` は同期。`result.html/php` と `beginner_result.html/php` はP1のとおり非同期。
+- キャッシュバスター: ローカルCSS/JSの付与漏れ0件、同一資産の不整合0件。F13 `result-cards-v2.js?v=48`、F20対象 `?v=f20`、F21対象 `?v=f21`、F22 `base*.css?v=f22`、F23 `theme-v3*.css?v=f23` が変更フェーズに追随。
+- 保全画像: `banner_acom2.jpg` / `banner_aiful.jpg` / `banner_mobit.jpg` / `banner_promise.jpg` / `promise.gif` は基点 `d252f1e` と `ad48791` でblob ID一致。
+- 保全プレースホルダー: `GTM-XXXXXXX` は34件で不変。各 `__AFFILIATE_URL_*__` は各2件で不変。
+- PR/注釈/スペック: F12後からF23まで残存PR/Sponsored 80行と主要スペック値の出現数は不変。F12ではCSS非表示の重複V2ブロック削除に伴いPR文字列16行もソース上削除されているため、文字どおりの保全条件への適合は人間確認対象。
+- 自動検査: `tests/f21-survey-unit.mjs`、`tests/f21-survey-contract.py`、`tests/f22-css-contract.py`、`git diff --check` は合格。ただし既存テストは `select_modal=2` を検証していない。
+
+## 導線確認結果（1〜7の各項目）
+
+1. 合格 — `index.html` の入口「はじめて」から `mobit_beginner.html` へ進み、6問を実回答して `beginner_result_v2.html?variant=beginner` へ遷移。緑テーマ、順位はモビット→アイフル→アコム。`utm_*` / `gclid` も維持。
+2. 不合格（P0）— `index.html?select_modal=2` では入口モーダルが残り、経験者診断へ直行しない。モーダルで「経験がある」を選び直して `entry-modal=2` を追加した後は、7問を実回答して `result_v2.html?variant=experienced` へ遷移し、青テーマ、順位はモビット→アイフル→プロミス。
+3. 合格 — 両V2とも3社カード→「＼ おすすめ ／ 即日で借りたいなら このカードローン」→モビット複製カード（rank「当サイトおすすめ」）→再検索フォームのDOM/表示順。
+4. 合格 — 両結果ページの「この条件で探す」を実クリック。初心者は同じ `beginner_result_v2.html?variant=beginner`、経験者は同じ `result_v2.html?variant=experienced` に回答値・計測パラメータ付きで復帰。
+5. 合格 — 4社の商品名・バナー・CTAは `redirect.html?item=...`。4社すべてで会社名、正しいバナー、表示中fallback、約1秒後の `__AFFILIATE_URL_*__` 転送を実測。fallbackクリックも確認。プレースホルダー未置換のローカル最終先Not Foundは期待値であり、製品リソース404には含めない。
+6. 合格 — redirect URLをitemだけで開いても、事前に保存した `utm_source` / `utm_medium` / `gclid` がfallbackと1秒後転送URLへ復元された。
+7. 一部実測・要最終確認 — 実時刻21時前の表示・更新を確認。実装JSを時間固定したハーネスで20:00表示、21:00非表示を確認。自動ブラウザでは別タブを前面化しても対象タブの `document.hidden` が変化せず、非表示タブ停止を実イベントで再現できなかった。`js/deadline-timer.js:90-94` と `js/result-cards-v2.js:215,225-231` のcancel/resume経路は静的確認済み。
+
+## カードUI確認結果
+
+- 通常モビットカードと最終複製カードの両方で、閉じた状態の画像、借入額、借入までの時間、冒頭文、「もっと見る」を確認。
+- 口コミ開閉: カード幅288px、画像約56.4×58pxは不変。高さ899.05→1057.75pxで下方向へ展開し、閉じると元へ復帰。
+- 「ここがオススメ」開閉: 同じく幅・画像サイズ不変。高さ899.05→1163.25pxで下方向へ展開し、閉じると元へ復帰。
+- 初心者結果3位のアコム: 「職業：バイト 年齢：25歳 年収：350万円 ★★★★★ 5」を確認。
+- アイフル吹き出し: 「1秒診断で借り入れ可能か確認する」を確認。
+
+## レスポンシブ確認結果（幅ごと）
+
+対象: `index.html` / `mobit_beginner.html` / `result_v2.html?variant=experienced` / `beginner_result_v2.html?variant=beginner`。
+
+| viewport幅 | 確認ページ数 | `scrollWidth-clientWidth` | 画面外要素 | 意図しない文字切れ | 画像欠損 |
+|---:|---:|---:|---:|---:|---:|
+| 320px | 4 | 全て0 | 0 | 0 | 0 |
+| 375px | 4 | 全て0 | 0 | 0 | 0 |
+| 390px | 4 | 全て0 | 0 | 0 | 0 |
+| 414px | 4 | 全て0 | 0 | 0 | 0 |
+| 768px | 4 | 全て0 | 0 | 0 | 0 |
+| 1280px | 4 | 全て0 | 0 | 0 | 0 |
+
+- 検出された1×1pxのclipは `.v3-sr-only` / `.v3-compare2-title-sr` 等のスクリーンリーダー専用要素のみで、可視文字切れではない。
+- V1系6ページ `result.html` / `beginner_result.html` / `mobit.html` / `mobit_result.html` / `mobit_beginner_result.html` / `beginner.html` をモバイルと1280pxで確認。横スクロール、画面外要素、画像欠損、console errorはいずれも0。内部リンク先も実在。
+- 13 HTML + 5 PHPを全巡回し、製品ページのconsole error 0件、製品リソース404 0件。PHPは静的HTMLとして配信して表示を確認し、PHPランタイムでの実行は対象外。
+
+## F22 CSS書き直しの見た目検証
+
+- 比較: F22直前 `1f9129a` とF23 `ad48791` を別サーバーで並行配信。
+- 条件: 375px / 1280px、主要4ページ、ヘッダー、ヒーロー/結果要約、診断ボックス、結果カード、CTA、フッターの計48要素ペア。
+- 比較値: `getBoundingClientRect`、color、font-size、background-color/image、display、position、ページscroll寸法。
+- 結果: 2px超の寸法・位置差0件、色・文字サイズ・背景差0件。
+
+## 人間が最終確認すべき箇所
+
+- P0修正後、正規URL `index.html?select_modal=2` から7問診断を再実測し、広告・計測側の既存リンクでも互換性を確認する。
+- F19で新設されたアイフル口コミのプロフィール、星、借入額、借入時間、本文が承認済み正本かを広告・法務担当が判断する。
+- 文書・テスト内の旧ファイル名も「痕跡」に含めて削除するか、監査証跡として明示的に除外するかを決める。
+- `result` / `beginner_result` のHTML/PHPどちらを正本にするか決め、保全対象コピーを人間確認してから同期する。
+- 実ブラウザをバックグラウンド化し、カウントダウンが停止・復帰することをDevToolsまたは実端末で確認する。
+- F12で非表示重複ブロックとともに削除されたPR表記16行を、「表示中の表記保全」として許容するか、「ソース文字列も不変」として差し戻すか判断する。
+- 本レビューは `ad48791` 固定。レビュー中にもライブHEADと未コミット変更は進行していたため、P0修正を取り込んだ最終リリースHEADで差分・導線・痕跡スキャンを再実施する。
