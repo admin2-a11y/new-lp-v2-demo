@@ -541,7 +541,14 @@ body.experience .v3-compare2-title-image img {
 }
 
 /* Double evaluation rings, except Aiful monthly repayment. */
-body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::after {
+body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::before,
+body.beginner .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::before {
+  width: 27px;
+  height: 27px;
+}
+
+body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::after,
+body.beginner .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -552,12 +559,20 @@ body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-va
   box-sizing: border-box;
 }
 
-body.experience .v3-compare2-table tbody tr:nth-child(3) td:nth-child(3) .v3-compare2-value.is-ring::after {
+body.experience .v3-compare2-table tbody tr:nth-child(3) td:nth-child(3) .v3-compare2-value.is-ring::after,
+body.beginner .v3-compare2-table tbody tr:nth-child(3) td:nth-child(3) .v3-compare2-value.is-ring::after {
   content: none;
 }
 
 @media screen and (max-width: 480px) {
-  body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::after {
+  body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::before,
+  body.beginner .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::before {
+    width: 19px;
+    height: 19px;
+  }
+
+  body.experience .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::after,
+  body.beginner .v3-compare2-table tbody tr:nth-child(-n + 4) td .v3-compare2-value.is-ring::after {
     width: 33px;
     height: 33px;
     border-width: 1px;
