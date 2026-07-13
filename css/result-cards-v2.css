@@ -659,6 +659,32 @@ body.experience .v4-review-meta {
 .v4-countdown b { font-weight: 700; }
 .v4-countdown i { display: inline-block; min-width: 25px; margin: 0 2px; padding: 3px 4px; border-radius: 4px; background: #171717; color: #fff342; font-style: normal; font-variant-numeric: tabular-nums; }
 .v4-countdown i:last-child { background: #ec172c; }
+.v4-countdown.is-next-morning {
+  gap: 4px;
+  margin-bottom: 14px;
+  padding: 7px 12px;
+  border: 1px solid #f1cb70;
+  border-radius: 999px;
+  background: #fff9df;
+}
+.v4-countdown.is-next-morning > span { color: #5a3a12; }
+.v4-countdown.is-next-morning b { color: #5a3a12; }
+.v4-countdown.is-next-morning strong {
+  display: inline-block;
+  margin: 0 2px;
+  color: #e55216;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1;
+  animation: v4-morning-time-pulse 1.8s ease-in-out infinite;
+}
+@keyframes v4-morning-time-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .55; transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v4-countdown.is-next-morning strong { animation: none; }
+}
 .v4-cta-bubble {
   position: relative;
   z-index: 1;

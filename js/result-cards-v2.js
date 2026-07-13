@@ -202,22 +202,28 @@
     const remaining = deadline.getTime() - now.getTime();
     countdowns.forEach((countdown) => {
       if (!isDisplayTime || remaining <= 0) {
-        countdown.hidden = true;
+        countdown.hidden = false;
+        if (!countdown.classList.contains("is-next-morning")) {
+          countdown.classList.add("is-next-morning");
+          countdown.innerHTML = '<span>本日のお申し込みで</span><b><strong>10時</strong>に借入れ可能性</b>';
+        }
         return;
       }
       countdown.hidden = false;
+      countdown.classList.remove("is-next-morning");
       const totalSeconds = Math.floor(remaining / 1000);
       countdown.querySelector("[data-v4-hours]").textContent = pad(Math.floor(totalSeconds / 3600));
       countdown.querySelector("[data-v4-minutes]").textContent = pad(Math.floor((totalSeconds % 3600) / 60));
       countdown.querySelector("[data-v4-seconds]").textContent = pad(totalSeconds % 60);
       countdown.querySelector("[data-v4-centiseconds]").textContent = reduceCountdownMotion ? "00" : pad(Math.floor((remaining % 1000) / 10));
     });
-    return isDisplayTime && remaining > 0;
+    return true;
   };
   const runCountdown = (timestamp) => {
     countdownFrame = 0;
     if (document.hidden || countdownStopped) return;
-    const updateInterval = reduceCountdownMotion ? 1000 : 50;
+    const isNextMorningMode = countdowns.some((countdown) => countdown.classList.contains("is-next-morning"));
+    const updateInterval = reduceCountdownMotion || isNextMorningMode ? 1000 : 50;
     if (timestamp - lastCountdownUpdate >= updateInterval) {
       lastCountdownUpdate = timestamp;
       countdownStopped = !updateCountdowns();
