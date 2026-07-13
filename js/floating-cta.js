@@ -17,11 +17,12 @@
 
   const apply = () => {
     scheduled = false;
+    if (visible) return;
     const shouldShow = window.scrollY > 400 && !exclusions.some(overlapsViewport);
-    if (visible === shouldShow) return;
-    visible = shouldShow;
-    banner.hidden = !visible;
-    banner.style.display = visible ? "block" : "none";
+    if (!shouldShow) return;
+    visible = true;
+    banner.hidden = false;
+    banner.style.display = "block";
   };
 
   const schedule = () => {
