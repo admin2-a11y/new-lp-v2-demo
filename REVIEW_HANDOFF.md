@@ -430,3 +430,6 @@
 - 両V2再検索フォームのaction・variant、アコム年収/星5、3件表記、redirect.htmlリンクを確認。
 - 最適化画像3点と4社のredirect.htmlはHTTP 200。ブラウザconsole errorなし。
 - カウントダウンの進行を確認。21時以降の非表示はコード条件を維持している。
+- 実フォーム完走: はじめて6問から `beginner_result_v2.html?variant=beginner`、経験者7問から `result_v2.html?variant=experienced` へのGET遷移を確認。
+- 両結果ページ下部の再検索を実送信し、同じV2ページへ正しいvariant付きで戻ることを確認。
+- 375px表示で最適化済み初心者向け説明画像の文字可読性を目視確認。
