@@ -186,6 +186,10 @@
 
   const pad = (value) => String(value).padStart(2, "0");
   const countdowns = Array.from(document.querySelectorAll("[data-v4-countdown]"));
+  const reduceCountdownMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let countdownFrame = 0;
+  let lastCountdownUpdate = 0;
+  let countdownStopped = false;
   const updateCountdowns = () => {
     const now = new Date();
     const isDisplayTime = now.getHours() < 21;
@@ -202,12 +206,30 @@
       countdown.querySelector("[data-v4-hours]").textContent = pad(Math.floor(totalSeconds / 3600));
       countdown.querySelector("[data-v4-minutes]").textContent = pad(Math.floor((totalSeconds % 3600) / 60));
       countdown.querySelector("[data-v4-seconds]").textContent = pad(totalSeconds % 60);
-      countdown.querySelector("[data-v4-centiseconds]").textContent = pad(Math.floor((remaining % 1000) / 10));
+      countdown.querySelector("[data-v4-centiseconds]").textContent = reduceCountdownMotion ? "00" : pad(Math.floor((remaining % 1000) / 10));
     });
-    if (!isDisplayTime || remaining <= 0) window.clearInterval(countdownTimer);
+    return isDisplayTime && remaining > 0;
   };
-  const countdownTimer = window.setInterval(updateCountdowns, 50);
-  updateCountdowns();
+  const runCountdown = (timestamp) => {
+    countdownFrame = 0;
+    if (document.hidden || countdownStopped) return;
+    const updateInterval = reduceCountdownMotion ? 1000 : 50;
+    if (timestamp - lastCountdownUpdate >= updateInterval) {
+      lastCountdownUpdate = timestamp;
+      countdownStopped = !updateCountdowns();
+    }
+    if (!countdownStopped) countdownFrame = window.requestAnimationFrame(runCountdown);
+  };
+  countdownStopped = !updateCountdowns();
+  if (!countdownStopped) countdownFrame = window.requestAnimationFrame(runCountdown);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      if (countdownFrame) window.cancelAnimationFrame(countdownFrame);
+      countdownFrame = 0;
+      return;
+    }
+    if (!countdownStopped && !countdownFrame) countdownFrame = window.requestAnimationFrame(runCountdown);
+  });
 
   document.querySelectorAll(".v4-recommend, .v4-review-box").forEach((box) => {
     box.addEventListener("click", (event) => {
