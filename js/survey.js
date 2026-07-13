@@ -71,7 +71,7 @@
   function setEntryState(container) {
     if (!container) return;
     var params = new URLSearchParams(window.location.search);
-    var hidden = params.get("entry-modal") === "2";
+    var hidden = params.get("entry-modal") === "2" || params.get("select_modal") === "2";
     var body = container.querySelector(".entry-modal_body");
     var loading = container.querySelector(".entry-modal_load");
     container.classList.toggle("active", !hidden);

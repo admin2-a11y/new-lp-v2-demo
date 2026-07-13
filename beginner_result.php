@@ -1043,7 +1043,7 @@
     </div>
 </footer>
 <div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>
-<script src="./js/survey.js?v=f22" defer></script>
+<script src="./js/survey.js?v=f23" defer></script>
 <script src="./js/v3-accessibility-cvr.js?v=f21" defer></script>
 </body>
 
