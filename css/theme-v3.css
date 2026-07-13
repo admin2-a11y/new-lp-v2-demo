@@ -8457,3 +8457,51 @@ body.search-results .v3-result-lender-cta::after {
     margin-left: auto !important;
   }
 }
+/* Comparison-table CTA push motion */
+.v3-compare2-cta,
+.hikaku_box .v3-tab-compare-cta,
+.hikaku_box .c-compareTable .c-button,
+#hikaku .c-button {
+  position: relative;
+  transform: translateY(0) scale(1);
+  transform-origin: center;
+  animation: v3CompareCtaPush 2.2s ease-in-out infinite;
+  will-change: transform, filter;
+}
+
+.v3-compare2-cta:hover,
+.v3-compare2-cta:focus-visible,
+.v3-compare2-cta:active,
+.hikaku_box .v3-tab-compare-cta:hover,
+.hikaku_box .v3-tab-compare-cta:focus-visible,
+.hikaku_box .v3-tab-compare-cta:active,
+.hikaku_box .c-compareTable .c-button:hover,
+.hikaku_box .c-compareTable .c-button:focus-visible,
+.hikaku_box .c-compareTable .c-button:active,
+#hikaku .c-button:hover,
+#hikaku .c-button:focus-visible,
+#hikaku .c-button:active {
+  animation-play-state: paused;
+  transform: translateY(3px) scale(.985);
+}
+
+@keyframes v3CompareCtaPush {
+  0%, 18%, 36%, 100% {
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+  9%, 27% {
+    transform: translateY(3px) scale(.985);
+    filter: brightness(.94);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v3-compare2-cta,
+  .hikaku_box .v3-tab-compare-cta,
+  .hikaku_box .c-compareTable .c-button,
+  #hikaku .c-button {
+    animation: none;
+    will-change: auto;
+  }
+}
