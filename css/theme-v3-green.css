@@ -764,6 +764,12 @@ ul.survey-list .slider_value {
   color: var(--v3-accent-strong) !important;
 }
 
+#survey-modal .modal-body p.choice-btn[aria-pressed="true"] {
+  border-color: var(--v3-accent) !important;
+  background: var(--v3-accent-weak) !important;
+  color: var(--v3-accent-strong) !important;
+}
+
 .loan-check {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr));

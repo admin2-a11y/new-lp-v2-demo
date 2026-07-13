@@ -19,7 +19,7 @@
 
   function enhancePseudoButtons(root) {
     (root || document).querySelectorAll(
-      '.entry-first, .entry-experienced, #survey-modal .choice-btn, #survey-modal .step-back, #survey-modal .step-submit, #survey-modal .modal-close'
+      '.entry-first, .entry-experienced, #survey-modal .choice-btn, #survey-modal .step-back, #survey-modal .modal-close'
     ).forEach(makeButtonLike);
   }
 
@@ -133,28 +133,6 @@
       .replace(/operationinfo\.php/g, 'operationinfo.html');
   }
 
-  var entryNavigationTimer = null;
-
-  function resetEntryLoadingState() {
-    if (entryNavigationTimer !== null) {
-      window.clearTimeout(entryNavigationTimer);
-      entryNavigationTimer = null;
-    }
-
-    var container = document.querySelector('.entry-modal');
-    var body = document.querySelector('.entry-modal_body');
-    var loading = document.querySelector('.entry-modal_load');
-    if (loading) loading.classList.remove('active');
-
-    if (container && body) {
-      var shouldHideEntryModal = /(?:^|[?&])entry-modal=2(?:&|$)/.test(window.location.search);
-      container.classList.toggle('active', !shouldHideEntryModal);
-      body.classList.toggle('active', !shouldHideEntryModal);
-    }
-  }
-
-  window.addEventListener('pageshow', resetEntryLoadingState);
-  window.addEventListener('popstate', resetEntryLoadingState);
 
   function enableGitHubPagesDemoRouting() {
     if (!isStaticDemoHost()) return;
@@ -166,35 +144,6 @@
       link.setAttribute('href', toDemoHtmlUrl(link.getAttribute('href')));
     });
 
-    document.addEventListener('click', function (event) {
-      var beginnerButton = event.target.closest && event.target.closest('.entry-first');
-      if (!beginnerButton) return;
-      event.preventDefault();
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-
-      var container = document.querySelector('.entry-modal');
-      var body = document.querySelector('.entry-modal_body');
-      var loading = document.querySelector('.entry-modal_load');
-      if (body) body.classList.remove('active');
-      if (loading) loading.classList.add('active');
-      var loadingText = document.querySelector('[data-entry-loading-message]');
-      var messages = [
-        'はじめての方向けの質問を準備しています',
-        '見やすい順番に整理しています',
-        'まもなく診断を開始します'
-      ];
-      messages.forEach(function (message, index) {
-        window.setTimeout(function () {
-          if (loadingText) loadingText.textContent = message;
-        }, index * 520);
-      });
-
-      entryNavigationTimer = window.setTimeout(function () {
-        entryNavigationTimer = null;
-        window.location.replace('beginner.html' + window.location.search);
-      }, 1850);
-    }, true);
   }
 
   function serializeFormToUrl(form) {
@@ -233,7 +182,7 @@
     }, true);
 
     document.addEventListener('click', function (event) {
-      var button = event.target.closest && event.target.closest('form[action*="result.php"] button[type="submit"], form[action*="result.html"] button[type="submit"], form[action*="beginner_result.php"] button[type="submit"], form[action*="beginner_result.html"] button[type="submit"], #survey-modal .step-submit');
+      var button = event.target.closest && event.target.closest('form[action*="result.php"] button[type="submit"], form[action*="result.html"] button[type="submit"], form[action*="beginner_result.php"] button[type="submit"], form[action*="beginner_result.html"] button[type="submit"]');
       if (!button) return;
       var form = button.closest('form') || document.querySelector('#search_box form');
       if (!form) return;

@@ -513,3 +513,11 @@ V1 HTML pages were additionally checked at 375px with horizontal overflow 0, fai
 - Preserved the intentional missing intermediate question ID, beginner six-question flow, experienced seven-question flow, option values/order, result variants, and repeat-search routes.
 - Removed two legacy dispatch-control inputs after repository-wide analysis found no PHP, JavaScript, display, URL-generation, or analytics reader; their only other references were hiding selectors.
 - Updated cache busters for every external CSS/JS file changed by this migration. Form and protected-asset contracts are verified against a pre-change machine-readable snapshot.
+
+## F21 Survey interaction rewrite (2026-07-13)
+
+- Replaced 40 duplicated inline diagnosis, entry-selection, result-restoration, and modal-enhancement blocks across 13 HTML/PHP pages with `js/survey.js`.
+- The new implementation builds option controls with DOM APIs, synchronizes each native select, restores valid URL values and selected loan companies, updates result chips, preserves six-question and seven-question variants, manages progress/back/close/focus behavior, and guards against repeated transition and submit actions.
+- Removed the competing beginner-entry and modal-submit handlers from both accessibility helper variants. Added a persistent selected-option state to the blue and green themes.
+- Added `tests/f21-survey-unit.mjs` and `tests/f21-survey-contract.py`. Unit, DOM-contract, external/inline JavaScript syntax, page-reference, F17 redirect, form/protected-asset baseline, and legacy-marker checks pass.
+- Browser workflow, viewport, console, and 404 regression checks remain pending. The in-app browser rejected the configured local origin in this session, so these items are not recorded as successful.
