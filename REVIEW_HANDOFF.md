@@ -433,3 +433,64 @@
 - 実フォーム完走: はじめて6問から `beginner_result_v2.html?variant=beginner`、経験者7問から `result_v2.html?variant=experienced` へのGET遷移を確認。
 - 両結果ページ下部の再検索を実送信し、同じV2ページへ正しいvariant付きで戻ることを確認。
 - 375px表示で最適化済み初心者向け説明画像の文字可読性を目視確認。
+## F15 Phase 1 Regression Test (2026-07-13)
+
+### Environment
+
+- Repository: `new-lp-v2-fixes-20260713`
+- Preview: existing local static server at `http://127.0.0.1:8122/`
+- Browser: Codex in-app browser
+- PHP runtime: unavailable in this environment
+- Phase commits: F12 `ec66709`, F13 `25865ba`, F14 `d033860`
+
+### Completed Tests
+
+- Selected `はじめて` in the entry modal, reached `mobit_beginner.html`, answered all 6 questions, and reached `beginner_result_v2.html?variant=beginner`.
+- Beginner result used the green theme, ordered SMBCモビット -> アイフル -> アコム, and rendered the final SMBCモビット card.
+- Opened `index.html?select_modal=2`, answered all 7 experienced questions, and reached `result_v2.html?variant=experienced`.
+- Experienced result used the blue theme, ordered SMBCモビット -> アイフル -> プロミス, and rendered the final SMBCモビット card.
+- Submitted both result-page search forms and returned to the same V2 page with the correct `variant`.
+- Verified normal and final cards both open the recommendation and review details.
+- Verified four redirect items (`acom`, `mobit`, `promise`, `aiful`) render the correct banner, loading message, fallback link, and begin the delayed placeholder navigation.
+- Verified `utm_source=f15test` and `utm_campaign=phase1` persist from entry through result and redirect fallback URLs.
+- Verified the V2 countdown changes over a 350 ms interval.
+- Checked V1 HTML pages: `result.html`, `beginner_result.html`, `mobit.html`, `mobit_result.html`, `mobit_beginner_result.html`, `beginner.html`.
+- Confirmed deleted F12-F14 assets have zero references in HTML, PHP, CSS, and JS.
+
+### Viewport Results
+
+The following widths were checked on `index.html`, `mobit_beginner.html`, `result_v2.html`, and `beginner_result_v2.html`:
+
+| Width | Horizontal overflow | Failed images | Console errors |
+| --- | ---: | ---: | ---: |
+| 320px | 0px | 0 | 0 |
+| 375px | 0px | 0 | 0 |
+| 390px | 0px | 0 | 0 |
+| 414px | 0px | 0 | 0 |
+| 768px | 0px | 0 | 0 |
+| 1280px | 0px | 0 | 0 |
+
+V1 HTML pages were additionally checked at 375px with horizontal overflow 0, failed images 0, and console errors 0.
+
+### Successful Results
+
+- Beginner and experienced workflows completed.
+- Card orders, themes, and final repeated cards matched the specification.
+- Result-page repeat searches retained the correct V2 route and variant.
+- Recommendation/review disclosure controls worked on normal and final cards.
+- Redirect intermediate UI and fallback URLs worked for all four items.
+- Query parameters reached result and redirect URLs.
+- Countdown progressed.
+- Tested pages reported 0 console errors and 0 failed image resources.
+
+### Alternatives and Limitations
+
+- PHP could not be executed or linted because no PHP runtime is installed. PHP mirrors were checked by source/reference searches only.
+- Redirect placeholders intentionally navigate to local placeholder paths in the static demo after about one second. The intermediate screen, fallback URL, query propagation, and navigation start were verified; a real ASP destination cannot be verified until placeholders are replaced.
+- Automated checks verified horizontal overflow and resource loading at every requested width. Fine-grained visual typography/overlap review was sampled in the browser rather than pixel-diffed on every page-width combination.
+
+### Failed or Unexecuted Items
+
+- No functional failure was found in the HTML demo.
+- Live PHP execution: not performed (runtime unavailable).
+- Live affiliate destination completion: not performed (placeholders intentionally retained).
