@@ -20,6 +20,9 @@
     section h2 { margin: 0; padding: 15px 18px; color: #fff; font-size: 21px; }
     .acom h2 { background: #1769aa; }
     .mobit h2 { background: #08785f; }
+    .final-adjustment { grid-column: 1 / -1; border-color: #f0b429; }
+    .final-adjustment h2 { background: #d98900; }
+    .final-adjustment ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     ul { display: grid; gap: 10px; margin: 0; padding: 16px; list-style: none; }
     a {
       display: flex;
@@ -40,6 +43,7 @@
     @media (max-width: 640px) {
       main { padding-top: 20px; }
       .versions { grid-template-columns: 1fr; }
+      .final-adjustment ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -48,6 +52,15 @@
     <h1>マネーローンナビ デモ一覧</h1>
     <p class="lead">アコム先頭版・モビット先頭版と共通TOPを確認できます。</p>
     <div class="versions">
+      <section class="final-adjustment">
+        <h2>最終調整</h2>
+        <ul>
+          <li><a href="./index.html?select_modal=2&amp;v=f1a7b7b"><span>経験者向け TOP<small>最終調整中のアンケート・比較導線</small></span></a></li>
+          <li><a href="./result_v2.html?variant=experienced&amp;v=f1a7b7b"><span>経験者向け 結果 V2<small>モビット・アイフル・プロミス</small></span></a></li>
+          <li><a href="./mobit_beginner.html?v=f1a7b7b"><span>はじめて向け TOP<small>最終調整中の初心者向けアンケート</small></span></a></li>
+          <li><a href="./beginner_result_v2.html?variant=beginner&amp;v=f1a7b7b"><span>はじめて向け 結果 V2<small>モビット・アイフル・アコム</small></span></a></li>
+        </ul>
+      </section>
       <section class="acom">
         <h2>アコム先頭版</h2>
         <ul>
