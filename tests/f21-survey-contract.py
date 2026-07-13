@@ -40,7 +40,7 @@ for name, (action, names) in PAGES.items():
     document = html.document_fromstring(source)
     refs = document.xpath("//script[@src]/@src")
     survey_refs = [ref for ref in refs if "js/survey.js" in ref]
-    if survey_refs != ["./js/survey.js?v=f21"]:
+    if survey_refs != ["./js/survey.js?v=f22"]:
         fail(f"{name}: unexpected survey refs {survey_refs}")
     accessibility_indexes = [index for index, ref in enumerate(refs) if "v3-accessibility-cvr" in ref]
     if len(accessibility_indexes) != 1 or refs.index(survey_refs[0]) > accessibility_indexes[0]:
