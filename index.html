@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+
+		<script>
+			(function(w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					'gtm.start': new Date().getTime(),
+					event: 'gtm.js'
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
+		</script>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no" />
+		<title>マネーローンナビ</title>
+		<meta name="description" content="カードローン経験者向けに、大手3社を条件で比較できる無料診断ページです。借入希望額や希望時期に合わせて候補を確認できます。">
+		<!--FONTS-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+		<link rel="shortcut icon" href="./favicon.ico?v=mnavi9" type="image/vnd.microsoft.icon">
+
+		<link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="./css/animate.css" media="all">
+
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+		<link rel="stylesheet" type="text/css" href="./css/style-main.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/colorbox.css">
+
+
+
+
+
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js" defer></script>
+		<script src="./js/query-keeper.js" defer></script>
+		<meta name='robots' content='index, follow' />
+		<style>
+			img:is([sizes="auto" i], [sizes^="auto," i]) {
+				contain-intrinsic-size: 3000px 1500px
+			}
+		</style>
+		<style type="text/css" id="custom-background-css">
+			body.custom-background {
+				background-image: url("./images/wall_default.png");
+				background-position: left top;
+				background-size: auto;
+				background-repeat: repeat;
+				background-attachment: scroll;
+			}
+		</style>
+		<link rel="icon" href="./images/icon.png?v=mnavi9" />
+		<link rel="apple-touch-icon" href="./images/icon.png?v=mnavi9" />
+		<meta name='robots' content='max-image-preview:large' />
+		<link rel='dns-prefetch' href='https://use.fontawesome.com/' />
+
+		<link rel='stylesheet' id='font-awesome-official-css'
+			href='https://use.fontawesome.com/releases/v5.15.2/css/all.css' type='text/css' media='all'
+			integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+			crossorigin="anonymous" />
+		<link rel='stylesheet' id='font-awesome-official-v4shim-css'
+			href='https://use.fontawesome.com/releases/v5.15.2/css/v4-shims.css' type='text/css' media='all'
+			integrity="sha384-1CjXmylX8++C7CVZORGA9EwcbYDfZV2D4Kl1pTm3hp2I/usHDafIrgBJNuRTDQ4f" crossorigin="anonymous"
+			media="print" onload="this.media='all'" />
+		<style id='font-awesome-official-v4shim-inline-css' type='text/css'>
+			@font-face {
+				font-family: "FontAwesome";
+				src: url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-brands-400.eot"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-brands-400.woff2") format("woff2"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-brands-400.woff") format("woff"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-brands-400.ttf") format("truetype"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+			}
+
+			@font-face {
+				font-family: "FontAwesome";
+				src: url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-solid-900.eot"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-solid-900.woff2") format("woff2"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-solid-900.woff") format("woff"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-solid-900.ttf") format("truetype"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+			}
+
+			@font-face {
+				font-family: "FontAwesome";
+				src: url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-regular-400.eot"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-regular-400.woff2") format("woff2"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-regular-400.woff") format("woff"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-regular-400.ttf") format("truetype"),
+					url("https://use.fontawesome.com/releases/v5.15.2/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+				unicode-range: U+F004-F005, U+F007, U+F017, U+F022, U+F024, U+F02E, U+F03E, U+F044, U+F057-F059, U+F06E, U+F070, U+F075, U+F07B-F07C, U+F080, U+F086, U+F089, U+F094, U+F09D, U+F0A0, U+F0A4-F0A7, U+F0C5, U+F0C7-F0C8, U+F0E0, U+F0EB, U+F0F3, U+F0F8, U+F0FE, U+F111, U+F118-F11A, U+F11C, U+F133, U+F144, U+F146, U+F14A, U+F14D-F14E, U+F150-F152, U+F15B-F15C, U+F164-F165, U+F185-F186, U+F191-F192, U+F1AD, U+F1C1-F1C9, U+F1CD, U+F1D8, U+F1E3, U+F1EA, U+F1F6, U+F1F9, U+F20A, U+F247-F249, U+F24D, U+F254-F25B, U+F25D, U+F267, U+F271-F274, U+F279, U+F28B, U+F28D, U+F2B5-F2B6, U+F2B9, U+F2BB, U+F2BD, U+F2C1-F2C2, U+F2D0, U+F2D2, U+F2DC, U+F2ED, U+F328, U+F358-F35B, U+F3A5, U+F3D1, U+F410, U+F4AD;
+			}
+		</style>
+		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./Prsd_xmlrpc.xml" />
+		<style type="text/css" id="custom-background-css">
+			body.custom-background {
+				background-image: url("./images/wall_default.png");
+				background-position: left top;
+				background-size: auto;
+				background-repeat: repeat;
+				background-attachment: scroll;
+			}
+		</style>
+		<script src="./js/wow.js"></script>
+		<script>
+			new WOW().init();
+		</script>
+		<script>
+			$(function() {
+				$('div.btn_menu').click(function() {
+					$('nav').toggleClass('open');
+				});
+			})
+		</script>
+		<script>
+			$(function() {
+				$('.btn_menu').on('click', function() {
+					$(this).toggleClass('active');
+					return false;
+				});
+			});
+		</script>
+		<script>
+			jQuery(function() {
+				var appear = false;
+				var pagetop = $('#page_top');
+				$(window).scroll(function() {
+					if ($(this).scrollTop() > 100) { //100pxスクロールしたら
+						if (appear == false) {
+							appear = true;
+							pagetop.stop().animate({
+								'bottom': '0px' //下から50pxの位置に
+							}, 300); //0.3秒かけて現れる
+						}
+					} else {
+						if (appear) {
+							appear = false;
+							pagetop.stop().animate({
+								'bottom': '-100px' //下から-50pxの位置に
+							}, 300); //0.3秒かけて隠れる
+						}
+					}
+				});
+				pagetop.click(function() {
+					$('body, html').animate({
+						scrollTop: 0
+					}, 500); //0.5秒かけてトップへ戻る
+					return false;
+				});
+			});
+		</script>
+
+		<script>
+			$(function() {
+				$(".aco_box").hide();
+				$(".aco_btn").click(function() {
+					$(this).next().slideToggle();
+					$(this).toggleClass('open');
+				});
+			});
+		</script>
+    <link rel="stylesheet" href="./css/theme-v3.css?v=mnavi111" type="text/css" media="screen">
+        <link rel="stylesheet" href="./css/experience-retry-survey.css?v=2" type="text/css" media="screen">
+	    <link rel="stylesheet" href="./css/experience-ranking-visible.css?v=1" type="text/css" media="screen">
+        <link rel="stylesheet" href="./css/mobit-compare2.css?v=softpulse1" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/experience-flow-width.css?v=mnavi1" type="text/css" media="screen">
+	<link rel="stylesheet" href="./css/experience-final-pick.css?v=mnavi2" type="text/css" media="screen">
+	<link rel="stylesheet" href="./css/result-cards-v2.css?v=58" type="text/css" media="screen">
+	<script defer src="./js/result-cards-v2.js?v=44"></script>
+</head>
+<body class="experience">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+    <div id="headerinner">
+        <div class="headerLeft">
+            <img height="221" width="1080" src="./images/logo.png" alt="マネーローンナビ">
+            <p class="pr_text"> このページにはPRリンクが含まれています </p>
+        </div>
+    </div>
+</header>    <div class="select_modal">
+        <div class="select_modal_body active">
+            <header class="v3-modal-head v3-entry-modal-head">
+                <h2 class="v3-sr-only">現在のご状況をお選びください</h2>
+                <img class="v3-entry-modal-banner" src="./images/entry-modal-banner.jpg" width="1200" height="720" alt="あなたにぴったりのカードローンをご紹介します。現在のご状況をお選びください。">
+            </header>
+            <div class="select_modal_inner">
+                <p class="v3-modal-note">回答に合わせて最適な診断に切り替えます</p>
+                <p class="button select_modal_btn2">経験がある<span>カードローンを使ったことがある・使っている</span></p>
+                <p class="button select_modal_btn1">はじめて<span>カードローンを使ったことがない</span></p>
+            </div>
+        </div>
+        <div class="select_modal_load">
+            <p><span data-entry-loading-message>ご状況に合わせて質問を準備しています</span><br>
+                <span class="v3-entry-loading-steps" aria-hidden="true"><i></i><i></i><i></i></span>
+                <br><img src="./images/loading.gif" alt="Loading" class="load" data-eio="l" width="50" height="50">
+            </p>
+        </div>
+    </div>
+    <span id="top"></span>
+    <div id="mainvisual" class="v3-hero v3-hero-experience">
+        <div class="v3-hero-inner">
+            <h1 class="v3-sr-only">延滞経験ありでもOK 簡単即日融資カードローン</h1>
+            <div class="v3-hero-media">
+                <img src="./images/hero-experience-firstview.jpg" width="1200" height="724" fetchpriority="high" alt="大手3社を条件で比較。延滞経験ありでも相談しやすいカードローン。WEB完結やコンビニATMなど、来店せず進めやすい方法もあります。">
+            </div>
+        </div>
+    </div>
+    <span id="content2"></span>
+    <div id="search_box">
+        <h2 class="ttl01">
+            <i class="fas fa-search"></i> あなたにぴったりのカードローンを探す
+        </h2>
+        <div class="timer_in_box">
+            <div class="remaining" style="display: block;">今日中に借りるなら</div>
+            <div class="timerbox">
+                <p id="timerTop"> </p>
+            </div>
+            <div class="over"></div>
+        </div>
+        <div id="searchTOP">
+            <form id="form" action="./result_v2.html" method="get">
+                <input type="hidden" name="variant" value="experienced">
+                <input name="s" type="hidden" />
+                <input type="hidden" name="post_type" value="post">
+                <h3>Q1.現在借り入れ中の会社は？<span>（複数選択可）</span></h3>
+                <div class="rentcheck">
+                    <label><input
+                            type="checkbox" value="a1_1" name="cat[]" /><span>アコム</span></label><label><input
+                            type="checkbox" value="a1_2" name="cat[]" /><span>プロミス</span></label><label><input type="checkbox" value="a1_0" name="cat[]" /><span>アイフル</span></label><label><input
+                            type="checkbox" value="a1_3" name="cat[]" /><span>SMBCモビット</span></label><label><input
+                            type="checkbox" value="a1_4" name="cat[]" /><span>レイク</span></label><label><input
+                            type="checkbox" value="a1_11" name="cat[]" /><span>その他</span></label>
+                </div>
+                <ul class="select_box"><li class="selected">
+                        <label for="select_s2">Q2.いつまでに借りたい？</label>
+                        <p>こだわらない</p>
+                        <select name="loan_speed_dis" id="select_s2">
+                            <option value="">こだわらない</option>
+                            <option id="loan_speed_1" value="a3_1">1時間以内に借りたい</option>
+                            <option id="loan_speed_2" value="a3_2">当日中に借りたい</option>
+                            <option id="loan_speed_3" value="a3_3">3日以内に借りたい</option>
+                            <option id="loan_speed_4" value="a3_4">1週間以内に借りたい</option>
+                        </select>
+                    </li><li class=" form_sliders">
+                        <label for="slider">Q3.いくら借りたい？</label>
+                        <p class="slider_value">こだわらない</p>
+                        <input type="range" id="slider" min="0" max="4" step="1" value="0" hidden>
+                        <select name="borrow_limit_dis" id="select_s1">
+                            <option value="">こだわらない</option>
+                            <option id="borrow_limit_1" value="a2_1">10万円以下</option>
+                            <option id="borrow_limit_2" value="a2_2">11〜50万円</option>
+                            <option id="borrow_limit_3" value="a2_3">51万〜100万円</option>
+                            <option id="borrow_limit_4" value="a2_4">101万円以上</option>
+                        </select>
+                    </li><li>
+                        <label for="select_s4">Q4.どのように借りたい？</label>
+                        <p>未回答</p>
+                        <select name="how_dis" data-id="how_dis" id="select_s4">
+                            <option value="">こだわらない</option>
+                            <option id="how_1" value="a4_1">コンビニATM</option>
+                            <option id="how_2" value="a4_2">口座振込</option>
+                        </select>
+                    </li><li class="form_sliders">
+                        <label for="select_s5">Q5.現在の年収は？</label>
+                        <p class="slider_value">未回答</p>
+                        <input type="range" id="slider" min="0" max="4" step="1" value="0" hidden>
+                        <select name="annual_income_dis" data-id="annual_income_dis" id="select_s5">
+                            <option value="">未回答</option>
+                            <option id="annual_income_1" value="a5_1">120万円未満</option>
+                            <option id="annual_income_2" value="a5_2">120万～300万円</option>
+                            <option id="annual_income_3" value="a5_3">300万～500万円</option>
+                            <option id="annual_income_4" value="a5_4">500万～700万円</option>
+                            <option id="annual_income_5" value="a5_5">700万円以上</option>
+                        </select>
+                    </li><li>
+                        <label for="select_s6">Q6.現在の職業は？</label>
+                        <p>なし</p>
+                        <select name="how_many_loans_dis" id="select_s6">
+                            <option value="">なし</option>
+                            <option id="job_1" value="a6_1">正社員</option>
+                            <option id="job_2" value="a6_2">公務員</option>
+                            <option id="job_3" value="a6_3">パート・アルバイト</option>
+                            <option id="job_4" value="a6_4">契約/派遣社員</option>
+                            <option id="job_5" value="a6_5">学生</option>
+                            <option id="job_6" value="a6_6">専業主婦</option>
+                            <option id="job_7" value="a6_7">個人事業主・経営者</option>
+                            <option id="job_8" value="a6_8">無職</option>
+                        </select>
+                    </li><li class="form_sliders">
+                        <label for="select_s7">Q7.会社規模は？</label>
+                        <p>未回答</p>
+                        <select name="company_size_dis" id="select_s7">
+                            <option value="">未回答</option>
+                            <option id="company_size_1" value="a7_1">5人未満</option>
+                            <option id="company_size_2" value="a7_2">5人以上</option>
+                            <option id="company_size_3" value="a7_3">20人以上</option>
+                            <option id="company_size_4" value="a7_4">50人以上/派遣社員</option>
+                        </select>
+                    </li><li>
+                        <label for="select_s8">Q8.勤続年数は？ </label>
+                        <p>未回答</p>
+                        <select name="duration_dis" id="select_s8">
+                            <option value="">未回答</option>
+                            <option id="duration_1" value="a8_1">半年未満</option>
+                            <option id="duration_2" value="a8_2">半年以上～1年未満</option>
+                            <option id="duration_3" value="a8_3">1年以上～3年未満</option>
+                            <option id="duration_4" value="a8_4">3年以上</option>
+                        </select>
+                    </li></ul>
+                <input type="checkbox" class="dispad_url_on" id="a999" name="dispad_url_on" value="dispad_url_on_1"
+                    checked>
+                <input type="checkbox" style="display:none" name="dispad_page" value="campaign-a" checked>
+                <div class="rentbtn">
+                    <input name="order_by_recommended_dis_2" value="ASC" type="hidden" />
+
+                    <button type="submit"><i class="fas fa-search"></i> この条件で探す</button>
+                </div>
+            </form>
+        </div>
+        <div id="serch2_Modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>かんたん診断で絞り込む</h2>
+                    <div class="v3-modal-progress" aria-live="polite"><span>質問 1 / 1</span><b><i style="width:0%"></i></b></div>
+                    <span class="modalClose">×</span>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(window).on('load', function() {
+                $('#select_s1').siblings('p').text($('#select_s1 option:selected').text());
+                $('#select_s2').siblings('p').text($('#select_s2 option:selected').text());
+                $('#select_s3').siblings('p').text($('#select_s3 option:selected').text());
+                if ($('.input_check:checked').length > 0) {
+                    $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
+                    $('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
+                    $('#select_s6').siblings('p').text($('#select_s6 option:selected').text());
+                    if ($('#necessary_conditions_1').prop('checked')) {
+                        $('#necessary_conditions_1').next().attr('data-checked', 'true');
+                    }
+                    if ($('#necessary_conditions_2').prop('checked')) {
+                        $('#necessary_conditions_2').next().attr('data-checked', 'true');
+                    }
+                    if ($('#necessary_conditions_3').prop('checked')) {
+                        $('#necessary_conditions_3').next().attr('data-checked', 'true');
+                    }
+                    if ($('#necessary_conditions_4').prop('checked')) {
+                        $('#necessary_conditions_4').next().attr('data-checked', 'true');
+                    }
+                    $('#select_s3, #select_s4, #select_s5, #select_s6').parent().css('display', 'list-item');
+                } else if ($('#select_s6').siblings('p').text() !== $('#select_s6 option:selected').text()) {
+                    $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
+                    $('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
+                    $('#select_s6').siblings('p').text($('#select_s6 option:selected').text());
+                    $('#select_s3, #select_s4, #select_s5, #select_s6').parent().css('display', 'list-item');
+                } else if ($('#select_s5').siblings('p').text() !== $('#select_s5 option:selected').text()) {
+                    $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
+                    $('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
+                    $('#select_s3, #select_s4, #select_s5').parent().css('display', 'list-item');
+                } else if ($('#select_s4').siblings('p').text() !== $('#select_s4 option:selected').text()) {
+                    $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
+                    $('#select_s3').parent().css('display', 'list-item');
+                }
+            });
+
+            $('#select_s1, #select_s2, #select_s3').change(function() {
+                const str1 = $('option:selected', this).text();
+                $(this).siblings('p').text(str1);
+            });
+            $('#select_s4, #select_s5, #select_s6,#select_s7,#select_s8').change(function() {
+                const str1 = $('option:selected', this).text();
+                $(this).siblings('p').text(str1);
+                $(this).parent().css('display', 'list-item');
+            });
+            $('#how_to_borrow_1').text('口座へ振り込み');
+            $('#how_to_borrow_2').text('コンビニATMから現金で借入');
+
+            $(function() {
+                var open = $('ul.select_box li'),
+                    open_2 = $('h2.ttl01'),
+                    selected_item = $('ul.select_box li[class="selected"]'),
+                    close = $('.modalClose'),
+                    container = $('#serch2_Modal'),
+                    container_title = $('.modal-header h2'),
+                    container_body = $('.modal-body');
+
+                open.on('click', function() {
+                    if ($('select', this).length) {
+                        container.data('name', $('select', this).attr('name'));
+                    } else {
+                        container.data('name', $('div', this).data('id'));
+                    }
+                    container_title.html($('label', this).first().html());
+                    if ($('select', this).length) {
+                        container_body.html($('select', this).html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+                        var selected_item = $('p', this).text();
+                        $('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
+                    } else {
+                        container_body.html($('div', this).html().replace(/<input/g, '<input disabled hidden').replace(/label/g, 'p class="modal-check"').replace(/for=/g, 'data-for=').replace(/data-checked=\"true\"/g, 'style="background:#d7e3f130"').replace(/<\/label>/g, '<\/p>'));
+                    }
+                    if ($(this).hasClass('form_slider')) {
+
+                        const $slider = $(this).find('input[type="range"]');
+                        const $select = $(this).find('select');
+                        const options = $select.find('option').map(function() {
+                            return $(this).text();
+                        }).get();
+
+                        const initialValue = $select.prop('selectedIndex');
+
+                        container_title.text($(this).find('label').text());
+                        container_body.append(`    <input type="range" class="modal-slider" min="0" max="${options.length - 1}" step="1" value="${initialValue}"><p class="slider-value-display">${options[initialValue]}</p>
+`);
+
+                        container_body.find('.modal-slider').on('input', function() {
+                            const sliderValue = $(this).val(); // スライダーの現在値を取得
+                            const $sliderValueDisplay = container_body.find('.slider-value-display'); // 値表示用
+                            const $modalButtons = container_body.find('.modal-btn'); // モーダル内の選択肢ボタン
+                            const $select = $('select[name="' + container.data('name') + '"]'); // 元の <select>
+
+                            const selectedText = $modalButtons.eq(sliderValue).text(); // 対応するテキストを取得
+                            $sliderValueDisplay.text(selectedText);
+
+                            $modalButtons.removeAttr('style'); // 全てのスタイルをリセット
+                            $modalButtons.eq(sliderValue).css('background', 'rgba(241,228,215, 0.19)'); // 現在の項目にスタイル適用
+
+                            $select.prop('selectedIndex', sliderValue).change(); // <select> のインデックスを同期
+
+                        });
+                        container_body.find('.modal-slider').on('change', function() {
+                            const sliderValue = $(this).val(); // スライダーの現在値を取得
+                            const $modalButtons = container_body.find('.modal-btn'); // モーダル内の選択肢ボタン
+
+                            $modalButtons.eq(sliderValue).click(); // ボタンのクリックイベントを発火
+                        });
+
+                    } else {
+                    }
+
+                    if ($(this).index() === $(this).siblings().length) {
+                        container_body.append('<p class="modal-submit">この条件で探す</p>')
+                    }
+                    if ($(this).index() !== 0) {
+                        container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+                    }
+                    container.addClass('active');
+                    return false;
+                });
+                open_2.on('click', function() {
+                    if ($('select', this).length) {
+                        container.data('name', $('select', this).attr('name'));
+                    } else {
+                        container.data('name', $('div', this).data('id'));
+                    }
+                    container_title.html($('label', this).first().html());
+                    if ($('select', this).length) {
+                        container_body.html($('select', this).html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+                        var selected_item = $('p', this).text();
+                        $('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
+                    } else {
+                        container_body.html($('div', this).html().replace(/<input/g, '<input disabled hidden').replace(/label/g, 'p class="modal-check"').replace(/for=/g, 'data-for=').replace(/data-checked=\"true\"/g, 'style="background:#d7e3f130"').replace(/<\/label>/g, '<\/p>'));
+                    }
+                    if ($(this).index() === $(this).siblings().length) {
+                        container_body.append('<p class="modal-submit">この条件で探す</p>')
+                    }
+                    if ($(this).index() !== 0) {
+                        container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+                    }
+                    container.addClass('active');
+                    return false;
+                }.bind(selected_item));
+
+                close.on('click', function() {
+                    container.removeClass('active');
+                });
+                container.on('click', function(e) {
+                    if (e.target === this) {
+                        container.removeClass('active');
+                    }
+                });
+
+                container_body.on('click', 'p.modal-btn', function() {
+                    var select_tag = $('select[name="' + container.data('name') + '"]');
+                    if ($(this).attr('data-value')) {
+                        select_tag.val($(this).data('value')).change();
+                    } else {
+                        select_tag.prop("selectedIndex", 0).change();
+                    }
+                    $(this).css('background', '#d7e3f130');
+                    $(this).siblings().removeAttr('style');
+                    if (select_tag.parent().index() !== select_tag.parent().siblings().length) {
+                        if (select_tag.parent().next().find('select').length) {
+                            container.data('name', select_tag.parent().next().find('select').attr('name'));
+                        } else {
+                            container.data('name', select_tag.parent().next().find('div').data('id'));
+                        }
+
+                        setTimeout(function() {
+                            container_title.html(select_tag.parent().next().find('label').first().html());
+                            const select_option = select_tag.parent().next().find('select')
+                            if (select_option.length != 0) {
+                                container_body.html(select_tag.parent().next().find('select').html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+                                var selected_item = select_tag.parent().next().find('p').text();
+                                $('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
+                            } else {
+                                container_body.html(select_tag.parent().next().find('div').html().replace(/<input/g, '<input disabled hidden').replace(/label/g, 'p class="modal-check"').replace(/for=/g, 'data-for=').replace(/data-checked=\"true\"/g, 'style="background:#d7e3f130"').replace(/<\/label>/g, '<\/p>'));
+                            }
+
+                            if (select_tag.parent().next().index() === select_tag.parent().siblings().length) {
+                                container_body.append('<p class="modal-submit">この条件で探す</p>')
+                            }
+                            container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+                            return false;
+                        }, 300);
+                    } else {
+                        console.log("-------- end --------");
+                        select_tag.parent().parent().parent().submit();
+                    }
+                });
+
+                container_body.on('click', 'p.modal-check', function() {
+                    var check_id = '#' + $(this).data('id');
+                    if ($(check_id).prop('checked')) {
+                        $(check_id).prop('checked', false);
+                        $(check_id).next().removeAttr('data-checked');
+                        $(this).css('background', '');
+                    } else {
+                        $(check_id).prop('checked', true);
+                        $(check_id).next().attr('data-checked', 'true');
+                        $(this).css('background', '#d7e3f130');
+                        $('div[data-id="necessary_conditions_dis"]').parent().css('display', 'list-item');
+                    }
+                });
+
+                container_body.on('click', 'p.modal-back', function() {
+                    if ($('select[name="' + container.data('name') + '"]').length) {
+                        var select_tag = $('select[name="' + container.data('name') + '"]');
+                    } else {
+                        var select_tag = $('div[data-id="' + container.data('name') + '"]');
+                    }
+                    container.data('name', select_tag.parent().prev().find('select').attr('name'));
+                    container_title.html(select_tag.parent().prev().find('label').first().html());
+                    container_body.html(select_tag.parent().prev().find("select").html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+                    var selected_item = select_tag.parent().prev().find('p').text();
+                    $('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
+                    if (select_tag.parent().prev().index() !== 0) {
+                        container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+                    }
+                    return false;
+                });
+
+                container_body.on('click', 'p.modal-submit', function() {
+
+                    var select_tag = $('div[data-id="' + container.data('name') + '"]');
+                    if (!select_tag.length) {
+                        var select_tag = $('select[name="' + container.data('name') + '"]');
+                    }
+                    select_tag.parent().parent().parent().submit();
+                });
+            });
+            $(document).ready(function() {
+
+            });
+        </script>
+    </div>
+
+<section id="hikaku2" class="v3-compare2" aria-labelledby="hikaku2-title">
+  <h2 id="hikaku2-title" class="v3-compare2-title v3-compare2-title-sr">おすすめの会社を徹底比較</h2>
+  <figure class="v3-compare2-title-image"><img src="./images/experience-compare-title.png" width="2048" height="684" loading="lazy" decoding="async" alt="人気のカードローン おすすめ徹底比較"></figure>
+  <div class="v3-compare2-tablewrap">
+    <table class="v3-compare2-table">
+      <caption>SMBCモビット、アイフル、プロミスの比較表</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="v3-compare2-label">会社名</th>
+          <th scope="col" class="v3-compare2-product is-featured">
+            <span class="v3-compare2-recommend">おすすめ</span>
+            <a target="_blank" href="./redirect.php?item=mobit"><img loading="lazy" width="400" height="333" src="./images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ"><b>SMBCモビット</b></a>
+          </th>
+          <th scope="col" class="v3-compare2-product"><a target="_blank" href="./redirect.php?item=aiful"><img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ"><b>アイフル</b></a></th>
+          <th scope="col" class="v3-compare2-product"><a target="_blank" href="./redirect.php?item=promise"><img loading="lazy" width="300" height="250" src="./images/banner_promise.jpg" alt="プロミス公式サイトへ"><b>プロミス</b></a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row" class="v3-compare2-label">融資時間</th><td class="is-featured"><span class="v3-compare2-value is-ring">最短15分<small>※1</small></span></td><td><span class="v3-compare2-value is-ring">WEBで最短14分<small>※1</small></span></td><td><span class="v3-compare2-value is-ring">最短3分<small>※1</small></span></td></tr>
+        <tr><th scope="row" class="v3-compare2-label">即日融資</th><td class="is-featured"><span class="v3-compare2-value is-ring">最短即日も可<small>※1</small></span></td><td><span class="v3-compare2-value is-ring">最短即日も可<small>※1</small></span></td><td><span class="v3-compare2-value is-ring">最短即日も可<small>※1</small></span></td></tr>
+        <tr><th scope="row" class="v3-compare2-label">返済</th><td class="is-featured"><span class="v3-compare2-value is-ring">月1,000円〜</span></td><td><span class="v3-compare2-value is-ring">月4,000円〜</span></td><td><span class="v3-compare2-value is-ring">月1,000円〜</span></td></tr>
+        <tr><th scope="row" class="v3-compare2-label">金利</th><td class="is-featured"><span class="v3-compare2-value is-ring">3.0%〜18.0%</span></td><td><span class="v3-compare2-value is-ring">3.0%〜18.0%</span></td><td><span class="v3-compare2-value is-ring">2.5%〜18.0%</span></td></tr>
+        <tr><th scope="row" class="v3-compare2-label">公式HP</th><td class="is-featured"><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=mobit">詳細はこちら</a></td><td><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=aiful">詳細はこちら</a></td><td><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=promise">詳細はこちら</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="v3-compare2-notes">
+    <p>※1 お申込時間や審査状況によりご希望に添えない場合があります。申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。</p>
+    <p>※返済額は借入残高や契約条件などにより異なります。各社公式サイトでご確認ください。</p>
+  </div>
+</section>
+
+
+
+
+
+    <div id="content1" class="ranking">
+
+
+        <span id="content0"></span>
+        <div id="recommend" class="v4-top-card-section">
+            <h2 class="v3-section-title">おすすめのカードローン</h2>
+            <div data-v4-result-cards data-v4-context="top" data-v4-variant="experienced"></div>
+            <div class="v3-lender-card-list">
+                <section class="v3-lender-card">
+                    <h3><span class="v3-lender-rank">1</span><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3>
+                    <p class="v3-lender-point"><span>POINT</span>WEB完結で周囲に知られにくく進めたい人におすすめ！</p>
+                    <div class="v3-lender-main">
+                        <a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-banner">
+                            <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
+                        </a>
+                        <ul class="v3-lender-tags">
+                            <li>来店不要</li>
+                            <li>Web申込可</li>
+                            <li>カードレス</li>
+                            <li>郵送物なし</li>
+                            <li>土日祝可</li>
+                            <li>バレない</li>
+                        </ul>
+                    </div>
+                    <dl class="v3-lender-specs">
+                        <div><dt>金利</dt><dd>3.0%～18.0%</dd></div>
+                        <div><dt>無利息期間</dt><dd>なし</dd></div>
+                        <div><dt>借入限度額</dt><dd>最大800万円</dd></div>
+                        <div><dt>融資時間</dt><dd>最短15分※</dd></div>
+                        <div><dt>審査時間</dt><dd>10秒簡易審査</dd></div>
+                        <div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+                    </dl>
+                    <a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+                    <p class="v3-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br>※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。<br>※一例であり、結果を保証するものではありません。</p>
+                </section>
+
+                <section class="v3-lender-card">
+                    <h3><span class="v3-lender-rank">2</span><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3>
+                    <p class="v3-lender-point"><span>POINT</span>アイフルの1秒診断なら、融資可能かをすばやく確認できます。</p>
+                    <div class="v3-lender-main">
+                        <a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-banner">
+                            <img loading="lazy" height="250" width="300" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ">
+                        </a>
+                        <ul class="v3-lender-tags">
+                            <li>来店不要</li>
+                            <li>Web申込可</li>
+                            <li>急ぎの借入</li>
+                            <li>収入証明不要</li>
+                            <li>土日祝可</li>
+                            <li>バレない</li>
+                        </ul>
+                    </div>
+                    <dl class="v3-lender-specs">
+                        <div><dt>金利</dt><dd>3.0%～18.0%</dd></div>
+                        <div><dt>無利息期間</dt><dd>最大30日</dd></div>
+                        <div><dt>借入限度額</dt><dd>最大800万円</dd></div>
+                        <div><dt>融資時間</dt><dd>WEBで最短14分※</dd></div>
+                        <div><dt>審査時間</dt><dd>WEBで最短14分※</dd></div>
+                        <div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+                    </dl>
+                    <a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+                    <p class="v3-lender-note">【PR】Sponsored by アイフル株式会社<br>※お申込時間や審査状況によりご希望に添えない場合があります。<br>※システムメンテナンスの時間帯や一部金融機関を除きます。<br>※一例であり、結果を保証するものではありません。</p>
+                </section>
+
+                <section class="v3-lender-card">
+                    <h3><span class="v3-lender-rank">3</span><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3>
+                    <p class="v3-lender-point"><span>POINT</span>郵送物なし＆カードレスで進めたい人におすすめ！</p>
+                    <div class="v3-lender-main">
+                        <a target="_blank" href="./redirect.php?item=promise" class="v3-lender-banner">
+                            <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg" alt="プロミス公式サイトへ">
+                        </a>
+                        <ul class="v3-lender-tags">
+                            <li>来店不要</li>
+                            <li>Web申込可</li>
+                            <li>カードレス</li>
+                            <li>郵送物なし</li>
+                            <li>土日祝可</li>
+                            <li>コンビニ対応</li>
+                        </ul>
+                    </div>
+                    <dl class="v3-lender-specs">
+                        <div><dt>金利</dt><dd>2.5%～18.0%</dd></div>
+                        <div><dt>無利息期間</dt><dd>30日</dd></div>
+                        <div><dt>借入限度額</dt><dd>最大500万円</dd></div>
+                        <div><dt>融資時間</dt><dd>最短3分</dd></div>
+                        <div><dt>審査時間</dt><dd>最短3分</dd></div>
+                        <div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+                    </dl>
+                    <a target="_blank" href="./redirect.php?item=promise" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+                    <p class="v3-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※お申込時間や審査によりご希望に添えない場合がございます。<br>※無利息期間30日を適用する場合は、メールアドレス登録とWeb明細利用の登録が必要です。<br>※一例であり、結果を保証するものではありません。</p>
+                </section>
+            </div>
+        </div>
+
+        <div id="flow">
+            <figure class="v3-sameday-flow-image">
+                <img loading="lazy" width="1148" height="1370" src="./images/sameday-flow-guide-experienced-3min.png" alt="最短で借りる流れ。STEP1 スマホで申し込み。自動契約機の場合はSTEP2 自動契約機の契約、STEP3 提携ATMで借入。口座振込の場合はSTEP2 WEBで契約、STEP3 口座振込。最短3分はお申し込みの時間や審査状況により異なります。">
+                <figcaption>※お申込時間や審査状況により、<br>ご希望に添えない場合や翌日以降の取扱となる場合があります。</figcaption>
+            </figure>
+        </div>
+
+
+
+
+
+<section class="v3-experience-final-pick v4-top-final-card-section" aria-labelledby="experience-final-pick-title">
+  <p class="v3-experience-final-pick__eyebrow">当サイトのおすすめは……</p>
+  <h2 id="experience-final-pick-title" class="v3-sr-only">SMBCモビット</h2>
+  <div class="v4-result-cards v4-top-final-card" data-v4-top-final-mobit></div>
+  <div class="v3-lender-card-list">
+    <section class="v3-lender-card">
+                        <h3><span class="v3-lender-rank">1</span><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3>
+                        <p class="v3-lender-point"><span>POINT</span>WEB完結で周囲に知られにくく進めたい人におすすめ！</p>
+                        <div class="v3-lender-main">
+                            <a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-banner">
+                                <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
+                            </a>
+                            <ul class="v3-lender-tags">
+                                <li>来店不要</li>
+                                <li>Web申込可</li>
+                                <li>カードレス</li>
+                                <li>郵送物なし</li>
+                                <li>土日祝可</li>
+                                <li>バレない</li>
+                            </ul>
+                        </div>
+                        <dl class="v3-lender-specs">
+                            <div><dt>金利</dt><dd>3.0%～18.0%</dd></div>
+                            <div><dt>無利息期間</dt><dd>なし</dd></div>
+                            <div><dt>借入限度額</dt><dd>最大800万円</dd></div>
+                            <div><dt>融資時間</dt><dd>最短15分※</dd></div>
+                            <div><dt>審査時間</dt><dd>10秒簡易審査</dd></div>
+                            <div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+                        </dl>
+                        <a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+                        <p class="v3-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br>※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。<br>※一例であり、結果を保証するものではありません。</p>
+                    </section>
+  </div>
+</section>
+
+                <div id="follow-banner" style="display: none;">
+            <button type="button" id="btn-follow" class="v3-follow-diagnosis" aria-label="簡単10秒 カードローン診断">
+                <span class="v3-follow-diagnosis__time">簡単10秒</span>
+                <span class="v3-follow-diagnosis__main"><span>カードローン</span><strong>診断</strong></span>
+                <span class="v3-follow-diagnosis__arrow" aria-hidden="true">⌄</span>
+            </button>
+        </div>
+        <a href="#top" class="nav arroe_top"></a>
+    </div>
+    <script>
+        $(function() {
+            var btn1 = $('.select_modal_btn1'),
+                btn2 = $('.select_modal_btn2'),
+                container = $('.select_modal'),
+                container_body = $('.select_modal_body'),
+                container_load = $('.select_modal_load'),
+                param = location.search;
+
+            function showEntryLoading(messages) {
+                var message = container_load.find('[data-entry-loading-message]');
+                container_body.removeClass('active');
+                container_load.addClass('active');
+                if (!message.length) return;
+                messages.forEach(function(text, index) {
+                    setTimeout(function() {
+                        message.text(text);
+                    }, index * 520);
+                });
+            }
+
+            if (!param.match('select_modal=2')) {
+                container.addClass('active');
+            }
+
+            function resolveBeginnerPath() {
+                var path = location.pathname || "";
+                return path.match(/\.html$/) ? "mobit_beginner.html" : "beginner.php";
+            }
+
+            btn1.on('click', function() {
+                showEntryLoading([
+                    'はじめての方向けの質問を準備しています',
+                    '見やすい順番に整理しています',
+                    'まもなく診断を開始します'
+                ]);
+                setTimeout(function() {
+                    location.replace(resolveBeginnerPath() + param);
+                }, 450);
+            });
+            btn2.on('click', function() {
+                showEntryLoading([
+                    'ご経験に合わせた質問を準備しています',
+                    '比較しやすい条件を整理しています',
+                    'まもなく診断を開始します'
+                ]);
+                setTimeout(function() {
+                    if (param) {
+                        location.replace(location.search + "&select_modal=2");
+                    } else {
+                        location.replace(location.search + "?select_modal=2");
+                    }
+                }, 450);
+            });
+
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('.select_modal_body').length) {
+                    return;
+                }
+            });
+        });
+    </script>
+    <script src="./js/timer.js?v=mnavi100" defer></script>
+    <script src="./js/follow_banner.js?v=mnavi50" defer></script>
+        <footer id="footer" class="v3-footer">
+    <div class="v3-footer-inner">
+        <div class="v3-footer-brand">
+            <img height="221" width="1080" src="./images/logo.png" alt="マネーローンナビ">
+            <p>カードローン選びに必要な情報を、比較しやすく整理してお届けします。</p>
+        </div>
+        <div class="v3-footer-sections">
+            <details open>
+                <summary>本サイトの目的</summary>
+                <ul>
+                    <li>本サイトは、ローン商品に関する情報提供と選択の機会を提供しますが、契約の代理や仲介は行いません。</li>
+                    <li>商品情報の正確性を期していますが、金利・手数料等に関する保証はありません。詳細は各事業者にお問い合わせください。</li>
+                    <li>サイト掲載商品の質問には回答できません。詳細は事業者にお問い合わせください。</li>
+                    <li>利用者間のトラブルについて当社は責任を負いません。</li>
+                    <li>利用規約やプライバシーポリシーを確認のうえ利用してください。</li>
+                    <li>サイト運営はアフィリエイトプログラムに基づき、広告収益を得ています。</li>
+                    <li>ランキングは当サイト調べ。</li>
+                    <li>マネーローンナビでは、アフィリエイトプログラムを利用し、事業社(アコム/アイフル/プロミス/SMBC)から委託を受け広告収益を得て運用しております。</li>
+                </ul>
+            </details>
+            <details open>
+                <summary>各ローン会社の概要</summary>
+                <h3>【プロミス】</h3>
+                <ul>
+                    <li><strong>年齢要件</strong>：19歳以下は収入証明書必須、高校生不可。</li>
+                    <li><strong>無利息サービス</strong>：30日間無利息（メール登録・Web明細利用登録が必要）。</li>
+                    <li><strong>必要書類</strong>：免許証のみで最大50万円まで融資可能。</li>
+                    <li><strong>融資時間</strong>：最短10秒振込（対応金融機関の口座が必要）。</li>
+                    <li><strong>その他</strong>：外国籍の方は在留カード等が必要。</li>
+                </ul>
+                <h3>【アイフル】</h3>
+                <ul>
+                    <li><strong>収入証明</strong>：50万円以下または借入総額100万円以下の場合、原則不要。</li>
+                    <li><strong>対象者</strong>：20歳以上70歳未満で安定収入のある方、主婦・フリーターも対象（条件あり）。</li>
+                </ul>
+                <h3>【アコム】</h3>
+                <ul>
+                    <li><strong>対象者</strong>：20歳以上で安定収入があればパート・バイトも可。</li>
+                    <li><strong>無利息サービス</strong>：アコムでのご契約がはじめての方が適用</li>
+                </ul>
+                <h3>【レイク】</h3>
+                <ul>
+                    <li><strong>融資条件</strong>：1万円～500万円、年率4.5%～18.0%、年齢20歳～70歳。</li>
+                    <li><strong>無利息期間</strong>：
+                        <ul>
+                            <li>60日間無利息（Web申込み限定）。</li>
+                            <li>5万円まで180日間無利息（初回契約の方）。</li>
+                            <li>※併用不可、契約翌日から無利息適用。</li>
+                        </ul>
+                    </li>
+                    <li><strong>融資時間</strong>：Web申込みで最短25分融資、21時までの手続き完了で当日振込可能。</li>
+                </ul>
+            </details>
+            <details open>
+                <summary>注意事項</summary>
+                <ul>
+                    <li>各ローンの詳細条件やサービス内容は、必ず公式サイトで確認してください。</li>
+                    <li>情報は予告なく変更される可能性があります。</li>
+                </ul>
+            </details>
+        </div>
+        <div class="v3-footer-bottom">
+            <a href="./operationinfo.php">運営社情報</a>
+            <small>Copyright &copy; マネーローンナビ All Rights Reserved.</small>
+        </div>
+    </div>
+</footer>
+<div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>    <script>
+        (function v3EnhanceDiagnosis() {
+            function updateDiagnosisState() {
+                var items = Array.prototype.slice.call(document.querySelectorAll('ul.select_box > li'));
+                items.forEach(function(item) {
+                    var select = item.querySelector('select');
+                    var label = item.querySelector('p');
+                    if (!select || !label) return;
+                    var value = (select.value || '').trim();
+                    var text = (label.textContent || '').trim();
+                    if (!value && (select.id === 'select_s1' || select.id === 'select_s2')) {
+                        label.textContent = 'こだわらない';
+                        text = label.textContent;
+                    } else if (!value && (text === '未回答' || text === 'なし' || text === 'こだわらない' || text === '')) {
+                        label.textContent = 'タップして選択 ▼';
+                        text = label.textContent;
+                    }
+                    item.classList.toggle('v3-answered', text !== 'タップして選択 ▼' && text !== '未回答' && text !== 'なし');
+                    item.classList.remove('v3-current-question');
+                });
+                var modal = document.getElementById('serch2_Modal');
+                if (!modal || !items.length) return;
+                var currentName = window.jQuery ? window.jQuery(modal).data('name') : '';
+                var currentSelect = currentName ? document.querySelector('select[name="' + currentName + '"]') : null;
+                var currentItem = currentSelect ? currentSelect.closest('li') : null;
+                if (!currentItem) {
+                    currentItem = items.filter(function(item) {
+                        return item.offsetParent !== null;
+                    })[0] || items[0];
+                }
+                if (currentItem) {
+                    currentItem.classList.add('v3-current-question');
+                }
+                var currentIndex = currentItem ? items.indexOf(currentItem) + 1 : 1;
+                if (currentIndex < 1) currentIndex = 1;
+                var progress = modal.querySelector('.v3-modal-progress');
+                if (progress) {
+                    progress.querySelector('span').textContent = '質問 ' + currentIndex + ' / ' + items.length;
+                    progress.querySelector('i').style.width = Math.round(currentIndex / items.length * 100) + '%';
+                }
+                var heading = modal.querySelector('.modal-header h2');
+                if (heading && /^Q\d+\./.test(heading.textContent)) {
+                    heading.textContent = heading.textContent.replace(/^Q\d+\./, '').trim();
+                }
+            }
+            if (window.jQuery) {
+                window.jQuery(window).on('load', function() { setTimeout(updateDiagnosisState, 0); });
+                window.jQuery(document).on('click change', 'ul.select_box li, #serch2_Modal .modal-btn, #serch2_Modal .modal-back, #serch2_Modal .modal-submit, select', function() {
+                    setTimeout(updateDiagnosisState, 0);
+                });
+            } else {
+                document.addEventListener('DOMContentLoaded', updateDiagnosisState);
+            }
+            document.addEventListener('click', function(event) {
+                if (event.target.closest('ul.select_box li, #serch2_Modal .modal-btn, #serch2_Modal .modal-back, #serch2_Modal .modal-submit')) {
+                    setTimeout(updateDiagnosisState, 0);
+                }
+            }, true);
+            document.addEventListener('change', function(event) {
+                if (event.target.matches('select')) {
+                    setTimeout(updateDiagnosisState, 0);
+                }
+            }, true);
+            var v3Heading = document.querySelector('#serch2_Modal .modal-header h2');
+            if (v3Heading && window.MutationObserver) {
+                new MutationObserver(function() { setTimeout(updateDiagnosisState, 0); }).observe(v3Heading, { childList: true, characterData: true, subtree: true });
+            }
+        })();
+    </script>
+<script src="./js/v3-accessibility-cvr-mobit.js?v=mobit-project-1" defer></script>
+</body>
+
+</html>
+

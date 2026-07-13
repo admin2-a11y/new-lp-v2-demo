@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">比較表を案内する人物イラスト</title>
+  <rect width="160" height="160" rx="24" fill="#eaf6ff"/>
+  <circle cx="81" cy="61" r="36" fill="#ffd9c1" stroke="#3d3d3d" stroke-width="3"/>
+  <path d="M45 61c1-29 19-45 42-43 19 2 31 18 30 43-22-1-42-10-55-27-5 12-10 20-17 27z" fill="#394b72"/>
+  <circle cx="68" cy="66" r="3" fill="#222"/>
+  <circle cx="95" cy="66" r="3" fill="#222"/>
+  <path d="M72 80c7 5 16 5 23 0" fill="none" stroke="#d96a6a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M35 124c5-20 87-20 94 0l8 28H27z" fill="#2a7bd6"/>
+  <path d="M67 108l14 18 14-18" fill="#fff"/>
+  <rect x="18" y="29" width="43" height="55" rx="7" fill="#fff" stroke="#2a7bd6" stroke-width="4"/>
+  <path d="M27 45h25M27 57h25M27 69h14" stroke="#9fd2ff" stroke-width="5" stroke-linecap="round"/>
+  <rect x="104" y="31" width="39" height="50" rx="6" fill="#fff" stroke="#1bb58a" stroke-width="4"/>
+  <path d="M113 46h21M113 59h17M113 71h13" stroke="#ace7d8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M31 102l18-15M129 99l-17-14" stroke="#ffd9c1" stroke-width="12" stroke-linecap="round"/>
+  <path d="M132 22l9-9M139 37l12-2M120 17l1-13" stroke="#ffcc00" stroke-width="6" stroke-linecap="round"/>
+</svg>

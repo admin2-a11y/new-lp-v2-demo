@@ -1,0 +1,409 @@
+/* Result-style recommendation cards used on the Mobit TOP pages. */
+
+
+.v3-result-lender-list {
+  display: grid;
+  gap: 14px;
+}
+
+.v3-result-lender-card {
+  padding: 12px;
+  border: 1px solid #b9d8f7;
+  border-radius: 8px;
+  background: #fffdf0;
+  box-shadow: 0 5px 12px rgba(23, 105, 184, .10);
+}
+
+.v3-result-lender-card.is-first {
+  border-color: #f6c77c;
+}
+
+.v3-result-lender-head {
+  display: grid;
+  grid-template-columns: minmax(0, 43%) minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.v3-result-lender-banner img {
+  display: block;
+  width: 100%;
+  max-height: 116px;
+  object-fit: contain;
+}
+
+.v3-result-lender-summary {
+  min-width: 0;
+}
+
+.v3-result-lender-rank {
+  display: inline-flex;
+  margin: 0 0 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #ff9d3d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.v3-result-lender-summary h3 {
+  margin: 0 0 8px;
+  color: #1b1b18;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.v3-result-lender-summary h3 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.v3-result-lender-card:nth-child(-n+3) .v3-result-lender-summary h3 a::before {
+  content: "\f521";
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+  font-family: "Font Awesome 5 Free";
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0 2px 4px rgba(0, 0, 0, .14);
+}
+
+.v3-result-lender-card:nth-child(1) .v3-result-lender-summary h3 a::before {
+  color: #d8a400;
+}
+
+.v3-result-lender-card:nth-child(2) .v3-result-lender-summary h3 a::before {
+  color: #aeb8c2;
+}
+
+.v3-result-lender-card:nth-child(3) .v3-result-lender-summary h3 a::before {
+  color: #b87333;
+}
+
+.v3-result-lender-group {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 8px;
+  background: #409b63;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.v3-result-lender-point {
+  margin: 4px 0 10px;
+  padding: 12px 10px 10px;
+  border: 2px solid #ff9d1c;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.v3-result-lender-point > span {
+  display: table;
+  margin: -26px auto 8px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: #ff9d3d;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.v3-result-lender-point > span::before {
+  content: "💡";
+  margin-right: 6px;
+}
+
+.v3-result-lender-point ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v3-result-lender-point li {
+  position: relative;
+  padding-left: 22px;
+  color: #1b1b18;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.v3-result-lender-point li::before {
+  content: "";
+  position: absolute;
+  top: .45em;
+  left: 2px;
+  width: 12px;
+  height: 7px;
+  border-left: 4px solid #ff9d1c;
+  border-bottom: 4px solid #ff9d1c;
+  transform: rotate(-45deg);
+}
+
+.v3-result-lender-spec {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 0 10px;
+  border-top: 1px solid #d5dce6;
+  border-left: 1px solid #d5dce6;
+  background: #fff;
+}
+
+.v3-result-lender-spec div {
+  border-right: 1px solid #d5dce6;
+  border-bottom: 1px solid #d5dce6;
+  text-align: center;
+}
+
+.v3-result-lender-spec dt {
+  margin: 0;
+  padding: 6px 3px;
+  background: #f0f3f7;
+  color: #1b1b18;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.v3-result-lender-spec dd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  margin: 0;
+  padding: 6px 4px;
+  background-image: radial-gradient(circle, transparent 0 13px, rgba(255, 190, 74, .7) 14px, rgba(255, 190, 74, .7) 17px, transparent 18px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  color: #111;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.v3-result-lender-spec dd:has(.v3-conveni-logos) {
+  background-image: none;
+}
+
+.v3-result-review {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: start;
+  margin: 0 0 12px;
+  padding: 10px;
+  border: 1px solid #b7bec8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.v3-result-review b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: #73b943;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.v3-result-review p {
+  margin: 0;
+  color: #1b1b18;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.v3-result-lender-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  margin: 0 0 10px;
+  padding: 12px 14px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #ff7a32 0%, #f04b1f 100%);
+  box-shadow: inset 0 -4px 0 rgba(163, 62, 13, .42);
+  color: #fff !important;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none !important;
+  animation: v3-result-cta-nudge 1.8s ease-in-out infinite;
+}
+
+.v3-result-lender-cta::after {
+  content: "›";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  margin-left: 8px;
+  border-radius: 999px;
+  background: #fff;
+  color: #f04b1f;
+  line-height: 1;
+}
+
+@keyframes v3-result-cta-nudge {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: inset 0 -4px 0 rgba(163, 62, 13, .42);
+  }
+  45% {
+    transform: translateY(-2px);
+    box-shadow: inset 0 -4px 0 rgba(163, 62, 13, .42), 0 7px 14px rgba(240, 75, 31, .22);
+  }
+  62% {
+    transform: translateY(1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v3-result-lender-cta {
+    animation: none !important;
+  }
+}
+
+.v3-result-lender-note {
+  margin: 0;
+  color: #8c8c8c;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 374px) {
+  .v3-result-lender-card { padding: 10px; }
+  .v3-result-lender-summary h3 { font-size: 20px; }
+  .v3-result-lender-point li,
+  .v3-result-review p,
+  .v3-result-lender-spec dd { font-size: 12px; }
+  .v3-result-lender-spec dt { font-size: 11px; }
+  .v3-result-lender-cta { min-height: 52px; font-size: 15px; }
+}
+
+/* ==== Result same-day deadline timer ==== */
+.v3-result-deadline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px 10px;
+  margin: 10px 0 12px;
+  padding: 8px 10px;
+  border: 1px solid #f4a13d;
+  border-radius: 999px;
+  background: #fff8e7;
+  color: #2b1c0d;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.v3-result-deadline-label span {
+  color: #f04b1f;
+  font-weight: 900;
+}
+
+.v3-result-deadline-timer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  color: #191919;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.v3-result-deadline-timer span:not(.end) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  margin: 0 1px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: #191919;
+  color: #fff100;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.v3-result-deadline-timer .cs {
+  min-width: 26px !important;
+  background: #e60012 !important;
+  color: #fff100 !important;
+  font-size: 17px !important;
+  transform: translateY(-1px);
+}
+
+.v3-result-deadline-timer em {
+  color: #191919;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.v3-result-deadline.is-ended {
+  border-color: #d7dfe8;
+  background: #f6f8fb;
+}
+
+.v3-result-deadline-timer .end {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #191919;
+  color: #fff100;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+@media screen and (min-width: 769px) {
+  .v3-result-deadline {
+    justify-content: space-between;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 9px 14px;
+  }
+
+  .v3-result-deadline-timer span:not(.end) {
+    min-width: 28px;
+    font-size: 16px;
+  }
+
+  .v3-result-deadline-timer .cs {
+    min-width: 30px !important;
+    font-size: 18px !important;
+  }
+}
+

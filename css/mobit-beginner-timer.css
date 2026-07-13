@@ -1,0 +1,622 @@
+/* Beginner countdown styling aligned with the experienced page. */
+.beginner #search_box .timer_in_box:has(#timerTop),
+.beginner .timer_in_box:has(#timerTop) {
+  border-top-color: #f4df82 !important;
+  border-bottom-color: #f4df82 !important;
+  background: #fffbd8 !important;
+}
+
+.beginner .timer_in_box:has(#timerTop) #timerTop > div,
+.beginner .timer_in_box:has(#timerTop) #timerTop > div.timerTopParts {
+  gap: 2px !important;
+}
+
+.beginner .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
+.beginner .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+  display: inline-flex !important;
+  min-width: 24px !important;
+  min-height: 22px !important;
+  padding: 1px 3px 2px !important;
+  border-radius: 4px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(180deg, #fff36a 0%, #ffd84d 100%) !important;
+  color: #e60012 !important;
+  box-shadow: inset 0 -1px 0 rgba(230, 0, 18, .16) !important;
+  font-size: 19px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+}
+
+.beginner .timer_in_box:has(#timerTop) #timerTop em {
+  margin: 0 1px !important;
+  color: #1b1b18 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+}
+
+@media screen and (max-width: 374px) {
+  .beginner .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
+  .beginner .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+    min-width: 21px !important;
+    min-height: 20px !important;
+    padding-inline: 2px !important;
+    font-size: 17px !important;
+  }
+
+  .beginner .timer_in_box:has(#timerTop) #timerTop em {
+    font-size: 11px !important;
+  }
+}
+
+/* Pulse the question currently awaiting an answer, matching experienced flow. */
+body.beginner #search_box ul.select_box > li.v3-current-question,
+body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
+  border: 2px solid #ff7624 !important;
+  background: #fff9f3 !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 118, 36, .20) !important;
+  outline: 0 !important;
+  filter: none !important;
+  transition: none !important;
+  animation: mobit-beginner-question-glow 1s ease-in-out infinite !important;
+  z-index: 1 !important;
+}
+
+@keyframes mobit-beginner-question-glow {
+  0%, 100% {
+    opacity: 1;
+    border-color: #ff7624;
+    background-color: #fff9f3;
+    box-shadow: inset 0 0 0 1px rgba(255, 118, 36, .20);
+  }
+
+  50% {
+    opacity: .72;
+    border-color: #ff3d00;
+    background-color: #ffe3d1;
+    box-shadow: inset 0 0 0 5px rgba(255, 118, 36, .42);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.beginner #search_box ul.select_box > li.v3-current-question,
+  body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
+    animation: none !important;
+  }
+}
+
+/* Responsive replacement for the beginner tips accordion. */
+.v3-beginner-final-pick-label {
+  width: min(100% - 24px, 760px);
+  margin: 20px auto 10px;
+  color: #08765f;
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.beginner .v3-beginner-tips.v3-beginner-tips--image {
+  width: min(100%, 430px) !important;
+  margin: 18px auto 8px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+.beginner .v3-beginner-tips--image .v3-beginner-tips-image {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.beginner .v3-beginner-tips--image .v3-beginner-tips-image img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 8px !important;
+}
+
+.beginner .v3-beginner-tips--image .v3-beginner-tips-transcript {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media screen and (min-width: 769px) {
+  .beginner .v3-beginner-tips.v3-beginner-tips--image {
+    width: min(calc(100% - 48px), 760px) !important;
+    max-width: 760px !important;
+  }
+}
+
+/* Survey retry band above the back-to-top link. */
+.beginner .v3-beginner-retry-survey {
+  width: min(100%, 430px) !important;
+  margin: 18px auto 12px !important;
+  padding: 18px 14px 20px !important;
+  border-top: 4px solid #0b8d70 !important;
+  border-bottom: 4px solid #ffd633 !important;
+  background: #eaf9f4 !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+}
+
+.beginner .v3-beginner-retry-survey h2 {
+  margin: 0 0 7px !important;
+  color: #0b5f4c !important;
+  font-size: 21px !important;
+  font-weight: 900 !important;
+  line-height: 1.3 !important;
+}
+
+.beginner .v3-beginner-retry-survey p {
+  margin: 0 0 13px !important;
+  color: #43534f !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.55 !important;
+}
+
+.beginner .v3-beginner-retry-survey form {
+  display: grid !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.beginner .v3-beginner-retry-question {
+  padding: 10px !important;
+  border: 1px solid #b9dfd2 !important;
+  background: #fff !important;
+}
+
+.beginner .v3-beginner-retry-question > label,
+.beginner .v3-beginner-retry-question legend {
+  display: block !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  color: #164f42 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  line-height: 1.35 !important;
+}
+
+.beginner .v3-beginner-retry-question fieldset {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.beginner .v3-beginner-retry-question legend small {
+  color: #667c75 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+}
+
+.beginner .v3-beginner-retry-options {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 6px !important;
+}
+
+.beginner .v3-beginner-retry-options label {
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.beginner .v3-beginner-retry-options input {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.beginner .v3-beginner-retry-options span {
+  display: flex !important;
+  min-height: 34px !important;
+  padding: 5px 4px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid #cfe3db !important;
+  border-radius: 4px !important;
+  background: #f8fcfa !important;
+  color: #21463c !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+}
+
+.beginner .v3-beginner-retry-options input:checked + span {
+  border-color: #0b8d70 !important;
+  background: #0b8d70 !important;
+  color: #fff !important;
+}
+
+.beginner .v3-beginner-retry-select {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 1.15fr !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.beginner .v3-beginner-retry-select label {
+  margin: 0 !important;
+}
+
+.beginner .v3-beginner-retry-select select {
+  width: 100% !important;
+  min-height: 40px !important;
+  padding: 7px 8px !important;
+  border: 1px solid #9acbbb !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+  color: #173f35 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+.beginner .v3-beginner-retry-survey button {
+  display: flex !important;
+  width: min(100%, 330px) !important;
+  min-height: 52px !important;
+  margin: 3px auto 0 !important;
+  padding: 10px 18px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border: 2px solid #08775e !important;
+  border-radius: 999px !important;
+  background: #0b8d70 !important;
+  box-shadow: 0 4px 0 #075b49 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+}
+
+.beginner .v3-beginner-retry-survey a {
+  display: flex !important;
+  width: min(100%, 330px) !important;
+  min-height: 52px !important;
+  margin: 0 auto !important;
+  padding: 10px 18px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border: 2px solid #08775e !important;
+  border-radius: 999px !important;
+  background: #0b8d70 !important;
+  box-shadow: 0 4px 0 #075b49 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+}
+
+.beginner .v3-beginner-retry-survey a:focus-visible {
+  outline: 3px solid #ff9f1c !important;
+  outline-offset: 3px !important;
+}
+
+@media screen and (max-width: 374px) {
+  .beginner .v3-beginner-retry-survey {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+
+  .beginner .v3-beginner-retry-survey h2 {
+    font-size: 19px !important;
+  }
+
+  .beginner .v3-beginner-retry-survey a {
+    font-size: 14px !important;
+  }
+
+  .beginner .v3-beginner-retry-question > label,
+  .beginner .v3-beginner-retry-question legend {
+    font-size: 13px !important;
+  }
+
+  .beginner .v3-beginner-retry-options span {
+    font-size: 10px !important;
+  }
+
+  .beginner .v3-beginner-retry-survey button {
+    font-size: 14px !important;
+  }
+}
+
+/* Keep the first-view timer light and compact. */
+.beginner #search_box h2.ttl01 {
+  margin-bottom: 5px !important;
+  font-size: 17px !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) {
+  width: min(calc(100% - 20px), 420px) !important;
+  margin-bottom: 9px !important;
+  padding: 8px 8px 7px !important;
+  border-color: #f0df9a !important;
+  background: #fffdf0 !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) .remaining {
+  margin-bottom: 3px !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop > div,
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop > div.timerTopParts {
+  font-size: 11px !important;
+  line-height: 1.15 !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+  min-width: 21px !important;
+  min-height: 20px !important;
+  padding: 1px 2px !important;
+  font-size: 18px !important;
+}
+
+.beginner #search_box .timer_in_box:has(#timerTop) #timerTop em {
+  font-size: 11px !important;
+}
+
+@media screen and (max-width: 374px) {
+  .beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
+  .beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+    min-width: 19px !important;
+    min-height: 19px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Responsive replacement for the shortest borrowing-flow cards. */
+.beginner .v3-beginner-fastest-flow {
+  width: min(100%, 430px) !important;
+  margin: 18px auto 8px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+.beginner .v3-beginner-fastest-flow-image {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.beginner .v3-beginner-fastest-flow-image img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 8px !important;
+}
+
+.beginner .v3-beginner-fastest-flow-transcript {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media screen and (min-width: 769px) {
+  .beginner .v3-beginner-fastest-flow {
+    width: min(calc(100% - 48px), 760px) !important;
+    max-width: 760px !important;
+  }
+}
+
+/* Highlight the current-loan question without changing the option structure. */
+.beginner #search_box #searchTOP form > h3 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  margin: 8px 0 !important;
+  padding: 9px 10px !important;
+  border: 2px solid #16856b !important;
+  border-radius: 8px !important;
+  background: #effbf6 !important;
+  color: #123f34 !important;
+  box-shadow: 0 2px 0 rgba(22, 133, 107, .16) !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+}
+
+.beginner #search_box #searchTOP form > h3 span {
+  color: #667c75 !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+@media screen and (max-width: 374px) {
+  .beginner #search_box #searchTOP form > h3 {
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+
+  .beginner #search_box #searchTOP form > h3 span {
+    font-size: 10px !important;
+  }
+}
+
+/* Give the two primary borrowing questions stronger visual priority. */
+.beginner #search_box ul.select_box > li:has(#select_s2),
+.beginner #search_box ul.select_box > li:has(#select_s1) {
+  min-height: 74px !important;
+}
+
+.beginner #search_box ul.select_box > li:has(#select_s2) > label,
+.beginner #search_box ul.select_box > li:has(#select_s1) > label {
+  position: absolute !important;
+  top: 50% !important;
+  left: 12px !important;
+  transform: translateY(-50%) !important;
+  width: auto !important;
+  max-width: calc(52% - 20px) !important;
+  margin: 0 !important;
+  color: #183f35 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  line-height: 1.25 !important;
+}
+
+.beginner #search_box ul.select_box > li:has(#select_s2) > p,
+.beginner #search_box ul.select_box > li:has(#select_s1) > p {
+  position: absolute !important;
+  top: 50% !important;
+  left: 52% !important;
+  transform: translateY(-50%) !important;
+  width: auto !important;
+  max-width: calc(48% - 42px) !important;
+  margin: 0 !important;
+  color: #294f45 !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+
+@media screen and (max-width: 374px) {
+  .beginner #search_box ul.select_box > li:has(#select_s2),
+  .beginner #search_box ul.select_box > li:has(#select_s1) {
+    min-height: 82px !important;
+  }
+
+  .beginner #search_box ul.select_box > li:has(#select_s2) > label,
+  .beginner #search_box ul.select_box > li:has(#select_s1) > label {
+    top: 14px !important;
+    left: 14px !important;
+    transform: none !important;
+    max-width: calc(100% - 58px) !important;
+    font-size: 13px !important;
+  }
+
+  .beginner #search_box ul.select_box > li:has(#select_s2) > p,
+  .beginner #search_box ul.select_box > li:has(#select_s1) > p {
+    top: 39px !important;
+    left: 14px !important;
+    transform: none !important;
+    max-width: calc(100% - 58px) !important;
+    font-size: 18px !important;
+  }
+}
+
+
+/* Keep only the application and contract flow from the supplied illustration. */
+.beginner .v3-beginner-fastest-flow-image {
+  aspect-ratio: 1149 / 1115 !important;
+  overflow: hidden !important;
+}
+
+/* Center the full beginner hero artwork on desktop without changing shared themes. */
+@media screen and (min-width: 769px) {
+  .beginner #mainvisual.v3-hero.v3-hero-beginner {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-inner,
+  .beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-media {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-media img {
+    width: min(100%, 1200px) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+  }
+}
+
+
+/* Put every beginner content block on the same mobile column. */
+@media screen and (max-width: 768px) {
+  .beginner #search_box,
+  .beginner #beginner-tips,
+  .beginner #beginner-recommend,
+  .beginner .v3-beginner-rank-section,
+  .beginner .v3-compare2,
+  .beginner .v3-beginner-repeat-lender-section,
+  .beginner .v3-beginner-fastest-flow,
+  .beginner .v3-beginner-retry-survey {
+    width: min(calc(100% - 24px), 430px) !important;
+    max-width: 430px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .beginner #beginner-tips .v3-beginner-tips-image,
+  .beginner #beginner-tips .v3-beginner-tips-image img,
+  .beginner #beginner-recommend .v3-result-lender-list,
+  .beginner .v3-beginner-repeat-lender-section .v3-result-lender-list,
+  .beginner .v3-beginner-rank-section .v3-beginner-select-ranking {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
+/* Beginner flow: stop after the two STEP3 panels and omit the completion/tip panels. */
+.beginner .v3-beginner-fastest-flow-image {
+  position: relative !important;
+  height: 0 !important;
+  padding: 0 0 97.04% !important;
+  overflow: hidden !important;
+}
+
+.beginner .v3-beginner-fastest-flow-image img {
+  position: absolute !important;
+  inset: 0 auto auto 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
+/* Show the complete flow artwork, including the completion and note panels. */
+.beginner .v3-beginner-fastest-flow-image {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.beginner .v3-beginner-fastest-flow-image img {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+}

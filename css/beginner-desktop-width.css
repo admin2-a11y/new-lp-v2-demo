@@ -1,0 +1,47 @@
+/* Align beginner-page sections on a consistent desktop column. */
+@media screen and (min-width: 769px) {
+  body.beginner #mainvisual.v3-hero.v3-hero-beginner {
+    width: 100% !important;
+    max-width: none !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  body.beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-inner,
+  body.beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-media {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body.beginner #mainvisual.v3-hero.v3-hero-beginner .v3-hero-media img {
+    display: block !important;
+    width: min(100%, 1200px) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+  }
+
+  body.beginner #search_box,
+  body.beginner #beginner-tips,
+  body.beginner #beginner-recommend,
+  body.beginner .v3-beginner-lender-section,
+  body.beginner .v3-beginner-rank-section,
+  body.beginner .v3-beginner-quick-ranking,
+  body.beginner .v3-compare2,
+  body.beginner .v3-beginner-repeat-lender-section,
+  body.beginner .v3-beginner-fastest-flow,
+  body.beginner .v3-beginner-retry-survey {
+    width: min(calc(100% - 48px), 760px) !important;
+    max-width: 760px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  body.beginner #beginner-recommend .v3-result-lender-list,
+  body.beginner .v3-beginner-repeat-lender-section .v3-result-lender-list {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}

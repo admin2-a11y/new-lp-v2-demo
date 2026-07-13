@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">スマホを持って案内する人物イラスト</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e7fbff"/>
+      <stop offset="1" stop-color="#fff7c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="24" fill="url(#bg)"/>
+  <path d="M36 125c8-21 79-21 88 0l7 27H29z" fill="#ffd94a"/>
+  <path d="M49 86c2 23 19 35 34 35s32-12 34-35c2-25-12-45-34-45S47 61 49 86z" fill="#ffd8bd" stroke="#4d372c" stroke-width="3"/>
+  <path d="M48 76c10-19 24-25 42-25 12 0 23 8 29 24-8-3-17-8-25-15-9 12-28 20-46 16z" fill="#b97946"/>
+  <circle cx="68" cy="86" r="3" fill="#2b2b2b"/>
+  <circle cx="98" cy="86" r="3" fill="#2b2b2b"/>
+  <path d="M73 101c6 5 15 5 21 0" fill="none" stroke="#e56f70" stroke-width="4" stroke-linecap="round"/>
+  <path d="M118 58l16-7M121 70l18 1M113 48l5-16" stroke="#ffc400" stroke-width="7" stroke-linecap="round"/>
+  <rect x="24" y="62" width="31" height="52" rx="6" fill="#fff" stroke="#116bb8" stroke-width="4"/>
+  <rect x="30" y="70" width="19" height="31" rx="3" fill="#d8f0ff"/>
+  <circle cx="39.5" cy="107" r="2.8" fill="#116bb8"/>
+  <path d="M44 118c7 0 14 4 19 12" fill="none" stroke="#ffd8bd" stroke-width="13" stroke-linecap="round"/>
+  <path d="M119 116c-10 2-17 6-22 14" fill="none" stroke="#ffd8bd" stroke-width="13" stroke-linecap="round"/>
+  <path d="M126 96c-7 2-15 0-20-6" fill="none" stroke="#ffd8bd" stroke-width="12" stroke-linecap="round"/>
+  <path d="M59 128c10 6 39 6 49 0" fill="none" stroke="#1f7cc3" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,99 @@
+/* Experience TOP must keep the requested lender rankings visible. */
+body.experience #content1.ranking {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 64px auto !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+body.experience #content1.ranking #recommend2,
+body.experience #content1.ranking #recommend {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+body.experience #content1.ranking #content0,
+body.experience #content1.ranking #flow {
+  display: block !important;
+}
+
+
+/* Use a responsive image banner so the experience comparison heading never wraps. */
+body.experience #hikaku .v3-tab-compare-title-sr {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+body.experience #hikaku .v3-tab-compare-title-image {
+  display: block !important;
+  width: min(100%, 980px) !important;
+  margin: 0 auto 14px !important;
+}
+
+body.experience #hikaku .v3-tab-compare-title-image img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+
+/* Keep the experience header compact and non-sticky. */
+body.experience > header {
+  position: static !important;
+  min-height: 42px !important;
+  backdrop-filter: none !important;
+}
+
+body.experience > header #headerinner {
+  min-height: 42px !important;
+  padding: 0 12px !important;
+}
+
+body.experience > header .headerLeft {
+  gap: 8px !important;
+}
+
+body.experience > header .headerLeft img {
+  max-width: 126px !important;
+  max-height: 28px !important;
+}
+
+body.experience > header .pr_text {
+  max-width: none !important;
+  margin: 0 !important;
+  flex: 0 0 auto;
+  color: #6d7885 !important;
+  font-size: 9px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 374px) {
+  body.experience > header #headerinner {
+    min-height: 38px !important;
+    padding: 0 8px !important;
+  }
+
+  body.experience > header .headerLeft img {
+    max-width: 105px !important;
+    max-height: 24px !important;
+  }
+
+  body.experience > header .pr_text {
+    font-size: 8px !important;
+  }
+}
