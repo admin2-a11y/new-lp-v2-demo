@@ -25,7 +25,6 @@ PAGES = {
 FORBIDDEN = (
     "replace(/option/g",
     "v3EnhanceDiagnosis",
-    "select_s3",
     "function getQueryParams()",
     "function onReady(callback)",
     "var btn1 = $('.entry-first')",

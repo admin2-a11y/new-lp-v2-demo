@@ -5,7 +5,7 @@
 - P0は見つかりませんでした。総合P1 5件は修正済みです。P2は一部対応済み、一部は改善余地として残っています。
 - 2026-07-08 LPO2確認: 入口ポップアップをファーストビュー中心にし、女性ナビゲーター案内と短い思考余白を追加。320 / 375 / 390 / 414pxで横スクロールなし、入口クリック遷移、診断モーダルの女性ナビ表示、console error 0件を確認。
 - `lp-compliance-reviewer` / `$lp-compliance-review` はユーザー指示により未実施です。広告文言の適法性断定レビューはしていません。
-- 旧総合Findingsのうち、`redirect.php` fallback、FV alt/注記、結果ページ職業label、`icon_clock.png`、`select_s3` 欠番明記は対応済みとして除外します。
+- 旧総合Findingsのうち、`redirect.php` fallback、FV alt/注記、結果ページ職業label、`icon_clock.png`、旧連番上の中間設問が欠番である旨の明記は対応済みとして除外します。
 - アンケートの指定id/name、`ul.survey-list` 順序、`.entry-modal` / `.entry-first` / `.entry-experienced` / `#survey-modal`、`.loan-check input[name="current_loans[]"]` valueは維持。PR表記・注釈・プレースホルダーも残っています。
 
 ## Post-Fix Verification
@@ -100,7 +100,7 @@
   - 推奨修正: TOP/初心者/結果/運営者情報にページ固有のdescriptionを追加してください。redirectはnoindex前提なら優先度低めです。
 
 - [P2] redirect.php:208 / css/theme-v3.css:1276 — JS挿入のリダイレクトバナーにheight予約がない
-  - 影響: `single-banner` に挿入されるimgはwidthのみで、画像読み込み時にレイアウトが動く余地があります。
+  - 影響: 中継バナー枠に挿入されるimgはwidthのみで、画像読み込み時にレイアウトが動く余地があります。
   - 推奨修正: 挿入HTMLに既知のwidth/heightを付けるか、`.v3-redirect .banner` にaspect-ratio/min-heightを設定してください。
 
 - [P2] result.php:250 / beginner_result.php:250 — 結果ページのおすすめ理由が診断回答と接続していない
@@ -257,7 +257,7 @@
   - 推奨修正: 各バナー画像に `alt="アコム公式サイトへ"` などリンク先が分かるaltを追加するか、重複リンクとして扱うならリンク側に `aria-label` を付けて画像altは空にしてください。広告バナー画像自体の差し替えは不要です。
 
 - [P2] redirect.php:209 / css/theme-v3.css:1276 — JS挿入のリダイレクトバナーにheight予約がなく、CLS余地がある
-  - 影響: `single-banner` にonload後 `innerHTML` でバナーを差し込む際、imgは `width="300"` のみでheight属性がありません。CSSは `height:auto` のため、画像取得後に中継ページ中央のレイアウトが押し下がる可能性があります。
+  - 影響: 中継バナー枠へonload後 `innerHTML` でバナーを差し込む際、imgは `width="300"` のみでheight属性がありません。CSSは `height:auto` のため、画像取得後に中継ページ中央のレイアウトが押し下がる可能性があります。
   - 推奨修正: `linkMap` に画像寸法を持たせるか、挿入HTMLに既知の `width` / `height` を付けてください。あわせて `.v3-redirect .banner` に `aspect-ratio` または `min-height` を置くと、Core Web Vitals上のCLSを抑えやすくなります。
 
 ## Release Check
@@ -355,7 +355,7 @@
 - 結論: P0/P1なし。実際のカード先頭順に合わせてデモ一覧を整理し、アコム先頭版・モビット先頭版・共通TOP・V2を区別できるようにした。
 - `result_v2.html` / `beginner_result_v2.html` はモビット先頭の詳細口コミカードとして、`result-cards-v2.css?v=38` / `result-cards-v2.js?v=31` を読み込むことを確認。
 - 320 / 375 / 390 / 414 / 768 / 1280pxで主要9ページを確認し、横スクロールなし・console errorなし。
-- 診断固定項目は経験者7個（`select_s3`は仕様上欠番）、初心者6個。入口モーダルと `#survey-modal` の存在も確認。
+- 診断固定項目は経験者7個（旧連番上の中間設問は仕様上欠番）、初心者6個。入口モーダルと `#survey-modal` の存在も確認。
 - 未追跡 `images/review-people-lineup.png` は未参照のため公開対象外。既存の公式アフィリエイトバナー・口コミ画像は編集していない。
 
 ### 残課題

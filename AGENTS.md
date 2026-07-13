@@ -1,82 +1,22 @@
-# AGENTS.md — マネーローンナビ LP（開発エージェント向け指示）
+# AGENTS.md - マネーローンナビ LP 開発ガイド
 
-このリポジトリ（`new-lp-v2/`）はローン比較のランディングページ。元LPを別クライアント「マネーローンナビ」向けに作り直したもの。
-**あなた（Codex等のエージェント）はここを継続開発する。以下のルールを必ず守ること。**
+このリポジトリは、経験者向けと初めて利用する方向けの2導線を持つカードローン比較LPです。変更前に既存契約を確認し、HTML/PHPミラー、診断、結果復元、redirect、広告素材を一体として保守してください。
 
----
+## 1. 現在のページ構成
 
-## 1. まず現状を理解する
-- 2フロー構成:
-  - 経験者: `index.html` → `result.php`（**青テーマ**）
-  - 初心者: `beginner.php` → `beginner_result.php`（**緑テーマ**）
-  - 共通: `redirect.php`（アフィリンク中継）, `operationinfo.php`（運営者情報）
-- 全体像・経緯は親フォルダの `../_HANDOFF_開発継続ガイド.md` を読むこと。
+- 共通入口: `index.html`
+- 経験者診断: `index.html?entry-modal=2`
+- 初めて利用する方向け診断: `mobit_beginner.html`
+- 経験者V2結果: `result_v2.html?variant=experienced`
+- 初心者V2結果: `beginner_result_v2.html?variant=beginner`
+- V1結果とPHPミラー: `result.html` / `result.php`、`beginner_result.html` / `beginner_result.php`
+- 中継ページ: `redirect.html` / `redirect.php`
+- 運営者情報: `operationinfo.html` / `operationinfo.php`
+- 旧版確認用の各 `mobit*` ページも、参照切れを起こさない状態で維持する。
 
-## 2. ★絶対に壊してはいけないもの（触る前に確認）
-1. **アンケート診断のJS**（`index.html`/`beginner.php` の `<script>` 内、モーダル診断ロジック）。
-   - `<select>` の **id `q-amount`〜`q-duration`** と **name（`amount`, `speed`, `method`, `income`, `job`, `company_size`, `duration`, `priority`）を変更・削除しない**。
-   - `<ul class="survey-list">` の **`<li>` の順番と `nth-of-type` による段階表示**（初期2問表示→回答で順次開く）を壊さない。
-   - エントリーモーダル（`.entry-modal` / `.entry-first`=はじめて / `.entry-experienced`=経験がある）と `#survey-modal` のクラス名を維持。
-   - 設問の順序は確定済み（先頭2問は「いつまでに→いくら」）。勝手に戻さない。
-   - 現行HTMLでは `select_s3` は仕様上の欠番。既存JSに参照が残っていても、フォーム構造を無理に復元しない。
-2. **青/緑テーマの分離**:
-   - 経験者ページは `style.css`+`style-main.css`+`style_add.css`（青）。
-   - 初心者ページは `style-green.css`+`style-main-green.css`+`style_add-green.css`（緑）。
-   - **CSSを共通化・マージしない**。両テーマを崩さないこと。青CSSを直したら緑CSSにも同等の変更を反映する。
-3. **プレースホルダー**（`__BRAND_NAME__`, `__COMPANY_NAME__`, `__COMPANY_ADDRESS__`, `__COMPANY_EMAIL__`, `GTM-XXXXXXX`, `__AFFILIATE_URL_*__`）は指示が無い限り消さない（実データ待ち）。
-4. **痕跡を再混入させない**: 旧ブランド「ローンプラス」「moment合同会社」「loan-plus.jp」「GTM-TQHV5GQ5」「rextjapan」等を復活させない。画像を追加する時はメタデータ（EXIF/C2PA）を除去する。
+## 2. 診断フォームの保全契約
 
-## 3. コード規約
-- 既存のクラス命名・インデント・書式に合わせる。過度なリファクタや一括整形をしない（差分を最小に）。
-- レスポンシブの主ブレークポイントは **`max-width: 768px`**（モバイルファースト）。新規もこれに合わせる。
-- 固定 `px` 幅の新規追加は避け、`%` / `max-width` / `clamp()` / flex を優先。
-- 変更は小さく分割し、1タスク＝1テーマで進める。
-
-## 4. 確認方法（必ず実施）
-- PHPで配信して確認: `php -S localhost:8099 -t .`（PHP未導入なら要インストール。動的処理は未使用なので `.php`→`.html` 静的配信でも可）
-- 確認URL: `http://localhost:8099/`（経験者・青）/ `http://localhost:8099/beginner.php`（初心者・緑）
-- **モバイル幅 320 / 375 / 390 / 414px で横スクロールが出ないこと**を必ず確認。
-- アンケートを実際に1問目→送信まで通し、`result.php` / `beginner_result.php` に遷移することを確認（回帰チェック）。
-
-## 5. リデザイントラック（案A クリーン・フィンテック）の特例ルール
-`CODEX_TASKS.md` の R0〜R11 は見た目を一新するリデザイン作業。以下の方式で「壊さず大きく変える」:
-- **新デザインはすべて上書き用CSSに書く**: `css/theme-v3.css`（青）/ `css/theme-v3-green.css`（緑）を新設し、各ページの **`</head>` 直前（既存CSSより後）** で読み込む。**既存CSSファイルは編集しない**（ロールバック＝link 1行削除で成立させるため）。
-- 上書きが効かない場合のみ `!important` を許可（乱用しない。セレクタ詳細度で解決を優先）。
-- **HTML構造の変更が許されるのは**: ヒーロー(`#mainvisual`)、画像見出し→HTMLテキスト化、ランキングカード内の装飾要素、フッター、operationinfo/redirect のコンテンツ部。
-- **HTML変更が禁止なのは**: アンケートフォーム内部（`ul.survey-list` の構造、select の id/name、`.loan-check` の input）、`#survey-modal`・`.entry-modal` の既存クラス、GTM/計測タグ、PR表記・注釈の文言。
-- アフィリエイトバナー画像（banner_*.jpg / promise.gif）と口コミ画像（kuchikomi_*.png）は差し替え不可（広告素材）。それ以外の装飾画像（見出し画像等）はHTML/CSSへの置き換えを推奨。
-- 旧デザイン専用になった画像は削除せず残す（ロールバック用）。
-
-## 6. タスクの一覧
-着手すべき改善タスクは `CODEX_TASKS.md` にある。上から順に、1タスクずつ実施・確認・コミットすること。
-
-## 7. Codex内 自動実装・レビュー運用
-- 実装を自動で進める場合は `$lp-auto-build` を使用する。
-- 最終検収だけを行う場合は `$lp-final-review` を使用する。
-- レビュー担当は `.codex/agents/lp-reviewer.toml` を使い、推論設定は `xhigh` を推奨する。
-- 修正担当は `.codex/agents/lp-fixer.toml` を使い、`REVIEW_FINDINGS.md` のP0/P1/P2順に最小差分で直す。
-- 1本の実行指示として使う場合は `CODEX_AUTO_REVIEW_PROMPT.md` をCodexに貼り付ける。
-- レビュー担当は原則としてプロダクトファイルを編集せず、まず `REVIEW_FINDINGS.md` に指摘を保存する。
-
-## 8. Web制作向け 追加レビュー体制
-- 見た目/CVR/情報設計は `$lp-design-review` と `.codex/agents/lp-marketing-designer.toml` を使う。
-- 独自バナー/FV画像/訴求画像の見え方は `$lp-banner-design-review` と `.codex/agents/lp-banner-designer.toml` を使う。
-- 動作確認は `$lp-qa-check` と `.codex/agents/lp-qa-engineer.toml` を使う。
-- アクセシビリティ/可読性/フォーム操作性は `$lp-accessibility-review` と `.codex/agents/lp-accessibility-reviewer.toml` を使う。
-- 表示速度/SEO/画像最適化は `$lp-performance-seo-review` と `.codex/agents/lp-performance-seo-reviewer.toml` を使う。
-- 文言/広告表現/PR表記は `$lp-compliance-review` と `.codex/agents/lp-compliance-reviewer.toml` を使う。
-- 公開前チェックは `$lp-release-check` と `.codex/agents/lp-release-manager.toml` を使う。
-- 推奨順序: 実装 → lp-marketing-designer → lp-banner-designer → lp-qa-engineer → lp-accessibility-reviewer → lp-performance-seo-reviewer → lp-reviewer → lp-fixer → lp-release-manager。
-- マーケッター/デザイナーは、実装の正しさではなく「ユーザーが迷わず診断・比較・申込へ進めるか」を見る。
-
-## 9. Web制作向け 速度・SEO・アクセシビリティレビュー
-- 表示速度/SEO/HTML構造は `$lp-performance-seo-review` と `.codex/agents/lp-performance-seo-reviewer.toml` を使う。
-- アクセシビリティ/使いやすさは `$lp-accessibility-review` と `.codex/agents/lp-accessibility-reviewer.toml` を使う。
-- 推奨順序: 実装 → lp-marketing-designer → lp-banner-designer → lp-qa-engineer → lp-accessibility-reviewer → lp-performance-seo-reviewer → lp-reviewer → lp-fixer → lp-release-manager。
-- 広告文言チェックはユーザーが行うため、lp-compliance-reviewer は通常フローでは使わない。
-## 10. 診断UIの現行識別子契約
-
-診断フォームとモーダルは、今後も以下の現行識別子と挙動を一体で保全する。
+診断ロジックは `js/survey.js` に集約されています。ページ内へ同等処理を再コピーしないでください。
 
 | 用途 | 現行識別子 |
 | --- | --- |
@@ -85,17 +25,72 @@
 | 借入額 / 希望時期 / 借入方法 | `#q-amount` / `#q-speed` / `#q-method` |
 | 年収 / 職業 / 会社規模 / 勤続年数 | `#q-income` / `#q-job` / `#q-company-size` / `#q-duration` |
 | 送信パラメータ | `amount`, `speed`, `method`, `income`, `job`, `company_size`, `duration`, `priority` |
-| 現在の借入先（複数選択） | `current_loans[]` |
+| 現在の借入先 | `current_loans[]` / `.loan-check` |
 | 並び順 | `sort_order` |
-| 現在の借入先UI | `.loan-check` |
 | 入口モーダル | `.entry-modal`, `.entry-first`, `.entry-experienced` |
 | 選択 / 戻る / 送信 / 閉じる | `.choice-btn`, `.step-back`, `.step-submit`, `.modal-close` |
-| 商品枠 / 新商品枠 | `.lp-box`, `.lp-box-new` |
-| 締切表示 / ページ上部導線 / 結果要約 | `.deadline-box`, `.to-top`, `.result-summary` |
+| 商品枠 | `.lp-box`, `.lp-box-new` |
+| 締切 / 上部導線 / 結果要約 | `.deadline-box`, `.to-top`, `.result-summary` |
 
-- 設問IDは見た目の設問順に対応し、存在しない中間IDを新設しない。
-- `current_loans[]` の6つのvalueと表示順を変更しない。
-- URLからの条件復元、選択済みチップ、初心者6問・経験者7問、V1/V2の遷移を維持する。
-- 入口状態をURLで指定する場合は `entry-modal=2` を使用する。
-- 廃止済みの配信制御用hidden入力は再導入しない。
-- CSS/JSを変更したときは、その資産を読む全HTML/PHPのキャッシュバスターを同じ値へ更新する。
+- 設問IDは見た目の設問順に対応する。存在しない中間IDを新設しない。
+- 初心者6問、経験者7問、選択肢の値と順序、複数選択6社のvalueを変更しない。
+- 選択UIと元の`select`値、URL復元、結果チップ、戻る操作、再検索を同期させる。
+- 入口指定には `entry-modal=2`、結果テーマ指定には `variant=beginner` / `variant=experienced` を使う。
+- 二重初期化、二重送信、連打による設問飛ばしを再発させない。
+- 廃止済みの配信制御hidden入力や移行前の識別子を再導入しない。
+
+## 3. CSSとテーマ
+
+- 共通基盤: `css/base.css`
+- 初心者テーマ差分: `css/base-green.css`
+- 現行デザイン上書き: `css/theme-v3.css` / `css/theme-v3-green.css`
+- カード等の機能別CSSは既存の責務を維持し、同じルールを別ファイルへ重複させない。
+- 経験者ページは共通基盤と青テーマ、初心者ページは共通基盤・緑差分・緑テーマを読み込む。
+- CSS/JSを変更した場合、その資産を読む全HTML/PHPで同じキャッシュバスターへ更新する。
+- 320 / 375 / 390 / 414 / 768 / 1280pxで横スクロール、重なり、文字切れを確認する。
+
+## 4. redirectの維持必須挙動
+
+- 許可された4社の`item`だけを転送対象とし、不正値は安全な既定先とfallback表示へ戻す。
+- 静的ページは `redirect.html`、PHPページは `redirect.php` を使用する。
+- 中継表示、公式バナー、遅延転送、fallbackリンク、`utm_*`等のクエリ引き継ぎを維持する。
+- 転送先に既存クエリがある場合とない場合の両方で、区切り文字を正しく付与する。
+- `__AFFILIATE_URL_*__` は実値差し込み前の契約なので、明示指示なく変更しない。
+
+## 5. 変更禁止対象
+
+- 公式ASP素材: `banner_acom2.jpg`, `banner_aiful.jpg`, `banner_mobit.jpg`, `banner_promise.jpg`, `promise.gif`
+- PR表記、Sponsored表記、注釈、広告文言
+- `GTM-XXXXXXX` と `__AFFILIATE_URL_*__`
+- 各社の金利、融資時間、限度額、無利息期間等のスペック値と商品コピー
+- フォームのname/value/順序、結果カード順位、初心者/経験者のテーマ区分
+
+画像を追加する場合は、権利を確認し、不要なEXIF/C2PA等のメタデータを除去してください。外部参照サイト固有のブランド名、ドメイン、識別子、CMS残骸を持ち込まないでください。
+
+## 6. HTML/PHPミラー同期
+
+- 対応するHTML/PHPは、配信方式に必要な差分以外を同時更新する。
+- フォームaction、結果variant、CSS/JS参照、キャッシュバスター、PR/注釈を片側だけ変更しない。
+- 静的ページでは `.html` 導線、PHPミラーでは `.php` 導線を維持する。
+- PHP実行環境がない場合は、ソース差分と参照を検証し、実行確認を成功扱いにしない。
+
+## 7. 実装と検証
+
+- 既存の責務と命名に合わせ、無関係な一括整形やリファクタを避ける。
+- 1タスク1コミットを基本とし、変更前後で `git diff --check` を通す。
+- 診断は入口から最終送信、結果復元、再検索まで実操作する。
+- 4社の通常カードと最終再掲カードから中継ページを確認する。
+- コンソールエラー、404、横スクロール、キーボード操作、`prefers-reduced-motion` を確認する。
+- 検証できない項目は理由と代替確認を記録し、成功扱いにしない。
+
+## 8. レビュー運用
+
+- 最終総合レビュー: `$lp-final-review`
+- 見た目/CVR: `$lp-design-review`
+- 画像・バナー: `$lp-banner-design-review`
+- 動作QA: `$lp-qa-check`
+- アクセシビリティ: `$lp-accessibility-review`
+- 表示速度/SEO: `$lp-performance-seo-review`
+- 公開前確認: `$lp-release-check`
+
+推奨順序は、実装、デザイン、画像、QA、アクセシビリティ、性能/SEO、総合レビュー、必要な修正、公開前確認です。レビュー担当はまず `REVIEW_FINDINGS.md` に根拠付きで記録し、修正担当はP0/P1/P2順に最小差分で対応してください。

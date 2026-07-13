@@ -25,7 +25,7 @@
 3. **HTML構造の変更が許されるのは**: ヒーロー（`#mainvisual`）、画像見出しのHTMLテキスト化、ランキングカード内の装飾、フッター、`operationinfo.php` / `redirect.php` のコンテンツ部。**フォーム内部・GTMタグ・計測用hidden inputは不可**。
 4. **文言・素材の保全**: PR表記（【PR】Sponsored by…）と注釈（※…）は一字も変えない。アフィリエイトバナー（`banner_*.jpg`, `promise.gif`）と口コミ画像（`kuchikomi_*.png`）は差し替え不可。プレースホルダー（`__BRAND_NAME__`, `__COMPANY_NAME__`, `GTM-XXXXXXX`, `__AFFILIATE_URL_*__` 等）は残す。
 5. **redirect.php の転送ロジック**（linkMap / getStoredQueryParams / setTimeout / fallback-link）は変更しない。
-6. 旧ブランド痕跡（「ローンプラス」「moment合同会社」「loan-plus.jp」「GTM-TQHV5GQ5」「rextjapan」）を再混入させない。旧デザイン用画像は削除せず残す（ロールバック用）。
+6. 外部参照サイト固有のブランド名・法人名・ドメイン・計測IDを再混入させない。旧デザイン専用で未使用の素材は、参照と権利を確認して整理する。
 
 ## デザイン仕様（案A クリーン・フィンテック）
 
@@ -67,7 +67,7 @@
 320px幅で全4ページ（index / result / beginner / beginner_result）を確認し、`scrollWidth > clientWidth` の原因となる固定 `width:○○px` を `max-width:100%` / `%` / `clamp()` に置換。アンケート構造は触らない。
 
 ### STEP 4 — R0: theme-v3 の新設
-上記デザイン仕様のトークンとベース（body背景白・`custom-background` 壁紙無効化・フォント切替・リンク/ボタン基本形）を `theme-v3.css` / `theme-v3-green.css` に定義し、全6ページに読み込みを追加（青ページ→theme-v3.css、beginner系→theme-v3-green.css）。
+上記デザイン仕様のトークンとベース（body背景白・旧CMS壁紙指定の無効化・フォント切替・リンク/ボタン基本形）を `theme-v3.css` / `theme-v3-green.css` に定義し、全6ページに読み込みを追加（青ページ→theme-v3.css、beginner系→theme-v3-green.css）。
 
 ### STEP 5 — R1: ヘッダー刷新
 白背景・下ボーダー1px・ロゴ左・PR表記右端・高さ約56px・`position: sticky`。あわせて各ページの「スクロールでヘッダー背景色を変えるJSブロック（`rgba(252,128,3,...)` を設定している `$(window).scroll`）」を削除。

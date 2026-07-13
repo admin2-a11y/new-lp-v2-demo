@@ -261,12 +261,12 @@
 
 ### 対応内容
 
-- P1: `redirect.php` の `fallback-link` を `window.onload` 内で設定し、自動遷移と同じ正規化済み `item` / `redirectUrlWithParams` を使うよう修正。無効な `item` でもデフォルト先のfallbackが表示されます。
+- P1: `redirect.php` の `fallback-link` を `window.onload` 内で設定し、自動遷移と同じ正規化済みの商品キーと転送先URLを共用するよう修正。無効な `item` でもデフォルト先のfallbackが表示されます。
 - P1: `index.html` / `beginner.php` のFV画像altとFV注記を条件付き表現へ変更。FV画像内の「誰にもバレない」「バレない」は、既存画像の左下アイコン部分だけを「周囲に知られにくい」へ上書きしました。
 - P2: `result.php` / `beginner_result.php` の再診断フォームで、職業ラベルの `for` を `q-job` に修正。
 - P2: 結果ページ上部CTAの `.result-summary .btn_red, .result-summary .btn_g` を、青/緑themeとも `min-height: 44px` に修正。
 - P2: 旧CSS参照の欠損 `css/images/icon_clock.png` を追加し、404を解消。
-- P2: `select_s3` はプロダクトHTMLを復元せず、`AGENTS.md` / `CODEX_TASKS.md` に欠番仕様として明記。
+- P2: 旧連番上の中間設問はプロダクトHTMLへ復元せず、`AGENTS.md` / `CODEX_TASKS.md` に欠番仕様として明記。
 - P2: `beginner.php` の初心者向け見出し/アコーディオン文言を、断定・強調を抑えた表現へ変更。
 
 ### 新規/変更した文言
@@ -279,7 +279,7 @@
 | FV注記 | ※借入までの時間はお申込時間や審査状況などにより異なります。ご利用方法や状況によっては、ご家族や勤務先に確認が必要な場合があります |
 | beginner.php セクション見出し | 初めてのカードローン 申し込み前に知っておきたい4つのコツ |
 | beginner.php アコーディオン見出し | 1. 周囲に知られにくい方法で進めやすい場合があります |
-| AGENTS.md / CODEX_TASKS.md | `select_s3` は欠番。既存JS参照のみを理由にプロダクトHTMLへ無理に復元しない。 |
+| AGENTS.md / CODEX_TASKS.md | 旧連番上の中間設問は欠番。既存JS参照のみを理由にプロダクトHTMLへ無理に復元しない。 |
 
 ### 確認結果
 
@@ -542,3 +542,66 @@ V1 HTML pages were additionally checked at 375px with horizontal overflow 0, fai
 - Pre-F22 form, option-order, protected banner, placeholder, PR, and Sponsored contracts remain byte-for-byte equivalent.
 - `git diff --check`: pass.
 - Browser workflow, requested viewports, console, screenshot/geometry comparison, and 404 network checks remain pending. The in-app browser rejected the configured local origin, so no browser-only item is recorded as successful.
+
+## F23 Final trace scan and maintenance contract (2026-07-13)
+
+### Phase commits
+
+| Phase | Commit | Summary |
+| --- | --- | --- |
+| F20 | `ed4e7d0` | Migrated diagnosis, modal, query, result-restoration, and layout identifiers to the current contract. |
+| F21 | `1f9129a` | Replaced duplicated inline survey logic with `js/survey.js` and contract/unit tests. |
+| F22 | `7e6fa85` | Reimplemented the retained presentation layer as `css/base.css` plus the beginner-theme delta. |
+| F23 | This commit | Removed remaining textual traces, refreshed maintenance rules and theme cache keys, and recorded final static verification. The stable hash is reported from `git log` after commit because a commit cannot contain its own final hash. |
+
+### F20-F23 change summary
+
+- F20 established the current form IDs, names, classes, result parameters, entry state, and layout hooks now documented in `AGENTS.md`. The obsolete source identifiers are intentionally not retained in repository documentation and must not be reintroduced.
+- F21 added `js/survey.js`, `tests/f21-survey-unit.mjs`, and `tests/f21-survey-contract.py`; 40 duplicated inline blocks were removed from 13 pages.
+- F22 added `css/base.css`, `css/base-green.css`, and `tests/f22-css-contract.py`. It removed `css/common.css`, `css/common-green.css`, `css/style.css`, `css/style-green.css`, `css/style-main.css`, `css/style-main-green.css`, `css/style_add.css`, and `css/style_add-green.css`.
+- F23 rewrote `AGENTS.md` around the current architecture, removed the last historical trace mentions from project/review documents, removed an unused CMS-era body selector from both theme files, and updated all 17 theme references to cache key `f23`.
+- Changed groups across the phase: 17 application HTML/PHP pages; `demo-list.html`; `AGENTS.md`, prompt/task/review documents; the two LP skills; diagnosis, timer, accessibility, card, and theme CSS/JS; and the three phase test files. `git diff --name-status 1ce5a3b..HEAD` is the canonical complete path list.
+
+### Trace and file scans
+
+- Content command: `foreach ($token in $requiredTraceTokens) { rg -F -i --hidden --glob '!.git/**' --glob '!node_modules/**' -- $token . }`.
+- All 20 required content tokens returned zero matches individually; total matches: 0.
+- The same token set was checked case-insensitively against file and directory names; matches: 0.
+- The nine prohibited legacy image filename patterns were checked recursively under `images/`; matching files: 0.
+- The three retired JavaScript paths and nine retired stylesheet paths were checked with `Test-Path`; existing files: 0.
+- The required replacements exist: `js/param-keeper.js`, `js/deadline-timer.js`, `js/floating-cta.js`, `js/survey.js`, `css/base.css`, and `css/base-green.css`.
+
+### Final static regression
+
+- `tests/f21-survey-unit.mjs`: pass.
+- `tests/f21-survey-contract.py`: pass for 13 survey pages and their six/seven-question contracts.
+- `tests/f22-css-contract.py`: pass for two stylesheets and all 17 application pages.
+- All eight external JavaScript files and 100 inline scripts pass syntax checks.
+- All 18 root HTML/PHP documents parse; page-level CSS, JS, image, action, destination, and CSS `url()` references resolve locally.
+- Redirect unit checks pass for four lenders, fallback behavior, delay, parameter propagation, and destination URLs both with and without an existing query.
+- The pre-F20/F22 machine snapshot confirms that form names, option values/order, official banner hashes, affiliate placeholders, GTM placeholder counts, PR labels, and Sponsored counts are unchanged.
+- Reduced-motion handling remains present in the countdown/card scripts and active CSS motion rules.
+- `git diff --check`: pass before commit.
+
+### HTML/PHP mirror status
+
+- Every mirror updated in F20-F23 uses the same current identifiers, survey implementation, base stylesheet, theme cache key, protected assets, and redirect contract.
+- The V1 HTML/PHP pairs already contained substantial copy/layout differences before this phase. They were not force-normalized because doing so would alter protected advertising copy and page composition outside F23. Full byte/DOM equivalence is therefore not asserted; this is a remaining release decision.
+
+### Browser and environment limitations
+
+- Browser used in F23: none. The configured local origin was rejected by the in-app browser in this session, and alternate browser/origin workarounds were intentionally not used.
+- Requested widths 320 / 375 / 390 / 414 / 768 / 1280: not re-run in F22/F23.
+- Console errors: not measured in F22/F23.
+- Network 404 count: not measured in F22/F23. Static unresolved local references: 0.
+- End-to-end survey clicks, disclosures, countdown movement, and redirect UI were not re-run in a browser. Their DOM contracts and JavaScript/unit paths passed static checks.
+- PHP runtime: unavailable; PHP execution and live transfer were not performed.
+- Live affiliate destinations and GTM/affiliate measurement cannot be tested while placeholders remain.
+
+### Human release checks
+
+- Complete both beginner and experienced diagnosis flows, including back, reselection, close/reopen, invalid/existing/UTM parameters, result restoration, and repeat search.
+- Inspect V1 and V2 pages at all six requested widths for layout, overflow, text clipping, theme color, disclosure panels, countdown, and floating CTA.
+- Exercise all normal and repeated lender-card CTAs through both static and PHP redirect pages, then test real ASP URLs after insertion.
+- Confirm console and network panels report zero errors/404s and verify GTM plus affiliate attribution in the release environment.
+- Review every PR label, note, lender specification, ranking, official banner, and PHP mirror before production publication.
