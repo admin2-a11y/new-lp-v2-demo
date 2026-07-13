@@ -50,7 +50,11 @@
   const lendersByKey = new Map(lenders.map((lender) => [lender.key, lender]));
   const rankedLenders = variantOrder.map((key) => lendersByKey.get(key)).filter(Boolean);
 
-  const specMarkup = (specs) => specs.map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("");
+  const ringSpecLabels = new Set(["融資時間", "実質年率", "利用限度額", "事前審査", "事前診断", "利用方法"]);
+  const specMarkup = (specs) => specs.map(([label, value]) => {
+    const ringClass = ringSpecLabels.has(label) ? " class=\"v4-spec-ring\"" : "";
+    return `<div${ringClass}><dt>${label}</dt><dd>${value}</dd></div>`;
+  }).join("");
   const pointMarkup = (points) => points.map(([title, body]) => `<li><strong>${title}</strong><span>${body}</span></li>`).join("");
   const reviewProfileMarkup = (lender) => {
     const income = lender.reviewIncome ? `<span class="v4-review-income">年収：${lender.reviewIncome}</span>` : "";
