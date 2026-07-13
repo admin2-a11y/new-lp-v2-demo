@@ -501,3 +501,9 @@ V1 HTML pages were additionally checked at 375px with horizontal overflow 0, fai
 - Removed 34 duplicated legacy body-background style blocks because the referenced background asset does not exist and active theme styles own the page background.
 - Removed 17 obsolete automatic-image intrinsic-size style blocks because no page depends on that generated CMS rule.
 - Retained Font Awesome and other functional head assets for separate usage analysis; this task removed only blocks proven to be inactive CMS residue.
+## F19 Unused library removal (2026-07-13)
+
+- Removed Colorbox stylesheet references from 17 pages and deleted its stylesheet. No plugin script, invocation, modal DOM identifiers, or dedicated assets were present; its three referenced decorative files were already absent.
+- Removed Animate stylesheet and WOW script/initializers from 17 pages, then deleted both local files. Repository markup contained no animation target classes or data attributes, so initialization had no visible target.
+- Removed Swiper 4.3.3 CDN stylesheet/script references from 17 pages. No slider container, wrapper, slide, navigation, pagination, or initializer existed.
+- Static verification after removal passed for all 18 root HTML/PHP documents, all page-level local references, all local JavaScript syntax, the F17 redirect unit cases, and preserved funnel/form contracts. The remaining 118 unresolved CSS URL references are confined to four legacy stylesheets scheduled for replacement in F22. Direct browser QA remains pending because the configured local origin is unavailable to this session.
