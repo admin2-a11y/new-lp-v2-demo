@@ -494,3 +494,10 @@ V1 HTML pages were additionally checked at 375px with horizontal overflow 0, fai
 - No functional failure was found in the HTML demo.
 - Live PHP execution: not performed (runtime unavailable).
 - Live affiliate destination completion: not performed (placeholders intentionally retained).
+## F18 Legacy CMS cleanup (2026-07-13)
+
+- Scope: all 18 root HTML/PHP files were scanned; 17 affected files (12 HTML pages and 5 PHP mirrors) were cleaned, while the standalone demo index had no matching residue.
+- Removed 17 obsolete remote-editor discovery links because no matching endpoint exists in this static/PHP-mirror project.
+- Removed 34 duplicated legacy body-background style blocks because the referenced background asset does not exist and active theme styles own the page background.
+- Removed 17 obsolete automatic-image intrinsic-size style blocks because no page depends on that generated CMS rule.
+- Retained Font Awesome and other functional head assets for separate usage analysis; this task removed only blocks proven to be inactive CMS residue.
