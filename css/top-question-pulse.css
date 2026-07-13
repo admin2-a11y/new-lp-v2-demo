@@ -1,11 +1,32 @@
-/* Keep the first unanswered question visually active before the modal opens. */
+/* Keep the first select question visually active before the modal opens. */
 .experience #searchTOP .v3-first-question-pulse,
 .beginner #searchTOP ul.survey-list > li:first-child {
   position: relative;
   border-radius: 8px;
 }
 
-.experience #searchTOP .v3-first-question-pulse:not(:has(input[type="checkbox"]:checked)),
+.experience #searchTOP .v3-first-question-pulse > h3 {
+  margin: 0 0 10px !important;
+  padding: 9px 12px !important;
+  border: 2px solid #1769aa;
+  border-radius: 8px;
+  background: #eef7ff;
+  color: #123f70;
+  text-align: center;
+  box-shadow: 0 2px 0 rgba(23, 105, 170, .16);
+}
+
+body.experience #search_box #searchTOP .v3-first-question-pulse {
+  max-width: 620px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+body.experience #search_box #searchTOP ul.survey-list {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.experience #searchTOP ul.survey-list > li:has(#q-speed).selected,
 html body.beginner:not(.search-results) #search_box #searchTOP ul.survey-list > li:first-child.selected:not([data-survey-visited="1"]) {
   outline: 0 solid rgba(255, 118, 36, 0);
   outline-offset: 0;
@@ -29,7 +50,7 @@ html body.beginner:not(.search-results) #search_box #searchTOP ul.survey-list > 
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .experience #searchTOP .v3-first-question-pulse:not(:has(input[type="checkbox"]:checked)),
+  .experience #searchTOP ul.survey-list > li:has(#q-speed).selected,
   html body.beginner:not(.search-results) #search_box #searchTOP ul.survey-list > li:first-child.selected:not([data-survey-visited="1"]) {
     outline: 3px solid rgba(255, 118, 36, 0.28);
     animation: none !important;
