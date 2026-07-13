@@ -408,3 +408,25 @@
 - 幅: 320 / 375 / 390 / 414 / 768 / 1280px。確認した範囲では横スクロールなし、コンソールエラーなし。
 - 経験者TOPは `select_s1`〜`select_s8` のうち仕様上存在する7個、初心者TOPは6個を確認。`.select_modal`、入口ボタン、`#serch2_Modal` も対象ページで確認した。
 - 残リスク: `redirect.php` / `redirect.html` の `__AFFILIATE_URL_*__`、GTM、運営者情報などの実値化は本番公開前に必要。PHPサーバーでの送信・転送の本番同等確認は未実施。
+## 2026-07-13 F0-F10 bug-fix project
+
+- 作業先を `new-lp-v2-fixes-20260713` として独立コピーし、元リポジトリのrebase状態には触れていない。
+- F0: はじめて診断の送信先を `beginner_result_v2.html` へ修正。
+- F1: variant未指定時はbodyの `beginner` クラスへフォールバックし、デモリンクにもvariantを追加。
+- F2: アコム口コミへ年収350万円・星5を追加。
+- F3: 両V2再検索フォームを同じV2結果ページへ戻し、variantを維持。
+- F4: HTML配信時のV2カードリンクを `redirect.html` に切り替える実装へ変更。
+- F5: 説明画像3点を長辺1200px・JPEG品質80で再圧縮（180KB〜206KB）。元PNGは維持。
+- F6: 結果件数を3件へ修正。
+- F7: 再検索の重複見出しをCSSで整理。
+- F8: beginner V2の旧after_box・旧注記sectionを削除し、重複IDを解消。
+- F9: 経験者結果の職業チップへ `selected-job` IDを追加。
+- F10: カウントダウンをrequestAnimationFrame制御へ変更し、非表示タブ・モーション低減設定に対応。
+
+### QA
+
+- `index.html` / `mobit_beginner.html` / `result_v2.html` / `beginner_result_v2.html` を320・375・390・414・768・1280pxで確認し、横スクロールなし。
+- 順位は経験者がモビット→アイフル→プロミス、はじめてがモビット→アイフル→アコム。
+- 両V2再検索フォームのaction・variant、アコム年収/星5、3件表記、redirect.htmlリンクを確認。
+- 最適化画像3点と4社のredirect.htmlはHTTP 200。ブラウザconsole errorなし。
+- カウントダウンの進行を確認。21時以降の非表示はコード条件を維持している。
