@@ -17,10 +17,10 @@
 ## 絶対ルール（違反しそうなら実施せずスキップして記録）
 
 1. **アンケート診断を壊さない**:
-   - `<select>` の id `select_s1`〜`select_s8` と name（`borrow_limit_dis`, `loan_speed_dis`, `how_dis`, `annual_income_dis`, `how_many_loans_dis`, `company_size_dis`, `duration_dis`, `focous_dis`）を変更・削除しない。
-   - `ul.select_box` の `<li>` の順序と、`nth-of-type` による段階表示（初期2問→回答で順次開く）を壊さない。
-   - `.select_modal` / `.select_modal_btn1` / `.select_modal_btn2` / `#serch2_Modal` のクラス・idを維持。診断JSのロジックは変更しない（見た目のCSSは可）。
-   - `.rentcheck` 内 input の `name="cat[]"` と value を変更しない。
+   - `<select>` の id `q-amount`〜`q-duration` と name（`amount`, `speed`, `method`, `income`, `job`, `company_size`, `duration`, `priority`）を変更・削除しない。
+   - `ul.survey-list` の `<li>` の順序と、`nth-of-type` による段階表示（初期2問→回答で順次開く）を壊さない。
+   - `.entry-modal` / `.entry-first` / `.entry-experienced` / `#survey-modal` のクラス・idを維持。診断JSのロジックは変更しない（見た目のCSSは可）。
+   - `.loan-check` 内 input の `name="current_loans[]"` と value を変更しない。
 2. **新デザインのCSSはすべて新規ファイルに書く**: `css/theme-v3.css`（青ページ用）/ `css/theme-v3-green.css`（緑ページ用）を新設し、各ページの `</head>` 直前（既存CSSより後）で読み込む。**既存CSSファイルは一切編集しない**（T0のバグ修正を除く）。上書きが効かない場合のみ `!important` 可。
 3. **HTML構造の変更が許されるのは**: ヒーロー（`#mainvisual`）、画像見出しのHTMLテキスト化、ランキングカード内の装飾、フッター、`operationinfo.php` / `redirect.php` のコンテンツ部。**フォーム内部・GTMタグ・計測用hidden inputは不可**。
 4. **文言・素材の保全**: PR表記（【PR】Sponsored by…）と注釈（※…）は一字も変えない。アフィリエイトバナー（`banner_*.jpg`, `promise.gif`）と口コミ画像（`kuchikomi_*.png`）は差し替え不可。プレースホルダー（`__BRAND_NAME__`, `__COMPANY_NAME__`, `GTM-XXXXXXX`, `__AFFILIATE_URL_*__` 等）は残す。
@@ -58,7 +58,7 @@
 3. `css/common-green.css`（6箇所）と `css/style_add-green.css`（1箇所）のカンマ二重を修正。青側 `common.css` / `style_add.css` にも同パターンが無いか確認して同様に修正。
 4. index.html 1001行目付近の `</dvi>` を修正（前後のdiv対応を確認してから）。
 5. 全ページのフッター `&#995511;` → `&copy;`。
-6. beginner.php のQ5ラベル `for="select_s5"`（重複）→ `for="select_s6"`。
+6. beginner.php のQ5ラベル `for="q-income"`（重複）→ `for="q-job"`。
 
 ### STEP 2 — T1: viewport統一
 全ページの viewport メタを `<meta name="viewport" content="width=device-width, initial-scale=1">` の**1つだけ**に（現在3つ重複。`user-scalable=no` / `maximum-scale` は削除）。
@@ -77,23 +77,23 @@
 1. ピルバッジ「最短20分で借入まで」（`--v3-accent-weak` 地＋`--v3-accent-strong` 文字）
 2. H1: 経験者「あなたに合うカードローンが3問でわかる」/ 初心者「はじめてでも安心。あなたに合うカードローンが3問でわかる」
 3. サブコピー「大手3社を条件で比較・診断は無料」
-4. 主CTA「かんたん30秒診断をはじめる」（タップで `ul.select_box` の最初の li の click をトリガーし既存モーダルを開く）
+4. 主CTA「かんたん30秒診断をはじめる」（タップで `ul.survey-list` の最初の li の click をトリガーし既存モーダルを開く）
 5. 信頼チップ3つ「来店不要」「スマホ完結」「診断無料」
 `#mainvisual` の id は維持。375px幅でH1とCTAがファーストビューに収まること。
 
 ### STEP 7 — R3: 診断ボックス&モーダルのスキン刷新
 - `#search_box` を白カード化。見出しを「かんたん診断で絞り込む」に短縮。
-- `ul.select_box` 各行: 高さ56px以上・回答済み行に左4pxアクセントボーダー＋✓・初期表示の「未回答」「なし」は「タップして選択 ▼」に（※JSが p のテキストと option:selected を比較して開閉判定している箇所があるため、先に影響を確認し必要ならJS側比較も整合させる）。
-- `#serch2_Modal` に進捗表示（「質問 3 / 8」＋細いプログレスバー。li の index から算出、表示の追加のみ）。選択肢は高さ52pxのピルボタン縦積み・選択中は `--v3-accent-weak` 地＋`--v3-accent` ボーダー。
-- `.rentcheck`（index.htmlのQ1）は2列グリッドの大きなピル型（高さ44px以上、選択時テーマ色反転＋✓）。CSSのみで実現。
-- `.timer_in_box` は「今日中に借りるなら ○○:○○ までに申込」の1行スリム通知バー（アンバー系）に。
+- `ul.survey-list` 各行: 高さ56px以上・回答済み行に左4pxアクセントボーダー＋✓・初期表示の「未回答」「なし」は「タップして選択 ▼」に（※JSが p のテキストと option:selected を比較して開閉判定している箇所があるため、先に影響を確認し必要ならJS側比較も整合させる）。
+- `#survey-modal` に進捗表示（「質問 3 / 8」＋細いプログレスバー。li の index から算出、表示の追加のみ）。選択肢は高さ52pxのピルボタン縦積み・選択中は `--v3-accent-weak` 地＋`--v3-accent` ボーダー。
+- `.loan-check`（index.htmlのQ1）は2列グリッドの大きなピル型（高さ44px以上、選択時テーマ色反転＋✓）。CSSのみで実現。
+- `.deadline-box` は「今日中に借りるなら ○○:○○ までに申込」の1行スリム通知バー（アンバー系）に。
 - index.html のエントリーモーダル: 擬似ローディング `setTimeout(..., 3000)` を **1200ms** に短縮（2箇所）。「経験がある」を主ボタン・「はじめて」を副ボタンの視覚階層に。質問文の下に「回答に合わせて最適な診断に切り替えます」を小さく追加。
 
 ### STEP 8 — R4: 比較表の刷新
 `.c-compareTable`: 外枠なし・ヘアライン区切りのみ・1列目th を `position: sticky; left: 0; background: #fff`・横スクロール＋scroll-snap・右端にスクロールヒント。◎○装飾はアクセント色の小バッジ＋太字数値に（td内テキストは不変）。「詳細」ボタンはピル型。
 
 ### STEP 9 — R5: ランキングカードの刷新
-`.topbox.case` を白カード化し、画像装飾をHTML化:
+`.lp-box.case` を白カード化し、画像装飾をHTML化:
 1. `rank1_catch.png` → 「No.1」アンバーバッジ＋テキスト
 2. `hitokoto_point__*.png` → アクセント色の吹き出し風テキスト（画像内文言と同等の内容）
 3. `.reco_table` → 3メトリクスタイル（融資時間/実質年率/限度額。ラベル12px・数値18px太字・`--v3-bg-alt` 地）
@@ -103,13 +103,13 @@
 対象: index → beginner → result → beginner_result の全カード。
 
 ### STEP 10 — R6: 結果ページの情報設計刷新（result.php / beginner_result.php）
-1. `.after_box`: 「あなたの条件に合うカードローン **3件**」を大きく、選択条件（`#selected-amount` 等）を条件チップ風に横並び。「条件を変更する」はアウトラインピル。
+1. `.result-summary`: 「あなたの条件に合うカードローン **3件**」を大きく、選択条件（`#selected-amount` 等）を条件チップ風に横並び。「条件を変更する」はアウトラインピル。
 2. `result_after.png` をHTMLの案内ブロック（1〜2行）に置換。
 3. 並び替えプルダウンは**未配線**（selectにnameが無くJSは `name='sort'` を探している）。非表示にするか配線するか選び、選択と理由を `REVIEW_HANDOFF.md` に記録。
 4. ページ下部の `#search_box` に「条件を変えてもう一度診断」の見出しを付けR3スキンを適用。
 
 ### STEP 11 — R7: redirect.php の刷新
-ロゴ→スピナー→「○○のサイトへ移動中です」→バナー→fallbackリンクの縦1カラム中央寄せに。`.timer_in_box` は削除。**転送ロジックは不変**。
+ロゴ→スピナー→「○○のサイトへ移動中です」→バナー→fallbackリンクの縦1カラム中央寄せに。`.deadline-box` は削除。**転送ロジックは不変**。
 
 ### STEP 12 — R8: operationinfo.php の刷新
 白カード内の定義リスト型レイアウト（モバイル縦積み）＋「← トップに戻る」リンク。プレースホルダーは残す。

@@ -1,18 +1,18 @@
 /* Beginner countdown styling aligned with the experienced page. */
-.beginner #search_box .timer_in_box:has(#timerTop),
-.beginner .timer_in_box:has(#timerTop) {
+.beginner #search_box .deadline-box:has(#timerTop),
+.beginner .deadline-box:has(#timerTop) {
   border-top-color: #f4df82 !important;
   border-bottom-color: #f4df82 !important;
   background: #fffbd8 !important;
 }
 
-.beginner .timer_in_box:has(#timerTop) #timerTop > div,
-.beginner .timer_in_box:has(#timerTop) #timerTop > div.timerTopParts {
+.beginner .deadline-box:has(#timerTop) #timerTop > div,
+.beginner .deadline-box:has(#timerTop) #timerTop > div.timerTopParts {
   gap: 2px !important;
 }
 
-.beginner .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
-.beginner .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+.beginner .deadline-box:has(#timerTop) #timerTop .timerTopNum,
+.beginner .deadline-box:has(#timerTop) #timerTop .timerTopCenti {
   display: inline-flex !important;
   min-width: 24px !important;
   min-height: 22px !important;
@@ -28,7 +28,7 @@
   line-height: 1 !important;
 }
 
-.beginner .timer_in_box:has(#timerTop) #timerTop em {
+.beginner .deadline-box:has(#timerTop) #timerTop em {
   margin: 0 1px !important;
   color: #1b1b18 !important;
   font-size: 12px !important;
@@ -36,22 +36,22 @@
 }
 
 @media screen and (max-width: 374px) {
-  .beginner .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
-  .beginner .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+  .beginner .deadline-box:has(#timerTop) #timerTop .timerTopNum,
+  .beginner .deadline-box:has(#timerTop) #timerTop .timerTopCenti {
     min-width: 21px !important;
     min-height: 20px !important;
     padding-inline: 2px !important;
     font-size: 17px !important;
   }
 
-  .beginner .timer_in_box:has(#timerTop) #timerTop em {
+  .beginner .deadline-box:has(#timerTop) #timerTop em {
     font-size: 11px !important;
   }
 }
 
 /* Pulse the question currently awaiting an answer, matching experienced flow. */
-body.beginner #search_box ul.select_box > li.v3-current-question,
-body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
+body.beginner #search_box ul.survey-list > li.v3-current-question,
+body.beginner.search-results #search_box ul.survey-list > li.v3-current-question {
   border: 2px solid #ff7624 !important;
   background: #fff9f3 !important;
   box-shadow: inset 0 0 0 1px rgba(255, 118, 36, .20) !important;
@@ -79,8 +79,8 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.beginner #search_box ul.select_box > li.v3-current-question,
-  body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
+  body.beginner #search_box ul.survey-list > li.v3-current-question,
+  body.beginner.search-results #search_box ul.survey-list > li.v3-current-question {
     animation: none !important;
   }
 }
@@ -345,7 +345,7 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   font-size: 17px !important;
 }
 
-.beginner #search_box .timer_in_box:has(#timerTop) {
+.beginner #search_box .deadline-box:has(#timerTop) {
   width: min(calc(100% - 20px), 420px) !important;
   margin-bottom: 9px !important;
   padding: 8px 8px 7px !important;
@@ -353,33 +353,33 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   background: #fffdf0 !important;
 }
 
-.beginner #search_box .timer_in_box:has(#timerTop) .remaining {
+.beginner #search_box .deadline-box:has(#timerTop) .remaining {
   margin-bottom: 3px !important;
   font-size: 11px !important;
   line-height: 1.2 !important;
 }
 
-.beginner #search_box .timer_in_box:has(#timerTop) #timerTop > div,
-.beginner #search_box .timer_in_box:has(#timerTop) #timerTop > div.timerTopParts {
+.beginner #search_box .deadline-box:has(#timerTop) #timerTop > div,
+.beginner #search_box .deadline-box:has(#timerTop) #timerTop > div.timerTopParts {
   font-size: 11px !important;
   line-height: 1.15 !important;
 }
 
-.beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
-.beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+.beginner #search_box .deadline-box:has(#timerTop) #timerTop .timerTopNum,
+.beginner #search_box .deadline-box:has(#timerTop) #timerTop .timerTopCenti {
   min-width: 21px !important;
   min-height: 20px !important;
   padding: 1px 2px !important;
   font-size: 18px !important;
 }
 
-.beginner #search_box .timer_in_box:has(#timerTop) #timerTop em {
+.beginner #search_box .deadline-box:has(#timerTop) #timerTop em {
   font-size: 11px !important;
 }
 
 @media screen and (max-width: 374px) {
-  .beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopNum,
-  .beginner #search_box .timer_in_box:has(#timerTop) #timerTop .timerTopCenti {
+  .beginner #search_box .deadline-box:has(#timerTop) #timerTop .timerTopNum,
+  .beginner #search_box .deadline-box:has(#timerTop) #timerTop .timerTopCenti {
     min-width: 19px !important;
     min-height: 19px !important;
     font-size: 16px !important;
@@ -467,15 +467,15 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
 }
 
 /* Keep the three primary borrowing questions on the same column grid. */
-.beginner #search_box ul.select_box > li:has(#select_s2),
-.beginner #search_box ul.select_box > li:has(#select_s1),
-.beginner #search_box ul.select_box > li:has(#select_s4) {
+.beginner #search_box ul.survey-list > li:has(#q-speed),
+.beginner #search_box ul.survey-list > li:has(#q-amount),
+.beginner #search_box ul.survey-list > li:has(#q-method) {
   min-height: 74px !important;
 }
 
-.beginner #search_box ul.select_box > li:has(#select_s2) > label,
-.beginner #search_box ul.select_box > li:has(#select_s1) > label,
-.beginner #search_box ul.select_box > li:has(#select_s4) > label {
+.beginner #search_box ul.survey-list > li:has(#q-speed) > label,
+.beginner #search_box ul.survey-list > li:has(#q-amount) > label,
+.beginner #search_box ul.survey-list > li:has(#q-method) > label {
   position: absolute !important;
   top: 50% !important;
   left: 12px !important;
@@ -489,9 +489,9 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   line-height: 1.25 !important;
 }
 
-.beginner #search_box ul.select_box > li:has(#select_s2) > p,
-.beginner #search_box ul.select_box > li:has(#select_s1) > p,
-.beginner #search_box ul.select_box > li:has(#select_s4) > p {
+.beginner #search_box ul.survey-list > li:has(#q-speed) > p,
+.beginner #search_box ul.survey-list > li:has(#q-amount) > p,
+.beginner #search_box ul.survey-list > li:has(#q-method) > p {
   position: absolute !important;
   top: 50% !important;
   left: 52% !important;
@@ -507,15 +507,15 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
 }
 
 @media screen and (max-width: 374px) {
-  .beginner #search_box ul.select_box > li:has(#select_s2),
-  .beginner #search_box ul.select_box > li:has(#select_s1),
-  .beginner #search_box ul.select_box > li:has(#select_s4) {
+  .beginner #search_box ul.survey-list > li:has(#q-speed),
+  .beginner #search_box ul.survey-list > li:has(#q-amount),
+  .beginner #search_box ul.survey-list > li:has(#q-method) {
     min-height: 82px !important;
   }
 
-  .beginner #search_box ul.select_box > li:has(#select_s2) > label,
-  .beginner #search_box ul.select_box > li:has(#select_s1) > label,
-  .beginner #search_box ul.select_box > li:has(#select_s4) > label {
+  .beginner #search_box ul.survey-list > li:has(#q-speed) > label,
+  .beginner #search_box ul.survey-list > li:has(#q-amount) > label,
+  .beginner #search_box ul.survey-list > li:has(#q-method) > label {
     top: 14px !important;
     left: 14px !important;
     transform: none !important;
@@ -523,9 +523,9 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
     font-size: 13px !important;
   }
 
-  .beginner #search_box ul.select_box > li:has(#select_s2) > p,
-  .beginner #search_box ul.select_box > li:has(#select_s1) > p,
-  .beginner #search_box ul.select_box > li:has(#select_s4) > p {
+  .beginner #search_box ul.survey-list > li:has(#q-speed) > p,
+  .beginner #search_box ul.survey-list > li:has(#q-amount) > p,
+  .beginner #search_box ul.survey-list > li:has(#q-method) > p {
     top: 39px !important;
     left: 14px !important;
     transform: none !important;

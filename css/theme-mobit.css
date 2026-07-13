@@ -236,13 +236,13 @@ body.mobit-page img {
     font-weight: 700;
 }
 
-.rentcheck {
+.loan-check {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
 }
 
-.rentcheck label {
+.loan-check label {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -255,19 +255,19 @@ body.mobit-page img {
     font-weight: 800;
 }
 
-.rentcheck input {
+.loan-check input {
     flex: 0 0 auto;
     width: 18px;
     height: 18px;
     accent-color: var(--mobit-green);
 }
 
-.rentcheck span {
+.loan-check span {
     min-width: 0;
     overflow-wrap: anywhere;
 }
 
-.select_box {
+.survey-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -276,7 +276,7 @@ body.mobit-page img {
     list-style: none;
 }
 
-.select_box li {
+.survey-list li {
     min-width: 0;
     padding: 12px;
     background: #fff;
@@ -284,7 +284,7 @@ body.mobit-page img {
     border-radius: 8px;
 }
 
-.select_box label {
+.survey-list label {
     display: block;
     margin-bottom: 6px;
     color: var(--mobit-green-dark);
@@ -292,13 +292,13 @@ body.mobit-page img {
     font-size: 14px;
 }
 
-.select_box p {
+.survey-list p {
     margin: 0 0 8px;
     color: var(--mobit-muted);
     font-size: 13px;
 }
 
-.select_box select {
+.survey-list select {
     width: 100%;
     min-height: 44px;
     padding: 8px 10px;
@@ -309,8 +309,7 @@ body.mobit-page img {
     font: inherit;
 }
 
-.mobit-hidden-check,
-.dispad_url_on {
+.mobit-hidden-check {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -716,8 +715,8 @@ body.mobit-page img {
         padding: 18px 12px;
     }
 
-    .rentcheck,
-    .select_box,
+    .loan-check,
+    .survey-list,
     .mobit-compare-grid,
     .mobit-metrics {
         grid-template-columns: 1fr;

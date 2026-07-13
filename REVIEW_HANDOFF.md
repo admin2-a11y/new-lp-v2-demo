@@ -77,12 +77,12 @@
 ## 動作確認結果
 
 - `rg`確認: rgba二重カンマ、`</dvi>`、`&#995511;` は実装ファイル上で検出なし。旧ブランド痕跡はAGENTS/CODEX_PROMPT/CODEX_TASKSの指示文内のみ検出。
-- 重要ID/name確認: `select_s1`〜`select_s8`、指定name、`name="cat[]"`、`.select_modal_btn1`、`.select_modal_btn2`、`#serch2_Modal` は維持。
+- 重要ID/name確認: `q-amount`〜`q-duration`、指定name、`name="current_loans[]"`、`.entry-first`、`.entry-experienced`、`#survey-modal` は維持。
 - ローカル配信: `http://127.0.0.1:8099/` をNode一時サーバーで配信。
 - ブラウザQA: 320 / 375 / 390 / 414 / 1280px、6ページ（index, result, beginner, beginner_result, redirect, operationinfo）計30ケースで `scrollWidth > clientWidth` なし。
 - ブラウザQA: 375pxの6ページで44px未満の可視タップ領域なし。
-- 導線確認: 経験者入口モーダル「経験がある」→ `?select_modal=2` 遷移OK。
-- 導線確認: index / beginner のヒーローCTA → `#serch2_Modal.active`、進捗表示、選択肢表示OK。
+- 導線確認: 経験者入口モーダル「経験がある」→ `?entry-modal=2` 遷移OK。
+- 導線確認: index / beginner のヒーローCTA → `#survey-modal.active`、進捗表示、選択肢表示OK。
 - 導線確認: index / beginner の検索フォームsubmit → result.php / beginner_result.phpへGET遷移OK。
 - redirect確認: `redirect.php?item=acom` で「アコムのサイトへ移動中です。」、バナー、fallbackリンク表示OK。転送先はプレースホルダーURL。
 - コンソール: ブラウザQA中のerrorログなし。
@@ -126,8 +126,8 @@
 
 ### F系の対応内容
 
-- F1: #searchTOP と .rentcheck を theme-v3 側で強く上書きし、375px以下でも会社名ピルが途中改行しないよう修正。
-- F2: .after_box ul li を width:auto / white-space:nowrap にして、結果条件チップの途中改行を防止。
+- F1: #searchTOP と .loan-check を theme-v3 側で強く上書きし、375px以下でも会社名ピルが途中改行しないよう修正。
+- F2: .result-summary ul li を width:auto / white-space:nowrap にして、結果条件チップの途中改行を防止。
 - F3: details.points / details.kuchikomi の閉状態を完全非表示にし、旧「もっと見る」疑似要素と高さ制限を打ち消し。
 - F4: index / beginner / beginner_result の比較表直前に横スクロールヒントを追加。
 - F5: 4ページ共通の v3EnhanceDiagnosis に見出しの Qn. 除去と MutationObserver を追加。既存select id/name/li順序は変更なし。
@@ -203,9 +203,9 @@
 
 ### 対応内容
 
-- M1: 結果ページのヘッダー下余白、`.after_box`、条件チップ、案内ブロック、カード前余白をモバイルで圧縮。375pxで1位カード冒頭がFV内に入るよう調整。
+- M1: 結果ページのヘッダー下余白、`.result-summary`、条件チップ、案内ブロック、カード前余白をモバイルで圧縮。375pxで1位カード冒頭がFV内に入るよう調整。
 - M2: TOP / beginner のヒーロー下部、CTA、注記、診断ボックス、Q1ピル、設問行、送信ボタン余白をモバイルで圧縮。アンケートの id/name/li 順序/JS は変更なし。
-- M3: `.timer_in_box > .timerbox::after` の直下指定へ変更し、カード内タイマーの「までに申込」混入を theme-v3 / theme-v3-green で抑止。
+- M3: `.deadline-box > .timerbox::after` の直下指定へ変更し、カード内タイマーの「までに申込」混入を theme-v3 / theme-v3-green で抑止。
 - docs: `CODEX_PROMPT_FIX2.md` / `CODEX_PROMPT_FIX3.md` を今回コミット対象に含める。
 
 ### 実測結果（375x812）
@@ -223,7 +223,7 @@
 
 - ローカル配信: `http://127.0.0.1:8099/` で確認。
 - レスポンシブ: 320 / 375 / 390 / 414pxで index, beginner, result, beginner_result の `scrollWidth - clientWidth = 0`。
-- 達成基準: 375pxで `result.php` の `.topbox.case` 上端433px、`beginner_result.php` 上端337px。index の送信ボタン下端854px。
+- 達成基準: 375pxで `result.php` の `.lp-box.case` 上端433px、`beginner_result.php` 上端337px。index の送信ボタン下端854px。
 - アンケート回帰: 経験者フロー `/` → `result.php`、初心者フロー `/beginner.php` → `beginner_result.php` への送信遷移OK。
 - タイマー確認: 診断ボックス上部の「までに申込」は維持。ランキングカード内の `.timerbox::after` は `none`。
 - 既存404: 旧CSS由来の `css/images/icon_clock.png` が404。今回の第4ラウンド差分由来ではないため、既存CSS不変ルールを優先して未変更。
@@ -243,15 +243,15 @@
 | 項目 | 修正前 | 修正後 | 確認幅 |
 |---|---:|---:|---|
 | 長い条件URLの横スクロール | 12px | 0px | 390px |
-| `result.php` `.after_box` 上端 | 153px | 69px | 375px |
+| `result.php` `.result-summary` 上端 | 153px | 69px | 375px |
 | `result.php` 1位カード上端 | 433px | 384px | 375px |
-| `beginner_result.php` `.after_box` 上端 | 57px | 69px | 375px |
+| `beginner_result.php` `.result-summary` 上端 | 57px | 69px | 375px |
 | `beginner_result.php` 1位カード上端 | 337px | 384px | 375px |
 
 ### 動作確認結果
 
 - ローカル配信: `http://127.0.0.1:8099/` で確認。
-- 長い条件URL: `loan_speed_dis=a3_1` / `loan_speed_dis=a3_4` と `borrow_limit_dis=a2_3` の組み合わせで 375 / 390 / 414px の横スクロール0。
+- 長い条件URL: `speed=a3_1` / `speed=a3_4` と `amount=a2_3` の組み合わせで 375 / 390 / 414px の横スクロール0。
 - レスポンシブ: 320 / 375 / 390 / 414pxで index, beginner, result, beginner_result, operationinfo, redirect の横スクロール0。
 - アンケート回帰: 経験者フロー `/` → `result.php`、初心者フロー `/beginner.php` → `beginner_result.php` への送信遷移OK。
 - operationinfo / redirect: `#contents` 変更後も横スクロールなし。operationinfo の本文開始はヘッダー下約69pxで不自然な詰まりなし。
@@ -263,8 +263,8 @@
 
 - P1: `redirect.php` の `fallback-link` を `window.onload` 内で設定し、自動遷移と同じ正規化済み `item` / `redirectUrlWithParams` を使うよう修正。無効な `item` でもデフォルト先のfallbackが表示されます。
 - P1: `index.html` / `beginner.php` のFV画像altとFV注記を条件付き表現へ変更。FV画像内の「誰にもバレない」「バレない」は、既存画像の左下アイコン部分だけを「周囲に知られにくい」へ上書きしました。
-- P2: `result.php` / `beginner_result.php` の再診断フォームで、職業ラベルの `for` を `select_s6` に修正。
-- P2: 結果ページ上部CTAの `.after_box .btn_red, .after_box .btn_g` を、青/緑themeとも `min-height: 44px` に修正。
+- P2: `result.php` / `beginner_result.php` の再診断フォームで、職業ラベルの `for` を `q-job` に修正。
+- P2: 結果ページ上部CTAの `.result-summary .btn_red, .result-summary .btn_g` を、青/緑themeとも `min-height: 44px` に修正。
 - P2: 旧CSS参照の欠損 `css/images/icon_clock.png` を追加し、404を解消。
 - P2: `select_s3` はプロダクトHTMLを復元せず、`AGENTS.md` / `CODEX_TASKS.md` に欠番仕様として明記。
 - P2: `beginner.php` の初心者向け見出し/アコーディオン文言を、断定・強調を抑えた表現へ変更。
@@ -283,9 +283,9 @@
 
 ### 確認結果
 
-- `git diff` で差分確認。アンケートのselect id/name、`.select_modal*`、`#serch2_Modal`、`.rentcheck input[name="cat[]"]` は変更していません。
+- `git diff` で差分確認。アンケートのselect id/name、`.entry-modal*`、`#survey-modal`、`.loan-check input[name="current_loans[]"]` は変更していません。
 - `rg` でP1対象の旧FV alt文言（`誰にもバレない`, `バレない、WEB完結`）と初心者向け強表現（`絶対に知るべき`, `家族や友達にバレず`）が解消していることを確認。
-- `rg` で結果ページ職業ラベルの `for="select_s5"` 残存が対象箇所には無いことを確認（年収ラベルの `select_s5` は正しいため維持）。
+- `rg` で結果ページ職業ラベルの `for="q-income"` 残存が対象箇所には無いことを確認（年収ラベルの `q-income` は正しいため維持）。
 - `rg` で `css/style-main.css` / `css/style-main-green.css` の `icon_clock.png` 参照を確認し、`css/images/icon_clock.png` を追加。
 - FV画像2枚はAPP1/APP13メタデータなしを確認（`metadataMarkers=none`）。
 - PHPはローカルPATH上に無く、`php -S` 確認は未実施。
@@ -326,7 +326,7 @@
 - 1280x720で index / beginner のFV CTA下端569px、注記下端600px。
 - result / beginner_result の「条件を変更する」は768px実測61px。
 - redirect fallbackは768/1280px実測48px、文言「移動先を開く」。
-- 診断モーダル内にtabbable要素6件、`.modal-btn` / `.modalClose` に `role="button"` と `tabindex="0"` が付与されることを確認。
+- 診断モーダル内にtabbable要素6件、`.choice-btn` / `.modal-close` に `role="button"` と `tabindex="0"` が付与されることを確認。
 - robots: index / beginner / result / beginner_result は `index, follow`、redirect / operationinfo は `noindex, nofollow`。
 - `rg`確認: プロダクトファイル内に `15社から厳選`、`<h2>TITLE</h2>` は検出なし。旧強表現はREVIEW_HANDOFF/REVIEW_FINDINGSの履歴記録内のみ。
 
@@ -360,9 +360,9 @@
 
 ### 保全したもの
 
-- アンケートの `select_s1`〜`select_s8`、指定 `name`、`ul.select_box` の順序は未変更。
-- `.select_modal` / `.select_modal_btn1` / `.select_modal_btn2` / `#serch2_Modal` は未変更。
-- `.rentcheck input[name="cat[]"]` のvalueは未変更。
+- アンケートの `q-amount`〜`q-duration`、指定 `name`、`ul.survey-list` の順序は未変更。
+- `.entry-modal` / `.entry-first` / `.entry-experienced` / `#survey-modal` は未変更。
+- `.loan-check input[name="current_loans[]"]` のvalueは未変更。
 - `redirect.php` の転送ロジック、`linkMap`、アフィリエイトURLプレースホルダー、PR表記、注釈は未変更。
 - 公式アフィリエイトバナー `banner_*.jpg` / `promise.gif`、口コミ画像 `kuchikomi_*.png` は編集・差し替えなし。スマホ結果上部では、CV導線優先のためCSSで1位カード冒頭の公式バナー表示を抑制。
 
@@ -406,7 +406,7 @@
 
 - 対象: `index.html`, `beginner.html`, `result_v2.html`, `beginner_result_v2.html`, `mobit.html`, `mobit_result.html`, `mobit_beginner.html`, `mobit_beginner_result.html`, `demo-list.html`。
 - 幅: 320 / 375 / 390 / 414 / 768 / 1280px。確認した範囲では横スクロールなし、コンソールエラーなし。
-- 経験者TOPは `select_s1`〜`select_s8` のうち仕様上存在する7個、初心者TOPは6個を確認。`.select_modal`、入口ボタン、`#serch2_Modal` も対象ページで確認した。
+- 経験者TOPは `q-amount`〜`q-duration` のうち仕様上存在する7個、初心者TOPは6個を確認。`.entry-modal`、入口ボタン、`#survey-modal` も対象ページで確認した。
 - 残リスク: `redirect.php` / `redirect.html` の `__AFFILIATE_URL_*__`、GTM、運営者情報などの実値化は本番公開前に必要。PHPサーバーでの送信・転送の本番同等確認は未実施。
 ## 2026-07-13 F0-F10 bug-fix project
 
@@ -419,7 +419,7 @@
 - F5: 説明画像3点を長辺1200px・JPEG品質80で再圧縮（180KB〜206KB）。元PNGは維持。
 - F6: 結果件数を3件へ修正。
 - F7: 再検索の重複見出しをCSSで整理。
-- F8: beginner V2の旧after_box・旧注記sectionを削除し、重複IDを解消。
+- F8: beginner V2の旧result-summary・旧注記sectionを削除し、重複IDを解消。
 - F9: 経験者結果の職業チップへ `selected-job` IDを追加。
 - F10: カウントダウンをrequestAnimationFrame制御へ変更し、非表示タブ・モーション低減設定に対応。
 
@@ -447,7 +447,7 @@
 
 - Selected `はじめて` in the entry modal, reached `mobit_beginner.html`, answered all 6 questions, and reached `beginner_result_v2.html?variant=beginner`.
 - Beginner result used the green theme, ordered SMBCモビット -> アイフル -> アコム, and rendered the final SMBCモビット card.
-- Opened `index.html?select_modal=2`, answered all 7 experienced questions, and reached `result_v2.html?variant=experienced`.
+- Opened `index.html?entry-modal=2`, answered all 7 experienced questions, and reached `result_v2.html?variant=experienced`.
 - Experienced result used the blue theme, ordered SMBCモビット -> アイフル -> プロミス, and rendered the final SMBCモビット card.
 - Submitted both result-page search forms and returned to the same V2 page with the correct `variant`.
 - Verified normal and final cards both open the recommendation and review details.
@@ -507,3 +507,9 @@ V1 HTML pages were additionally checked at 375px with horizontal overflow 0, fai
 - Removed Animate stylesheet and WOW script/initializers from 17 pages, then deleted both local files. Repository markup contained no animation target classes or data attributes, so initialization had no visible target.
 - Removed Swiper 4.3.3 CDN stylesheet/script references from 17 pages. No slider container, wrapper, slide, navigation, pagination, or initializer existed.
 - Static verification after removal passed for all 18 root HTML/PHP documents, all page-level local references, all local JavaScript syntax, the F17 redirect unit cases, and preserved funnel/form contracts. The remaining 118 unresolved CSS URL references are confined to four legacy stylesheets scheduled for replacement in F22. Direct browser QA remains pending because the configured local origin is unavailable to this session.
+## F20 Identifier contract migration (2026-07-13)
+
+- Migrated the diagnosis form, modal, query parameters, result restoration, layout hooks, and supporting CSS/JS to the current identifier contract documented in `AGENTS.md`.
+- Preserved the intentional missing intermediate question ID, beginner six-question flow, experienced seven-question flow, option values/order, result variants, and repeat-search routes.
+- Removed two legacy dispatch-control inputs after repository-wide analysis found no PHP, JavaScript, display, URL-generation, or analytics reader; their only other references were hiding selectors.
+- Updated cache busters for every external CSS/JS file changed by this migration. Form and protected-asset contracts are verified against a pre-change machine-readable snapshot.

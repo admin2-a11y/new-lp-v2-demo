@@ -6,7 +6,7 @@
 - 2026-07-08 LPO2確認: 入口ポップアップをファーストビュー中心にし、女性ナビゲーター案内と短い思考余白を追加。320 / 375 / 390 / 414pxで横スクロールなし、入口クリック遷移、診断モーダルの女性ナビ表示、console error 0件を確認。
 - `lp-compliance-reviewer` / `$lp-compliance-review` はユーザー指示により未実施です。広告文言の適法性断定レビューはしていません。
 - 旧総合Findingsのうち、`redirect.php` fallback、FV alt/注記、結果ページ職業label、`icon_clock.png`、`select_s3` 欠番明記は対応済みとして除外します。
-- アンケートの指定id/name、`ul.select_box` 順序、`.select_modal` / `.select_modal_btn1` / `.select_modal_btn2` / `#serch2_Modal`、`.rentcheck input[name="cat[]"]` valueは維持。PR表記・注釈・プレースホルダーも残っています。
+- アンケートの指定id/name、`ul.survey-list` 順序、`.entry-modal` / `.entry-first` / `.entry-experienced` / `#survey-modal`、`.loan-check input[name="current_loans[]"]` valueは維持。PR表記・注釈・プレースホルダーも残っています。
 
 ## Post-Fix Verification
 - 修正済みP1:
@@ -119,7 +119,7 @@
 - 実施した確認
   - `AGENTS.md`, `CODEX_PROMPT.md`, `CODEX_TASKS.md`, `REVIEW_HANDOFF.md`, `REVIEW_FINDINGS.md`, `.agents/skills/lp-final-review/SKILL.md`, `.codex/agents/lp-reviewer.toml` を確認。
   - `git status`, `git diff`, 直近コミットログを確認。作業ツリーには未コミット変更と `REVIEW_FINDINGS.md` / `.agents/` / `.codex/` 等の未追跡が残っています。
-  - grepで `select_s1/s2/s4/s5/s6/s7/s8`、指定name、`.select_modal*`、`#serch2_Modal`、`.rentcheck input[name="cat[]"]` value（`a1_1`, `a1_2`, `a1_0`, `a1_3`, `a1_4`, `a1_11`）を確認。
+  - grepで `q-amount/s2/s4/s5/s6/s7/s8`、指定name、`.entry-modal*`、`#survey-modal`、`.loan-check input[name="current_loans[]"]` value（`a1_1`, `a1_2`, `a1_0`, `a1_3`, `a1_4`, `a1_11`）を確認。
   - `redirect.php` の `linkMap` / `getStoredQueryParams` / `setTimeout` / fallback-link を確認。無効itemでもfallbackはアコムへ正規化され、`utm_source=test` が付くことをChromeヘッドレスで確認。
   - FV画像2枚を目視確認し、左上の「15社から厳選」が画像内に残っていることを確認。
   - Chromeヘッドレス＋一時QAサーバーで主要ページを確認。横スクロール差分は実測0、主要な残エラーは `/favicon.ico` 404のみ。
@@ -132,7 +132,7 @@
 ## 修正担当への指示
 - 1. P1を優先: FV「15社」整合、PC FV CTA、カード上部CTA、モーダルのキーボード操作、主要ページrobots。
 - 2. 次にP2: 結果CTA実測44px、fallbackボタン化、favicon、`TITLE` h2、バナーalt、追従ボタン、footer summary、description、redirect画像寸法、診断理由表示、カード内バナー配置。
-- 3. アンケートid/name/value、`ul.select_box` 順序、PR表記・注釈・プレースホルダーは引き続き保全すること。
+- 3. アンケートid/name/value、`ul.survey-list` 順序、PR表記・注釈・プレースホルダーは引き続き保全すること。
 
 ## Design / CVR Review
 - P0: 見つかりませんでした。
@@ -181,18 +181,18 @@
   - 推奨修正: バナー画像は保持したまま、主要指標と主CTAの後ろへ移すか、モバイルでは全幅に近い表示にして「公式素材」として見せ切ってください。比較判断はHTMLの一言・指標・CTAで先に完結させる構成が自然です。
 ## QA Check
 - 実施環境: Headless Chrome 149.0.7827.200 + 一時Node静的サーバー（`.php` は `text/html` として配信）
-- 確認済みページ: `index.html`（入口モーダルあり/`?select_modal=2`）, `beginner.php`, `result.php`, `beginner_result.php`, `redirect.php?item=acom`, `operationinfo.php`
+- 確認済みページ: `index.html`（入口モーダルあり/`?entry-modal=2`）, `beginner.php`, `result.php`, `beginner_result.php`, `redirect.php?item=acom`, `operationinfo.php`
 - 確認済み幅: 320 / 375 / 390 / 414 / 768 / 1280px
 - 結果: P0/P1は見つかりませんでした。P2が2件残っています。
 - 確認OK: 320/375/390/414pxの実横スクロールなし。768/1280pxは `scrollWidth` が大きいものの `window.scrollTo(99999, 0)` 後も `scrollX=0` で実横スクロールは再現なし。主要ページで文字/ボタンの実害ある重なりなし。iOS想定の可視input/select/textareaは16px未満なし。
-- 確認OK: 入口モーダルは初期表示され、「はじめて」→ `beginner.php`、「経験がある」→ `?select_modal=2` に遷移。
+- 確認OK: 入口モーダルは初期表示され、「はじめて」→ `beginner.php`、「経験がある」→ `?entry-modal=2` に遷移。
 - 確認OK: ヒーローCTAから診断モーダルが開き、経験者7問/初心者6問をモーダル内で進めて `result.php` / `beginner_result.php` へGET遷移。
 - 確認OK: `redirect.php?item=acom` と不正 `item=bad` は中継文言・fallbackリンクを表示し、fallbackはデフォルトのアコムURLに正規化。`utm_source` は引き継ぎ確認済み。
 - 未確認: PHP実行環境での確認、実アフィリエイトURLへの外部到達確認。`click_id` は `query-keeper.js` のallowlist外のため引き継ぎ対象外として扱いました。
 
 ### Bugs
 - [P2] result.php:216 / beginner_result.php:215 — 768px以上で結果ページ上部の「条件を変更する」が44px未満
-  - 再現手順: Headless Chromeで `result.php` / `beginner_result.php` を 768px または 1280px 幅で開き、`.after_box .btn_red.btn_g` の表示サイズを計測。
+  - 再現手順: Headless Chromeで `result.php` / `beginner_result.php` を 768px または 1280px 幅で開き、`.result-summary .btn_red.btn_g` の表示サイズを計測。
   - 期待結果: 主要導線のタップ/クリック領域が44px以上。
   - 実際結果: 768px/1280pxで高さ37px。`css/theme-v3.css:1163` / `css/theme-v3-green.css:1158` は `min-height: 44px` 指定だが、`css/common.css:22` の `body { zoom: 0.85; }` により実測サイズが縮んでいます。
   - 推奨修正: PC/タブレット幅でも実測44px以上になるよう、結果CTAだけ `min-height` / `padding` をzoom後基準で増やすか、theme-v3側で対象領域のzoom影響を打ち消してください。
@@ -209,12 +209,12 @@
 - 確認OK: 主要本文・フォーム入力は16px基準で、iOSズームを誘発する16px未満の可視input/select/textareaは見つかりませんでした。主要CTA、ランキングdetails/summary、フッターsummaryのモバイルタップ領域は概ね44px以上。主要配色のコントラストにP0/P1相当の不足は見つかりませんでした。
 
 - [P1] index.html:203 / index.html:204 — 初回の入口モーダル選択肢が `p` 要素で、キーボード操作・読み上げ上のボタンになっていない
-  - 影響: 初回表示の `.select_modal` は画面を覆いますが、「経験がある」「はじめて」が `<p class="button">` のclick専用で、実測でもモーダル内のtabbable要素は0件でした。キーボード利用者やスクリーンリーダー利用者が最初の分岐を選べず、LP本体に進めない可能性があります。
-  - 推奨修正: 既存クラス `.select_modal_btn1` / `.select_modal_btn2` は維持したまま、要素を `<button type="button">` にするか、最低限 `role="button"` / `tabindex="0"` / Enter・Space対応を追加してください。入口モーダル自体にも `role="dialog"` と見出しへの `aria-labelledby` を付け、初期フォーカスを選択肢へ移してください。
+  - 影響: 初回表示の `.entry-modal` は画面を覆いますが、「経験がある」「はじめて」が `<p class="button">` のclick専用で、実測でもモーダル内のtabbable要素は0件でした。キーボード利用者やスクリーンリーダー利用者が最初の分岐を選べず、LP本体に進めない可能性があります。
+  - 推奨修正: 既存クラス `.entry-first` / `.entry-experienced` は維持したまま、要素を `<button type="button">` にするか、最低限 `role="button"` / `tabindex="0"` / Enter・Space対応を追加してください。入口モーダル自体にも `role="dialog"` と見出しへの `aria-labelledby` を付け、初期フォーカスを選択肢へ移してください。
 
 - [P1] index.html:340 / index.html:413 / beginner.php:302 / beginner.php:375 / result.php:803 / result.php:876 / beginner_result.php:884 / beginner_result.php:957 — 診断モーダルの選択肢・戻る・送信・閉じるがキーボード操作できず、フォーカスも背面へ抜ける
-  - 影響: `#serch2_Modal` 内の選択肢は `<option>` を `p.modal-btn` に置換しており、戻る/送信も `p` 追加、閉じるも `span.modalClose` です。実測では診断モーダルを開いてもモーダル内tabbable要素は0件で、Tabは背面のhero CTA、元のselect、商品リンクへ移動しました。モーダル操作・フォーカス・読み上げの主要要件を満たせず、診断完了まで進めない利用者が出ます。
-  - 推奨修正: `.modal-btn` / `.modal-back` / `.modal-submit` / `.modalClose` をbutton化するか、既存DOM生成を保つ場合は `role="button"`、`tabindex="0"`、Enter/Spaceキー対応を追加してください。`#serch2_Modal` に `role="dialog"` / `aria-modal="true"` / `aria-labelledby` を付け、開いたら先頭選択肢または閉じるボタンへフォーカス移動、Tabのフォーカストラップ、Escで閉じる処理を入れてください。
+  - 影響: `#survey-modal` 内の選択肢は `<option>` を `p.choice-btn` に置換しており、戻る/送信も `p` 追加、閉じるも `span.modal-close` です。実測では診断モーダルを開いてもモーダル内tabbable要素は0件で、Tabは背面のhero CTA、元のselect、商品リンクへ移動しました。モーダル操作・フォーカス・読み上げの主要要件を満たせず、診断完了まで進めない利用者が出ます。
+  - 推奨修正: `.choice-btn` / `.step-back` / `.step-submit` / `.modal-close` をbutton化するか、既存DOM生成を保つ場合は `role="button"`、`tabindex="0"`、Enter/Spaceキー対応を追加してください。`#survey-modal` に `role="dialog"` / `aria-modal="true"` / `aria-labelledby` を付け、開いたら先頭選択肢または閉じるボタンへフォーカス移動、Tabのフォーカストラップ、Escで閉じる処理を入れてください。
 
 - [P2] index.html:706 / index.html:781 / index.html:848 / beginner.php:637 / beginner.php:735 / beginner.php:817 / result.php:275 / result.php:372 / result.php:454 / beginner_result.php:274 / beginner_result.php:372 / beginner_result.php:454 — ランキングカード内の画像リンクにaltがなく、リンク名が不安定
   - 影響: 商品バナー画像だけを中身にしたリンクで `alt` が未指定の箇所があります。スクリーンリーダーではファイル名読み上げや無名リンクになりやすく、「どの会社の詳細へ進むリンクか」が周辺文脈なしでは伝わりません。商品名リンクやCTAが別にあるため致命的ではありませんが、同一カード内に分かりにくいリンクが残ります。
@@ -334,7 +334,7 @@
 
 ## Final Review（2026-07-08 LPO追加）
 
-- 結論: 条件付き合格。アンケートid/name/order、`.select_modal*`、`#serch2_Modal`、`.rentcheck input[name="cat[]"]`、redirect.phpの転送ロジック、PR表記、注釈、公式バナー/口コミ画像ファイルは保全されています。
+- 結論: 条件付き合格。アンケートid/name/order、`.entry-modal*`、`#survey-modal`、`.loan-check input[name="current_loans[]"]`、redirect.phpの転送ロジック、PR表記、注釈、公式バナー/口コミ画像ファイルは保全されています。
 - P0: なし。
 - P1: なし。
 - P2: CSS重複整理、320pxでのCTA完全収め、GitHub Pages実URLでのconsole/CDN確認。
@@ -343,7 +343,7 @@
 
 - 結論: 条件付き公開可。
 - ブロッカー: コード上のP0/P1はなし。ただし本番公開前に `GTM-XXXXXXX`、`__AFFILIATE_URL_*__`、運営者情報プレースホルダーを実値化してください。
-- 公開前の人間確認: GitHub Pages実URLで `/?select_modal=2`、`result.html`、`beginner_result.html`、`redirect.html?item=acom`、`operationinfo.html` を320/375/390/414pxで確認。広告文言チェックはユーザー担当。
+- 公開前の人間確認: GitHub Pages実URLで `/?entry-modal=2`、`result.html`、`beginner_result.html`、`redirect.html?item=acom`、`operationinfo.html` を320/375/390/414pxで確認。広告文言チェックはユーザー担当。
 - ロールバック方法: `theme-v3.css` / `theme-v3-green.css` と `js/v3-accessibility-cvr.js` 読み込みを外すと、今回のLPO見た目/補助CTAを戻せます。
 
 ## Compliance / Copy Review
@@ -355,7 +355,7 @@
 - 結論: P0/P1なし。実際のカード先頭順に合わせてデモ一覧を整理し、アコム先頭版・モビット先頭版・共通TOP・V2を区別できるようにした。
 - `result_v2.html` / `beginner_result_v2.html` はモビット先頭の詳細口コミカードとして、`result-cards-v2.css?v=38` / `result-cards-v2.js?v=31` を読み込むことを確認。
 - 320 / 375 / 390 / 414 / 768 / 1280pxで主要9ページを確認し、横スクロールなし・console errorなし。
-- 診断固定項目は経験者7個（`select_s3`は仕様上欠番）、初心者6個。入口モーダルと `#serch2_Modal` の存在も確認。
+- 診断固定項目は経験者7個（`select_s3`は仕様上欠番）、初心者6個。入口モーダルと `#survey-modal` の存在も確認。
 - 未追跡 `images/review-people-lineup.png` は未参照のため公開対象外。既存の公式アフィリエイトバナー・口コミ画像は編集していない。
 
 ### 残課題

@@ -21,7 +21,7 @@
   };
 
   const toggleWrap = (element, active) => {
-    const wrap = element.closest(".timer_in_box");
+    const wrap = element.closest(".deadline-box");
     if (!wrap) return;
     wrap.classList.toggle("is-countdown-hidden", !active);
     if (active) wrap.style.removeProperty("display");

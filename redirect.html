@@ -37,8 +37,8 @@
 
 		
 		
-		<link rel="stylesheet" type="text/css" href="./css/style-main.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add.css?v=f13" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style-main.css?v=f20" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add.css?v=f20" media="all">
 <script src="./js/param-keeper.js?v=1" defer></script>
 		<meta name='robots' content='noindex, nofollow' />
 		<link rel="icon" href="./images/icon.png?v=mnavi9" />
@@ -140,7 +140,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3.css?v=f17" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=f20" type="text/css" media="screen">
 	</head>
 <script type="text/javascript">
 (() => {

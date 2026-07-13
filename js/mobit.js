@@ -83,7 +83,7 @@
         Array.prototype.forEach.call(card.querySelectorAll('.v3-rank-badge'), function(badge) {
             badge.remove();
         });
-        if (rank === 1 && card.classList.contains('topboxNew')) {
+        if (rank === 1 && card.classList.contains('lp-box-new')) {
             var badge = document.createElement('div');
             badge.className = 'v3-rank-badge';
             badge.innerHTML = '<span>No.1</span><b>一番選ばれています</b>';
@@ -159,7 +159,7 @@
     }
 
     function replaceDetailedRankings() {
-        var cards = Array.prototype.slice.call(document.querySelectorAll('.topbox.topboxNew.case'));
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.lp-box.lp-box-new.case'));
         var acom = cards.find(function(card) { return productOf(card) === 'acom'; });
         var mobit = cards.find(function(card) { return productOf(card) === 'mobit'; });
         var promise = cards.find(function(card) { return productOf(card) === 'promise'; });

@@ -9,12 +9,12 @@
 
 ## H1. 結果ページの条件チップが右にはみ出す（優先度高・回帰バグ）
 
-**症状**: 375〜414px幅で、回答値が長い場合（例: `/result.php?loan_speed_dis=a3_1&borrow_limit_dis=a2_3&how_dis=a4_1` の「1時間以内に借りたい」）にチップ内のテキストがコンテナ右端を越え、**scrollWidth=395 > 375 で横スクロールが発生**。320pxでは1列になるため発生しない。
+**症状**: 375〜414px幅で、回答値が長い場合（例: `/result.php?speed=a3_1&amount=a2_3&method=a4_1` の「1時間以内に借りたい」）にチップ内のテキストがコンテナ右端を越え、**scrollWidth=395 > 375 で横スクロールが発生**。320pxでは1列になるため発生しない。
 **原因**: round4で入れた `flex: 1 1 calc(50% - 3px)`（2列固定）と、既存の `white-space: nowrap` の競合。セル幅(約145px)より長いnowrapテキストがliからあふれる。
-**修正**: `.after_box ul li` の flex 指定を「内容に応じた自然な幅+折返し」に変更（round4のルールを直接書き換え）:
+**修正**: `.result-summary ul li` の flex 指定を「内容に応じた自然な幅+折返し」に変更（round4のルールを直接書き換え）:
 
 ```css
-.after_box ul li {
+.result-summary ul li {
   flex: 0 1 auto !important;
   max-width: 100%;
   overflow: hidden;
@@ -23,7 +23,7 @@
 ```
 
 （長いチップは1行を専有し、最悪ケースは省略記号で切れる。ul の flex-wrap: wrap は維持）
-**確認**: 上記URLと `loan_speed_dis=a3_4`（1週間以内）でも 375 / 390 / 414px で `scrollWidth == clientWidth`。チップ2〜3行でカード上端が480pxを超えないこと。
+**確認**: 上記URLと `speed=a3_4`（1週間以内）でも 375 / 390 / 414px で `scrollWidth == clientWidth`。チップ2〜3行でカード上端が480pxを超えないこと。
 
 ## H2. ヘッダー下の96px空白が未対応（M1-1の残り）
 
@@ -37,7 +37,7 @@
 }
 ```
 
-**確認**: result / beginner_result で `.after_box` 上端が約70px、1位カード上端が**約350px**まで上がること。`#contents` を使う operationinfo.php も表示が詰まりすぎないこと（不自然なら operationinfo 側だけ余白をtheme上書きで足す）。redirect.php への影響も目視確認。
+**確認**: result / beginner_result で `.result-summary` 上端が約70px、1位カード上端が**約350px**まで上がること。`#contents` を使う operationinfo.php も表示が詰まりすぎないこと（不自然なら operationinfo 側だけ余白をtheme上書きで足す）。redirect.php への影響も目視確認。
 
 ## 確認方法（共通）
 

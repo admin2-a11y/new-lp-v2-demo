@@ -1,6 +1,6 @@
-body.beginner.search-results #search_box ul.select_box > li,
-body.beginner.search-results #search_box ul.select_box > li.selected,
-body.beginner.search-results #search_box ul.select_box > li.v3-current-question {
+body.beginner.search-results #search_box ul.survey-list > li,
+body.beginner.search-results #search_box ul.survey-list > li.selected,
+body.beginner.search-results #search_box ul.survey-list > li.v3-current-question {
   min-height: 72px;
   border: 2px solid #56bfa8 !important;
   background: #f7fffc !important;
@@ -8,7 +8,7 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   animation: none !important;
 }
 
-html body.beginner.search-results #search_box #searchTOP ul.select_box > li label {
+html body.beginner.search-results #search_box #searchTOP ul.survey-list > li label {
   left: 14px !important;
   width: 48%;
   max-width: none !important;
@@ -19,7 +19,7 @@ html body.beginner.search-results #search_box #searchTOP ul.select_box > li labe
   line-height: 1.35;
 }
 
-html body.beginner.search-results #search_box #searchTOP ul.select_box > li p {
+html body.beginner.search-results #search_box #searchTOP ul.survey-list > li p {
   left: 52% !important;
   width: calc(48% - 50px);
   max-width: none !important;
@@ -32,7 +32,7 @@ html body.beginner.search-results #search_box #searchTOP ul.select_box > li p {
   white-space: nowrap;
 }
 
-body.beginner.search-results #search_box ul.select_box > li::before {
+body.beginner.search-results #search_box ul.survey-list > li::before {
   right: 17px !important;
   width: 11px !important;
   height: 11px !important;
@@ -45,19 +45,19 @@ body.beginner.search-results #search_box ul.select_box > li::before {
 }
 
 @media (max-width: 374px) {
-  html body.beginner.search-results #search_box #searchTOP ul.select_box > li label {
+  html body.beginner.search-results #search_box #searchTOP ul.survey-list > li label {
     left: 10px !important;
     width: 49%;
     font-size: 12px !important;
   }
 
-  html body.beginner.search-results #search_box #searchTOP ul.select_box > li p {
+  html body.beginner.search-results #search_box #searchTOP ul.survey-list > li p {
     left: 50% !important;
     width: calc(50% - 48px);
     font-size: 12px !important;
   }
 
-  body.beginner.search-results #search_box ul.select_box > li::before {
+  body.beginner.search-results #search_box ul.survey-list > li::before {
     right: 13px !important;
   }
 }

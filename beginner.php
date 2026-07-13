@@ -37,8 +37,8 @@
 
 		
 		
-		<link rel="stylesheet" type="text/css" href="./css/style-main-green.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css?v=f13" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style-main-green.css?v=f20" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css?v=f20" media="all">
 <script src="./js/param-keeper.js?v=1" defer></script>
 		<meta name='robots' content='index, follow' />
 		<link rel="icon" href="./images/icon-green.png?v=mnavi9" />
@@ -140,7 +140,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css?v=f17" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=f20" type="text/css" media="screen">
 	</head>
 <body class="beginner">
 	
@@ -168,7 +168,7 @@
 		<h2 class="ttl01">
 			<i class="fas fa-search"></i> あなたにぴったりのカードローンを探す
 		</h2>
-		<div class="timer_in_box">
+		<div class="deadline-box">
 			<div class="remaining" style="display: block;"><span>今日中</span>に借りるなら</div>
 			<div class="timerbox">
 				<p id="timerTop"></p>
@@ -179,10 +179,10 @@
 			<form id="form" action="./beginner_result.php" method="get">
 				<input name="s" type="hidden" />
 				<input type="hidden" name="post_type" value="post">
-				<ul class="select_box"><li class="selected">
-						<label for="select_s2">Q1.いつまでに借りたい？</label>
+				<ul class="survey-list"><li class="selected">
+						<label for="q-speed">Q1.いつまでに借りたい？</label>
 						<p>こだわらない</p>
-						<select name="loan_speed_dis" id="select_s2">
+						<select name="speed" id="q-speed">
 							<option value="">こだわらない</option>
 							<option id="loan_speed_1" value="a3_1">1時間以内に借りたい</option>
 							<option id="loan_speed_2" value="a3_2">当日中に借りたい</option>
@@ -190,9 +190,9 @@
 							<option id="loan_speed_4" value="a3_4">1週間以内に借りたい</option>
 						</select>
 					</li><li class="">
-						<label for="select_s1">Q2.いくら借りたい？</label>
+						<label for="q-amount">Q2.いくら借りたい？</label>
 						<p>こだわらない</p>
-						<select name="borrow_limit_dis" id="select_s1">
+						<select name="amount" id="q-amount">
 							<option value="">こだわらない</option>
 							<option id="borrow_limit_1" value="a2_1">10万円以下</option>
 							<option id="borrow_limit_2" value="a2_2">11〜50万円</option>
@@ -200,17 +200,17 @@
 							<option id="borrow_limit_4" value="a2_4">101万円以上</option>
 						</select>
 					</li><li>
-						<label for="select_s4">Q3.どのように借りたい？</label>
+						<label for="q-method">Q3.どのように借りたい？</label>
 						<p>未回答</p>
-						<select name="how_dis" data-id="how_dis" id="select_s4">
+						<select name="method" data-id="method" id="q-method">
 							<option value="">こだわらない</option>
 							<option id="how_1" value="a4_1">コンビニATM</option>
 							<option id="how_2" value="a4_2">口座振込</option>
 						</select>
 					</li><li>
-						<label for="select_s5">Q4.現在の年収は？</label>
+						<label for="q-income">Q4.現在の年収は？</label>
 						<p>未回答</p>
-						<select name="annual_income_dis" data-id="annual_income_dis" id="select_s5">
+						<select name="income" data-id="income" id="q-income">
 							<option value="">未回答</option>
 							<option id="annual_income_1" value="a5_1">120万円未満</option>
 							<option id="annual_income_2" value="a5_2">120万～300万円</option>
@@ -219,9 +219,9 @@
 							<option id="annual_income_5" value="a5_5">700万円以上</option>
 						</select>
 					</li><li>
-						<label for="select_s6">Q5.現在の職業は？</label>
+						<label for="q-job">Q5.現在の職業は？</label>
 						<p>なし</p>
-						<select name="how_many_loans_dis" id="select_s6">
+						<select name="job" id="q-job">
 							<option value="">なし</option>
 							<option id="job_1" value="a6_1">正社員</option>
 							<option id="job_2" value="a6_2">公務員</option>
@@ -233,9 +233,9 @@
 							<option id="job_8" value="a6_8">無職</option>
 						</select>
 					</li><li>
-						<label for="select_s7">Q6.利用にあたって重視したい点は？</label>
+						<label for="q-company-size">Q6.利用にあたって重視したい点は？</label>
 						<p>なし</p>
-						<select name="focous_dis" id="select_s7">
+						<select name="priority" id="q-company-size">
 							<option value="">なし</option>
 							<option id="focous_1" value="focous_1">無利息金利期間がある</option>
 							<option id="focous_2" value="focous_2">収入証明書が不要</option>
@@ -243,22 +243,19 @@
 							<option id="focous_4" value="focous_4">低金利</option>
 						</select>
 					</li></ul>
-				<input type="checkbox" class="dispad_url_on" id="a999" name="dispad_url_on" value="dispad_url_on_1"
-					checked>
-				<input type="checkbox" style="display:none" name="dispad_page" value="campaign-a" checked>
 				<div class="rentbtn">
-					<input name="order_by_recommended_dis_2" value="ASC" type="hidden" />
+					<input name="sort_order" value="ASC" type="hidden" />
 					
 					<button type="submit"><i class="fas fa-search"></i> この条件で探す</button>
 				</div>
 			</form>
 		</div>
-		<div id="serch2_Modal">
+		<div id="survey-modal">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h2>かんたん診断で絞り込む</h2>
                     <div class="v3-modal-progress" aria-live="polite"><span>質問 1 / 1</span><b><i style="width:0%"></i></b></div>
-                    <span class="modalClose">×</span>
+                    <span class="modal-close">×</span>
 				</div>
 				<div class="modal-body">
 					<p></p>
@@ -267,13 +264,13 @@
 		</div>
 		<script>
 			$(window).on('load', function() {
-				$('#select_s1').siblings('p').text($('#select_s1 option:selected').text());
-				$('#select_s2').siblings('p').text($('#select_s2 option:selected').text());
+				$('#q-amount').siblings('p').text($('#q-amount option:selected').text());
+				$('#q-speed').siblings('p').text($('#q-speed option:selected').text());
 				$('#select_s3').siblings('p').text($('#select_s3 option:selected').text());
 				if ($('.input_check:checked').length > 0) {
-					$('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
-					$('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
-					$('#select_s6').siblings('p').text($('#select_s6 option:selected').text());
+					$('#q-method').siblings('p').text($('#q-method option:selected').text());
+					$('#q-income').siblings('p').text($('#q-income option:selected').text());
+					$('#q-job').siblings('p').text($('#q-job option:selected').text());
 					if ($('#necessary_conditions_1').prop('checked')) {
 						$('#necessary_conditions_1').next().attr('data-checked', 'true');
 					}
@@ -286,27 +283,27 @@
 					if ($('#necessary_conditions_4').prop('checked')) {
 						$('#necessary_conditions_4').next().attr('data-checked', 'true');
 					}
-					$('#select_s3, #select_s4, #select_s5, #select_s6').parent().css('display', 'list-item');
-				} else if ($('#select_s6').siblings('p').text() !== $('#select_s6 option:selected').text()) {
-					$('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
-					$('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
-					$('#select_s6').siblings('p').text($('#select_s6 option:selected').text());
-					$('#select_s3, #select_s4, #select_s5, #select_s6').parent().css('display', 'list-item');
-				} else if ($('#select_s5').siblings('p').text() !== $('#select_s5 option:selected').text()) {
-					$('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
-					$('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
-					$('#select_s3, #select_s4, #select_s5').parent().css('display', 'list-item');
-				} else if ($('#select_s4').siblings('p').text() !== $('#select_s4 option:selected').text()) {
-					$('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
+					$('#select_s3, #q-method, #q-income, #q-job').parent().css('display', 'list-item');
+				} else if ($('#q-job').siblings('p').text() !== $('#q-job option:selected').text()) {
+					$('#q-method').siblings('p').text($('#q-method option:selected').text());
+					$('#q-income').siblings('p').text($('#q-income option:selected').text());
+					$('#q-job').siblings('p').text($('#q-job option:selected').text());
+					$('#select_s3, #q-method, #q-income, #q-job').parent().css('display', 'list-item');
+				} else if ($('#q-income').siblings('p').text() !== $('#q-income option:selected').text()) {
+					$('#q-method').siblings('p').text($('#q-method option:selected').text());
+					$('#q-income').siblings('p').text($('#q-income option:selected').text());
+					$('#select_s3, #q-method, #q-income').parent().css('display', 'list-item');
+				} else if ($('#q-method').siblings('p').text() !== $('#q-method option:selected').text()) {
+					$('#q-method').siblings('p').text($('#q-method option:selected').text());
 					$('#select_s3').parent().css('display', 'list-item');
 				}
 			});
 
-			$('#select_s1, #select_s2, #select_s3').change(function() {
+			$('#q-amount, #q-speed, #select_s3').change(function() {
 				const str1 = $('option:selected', this).text();
 				$(this).siblings('p').text(str1);
 			});
-			$('#select_s4, #select_s5, #select_s6').change(function() {
+			$('#q-method, #q-income, #q-job').change(function() {
 				const str1 = $('option:selected', this).text();
 				$(this).siblings('p').text(str1);
 				$(this).parent().css('display', 'list-item');
@@ -315,11 +312,11 @@
 			$('#how_to_borrow_2').text('コンビニATMから現金で借入');
 
 			$(function() {
-				var open = $('ul.select_box li'),
+				var open = $('ul.survey-list li'),
 					open_2 = $('h2.ttl01'),
-					selected_item = $('ul.select_box li[class="selected"]'),
-					close = $('.modalClose'),
-					container = $('#serch2_Modal'),
+					selected_item = $('ul.survey-list li[class="selected"]'),
+					close = $('.modal-close'),
+					container = $('#survey-modal'),
 					container_title = $('.modal-header h2'),
 					container_body = $('.modal-body');
 
@@ -331,17 +328,17 @@
 					}
 					container_title.html($('label', this).first().html());
 					if ($('select', this).length) {
-						container_body.html($('select', this).html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+						container_body.html($('select', this).html().replace(/option/g, 'p class="choice-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
 						var selected_item = $('p', this).text();
 						$('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
 					} else {
 						container_body.html($('div', this).html().replace(/<input/g, '<input disabled hidden').replace(/label/g, 'p class="modal-check"').replace(/for=/g, 'data-for=').replace(/data-checked=\"true\"/g, 'style="background:#d7e3f130"').replace(/<\/label>/g, '<\/p>'));
 					}
 					if ($(this).index() === $(this).siblings().length) {
-						container_body.append('<p class="modal-submit">この条件で探す</p>')
+						container_body.append('<p class="step-submit">この条件で探す</p>')
 					}
 					if ($(this).index() !== 0) {
-						container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+						container_body.append('<p class="step-back">1つ前の質問に戻る</p>')
 					}
 					container.addClass('active');
 					return false;
@@ -354,17 +351,17 @@
 					}
 					container_title.html($('label', this).first().html());
 					if ($('select', this).length) {
-						container_body.html($('select', this).html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+						container_body.html($('select', this).html().replace(/option/g, 'p class="choice-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
 						var selected_item = $('p', this).text();
 						$('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
 					} else {
 						container_body.html($('div', this).html().replace(/<input/g, '<input disabled hidden').replace(/label/g, 'p class="modal-check"').replace(/for=/g, 'data-for=').replace(/data-checked=\"true\"/g, 'style="background:#d7e3f130"').replace(/<\/label>/g, '<\/p>'));
 					}
 					if ($(this).index() === $(this).siblings().length) {
-						container_body.append('<p class="modal-submit">この条件で探す</p>')
+						container_body.append('<p class="step-submit">この条件で探す</p>')
 					}
 					if ($(this).index() !== 0) {
-						container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+						container_body.append('<p class="step-back">1つ前の質問に戻る</p>')
 					}
 					container.addClass('active');
 					return false;
@@ -379,7 +376,7 @@
 					}
 				});
 
-				container_body.on('click', 'p.modal-btn', function() {
+				container_body.on('click', 'p.choice-btn', function() {
 					var select_tag = $('select[name="' + container.data('name') + '"]');
 					if ($(this).attr('data-value')) {
 						select_tag.val($(this).data('value')).change();
@@ -399,7 +396,7 @@
 							container_title.html(select_tag.parent().next().find('label').first().html());
 							const select_option = select_tag.parent().next().find('select')
 							if (select_option.length != 0) {
-								container_body.html(select_tag.parent().next().find('select').html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+								container_body.html(select_tag.parent().next().find('select').html().replace(/option/g, 'p class="choice-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
 								var selected_item = select_tag.parent().next().find('p').text();
 								$('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
 							} else {
@@ -407,9 +404,9 @@
 							}
 
 							if (select_tag.parent().next().index() === select_tag.parent().siblings().length) {
-								container_body.append('<p class="modal-submit">この条件で探す</p>')
+								container_body.append('<p class="step-submit">この条件で探す</p>')
 							}
-							container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+							container_body.append('<p class="step-back">1つ前の質問に戻る</p>')
 							return false;
 						}, 300);
 					} else {
@@ -432,7 +429,7 @@
 					}
 				});
 
-				container_body.on('click', 'p.modal-back', function() {
+				container_body.on('click', 'p.step-back', function() {
 					if ($('select[name="' + container.data('name') + '"]').length) {
 						var select_tag = $('select[name="' + container.data('name') + '"]');
 					} else {
@@ -440,16 +437,16 @@
 					}
 					container.data('name', select_tag.parent().prev().find('select').attr('name'));
 					container_title.html(select_tag.parent().prev().find('label').first().html());
-					container_body.html(select_tag.parent().prev().find("select").html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+					container_body.html(select_tag.parent().prev().find("select").html().replace(/option/g, 'p class="choice-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
 					var selected_item = select_tag.parent().prev().find('p').text();
 					$('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
 					if (select_tag.parent().prev().index() !== 0) {
-						container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+						container_body.append('<p class="step-back">1つ前の質問に戻る</p>')
 					}
 					return false;
 				});
 
-				container_body.on('click', 'p.modal-submit', function() {
+				container_body.on('click', 'p.step-submit', function() {
 
 					var select_tag = $('div[data-id="' + container.data('name') + '"]');
 					if (!select_tag.length) {
@@ -459,7 +456,7 @@
 				});
 			});
 			$(document).ready(function() {
-				$('.rentcheck input[type="checkbox"]').on('click', function() {
+				$('.loan-check input[type="checkbox"]').on('click', function() {
 					if ($(this).is(':checked')) {
 						$(this).prop('checked', true); // チェックを付ける
 					} else {
@@ -648,7 +645,7 @@
     };
 </script>		<div id="recommend2" class="btm_arrow02">
 			<div class="ht40"></div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
     
             <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
@@ -678,7 +675,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p>ここがオススメ</p>
             </div>
             <div class="points_content">
@@ -701,7 +698,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -725,7 +722,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -756,7 +753,7 @@
 
     </div>
 </div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -785,7 +782,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p><i class="fas fa-circle"></i>ここがおすすめ</p>
             </div>
             <div class="points_content">
@@ -803,7 +800,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -825,7 +822,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -847,7 +844,7 @@
             ※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br /> ※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。 </p>
     </div>
 </div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -876,7 +873,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p> <i class="fas fa-circle"></i>ここがおすすめ</p>
             </div>
             <div class="points_content">
@@ -897,7 +894,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -919,7 +916,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -954,7 +951,7 @@
 	
 <section class="hikaku_box" id="hikaku">
     <div class="c-compareTableWrapper u-mb-0 is-open">
-        <section class="topbox topboxNew hikaku CardListSearch__compareWrapper">
+        <section class="lp-box lp-box-new hikaku CardListSearch__compareWrapper">
                             <h2>初めての方に<BR>おすすめのカードローンを徹底比較</h2>
             <p class="v3-table-hint">横にスクロールして3社を比較 →</p>
             
@@ -1055,7 +1052,7 @@
 </section>	<div class="ht40"></div>
 	
 	    <section class="v3-beginner-rank-section">
-        <div id="ranking2" class="topbox v3-beginner-select-ranking">
+        <div id="ranking2" class="lp-box v3-beginner-select-ranking">
             <h2>結局どれがいいかわからない・・・<br>迷ったらコレ！<br>
                 <span>-各ポイント別おすすめカードローン早見表-</span>
             </h2>
@@ -1132,7 +1129,7 @@
 		<div class="inner"><h2 class="v3-section-title">即日融資におすすめのカードローン</h2></div>
 		<div id="recommend2" class="btm_arrow02">
 			<div class="ht40"></div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
     
             <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
@@ -1162,7 +1159,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p>ここがオススメ</p>
             </div>
             <div class="points_content">
@@ -1185,7 +1182,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -1209,7 +1206,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -1240,7 +1237,7 @@
 
     </div>
 </div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -1269,7 +1266,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p><i class="fas fa-circle"></i>ここがおすすめ</p>
             </div>
             <div class="points_content">
@@ -1287,7 +1284,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -1309,7 +1306,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -1331,7 +1328,7 @@
             ※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br /> ※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。 </p>
     </div>
 </div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -1360,7 +1357,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p> <i class="fas fa-circle"></i>ここがおすすめ</p>
             </div>
             <div class="points_content">
@@ -1381,7 +1378,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -1403,7 +1400,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -1441,7 +1438,7 @@
         </div>
 	</section>
 	<section>
-		<div class="topbox topboxNew case">
+		<div class="lp-box lp-box-new case">
     
             <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
@@ -1471,7 +1468,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p>ここがオススメ</p>
             </div>
             <div class="points_content">
@@ -1494,7 +1491,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -1518,7 +1515,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -1553,7 +1550,7 @@
 	<div class="osusume_btn_area">
 		<a href="#top">トップへもどる</a>
 	</div>
-	<a href="#top" class="nav arroe_top"></a>
+	<a href="#top" class="nav to-top"></a>
 	<div id="follow-banner" style="display: none;">
 		<button type="button" id="btn-follow" class="v3-follow-diagnosis v3-follow-diagnosis--beginner" aria-label="簡単10秒 カードローン診断">
       <span class="v3-follow-diagnosis__time">簡単10秒</span>
@@ -1563,7 +1560,7 @@
 	</div>
 	<script src="./js/floating-cta.js?v=1" defer></script>
 	
-	<script src="./js/deadline-timer.js?v=1" defer></script>
+	<script src="./js/deadline-timer.js?v=f20" defer></script>
 		<footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
@@ -1637,14 +1634,14 @@
             var lastChangedName = '';
 
             function updateDiagnosisState() {
-                var items = Array.prototype.slice.call(document.querySelectorAll('ul.select_box > li'));
+                var items = Array.prototype.slice.call(document.querySelectorAll('ul.survey-list > li'));
                 items.forEach(function(item) {
                     var select = item.querySelector('select');
                     var label = item.querySelector('p');
                     if (!select || !label) return;
                     var value = (select.value || '').trim();
                     var text = (label.textContent || '').trim();
-                    if (!value && (select.id === 'select_s1' || select.id === 'select_s2')) {
+                    if (!value && (select.id === 'q-amount' || select.id === 'q-speed')) {
                         label.textContent = 'こだわらない';
                         text = label.textContent;
                     } else if (!value && (text === '未回答' || text === 'なし' || text === 'こだわらない' || text === '')) {
@@ -1654,7 +1651,7 @@
                     item.classList.toggle('v3-answered', text !== 'タップして選択 ▼' && text !== '未回答' && text !== 'なし');
                     item.classList.remove('v3-current-question');
                 });
-                var modal = document.getElementById('serch2_Modal');
+                var modal = document.getElementById('survey-modal');
                 if (!modal || !items.length) return;
                 var currentName = window.jQuery ? window.jQuery(modal).data('name') : '';
                 currentName = currentName || lastChangedName;
@@ -1689,8 +1686,8 @@
             }
             if (window.jQuery) {
                 window.jQuery(window).on('load', function() { setTimeout(updateDiagnosisState, 0); });
-                window.jQuery(document).on('click change', 'ul.select_box li, #serch2_Modal .modal-btn, #serch2_Modal .modal-back, #serch2_Modal .modal-submit, select', function(event) {
-                    if (event.type === 'change' && this.matches && this.matches('#search_box ul.select_box select')) {
+                window.jQuery(document).on('click change', 'ul.survey-list li, #survey-modal .choice-btn, #survey-modal .step-back, #survey-modal .step-submit, select', function(event) {
+                    if (event.type === 'change' && this.matches && this.matches('#search_box ul.survey-list select')) {
                         lastChangedName = this.name || '';
                     }
                     setTimeout(updateDiagnosisState, 0);
@@ -1698,13 +1695,13 @@
             } else {
                 document.addEventListener('DOMContentLoaded', updateDiagnosisState);
             }
-            var v3Heading = document.querySelector('#serch2_Modal .modal-header h2');
+            var v3Heading = document.querySelector('#survey-modal .modal-header h2');
             if (v3Heading && window.MutationObserver) {
                 new MutationObserver(function() { setTimeout(updateDiagnosisState, 0); }).observe(v3Heading, { childList: true, characterData: true, subtree: true });
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js?v=pages-demo-5" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=f20" defer></script>
 </body>
 
 </html>

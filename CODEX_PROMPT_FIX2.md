@@ -32,7 +32,7 @@ details.kuchikomi:not([open]) {
 ## G2. 比較表ヒントが点滅している（優先度中）
 
 **症状**: 「横にスクロールして3社を比較 →」が3秒周期で点滅する。
-**原因**: 旧CSS `style-main.css` の `.topbox > p:nth-of-type(1)`（リボン点滅用 `animation: flash 3s linear infinite`）に、`.topbox` セクション先頭に挿入した `.v3-table-hint` がマッチしている。
+**原因**: 旧CSS `style-main.css` の `.lp-box > p:nth-of-type(1)`（リボン点滅用 `animation: flash 3s linear infinite`）に、`.lp-box` セクション先頭に挿入した `.v3-table-hint` がマッチしている。
 **修正**: theme-v3 に追加:
 
 ```css
@@ -60,7 +60,7 @@ details.kuchikomi:not([open]) {
 ## G4. 結果ページH1の不自然な改行（優先度低）
 
 **症状**: 375pxで「あなたの条件に合うカ／ードローン 3件」と「カードローン」の途中で改行される。
-**修正**: 文言は変えずに折り返し位置を制御する。例: result.php / beginner_result.php の `.after_box h1` を
+**修正**: 文言は変えずに折り返し位置を制御する。例: result.php / beginner_result.php の `.result-summary h1` を
 `あなたの条件に合う<br class="v3-sp-br">カードローン <span>3</span>件` とし、theme-v3 で `.v3-sp-br { display: none; } @media (max-width: 768px) { .v3-sp-br { display: block; } }`。あわせて h1 の font-size を `clamp(24px, 6vw, 36px)` 程度に調整してもよい。
 **確認**: 320 / 375 / 414px で単語の途中で切れないこと。
 

@@ -14,9 +14,9 @@
 
 ## 2. ★絶対に壊してはいけないもの（触る前に確認）
 1. **アンケート診断のJS**（`index.html`/`beginner.php` の `<script>` 内、モーダル診断ロジック）。
-   - `<select>` の **id `select_s1`〜`select_s8`** と **name（`borrow_limit_dis`, `loan_speed_dis`, `how_dis`, `annual_income_dis`, `how_many_loans_dis`, `company_size_dis`, `duration_dis`, `focous_dis`）を変更・削除しない**。
-   - `<ul class="select_box">` の **`<li>` の順番と `nth-of-type` による段階表示**（初期2問表示→回答で順次開く）を壊さない。
-   - エントリーモーダル（`.select_modal` / `.select_modal_btn1`=はじめて / `.select_modal_btn2`=経験がある）と `#serch2_Modal` のクラス名を維持。
+   - `<select>` の **id `q-amount`〜`q-duration`** と **name（`amount`, `speed`, `method`, `income`, `job`, `company_size`, `duration`, `priority`）を変更・削除しない**。
+   - `<ul class="survey-list">` の **`<li>` の順番と `nth-of-type` による段階表示**（初期2問表示→回答で順次開く）を壊さない。
+   - エントリーモーダル（`.entry-modal` / `.entry-first`=はじめて / `.entry-experienced`=経験がある）と `#survey-modal` のクラス名を維持。
    - 設問の順序は確定済み（先頭2問は「いつまでに→いくら」）。勝手に戻さない。
    - 現行HTMLでは `select_s3` は仕様上の欠番。既存JSに参照が残っていても、フォーム構造を無理に復元しない。
 2. **青/緑テーマの分離**:
@@ -43,7 +43,7 @@
 - **新デザインはすべて上書き用CSSに書く**: `css/theme-v3.css`（青）/ `css/theme-v3-green.css`（緑）を新設し、各ページの **`</head>` 直前（既存CSSより後）** で読み込む。**既存CSSファイルは編集しない**（ロールバック＝link 1行削除で成立させるため）。
 - 上書きが効かない場合のみ `!important` を許可（乱用しない。セレクタ詳細度で解決を優先）。
 - **HTML構造の変更が許されるのは**: ヒーロー(`#mainvisual`)、画像見出し→HTMLテキスト化、ランキングカード内の装飾要素、フッター、operationinfo/redirect のコンテンツ部。
-- **HTML変更が禁止なのは**: アンケートフォーム内部（`ul.select_box` の構造、select の id/name、`.rentcheck` の input）、`#serch2_Modal`・`.select_modal` の既存クラス、GTM/計測タグ、PR表記・注釈の文言。
+- **HTML変更が禁止なのは**: アンケートフォーム内部（`ul.survey-list` の構造、select の id/name、`.loan-check` の input）、`#survey-modal`・`.entry-modal` の既存クラス、GTM/計測タグ、PR表記・注釈の文言。
 - アフィリエイトバナー画像（banner_*.jpg / promise.gif）と口コミ画像（kuchikomi_*.png）は差し替え不可（広告素材）。それ以外の装飾画像（見出し画像等）はHTML/CSSへの置き換えを推奨。
 - 旧デザイン専用になった画像は削除せず残す（ロールバック用）。
 
@@ -74,3 +74,28 @@
 - アクセシビリティ/使いやすさは `$lp-accessibility-review` と `.codex/agents/lp-accessibility-reviewer.toml` を使う。
 - 推奨順序: 実装 → lp-marketing-designer → lp-banner-designer → lp-qa-engineer → lp-accessibility-reviewer → lp-performance-seo-reviewer → lp-reviewer → lp-fixer → lp-release-manager。
 - 広告文言チェックはユーザーが行うため、lp-compliance-reviewer は通常フローでは使わない。
+## 10. 診断UIの現行識別子契約
+
+診断フォームとモーダルは、今後も以下の現行識別子と挙動を一体で保全する。
+
+| 用途 | 現行識別子 |
+| --- | --- |
+| 診断モーダル | `#survey-modal` |
+| 設問リスト | `ul.survey-list` |
+| 借入額 / 希望時期 / 借入方法 | `#q-amount` / `#q-speed` / `#q-method` |
+| 年収 / 職業 / 会社規模 / 勤続年数 | `#q-income` / `#q-job` / `#q-company-size` / `#q-duration` |
+| 送信パラメータ | `amount`, `speed`, `method`, `income`, `job`, `company_size`, `duration`, `priority` |
+| 現在の借入先（複数選択） | `current_loans[]` |
+| 並び順 | `sort_order` |
+| 現在の借入先UI | `.loan-check` |
+| 入口モーダル | `.entry-modal`, `.entry-first`, `.entry-experienced` |
+| 選択 / 戻る / 送信 / 閉じる | `.choice-btn`, `.step-back`, `.step-submit`, `.modal-close` |
+| 商品枠 / 新商品枠 | `.lp-box`, `.lp-box-new` |
+| 締切表示 / ページ上部導線 / 結果要約 | `.deadline-box`, `.to-top`, `.result-summary` |
+
+- 設問IDは見た目の設問順に対応し、存在しない中間IDを新設しない。
+- `current_loans[]` の6つのvalueと表示順を変更しない。
+- URLからの条件復元、選択済みチップ、初心者6問・経験者7問、V1/V2の遷移を維持する。
+- 入口状態をURLで指定する場合は `entry-modal=2` を使用する。
+- 廃止済みの配信制御用hidden入力は再導入しない。
+- CSS/JSを変更したときは、その資産を読む全HTML/PHPのキャッシュバスターを同じ値へ更新する。

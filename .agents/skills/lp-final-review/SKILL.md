@@ -29,11 +29,11 @@ Gitが dubious ownership で止まる場合は、その事実を `REVIEW_FINDING
 
 ### P0: 壊れると致命的
 
-- アンケートの `select_s1`〜`select_s8` が維持されているか。
+- アンケートの `q-amount`〜`q-duration` が維持されているか。
 - 指定 `name` が維持されているか。
-- `ul.select_box > li` の順序と段階表示が壊れていないか。
-- `.select_modal`, `.select_modal_btn1`, `.select_modal_btn2`, `#serch2_Modal` が維持されているか。
-- `.rentcheck input[name="cat[]"]` のvalueが変わっていないか。
+- `ul.survey-list > li` の順序と段階表示が壊れていないか。
+- `.entry-modal`, `.entry-first`, `.entry-experienced`, `#survey-modal` が維持されているか。
+- `.loan-check input[name="current_loans[]"]` のvalueが変わっていないか。
 - `redirect.php` の `linkMap`, `getStoredQueryParams`, `setTimeout`, `fallback-link` の転送ロジックが壊れていないか。
 - アフィリエイトバナー、口コミ画像、PR表記、注釈、プレースホルダーが消えていないか。
 

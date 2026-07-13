@@ -36,8 +36,8 @@
 
 		
 		
-		<link rel="stylesheet" type="text/css" href="./css/style-main.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add.css?v=f13" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style-main.css?v=f20" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add.css?v=f20" media="all">
 <script src="./js/param-keeper.js?v=1" defer></script>
 		<meta name='robots' content='index, follow' />
 		<link rel="icon" href="./images/icon.png?v=mnavi9" />
@@ -139,7 +139,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3.css?v=f17" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=f20" type="text/css" media="screen">
 	</head>
 <body class="experience search-results">
     
@@ -323,7 +323,7 @@
             </section>
             
             <div class="ht40"></div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
     
             <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
@@ -356,7 +356,7 @@
     </div>
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p>ここがオススメ</p>
             </div>
             <div class="points_content">
@@ -379,7 +379,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -403,7 +403,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -434,7 +434,7 @@
 
     </div>
 </div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -463,7 +463,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p><i class="fas fa-circle"></i>ここがおすすめ</p>
             </div>
             <div class="points_content">
@@ -481,7 +481,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -503,7 +503,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -525,7 +525,7 @@
             ※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br /> ※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。 </p>
     </div>
 </div>
-<div class="topbox topboxNew case">
+<div class="lp-box lp-box-new case">
         <div class="text">
         
         <div class="rank-title is-flex is-align-center">
@@ -554,7 +554,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p> <i class="fas fa-circle"></i>ここがおすすめ</p>
             </div>
             <div class="points_content">
@@ -575,7 +575,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -597,7 +597,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -631,7 +631,7 @@
             <sapn
                 style="font-size: large; text-align: center; display: block; width: 100%; padding-bottom: 1em;">
                 そんな方にはこちらのカードローンがオススメです。 </sapn>
-            <div class="topbox topboxNew case">
+            <div class="lp-box lp-box-new case">
     
             <div class="v3-rank-badge"><span>No.1</span><b>一番選ばれています</b></div>
         <div class="text">
@@ -661,7 +661,7 @@
     
     <details class="points">
         <summary>
-            <div class="points_header is-flex is-align-center is-justfy-center">
+            <div class="points_header is-flex is-align-center is-justify-center">
                 <p>ここがオススメ</p>
             </div>
             <div class="points_content">
@@ -684,7 +684,7 @@
     
     <details class="kuchikomi">
         <summary>
-            <div class="kuchikomi_header is-flex is-align-center is-justfy-center">
+            <div class="kuchikomi_header is-flex is-align-center is-justify-center">
                 <p>リアルな体験談</p>
             </div>
             <div class="kuchikomi_content">
@@ -708,7 +708,7 @@
     </details>
     
     
-<div class="timer_in_box">
+<div class="deadline-box">
     <div class="remaining"><span>本日中</span>に申し込みをする場合</div>
     <div class="timerbox">
         <p class="timer"></p>
@@ -743,7 +743,7 @@
 
             
                 <section>
-        <div id="ranking2" class="topbox">
+        <div id="ranking2" class="lp-box">
             <h2> 結局どれがいいかわからない・・・ <BR>迷ったらコレ！ <BR>
                 <span>-各ポイント別おすすめカードローン早見表-</span>
             </h2>
@@ -798,18 +798,18 @@
                         <input name="s" type="hidden" />
                         <input type="hidden" name="post_type" value="post">
                         <h3>Q1.現在借り入れ中の会社は？<span>（複数選択可）</span></h3>
-                        <div class="rentcheck">
+                        <div class="loan-check">
                     <label><input
-                                    type="checkbox" value="a1_1" name="cat[]" /><span>アコム</span></label><label><input
-                                    type="checkbox" value="a1_2" name="cat[]" /><span>プロミス</span></label><label><input type="checkbox" value="a1_0" name="cat[]" /><span>アイフル</span></label><label><input
-                                    type="checkbox" value="a1_3" name="cat[]" /><span>SMBCモビット</span></label><label><input
-                                    type="checkbox" value="a1_4" name="cat[]" /><span>レイク</span></label><label><input
-                                    type="checkbox" value="a1_11" name="cat[]" /><span>その他</span></label>
+                                    type="checkbox" value="a1_1" name="current_loans[]" /><span>アコム</span></label><label><input
+                                    type="checkbox" value="a1_2" name="current_loans[]" /><span>プロミス</span></label><label><input type="checkbox" value="a1_0" name="current_loans[]" /><span>アイフル</span></label><label><input
+                                    type="checkbox" value="a1_3" name="current_loans[]" /><span>SMBCモビット</span></label><label><input
+                                    type="checkbox" value="a1_4" name="current_loans[]" /><span>レイク</span></label><label><input
+                                    type="checkbox" value="a1_11" name="current_loans[]" /><span>その他</span></label>
                 </div>
-                        <ul class="select_box"><li class="selected">
-                                <label for="select_s2">Q2.いつまでに借りたい？</label>
+                        <ul class="survey-list"><li class="selected">
+                                <label for="q-speed">Q2.いつまでに借りたい？</label>
                                 <p>こだわらない</p>
-                                <select name="loan_speed_dis" id="select_s2">
+                                <select name="speed" id="q-speed">
                                     <option value="">こだわらない</option>
                                     
                                     <option id="loan_speed_1" value="a3_1">1時間以内に借りたい</option>
@@ -821,9 +821,9 @@
                                     <option id="loan_speed_4" value="a3_4">1週間以内に借りたい</option>
                                 </select>
                             </li><li class="">
-                                <label for="select_s1">Q3.いくら借りたい？</label>
+                                <label for="q-amount">Q3.いくら借りたい？</label>
                                 <p>こだわらない</p>
-                                <select name="borrow_limit_dis" id="select_s1">
+                                <select name="amount" id="q-amount">
                                     <option value="">こだわらない</option>
                                     <option id="borrow_limit_1" value="a2_1">10万円以下</option>
                                     <option id="borrow_limit_2" value="a2_2">11〜50万円</option>
@@ -831,9 +831,9 @@
                                     <option id="borrow_limit_4" value="a2_4">101万円以上</option>
                                 </select>
                             </li><li>
-                                <label for="select_s4">Q4.どのように借りたい？</label>
+                                <label for="q-method">Q4.どのように借りたい？</label>
                                 <p>未回答</p>
-                                <select name="how_dis" data-id="how_dis" id="select_s4">
+                                <select name="method" data-id="method" id="q-method">
                                     <option value="">こだわらない</option>
                                     
                                     <option id="how_1" value="a4_1">コンビニATM</option>
@@ -842,9 +842,9 @@
                                     
                                 </select>
                             </li><li>
-                                <label for="select_s5">Q5.現在の年収は？</label>
+                                <label for="q-income">Q5.現在の年収は？</label>
                                 <p>未回答</p>
-                                <select name="annual_income_dis" data-id="annual_income_dis" id="select_s5">
+                                <select name="income" data-id="income" id="q-income">
                                     <option value="">未回答</option>
                                     
                                     <option id="annual_income_1" value="a5_1">120万円未満</option>
@@ -858,9 +858,9 @@
                                     <option id="annual_income_5" value="a5_5">700万円以上</option>
                                 </select>
                             </li><li>
-                                <label for="select_s6">Q6.現在の職業は？</label>
+                                <label for="q-job">Q6.現在の職業は？</label>
                                 <p>なし</p>
-                                <select name="how_many_loans_dis" id="select_s6">
+                                <select name="job" id="q-job">
                                     <option value="">なし</option>
                                     <option id="job_1" value="a6_1">正社員</option>
                                     <option id="job_2" value="a6_2">公務員</option>
@@ -872,9 +872,9 @@
                                     <option id="job_8" value="a6_8">無職</option>
                                 </select>
                             </li><li>
-                                <label for="select_s7">Q7.会社規模は？</label>
+                                <label for="q-company-size">Q7.会社規模は？</label>
                                 <p>なし</p>
-                                <select name="company_size_dis" id="select_s7">
+                                <select name="company_size" id="q-company-size">
                                     <option value="">未回答</option>
                                     <option id="company_size_1" value="a7_1">5人未満</option>
                                     <option id="company_size_2" value="a7_2">5人以上</option>
@@ -882,9 +882,9 @@
                                     <option id="company_size_4" value="a7_4">50人以上/派遣社員</option>
                                 </select>
                             </li><li>
-                                <label for="select_s8">Q8.勤続年数は？ </label>
+                                <label for="q-duration">Q8.勤続年数は？ </label>
                                 <p>未回答</p>
-                                <select name="duration_dis" id="select_s8">
+                                <select name="duration" id="q-duration">
                                     <option value="">未回答</option>
                                     <option id="duration_1" value="a8_1">半年未満</option>
                                     <option id="duration_2" value="a8_2">半年以上～1年未満</option>
@@ -892,23 +892,19 @@
                                     <option id="duration_4" value="a8_4">3年以上</option>
                                 </select>
                             </li></ul>
-                        <input type="checkbox" class="dispad_url_on" id="a999" name="dispad_url_on"
-                            value="dispad_url_on_1" checked>
-                        <input type="checkbox" style="display:none" name="dispad_page" value="campaign-a"
-                            checked>
                         <div class="rentbtn">
-                            <input name="order_by_recommended_dis_2" value="ASC" type="hidden" />
+                            <input name="sort_order" value="ASC" type="hidden" />
                             
                             <button type="submit"><i class="fas fa-search"></i> この条件で探す</button>
                         </div>
                     </form>
                 </div>
-                <div id="serch2_Modal">
+                <div id="survey-modal">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h2>かんたん診断で絞り込む</h2>
                     <div class="v3-modal-progress" aria-live="polite"><span>質問 1 / 1</span><b><i style="width:0%"></i></b></div>
-                    <span class="modalClose">×</span>
+                    <span class="modal-close">×</span>
                         </div>
                         <div class="modal-body">
                             <p></p>
@@ -917,13 +913,13 @@
                 </div>
                 <script>
                     $(window).on('load', function() {
-                        $('#select_s1').siblings('p').text($('#select_s1 option:selected').text());
-                        $('#select_s2').siblings('p').text($('#select_s2 option:selected').text());
+                        $('#q-amount').siblings('p').text($('#q-amount option:selected').text());
+                        $('#q-speed').siblings('p').text($('#q-speed option:selected').text());
                         $('#select_s3').siblings('p').text($('#select_s3 option:selected').text());
                         if ($('.input_check:checked').length > 0) {
-                            $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
-                            $('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
-                            $('#select_s6').siblings('p').text($('#select_s6 option:selected').text());
+                            $('#q-method').siblings('p').text($('#q-method option:selected').text());
+                            $('#q-income').siblings('p').text($('#q-income option:selected').text());
+                            $('#q-job').siblings('p').text($('#q-job option:selected').text());
                             if ($('#necessary_conditions_1').prop('checked')) {
                                 $('#necessary_conditions_1').next().attr('data-checked', 'true');
                             }
@@ -936,27 +932,27 @@
                             if ($('#necessary_conditions_4').prop('checked')) {
                                 $('#necessary_conditions_4').next().attr('data-checked', 'true');
                             }
-                            $('#select_s3, #select_s4, #select_s5, #select_s6').parent().css('display', 'list-item');
-                        } else if ($('#select_s6').siblings('p').text() !== $('#select_s6 option:selected').text()) {
-                            $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
-                            $('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
-                            $('#select_s6').siblings('p').text($('#select_s6 option:selected').text());
-                            $('#select_s3, #select_s4, #select_s5, #select_s6').parent().css('display', 'list-item');
-                        } else if ($('#select_s5').siblings('p').text() !== $('#select_s5 option:selected').text()) {
-                            $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
-                            $('#select_s5').siblings('p').text($('#select_s5 option:selected').text());
-                            $('#select_s3, #select_s4, #select_s5').parent().css('display', 'list-item');
-                        } else if ($('#select_s4').siblings('p').text() !== $('#select_s4 option:selected').text()) {
-                            $('#select_s4').siblings('p').text($('#select_s4 option:selected').text());
+                            $('#select_s3, #q-method, #q-income, #q-job').parent().css('display', 'list-item');
+                        } else if ($('#q-job').siblings('p').text() !== $('#q-job option:selected').text()) {
+                            $('#q-method').siblings('p').text($('#q-method option:selected').text());
+                            $('#q-income').siblings('p').text($('#q-income option:selected').text());
+                            $('#q-job').siblings('p').text($('#q-job option:selected').text());
+                            $('#select_s3, #q-method, #q-income, #q-job').parent().css('display', 'list-item');
+                        } else if ($('#q-income').siblings('p').text() !== $('#q-income option:selected').text()) {
+                            $('#q-method').siblings('p').text($('#q-method option:selected').text());
+                            $('#q-income').siblings('p').text($('#q-income option:selected').text());
+                            $('#select_s3, #q-method, #q-income').parent().css('display', 'list-item');
+                        } else if ($('#q-method').siblings('p').text() !== $('#q-method option:selected').text()) {
+                            $('#q-method').siblings('p').text($('#q-method option:selected').text());
                             $('#select_s3').parent().css('display', 'list-item');
                         }
                     });
 
-                    $('#select_s1, #select_s2, #select_s3').change(function() {
+                    $('#q-amount, #q-speed, #select_s3').change(function() {
                         const str1 = $('option:selected', this).text();
                         $(this).siblings('p').text(str1);
                     });
-                    $('#select_s4, #select_s5, #select_s6,#select_s7,#select_s8').change(function() {
+                    $('#q-method, #q-income, #q-job,#q-company-size,#q-duration').change(function() {
                         const str1 = $('option:selected', this).text();
                         $(this).siblings('p').text(str1);
                         $(this).parent().css('display', 'list-item');
@@ -965,11 +961,11 @@
                     $('#how_to_borrow_2').text('コンビニATMから現金で借入');
 
                     $(function() {
-                        var open = $('ul.select_box li'),
+                        var open = $('ul.survey-list li'),
                             open_2 = $('h2.ttl01'),
-                            selected_item = $('ul.select_box li[class="selected"]'),
-                            close = $('.modalClose'),
-                            container = $('#serch2_Modal'),
+                            selected_item = $('ul.survey-list li[class="selected"]'),
+                            close = $('.modal-close'),
+                            container = $('#survey-modal'),
                             container_title = $('.modal-header h2'),
                             container_body = $('.modal-body');
 
@@ -981,7 +977,7 @@
                             }
                             container_title.html($('label', this).first().html());
                             if ($('select', this).length) {
-                                container_body.html($('select', this).html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+                                container_body.html($('select', this).html().replace(/option/g, 'p class="choice-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
                                 var selected_item = $('p', this).text();
                                 $('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
                             } else {
@@ -1004,7 +1000,7 @@
                                 container_body.find('.modal-slider').on('input', function() {
                                     const sliderValue = $(this).val(); // スライダーの現在値を取得
                                     const $sliderValueDisplay = container_body.find('.slider-value-display'); // 値表示用
-                                    const $modalButtons = container_body.find('.modal-btn'); // モーダル内の選択肢ボタン
+                                    const $modalButtons = container_body.find('.choice-btn'); // モーダル内の選択肢ボタン
                                     const $select = $('select[name="' + container.data('name') + '"]'); // 元の <select>
 
                                     const selectedText = $modalButtons.eq(sliderValue).text(); // 対応するテキストを取得
@@ -1018,7 +1014,7 @@
                                 });
                                 container_body.find('.modal-slider').on('change', function() {
                                     const sliderValue = $(this).val(); // スライダーの現在値を取得
-                                    const $modalButtons = container_body.find('.modal-btn'); // モーダル内の選択肢ボタン
+                                    const $modalButtons = container_body.find('.choice-btn'); // モーダル内の選択肢ボタン
 
                                     $modalButtons.eq(sliderValue).click(); // ボタンのクリックイベントを発火
                                 });
@@ -1027,10 +1023,10 @@
                             }
 
                             if ($(this).index() === $(this).siblings().length) {
-                                container_body.append('<p class="modal-submit">この条件で探す</p>')
+                                container_body.append('<p class="step-submit">この条件で探す</p>')
                             }
                             if ($(this).index() !== 0) {
-                                container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+                                container_body.append('<p class="step-back">1つ前の質問に戻る</p>')
                             }
                             container.addClass('active');
                             return false;
@@ -1043,17 +1039,17 @@
                             }
                             container_title.html($('label', this).first().html());
                             if ($('select', this).length) {
-                                container_body.html($('select', this).html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+                                container_body.html($('select', this).html().replace(/option/g, 'p class="choice-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
                                 var selected_item = $('p', this).text();
                                 $('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
                             } else {
                                 container_body.html($('div', this).html().replace(/<input/g, '<input disabled hidden').replace(/label/g, 'p class="modal-check"').replace(/for=/g, 'data-for=').replace(/data-checked=\"true\"/g, 'style="background:#d7e3f130"').replace(/<\/label>/g, '<\/p>'));
                             }
                             if ($(this).index() === $(this).siblings().length) {
-                                container_body.append('<p class="modal-submit">この条件で探す</p>')
+                                container_body.append('<p class="step-submit">この条件で探す</p>')
                             }
                             if ($(this).index() !== 0) {
-                                container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+                                container_body.append('<p class="step-back">1つ前の質問に戻る</p>')
                             }
                             container.addClass('active');
                             return false;
@@ -1068,7 +1064,7 @@
                             }
                         });
 
-                        container_body.on('click', 'p.modal-btn', function() {
+                        container_body.on('click', 'p.choice-btn', function() {
                             var select_tag = $('select[name="' + container.data('name') + '"]');
                             if ($(this).attr('data-value')) {
                                 select_tag.val($(this).data('value')).change();
@@ -1088,7 +1084,7 @@
                                     container_title.html(select_tag.parent().next().find('label').first().html());
                                     const select_option = select_tag.parent().next().find('select')
                                     if (select_option.length != 0) {
-                                        container_body.html(select_tag.parent().next().find('select').html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+                                        container_body.html(select_tag.parent().next().find('select').html().replace(/option/g, 'p class="choice-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
                                         var selected_item = select_tag.parent().next().find('p').text();
                                         $('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
                                     } else {
@@ -1096,9 +1092,9 @@
                                     }
 
                                     if (select_tag.parent().next().index() === select_tag.parent().siblings().length) {
-                                        container_body.append('<p class="modal-submit">この条件で探す</p>')
+                                        container_body.append('<p class="step-submit">この条件で探す</p>')
                                     }
-                                    container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+                                    container_body.append('<p class="step-back">1つ前の質問に戻る</p>')
                                     return false;
                                 }, 300);
                             } else {
@@ -1121,7 +1117,7 @@
                             }
                         });
 
-                        container_body.on('click', 'p.modal-back', function() {
+                        container_body.on('click', 'p.step-back', function() {
                             if ($('select[name="' + container.data('name') + '"]').length) {
                                 var select_tag = $('select[name="' + container.data('name') + '"]');
                             } else {
@@ -1129,16 +1125,16 @@
                             }
                             container.data('name', select_tag.parent().prev().find('select').attr('name'));
                             container_title.html(select_tag.parent().prev().find('label').first().html());
-                            container_body.html(select_tag.parent().prev().find("select").html().replace(/option/g, 'p class="modal-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
+                            container_body.html(select_tag.parent().prev().find("select").html().replace(/option/g, 'p class="choice-btn"').replace(/id=/g, 'data-id=').replace(/value/g, 'data-value'));
                             var selected_item = select_tag.parent().prev().find('p').text();
                             $('.modal-body p:contains("' + selected_item + '")').css('background', '#d7e3f130');
                             if (select_tag.parent().prev().index() !== 0) {
-                                container_body.append('<p class="modal-back">1つ前の質問に戻る</p>')
+                                container_body.append('<p class="step-back">1つ前の質問に戻る</p>')
                             }
                             return false;
                         });
 
-                        container_body.on('click', 'p.modal-submit', function() {
+                        container_body.on('click', 'p.step-submit', function() {
 
                             var select_tag = $('div[data-id="' + container.data('name') + '"]');
                             if (!select_tag.length) {
@@ -1155,7 +1151,7 @@
             <div class="osusume_btn_area">
                 <a href="#top">トップへもどる</a>
             </div>
-            <a href="#top" class="nav arroe_top"></a>
+            <a href="#top" class="nav to-top"></a>
         </div>
     </div>
         <footer id="footer" class="v3-footer">
@@ -1229,7 +1225,7 @@
     <script>
         (function v3EnhanceDiagnosis() {
             function updateDiagnosisState() {
-                var items = Array.prototype.slice.call(document.querySelectorAll('ul.select_box > li'));
+                var items = Array.prototype.slice.call(document.querySelectorAll('ul.survey-list > li'));
                 items.forEach(function(item) {
                     var select = item.querySelector('select');
                     var label = item.querySelector('p');
@@ -1242,7 +1238,7 @@
                     }
                     item.classList.toggle('v3-answered', text !== 'タップして選択 ▼' && text !== '未回答' && text !== 'なし');
                 });
-                var modal = document.getElementById('serch2_Modal');
+                var modal = document.getElementById('survey-modal');
                 if (!modal || !items.length) return;
                 var currentName = window.jQuery ? window.jQuery(modal).data('name') : '';
                 var currentSelect = currentName ? document.querySelector('select[name="' + currentName + '"]') : null;
@@ -1261,22 +1257,22 @@
             }
             if (window.jQuery) {
                 window.jQuery(window).on('load', function() { setTimeout(updateDiagnosisState, 0); });
-                window.jQuery(document).on('click change', 'ul.select_box li, #serch2_Modal .modal-btn, #serch2_Modal .modal-back, #serch2_Modal .modal-submit, select', function() {
+                window.jQuery(document).on('click change', 'ul.survey-list li, #survey-modal .choice-btn, #survey-modal .step-back, #survey-modal .step-submit, select', function() {
                     setTimeout(updateDiagnosisState, 0);
                 });
             } else {
                 document.addEventListener('DOMContentLoaded', updateDiagnosisState);
             }
-            var v3Heading = document.querySelector('#serch2_Modal .modal-header h2');
+            var v3Heading = document.querySelector('#survey-modal .modal-header h2');
             if (v3Heading && window.MutationObserver) {
                 new MutationObserver(function() { setTimeout(updateDiagnosisState, 0); }).observe(v3Heading, { childList: true, characterData: true, subtree: true });
             }
         })();
     </script>
-<script src="./js/v3-accessibility-cvr.js?v=pages-demo-5" defer></script>
+<script src="./js/v3-accessibility-cvr.js?v=f20" defer></script>
 </body>
 
-<script src="./js/deadline-timer.js?v=1" defer></script>
+<script src="./js/deadline-timer.js?v=f20" defer></script>
 
 <script>
     $(document).ready(function() {
@@ -1288,7 +1284,7 @@
             $.each(queryArray, function(index, param) {
                 const [key, value] = param.split('=');
                 if (key) {
-                    if (key === 'cat[]') {
+                    if (key === 'current_loans[]') {
                         if (!params[key]) {
                             params[key] = [];
                         }
@@ -1319,9 +1315,9 @@
             $output.append($list);
         }
 
-        const catValues = queryParams['cat[]'] || [];
+        const catValues = queryParams['current_loans[]'] || [];
 
-        $('.rentcheck input[type="checkbox"]').each(function() {
+        $('.loan-check input[type="checkbox"]').each(function() {
             if (catValues.includes($(this).val())) {
                 $(this).prop('', true);
             } else {
@@ -1330,7 +1326,7 @@
         });
 
         $.each(queryParams, function(key, value) {
-            if (key !== 'cat[]') {
+            if (key !== 'current_loans[]') {
                 $(`select[name="${key}"]`).val(value);
             }
         });
@@ -1340,20 +1336,20 @@
             return label ? label : '';
         }).join(', ') || '未選択';
         $('#selected-companies').text(companies);
-        $('#selected-amount').text($(`#select_s1 option:selected`).text() || '未選択');
-        $('#selected-time').text($(`#select_s2 option:selected`).text() || '未選択');
-        $('#selected-method').text($(`#select_s4 option:selected`).text() || '未選択');
-        $('#selected-income').text($(`#select_s5 option:selected`).text() || '未選択');
-        $('#selected-job').text($(`#select_s6 option:selected`).text() || '未選択');
-        $('#selected-company-size').text($(`#select_s7 option:selected`).text() || '未選択');
-        $('#selected-duration').text($(`#select_s8 option:selected`).text() || '未選択');
+        $('#selected-amount').text($(`#q-amount option:selected`).text() || '未選択');
+        $('#selected-time').text($(`#q-speed option:selected`).text() || '未選択');
+        $('#selected-method').text($(`#q-method option:selected`).text() || '未選択');
+        $('#selected-income').text($(`#q-income option:selected`).text() || '未選択');
+        $('#selected-job').text($(`#q-job option:selected`).text() || '未選択');
+        $('#selected-company-size').text($(`#q-company-size option:selected`).text() || '未選択');
+        $('#selected-duration').text($(`#q-duration option:selected`).text() || '未選択');
     });
     $(document).ready(function() {
         const urlParams = new URLSearchParams(window.location.search);
 
-        const catValues = urlParams.getAll('cat[]');
+        const catValues = urlParams.getAll('current_loans[]');
 
-        $('.rentcheck input[type="checkbox"]').each(function() {
+        $('.loan-check input[type="checkbox"]').each(function() {
             if (catValues.includes($(this).val())) {
                 $(this).prop('checked', true);
             } else {
@@ -1386,7 +1382,7 @@
         }
 
         function checkboxLabel(value) {
-            var inputs = document.querySelectorAll('.rentcheck input[name="cat[]"]');
+            var inputs = document.querySelectorAll('.loan-check input[name="current_loans[]"]');
             for (var i = 0; i < inputs.length; i += 1) {
                 if (inputs[i].value === value) {
                     var label = inputs[i].closest('label');
@@ -1398,9 +1394,9 @@
 
         onReady(function() {
             var params = new URLSearchParams(window.location.search);
-            var catValues = params.getAll('cat[]');
+            var catValues = params.getAll('current_loans[]');
 
-            document.querySelectorAll('.rentcheck input[name="cat[]"]').forEach(function(input) {
+            document.querySelectorAll('.loan-check input[name="current_loans[]"]').forEach(function(input) {
                 input.checked = catValues.indexOf(input.value) !== -1;
             });
 
@@ -1412,13 +1408,13 @@
 
             var companies = catValues.map(checkboxLabel).filter(Boolean).join(' / ') || '指定なし';
             setText('selected-companies', companies);
-            setText('selected-amount', optionText('select_s1', 'こだわらない'));
-            setText('selected-time', optionText('select_s2', 'こだわらない'));
-            setText('selected-method', optionText('select_s4', 'こだわらない'));
-            setText('selected-income', optionText('select_s5', '未回答'));
-            setText('selected-job', optionText('select_s6', 'なし'));
-            setText('selected-company-size', optionText('select_s7', '未回答'));
-            setText('selected-duration', optionText('select_s8', '未回答'));
+            setText('selected-amount', optionText('q-amount', 'こだわらない'));
+            setText('selected-time', optionText('q-speed', 'こだわらない'));
+            setText('selected-method', optionText('q-method', 'こだわらない'));
+            setText('selected-income', optionText('q-income', '未回答'));
+            setText('selected-job', optionText('q-job', 'なし'));
+            setText('selected-company-size', optionText('q-company-size', '未回答'));
+            setText('selected-duration', optionText('q-duration', '未回答'));
         });
     })();
 </script>

@@ -6,7 +6,7 @@
     el.dataset.v3A11yReady = '1';
     el.setAttribute('role', 'button');
     el.setAttribute('tabindex', '0');
-    if (el.classList && el.classList.contains('modalClose') && !el.getAttribute('aria-label')) {
+    if (el.classList && el.classList.contains('modal-close') && !el.getAttribute('aria-label')) {
       el.setAttribute('aria-label', '閉じる');
     }
     el.addEventListener('keydown', function (event) {
@@ -19,17 +19,17 @@
 
   function enhancePseudoButtons(root) {
     (root || document).querySelectorAll(
-      '.select_modal_btn1, .select_modal_btn2, #serch2_Modal .modal-btn, #serch2_Modal .modal-back, #serch2_Modal .modal-submit, #serch2_Modal .modalClose'
+      '.entry-first, .entry-experienced, #survey-modal .choice-btn, #survey-modal .step-back, #survey-modal .step-submit, #survey-modal .modal-close'
     ).forEach(makeButtonLike);
   }
 
   function enhanceDialogs() {
-    var entry = document.querySelector('.select_modal');
+    var entry = document.querySelector('.entry-modal');
     if (entry) {
       entry.setAttribute('role', 'dialog');
       entry.setAttribute('aria-modal', 'true');
     }
-    var diagnosis = document.getElementById('serch2_Modal');
+    var diagnosis = document.getElementById('survey-modal');
     if (diagnosis) {
       diagnosis.setAttribute('role', 'dialog');
       diagnosis.setAttribute('aria-modal', 'true');
@@ -47,7 +47,7 @@
   };
 
   function ensureDiagnosisGuide() {
-    var modal = document.getElementById('serch2_Modal');
+    var modal = document.getElementById('survey-modal');
     if (!modal) return;
     modal.querySelectorAll('.v3-chat-guide').forEach(function (guide) {
       guide.remove();
@@ -59,7 +59,7 @@
   }
 
   function focusFirstModalControl() {
-    var activeModal = document.querySelector('#serch2_Modal.active, .select_modal.active');
+    var activeModal = document.querySelector('#survey-modal.active, .entry-modal.active');
     if (!activeModal) return;
     var target = activeModal.querySelector('[tabindex="0"], button, a, select, input');
     if (target && document.activeElement !== target && !activeModal.contains(document.activeElement)) {
@@ -68,7 +68,7 @@
   }
 
   function getFocusableInActiveModal() {
-    var activeModal = document.querySelector('#serch2_Modal.active, .select_modal.active');
+    var activeModal = document.querySelector('#survey-modal.active, .entry-modal.active');
     if (!activeModal) return null;
     var focusables = Array.prototype.slice.call(activeModal.querySelectorAll(
       'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -81,7 +81,7 @@
   }
 
   function addTopCardCtas() {
-    document.querySelectorAll('.topbox.case').forEach(function (card, index) {
+    document.querySelectorAll('.lp-box.case').forEach(function (card, index) {
       if (index > 0 || card.querySelector('.v3-card-top-cta, .v3-lpo-fast-cta')) return;
       var link = card.querySelector('.rank-title a[href*="redirect.php"], h3 a[href*="redirect.php"], .osusume_btn_area a[href*="redirect.php"]');
       var metrics = card.querySelector('.v3-metrics');
@@ -104,7 +104,7 @@
       ['banner_promise', 'プロミス公式サイトへ'],
       ['banner_aiful', 'アイフル公式サイトへ']
     ];
-    document.querySelectorAll('.topbox.case a[href*="redirect.php"] img').forEach(function (img) {
+    document.querySelectorAll('.lp-box.case a[href*="redirect.php"] img').forEach(function (img) {
       if (img.getAttribute('alt')) return;
       var src = img.getAttribute('src') || '';
       var match = labels.find(function (item) { return src.indexOf(item[0]) !== -1; });
@@ -141,13 +141,13 @@
       entryNavigationTimer = null;
     }
 
-    var container = document.querySelector('.select_modal');
-    var body = document.querySelector('.select_modal_body');
-    var loading = document.querySelector('.select_modal_load');
+    var container = document.querySelector('.entry-modal');
+    var body = document.querySelector('.entry-modal_body');
+    var loading = document.querySelector('.entry-modal_load');
     if (loading) loading.classList.remove('active');
 
     if (container && body) {
-      var shouldHideEntryModal = /(?:^|[?&])select_modal=2(?:&|$)/.test(window.location.search);
+      var shouldHideEntryModal = /(?:^|[?&])entry-modal=2(?:&|$)/.test(window.location.search);
       container.classList.toggle('active', !shouldHideEntryModal);
       body.classList.toggle('active', !shouldHideEntryModal);
     }
@@ -167,15 +167,15 @@
     });
 
     document.addEventListener('click', function (event) {
-      var beginnerButton = event.target.closest && event.target.closest('.select_modal_btn1');
+      var beginnerButton = event.target.closest && event.target.closest('.entry-first');
       if (!beginnerButton) return;
       event.preventDefault();
       event.stopPropagation();
       event.stopImmediatePropagation();
 
-      var container = document.querySelector('.select_modal');
-      var body = document.querySelector('.select_modal_body');
-      var loading = document.querySelector('.select_modal_load');
+      var container = document.querySelector('.entry-modal');
+      var body = document.querySelector('.entry-modal_body');
+      var loading = document.querySelector('.entry-modal_load');
       if (body) body.classList.remove('active');
       if (loading) loading.classList.add('active');
       var loadingText = document.querySelector('[data-entry-loading-message]');
@@ -207,9 +207,9 @@
   }
 
   function showDiagnosisLoading() {
-    var container = document.querySelector('.select_modal');
-    var body = document.querySelector('.select_modal_body');
-    var loading = document.querySelector('.select_modal_load');
+    var container = document.querySelector('.entry-modal');
+    var body = document.querySelector('.entry-modal_body');
+    var loading = document.querySelector('.entry-modal_load');
     if (!container || !loading) return;
     container.classList.add('active');
     if (body) body.classList.remove('active');
@@ -233,7 +233,7 @@
     }, true);
 
     document.addEventListener('click', function (event) {
-      var button = event.target.closest && event.target.closest('form[action*="result.php"] button[type="submit"], form[action*="result.html"] button[type="submit"], form[action*="beginner_result.php"] button[type="submit"], form[action*="beginner_result.html"] button[type="submit"], #serch2_Modal .modal-submit');
+      var button = event.target.closest && event.target.closest('form[action*="result.php"] button[type="submit"], form[action*="result.html"] button[type="submit"], form[action*="beginner_result.php"] button[type="submit"], form[action*="beginner_result.html"] button[type="submit"], #survey-modal .step-submit');
       if (!button) return;
       var form = button.closest('form') || document.querySelector('#search_box form');
       if (!form) return;
@@ -266,7 +266,7 @@
       var state = getFocusableInActiveModal();
       if (!state || !state.focusables.length) return;
       if (event.key === 'Escape') {
-        var close = state.modal.querySelector('.modalClose');
+        var close = state.modal.querySelector('.modal-close');
         if (close) close.click();
         return;
       }

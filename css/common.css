@@ -738,16 +738,16 @@ header h1 img {
   background: rgba(255,255,255,0);
   text-align: center;
 }
-#searchTOP .rentcheck {
+#searchTOP .loan-check {
   display: block;
   box-sizing: border-box;
   text-align: left;
   margin: 0 auto 20px;
 }
-#searchTOP .rentcheck input[type=checkbox]{
+#searchTOP .loan-check input[type=checkbox]{
   display: none;
 }
-#searchTOP .rentcheck span{
+#searchTOP .loan-check span{
   padding: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
@@ -764,7 +764,7 @@ header h1 img {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
 }
-#searchTOP .rentcheck span::before{
+#searchTOP .loan-check span::before{
   content:"●";
   display: inline-block;
   margin-right: 30px;
@@ -782,12 +782,12 @@ header h1 img {
   top: 3px;
   left: 0px;
 }
-#searchTOP .rentcheck input[type=checkbox]:checked + span{
+#searchTOP .loan-check input[type=checkbox]:checked + span{
   color: #848484;
   background: #f3f3f3;
   border: 1px solid #848484;  
 }
-#searchTOP .rentcheck input[type=checkbox]:checked + span::before{
+#searchTOP .loan-check input[type=checkbox]:checked + span::before{
   content:"○";
   display: inline-block;
   margin-right: 30px;
@@ -965,7 +965,7 @@ header h1 img {
   z-index:100;
 }
 
-.topbox {
+.lp-box {
   box-sizing: border-box;
   border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -975,7 +975,7 @@ header h1 img {
   display: block;
   padding: 0;
 }
-.topbox h2{
+.lp-box h2{
   font-size: 24px;
   font-weight: bold;
   background: #ffd700;
@@ -990,7 +990,7 @@ header h1 img {
   -moz-border-radius-topleft: 3px;
   -moz-border-radius-topright: 3px;
 }
-.topbox span.rank1{
+.lp-box span.rank1{
   display: inline-block;
   background: #fff;
   color: #b8860b;
@@ -1004,7 +1004,7 @@ header h1 img {
   margin-right: 10px;
   vertical-align: middle;
 }
-.topbox span.rank2 {
+.lp-box span.rank2 {
   display: inline-block;
   background: #fff;
   color: #9da1ae;
@@ -1018,7 +1018,7 @@ header h1 img {
   margin-right: 10px;
   vertical-align: middle;
 }
-.topbox span.rank3 {
+.lp-box span.rank3 {
   display: inline-block;
   background: #fff;
   color: #bb6b3f;
@@ -1032,8 +1032,8 @@ header h1 img {
   margin-right: 10px;
   vertical-align: middle;
 }
-.topbox span.rank4,
-.topbox span.rank5{
+.lp-box span.rank4,
+.lp-box span.rank5{
   display: inline-block;
   background: #fff;
   color: #297ad0;
@@ -1047,7 +1047,7 @@ header h1 img {
   margin-right: 10px;
   vertical-align: middle;
 }
-.topbox p.catch{
+.lp-box p.catch{
   color: #039cfc;
   font-size: 20px;
   font-weight: bold;
@@ -1240,7 +1240,7 @@ ul.status li.noalb{
   color: #848484;
 }
 
-.after_box {
+.result-summary {
   display: block;
   width: auto;
   padding: 10px;
@@ -1251,7 +1251,7 @@ ul.status li.noalb{
   -moz-border-radius: 6px;
   box-sizing: border-box;
 }
-.after_box h1{
+.result-summary h1{
   font-size: 16px;
   padding: 0;
   padding-bottom: 5px;
@@ -1262,22 +1262,22 @@ ul.status li.noalb{
   font-weight: bold;
   line-height: 1.4;
 }
-.after_box h1 span{
+.result-summary h1 span{
   font-size: 24px;
   color: #ff0000;
   font-weight: bold;
   margin: 0 10px 0 5px;
 }
-.after_box .research {
+.result-summary .research {
   display: block;
   margin: 10px 0;
   text-align: right;
   padding: 0 5px;
 }
-.after_box .research a{
+.result-summary .research a{
   color: #039cfc;
 }
-.after_box ul{
+.result-summary ul{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -1285,7 +1285,7 @@ ul.status li.noalb{
   margin: 0;
   box-sizing: border-box;
 }
-.after_box ul li{
+.result-summary ul li{
   display: inline-block;
   width: 48%;
   text-align: left;
@@ -1293,12 +1293,12 @@ ul.status li.noalb{
   padding: 5px;
   box-sizing: border-box;
 }
-.after_box ul li span{
+.result-summary ul li span{
   font-weight: normal;
   margin-right: 2px;
   font-size: 14px;
 }
-.after_box ul li span.after_ttl{
+.result-summary ul li span.after_ttl{
   font-weight: bold;
   margin-right: 0;
   font-size: 14px;
@@ -2475,16 +2475,16 @@ header h1 img {
   background: #fff;
   text-align: center;
 }
-#searchTOP .rentcheck {
+#searchTOP .loan-check {
   display: block;
   box-sizing: border-box;
   text-align: left;
   margin: 0 auto 20px;
 }
-#searchTOP .rentcheck input[type=checkbox]{
+#searchTOP .loan-check input[type=checkbox]{
   display: none;
 }
-#searchTOP .rentcheck span{
+#searchTOP .loan-check span{
   padding: 5px 1px;
   margin-left: 5px;
   margin-bottom: 5px;
@@ -2501,7 +2501,7 @@ header h1 img {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
 }
-#searchTOP .rentcheck span::before{
+#searchTOP .loan-check span::before{
   content:"";
   display: inline-block;
   margin-right: 30px;
@@ -2519,12 +2519,12 @@ header h1 img {
   top: 3px;
   left: 0px;
 }
-#searchTOP .rentcheck input[type=checkbox]:checked + span{
+#searchTOP .loan-check input[type=checkbox]:checked + span{
   color: #848484;
   background: #f3f3f3;
   border: 1px solid #848484;  
 }
-#searchTOP .rentcheck input[type=checkbox]:checked + span::before{
+#searchTOP .loan-check input[type=checkbox]:checked + span::before{
   content:"";
   display: inline-block;
   margin-right: 30px;
@@ -2682,7 +2682,7 @@ header h1 img {
   padding-top: 3px;
   margin-bottom: 30px;
 }
-.topbox {
+.lp-box {
   box-sizing: border-box;
   border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -2692,7 +2692,7 @@ header h1 img {
   display: block;
   padding: 0;
 }
-.topbox h2{
+.lp-box h2{
   font-size: 18px;
   font-weight: bold;
   background: #ffd700;
@@ -2707,7 +2707,7 @@ header h1 img {
   -moz-border-radius-topleft: 3px;
   -moz-border-radius-topright: 3px;
 }
-.topbox span.rank1{
+.lp-box span.rank1{
   display: inline-block;
   background: #fff;
   color: #b8860b;
@@ -2721,7 +2721,7 @@ header h1 img {
   margin-right: 10px;
   vertical-align: middle;
 }
-.topbox span.rank2 {
+.lp-box span.rank2 {
   display: inline-block;
   background: #fff;
   color: #9da1ae;
@@ -2735,7 +2735,7 @@ header h1 img {
   margin-right: 10px;
   vertical-align: middle;
 }
-.topbox span.rank3 {
+.lp-box span.rank3 {
   display: inline-block;
   background: #fff;
   color: #bb6b3f;
@@ -2749,8 +2749,8 @@ header h1 img {
   margin-right: 10px;
   vertical-align: middle;
 }
-.topbox span.rank4,
-.topbox span.rank5{
+.lp-box span.rank4,
+.lp-box span.rank5{
   display: inline-block;
   background: #fff;
   color: #297ad0;
@@ -2764,7 +2764,7 @@ header h1 img {
   margin-right: 10px;
   vertical-align: middle;
 }
-.topbox p.catch{
+.lp-box p.catch{
   color: #039cfc;
   font-size: 18px;
   font-weight: bold;
@@ -2964,7 +2964,7 @@ ul.status li.noalb{
   color: #848484;
 }
 
-.after_box {
+.result-summary {
   display: block;
   width: auto;
   padding: 10px;
@@ -2975,7 +2975,7 @@ ul.status li.noalb{
   -moz-border-radius: 6px;
   box-sizing: border-box;
 }
-.after_box h1{
+.result-summary h1{
   font-size: 16px;
   padding: 0;
   padding-bottom: 5px;
@@ -2986,22 +2986,22 @@ ul.status li.noalb{
   font-weight: bold;
   line-height: 1.4;
 }
-.after_box h1 span{
+.result-summary h1 span{
   font-size: 24px;
   color: #ff0000;
   font-weight: bold;
   margin: 0 10px 0 5px;
 }
-.after_box .research {
+.result-summary .research {
   display: block;
   margin: 10px 0;
   text-align: right;
   padding: 0 5px;
 }
-.after_box .research a{
+.result-summary .research a{
   color: #039cfc;
 }
-.after_box ul{
+.result-summary ul{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -3009,7 +3009,7 @@ ul.status li.noalb{
   margin: 0;
   box-sizing: border-box;
 }
-.after_box ul li{
+.result-summary ul li{
   display: inline-block;
   width: 48%;
   text-align: left;
@@ -3017,12 +3017,12 @@ ul.status li.noalb{
   padding: 5px;
   box-sizing: border-box;
 }
-.after_box ul li span{
+.result-summary ul li span{
   font-weight: normal;
   margin-right: 2px;
   font-size: 14px;
 }
-.after_box ul li span.after_ttl{
+.result-summary ul li span.after_ttl{
   font-weight: bold;
   margin-right: 0;
   font-size: 14px;
@@ -3826,35 +3826,35 @@ br.sp {
 }
 
 
-.topbox p.catch {
+.lp-box p.catch {
     color: #333;
     padding: 20px;
 }
-.topbox {
+.lp-box {
     max-width: 100%;
     margin: 0 auto;
 }
-.topbox .box_in {
+.lp-box .box_in {
     padding: 0 20px 20px;
 }
-.topbox .top_img_box {
+.lp-box .top_img_box {
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
     justify-content: flex-start;  
     margin: 0 0 20px;
 }
-.topbox .top_img_box .img {
+.lp-box .top_img_box .img {
     margin: 0 20px 0 0;
     width: 40%;
 }
-.topbox .top_img_box .img img {
+.lp-box .top_img_box .img img {
     width: 100%;
 }
-.topbox .feature {
+.lp-box .feature {
     width: 60%;
 }
-.topbox .feature li {
+.lp-box .feature li {
     background: #fff9ea;
     padding: 10px 20px 10px 60px;
     width: 100%;
@@ -3863,7 +3863,7 @@ br.sp {
     font-weight: bold;
     position: relative;
 }
-.topbox .feature li::before {
+.lp-box .feature li::before {
     position: absolute;
     display: block;
     content: "";
@@ -3874,43 +3874,43 @@ br.sp {
     top: 50%;
     transform: translate(0,-50%);
 }
-.topbox .feature li:not(:last-child) {
+.lp-box .feature li:not(:last-child) {
     margin: 0 0 10px;
 }
-.topbox .info {
+.lp-box .info {
     width: 100%;
     margin: 0 0 20px;
 }
-.topbox .info tr {
+.lp-box .info tr {
     border-bottom: 1px solid #fff;
     font-size: 120%;
 }
-.topbox .info th {
+.lp-box .info th {
     background: #fde9b6;
     padding: 10px;
     font-weight: bold;
 }
-.topbox .info td {
+.lp-box .info td {
     width: 50%;
     background: #fff9ea;
     font-weight: bold;
     padding: 10px;
     text-align: center;
 }
-.topbox .timer_in_box .timerbox {
+.lp-box .deadline-box .timerbox {
     width: 300px;
     margin: 0 auto;
 }
-.topbox .transition{
+.lp-box .transition{
   text-align: center;
   display: block;
 }
-.topbox .transition_sp{
+.lp-box .transition_sp{
   text-align: center;
   display: none;
 }
-.topbox .transition_sp a,
-.topbox .transition a{
+.lp-box .transition_sp a,
+.lp-box .transition a{
   display: block;
   color: #fff;
   font-size: 18px;
@@ -3933,27 +3933,27 @@ br.sp {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.topbox .transition a:hover{
+.lp-box .transition a:hover{
   box-shadow: 0 0px #ab0107;
   top: 4px;
   opacity: 1;
 }
 @media screen and (max-width: 768px) {
-    .topbox p.catch {
+    .lp-box p.catch {
         font-size:120%;
     }
-    .topbox .top_img_box .img {
+    .lp-box .top_img_box .img {
         margin: 0 10px 0 0;
         width: 50%;
     }
-    .topbox .feature {
+    .lp-box .feature {
         width: 50%;
     }
-    .topbox .feature li {
+    .lp-box .feature li {
         padding: 5px 10px 5px 30px;
         font-size: 90%;
     }
-    .topbox .feature li::before {
+    .lp-box .feature li::before {
         position: absolute;
         display: block;
         content: "";
@@ -3962,13 +3962,13 @@ br.sp {
         height: 11px;
         left: 10px;
     }
-    .topbox .feature li:not(:last-child) {
+    .lp-box .feature li:not(:last-child) {
         margin: 0 0 5px;
     }
-    .topbox .info {
+    .lp-box .info {
         margin: 0 0 10px;
     }
-    .topbox .timer_in_box .timerbox {
+    .lp-box .deadline-box .timerbox {
         width: 100%;
     }
     #mainvisual {
@@ -4193,7 +4193,7 @@ background: linear-gradient(transparent 60%, #ffff00 0%);
 }
 
 
-.topbox {
+.lp-box {
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -4205,19 +4205,19 @@ background: linear-gradient(transparent 60%, #ffff00 0%);
     border-radius: 10px;
     max-width: 900px;
 }
-.topbox .box_in {
+.lp-box .box_in {
     padding: 0;
 }
-.topbox h2 {
+.lp-box h2 {
     border-bottom: 1px solid #039cfc;
     background: none;
     padding: 0 0 10px;
 
 }
-.topbox span.rank1 {
+.lp-box span.rank1 {
     background: #eee;
 }
-.topbox p.catch {
+.lp-box p.catch {
     padding: 20px 0;
 }
 .bg_box {
@@ -4247,13 +4247,13 @@ background: linear-gradient(transparent 60%, #ffff00 0%);
     display: none !important;
   }
   
-  .topbox h2 {
+  .lp-box h2 {
     font-weight: bolder;
     font-size: 20px;
 
 }
   
-  .bg_box .topbox h2 span {
+  .bg_box .lp-box h2 span {
     font-size: 70%;
 
 }
@@ -4324,12 +4324,12 @@ table.info td span {
 
 
 
-.search-results .topbox {
+.search-results .lp-box {
     border: 2px solid #009dff;
 }
 
 @media screen and (max-width: 768px) {
-.search-results .topbox .transition_sp {
+.search-results .lp-box .transition_sp {
     display: block;
 }
 }

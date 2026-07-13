@@ -28,7 +28,7 @@
 }
 
 /* Highlight whichever beginner question is currently active. */
-body.beginner:not(.search-results) #search_box ul.select_box > li.v3-current-question {
+body.beginner:not(.search-results) #search_box ul.survey-list > li.v3-current-question {
   border: 2px solid #ff7624 !important;
   background: #fff9f3 !important;
   box-shadow: 0 0 0 2px rgba(255, 118, 36, .14), 0 0 10px rgba(255, 118, 36, .28) !important;
@@ -36,31 +36,31 @@ body.beginner:not(.search-results) #search_box ul.select_box > li.v3-current-que
   animation: beginner-loan-speed-glow .9s ease-in-out infinite !important;
 }
 
-body.beginner:not(.search-results) #search_box ul.select_box > li.selected:not(.v3-current-question) {
+body.beginner:not(.search-results) #search_box ul.survey-list > li.selected:not(.v3-current-question) {
   animation: none !important;
 }
 
-body.beginner:not(.search-results) #search_box ul.select_box > li:nth-of-type(3) {
+body.beginner:not(.search-results) #search_box ul.survey-list > li:nth-of-type(3) {
   display: list-item !important;
   border-left: 4px solid #0f6e56 !important;
   background: linear-gradient(90deg, #e1f5ee, #fff 34%) !important;
 }
 
-body.beginner:not(.search-results) #search_box ul.select_box > li:nth-of-type(3) label {
+body.beginner:not(.search-results) #search_box ul.survey-list > li:nth-of-type(3) label {
   color: #183f35 !important;
   font-size: 14px !important;
   font-weight: 900 !important;
   line-height: 1.25 !important;
 }
 
-body.beginner:not(.search-results) #search_box ul.select_box > li:nth-of-type(3) p {
+body.beginner:not(.search-results) #search_box ul.survey-list > li:nth-of-type(3) p {
   color: #294f45 !important;
   font-size: 18px !important;
   font-weight: 800 !important;
   line-height: 1.25 !important;
 }
 
-body.beginner:not(.search-results) #search_box ul.select_box > li:nth-of-type(3).v3-current-question {
+body.beginner:not(.search-results) #search_box ul.survey-list > li:nth-of-type(3).v3-current-question {
   border: 2px solid #ff7624 !important;
   background: #fff9f3 !important;
 }
@@ -92,7 +92,7 @@ body.beginner:not(.search-results) #search_box .rentbtn button[type="submit"] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.beginner:not(.search-results) #search_box ul.select_box > li.v3-current-question {
+  body.beginner:not(.search-results) #search_box ul.survey-list > li.v3-current-question {
     animation: none !important;
   }
 
