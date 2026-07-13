@@ -37,7 +37,8 @@
     }
   ];
 
-  const requestedVariant = mount.dataset.v4Variant || new URLSearchParams(window.location.search).get("variant");
+  const urlVariant = new URLSearchParams(window.location.search).get("variant");
+  const requestedVariant = urlVariant || mount.dataset.v4Variant || (document.body.classList.contains("beginner") ? "beginner" : "experienced");
   const resultVariant = requestedVariant === "beginner"
     ? "beginner"
     : "experienced";
