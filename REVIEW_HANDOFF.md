@@ -521,3 +521,24 @@ V1 HTML pages were additionally checked at 375px with horizontal overflow 0, fai
 - Removed the competing beginner-entry and modal-submit handlers from both accessibility helper variants. Added a persistent selected-option state to the blue and green themes.
 - Added `tests/f21-survey-unit.mjs` and `tests/f21-survey-contract.py`. Unit, DOM-contract, external/inline JavaScript syntax, page-reference, F17 redirect, form/protected-asset baseline, and legacy-marker checks pass.
 - Browser workflow, viewport, console, and 404 regression checks remain pending. The in-app browser rejected the configured local origin in this session, so these items are not recorded as successful.
+
+## F22 Legacy stylesheet rewrite (2026-07-13)
+
+- Replaced the eight inherited stylesheet entry points with `css/base.css` and the beginner-theme delta `css/base-green.css`.
+- Audited 44 HTML/PHP/JS/CSS sources, including markup identifiers, JavaScript selector use, generated state classes, media queries, keyframes, attributes, pseudo states, V1/V2 pages, and the later theme/card overrides.
+- Parsed 1,997 blue-source rules and retained 894 rules with 1,071 used selectors; 1,100 dead rules and 1,253 dead selector branches were omitted. The shared output is 116,764 bytes, compared with 246,592 bytes across the three former blue sources.
+- Compared the full beginner source to the retained shared layer. `base-green.css` contains only 68 changed rules (14,039 bytes); 826 retained rules are shared without duplication.
+- Removed 16 declarations that referenced missing local assets, three exact duplicate declarations, 11 obsolete prefixed fallbacks, and one unused keyframe. Existing referenced image assets were not modified.
+- Updated all 17 application HTML/PHP pages to `base.css?v=f22`; the seven beginner-theme pages additionally load `base-green.css?v=f22`. `demo-list.html` remains standalone.
+- Added `tests/f22-css-contract.py` to verify CSS structure, local asset resolution, deletion of the former stylesheets, page-level cache-busted links, and beginner-theme allocation.
+
+### F22 static verification
+
+- `tests/f22-css-contract.py`: pass for both generated stylesheets and all 17 application pages.
+- F21 survey unit and DOM-contract tests: pass after the CSS migration.
+- External and inline JavaScript syntax checks: pass.
+- All 18 root HTML/PHP documents parse; page-level local CSS/JS/image references resolve.
+- F17 redirect tests: pass for both static and PHP mirrors.
+- Pre-F22 form, option-order, protected banner, placeholder, PR, and Sponsored contracts remain byte-for-byte equivalent.
+- `git diff --check`: pass.
+- Browser workflow, requested viewports, console, screenshot/geometry comparison, and 404 network checks remain pending. The in-app browser rejected the configured local origin, so no browser-only item is recorded as successful.
