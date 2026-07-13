@@ -517,7 +517,7 @@ body.experience .v3-compare2 > .v3-compare-index {
 
 body.experience .v3-compare2-title-image {
   position: relative;
-  width: min(86%, 660px);
+  width: 100%;
   aspect-ratio: 1660 / 500;
   margin: 0 auto 8px;
   overflow: hidden;
@@ -530,14 +530,6 @@ body.experience .v3-compare2-title-image img {
   width: 100%;
   height: auto;
   transform: translateY(-18.2%);
-}
-
-/* Keep the experience comparison banner compact on phones. */
-@media screen and (max-width: 480px) {
-  body.experience .v3-compare2-title-image {
-    width: 92%;
-    margin-bottom: 6px;
-  }
 }
 
 /* Double evaluation rings, except Aiful monthly repayment. */
