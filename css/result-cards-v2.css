@@ -621,6 +621,28 @@ body.beginner .v4-spec-ring dd {
 .v4-review-text { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.65; }
 .v4-review small { display: block; margin-top: 8px; color: #777; font-size: 10px; }
 
+/* Keep the review card aligned with the experienced-user blue palette. */
+body.experience .v4-review-box {
+  border-color: #1f6fba;
+  background: #f8fbff;
+}
+body.experience .v4-review-title { background: #1f6fba; }
+body.experience .v4-review-facts span {
+  border-color: #5d9ed4;
+  background: #fff;
+  color: #23486d;
+}
+body.experience .v4-review-bubble { border-color: #5d9ed4; }
+body.experience .v4-review-bubble::before {
+  border-left-color: #5d9ed4;
+  border-bottom-color: #5d9ed4;
+}
+body.experience .v4-review-meta {
+  border-color: #8ebfe8;
+  background: #eef7ff;
+  color: #24496d;
+}
+
 .v4-cta-wrap { padding: 4px 14px 14px; text-align: center; }
 .v4-countdown {
   display: flex;
