@@ -1,42 +1,23 @@
 @charset "UTF-8";
-.crown::before {
-  content: "";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-image: url("../images/rank1.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center 0px;
-  bottom: -3px;
-  position: relative;
-}
-
-.crown2::before {
-  content: "";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-image: url("../images/rank2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center 0px;
-  bottom: -3px;
-  position: relative;
-}
-
+.crown::before,
+.crown2::before,
 .crown3::before {
-  content: "";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-image: url("../images/rank3.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center 0px;
-  bottom: -3px;
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 5px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  vertical-align: middle;
 }
+.crown::before { content: "1"; background: #d7aa00; }
+.crown2::before { content: "2"; background: #9aa3ad; }
+.crown3::before { content: "3"; background: #b87333; }
 
 #follow-banner {
   position: fixed;
@@ -196,7 +177,8 @@ span.caution {
   transform: translate(0, -50%);
 }
 #search_box .select_box li::before {
-  background: url("../images/icon_check_ms.png") no-repeat center/31px 31px;
+  background: #55c879;
+  border-radius: 50%;
 }
 #search_box .select_box li > div input, #search_box .select_box li > div label {
   visibility: hidden;
@@ -246,7 +228,7 @@ span.caution {
     width: 20px;
     height: 20px;
     right: 10px;
-    background: url("../images/icon_check_ms.png") no-repeat center/20px 20px;
+    background: #55c879;
   }
   .after_box ul li {
     display: inline-block;
@@ -1027,7 +1009,8 @@ h2.content3_ttl {
 .btm_arrow02::after {
   position: static;
   transform: none;
-  background: url(../images/btm_arrow02_b.png) no-repeat;
+  background: #ccdcec;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
   background-size: contain;
   background-color: #ccdcec;
   aspect-ratio: 1200/140;
@@ -1791,7 +1774,8 @@ h2.content3_ttl {
 .beginner #recommend2.btm_arrow02::after {
   position: static;
   transform: none;
-  background: url(../images/btm_arrow02_b.png) no-repeat;
+  background: #ccdcec;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
   background-size: contain;
   background-color: #ccdcec;
   background: none;
@@ -1965,4 +1949,47 @@ h2.content3_ttl {
   .legacy-review-person img { width: 70px; height: 70px; }
   .legacy-review-facts { grid-template-columns: 1fr; gap: 2px; }
   .legacy-review-body > p { padding: 8px 9px; font-size: 12px; }
+}
+
+
+/* CSS-only beginner floating diagnosis control. */
+body.beginner #btn-follow.v3-follow-diagnosis--beginner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  height: 104px;
+  min-height: 104px;
+  padding: 10px 6px 9px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #0b7c62;
+  box-shadow: 0 5px 0 #075440, 0 8px 18px rgba(0,0,0,.24);
+  color: #fff;
+  cursor: pointer;
+}
+body.beginner .v3-follow-diagnosis__time { color: #fff16a; font-size: 12px; font-weight: 800; line-height: 1; }
+body.beginner .v3-follow-diagnosis__main { display: flex; flex-direction: column; align-items: center; color: #fff; font-size: 12px; font-weight: 800; line-height: 1.05; }
+body.beginner .v3-follow-diagnosis__main strong { color: #fff16a; font-size: 24px; line-height: 1; }
+body.beginner .v3-follow-diagnosis__arrow { display: block; margin-top: 2px; font-size: 16px; line-height: 1; }
+body.beginner #btn-follow.v3-follow-diagnosis--beginner:focus-visible { outline: 3px solid #ffef45; outline-offset: 3px; }
+body.beginner #btn-follow.v3-follow-diagnosis--beginner:active { transform: translateY(4px); box-shadow: 0 1px 0 #075440, 0 4px 10px rgba(0,0,0,.2); }
+.v3-atm-text { display: inline-block; color: #174a3f; font-size: 11px; font-weight: 700; line-height: 1.35; text-align: center; }
+
+#search_box .select_box li::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 29px;
+  z-index: 1;
+  width: 8px;
+  height: 14px;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  pointer-events: none;
+  transform: translateY(-65%) rotate(45deg);
+}
+@media (max-width: 768px) {
+  #search_box .select_box li::after { right: 16px; width: 6px; height: 10px; border-width: 0 2px 2px 0; }
 }

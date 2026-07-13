@@ -40,7 +40,7 @@
 		
 		
 		<link rel="stylesheet" type="text/css" href="./css/style-main.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add.css?v=f12" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add.css?v=f13" media="all">
 		<link rel="stylesheet" type="text/css" href="./css/colorbox.css">
 		
 		
@@ -243,7 +243,7 @@
                                 <div><dt>融資時間</dt><dd>最短20分<span class="caution">※2</span></dd></div>
                                 <div><dt>借入限度額</dt><dd>1万円〜800万円</dd></div>
                                 <div><dt>実質年率</dt><dd>2.4%〜17.9%</dd></div>
-                                <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
+                                <div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
                             </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>申込前に条件や必要書類を確認でき、スマホで進めやすかったという声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline>
@@ -278,7 +278,7 @@
                                 <div><dt>融資時間</dt><dd>最短15分<span class="caution">※</span></dd></div>
                                 <div><dt>借入限度額</dt><dd>最大800万円</dd></div>
                                 <div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div>
-                                <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
+                                <div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
                             </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>Webで手続きを進められる点や、郵送物を抑えられる点を重視する声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline>
@@ -313,7 +313,7 @@
                                 <div><dt>融資時間</dt><dd>最短3分</dd></div>
                                 <div><dt>借入限度額</dt><dd>最大500万円</dd></div>
                                 <div><dt>実質年率</dt><dd>2.5%〜18.0%</dd></div>
-                                <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
+                                <div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
                             </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>スマホで比較しながら、返済額や無利息期間を確認できたという声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline>
@@ -348,7 +348,7 @@
                                 <div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div>
                                 <div><dt>借入限度額</dt><dd>最大800万円</dd></div>
                                 <div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div>
-                                <div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div>
+                                <div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
                             </dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>申込前に診断で目安を確認でき、条件を比較しやすかったという声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline>

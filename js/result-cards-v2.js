@@ -85,7 +85,7 @@
               </a>
               <div class="v4-lender-summary">
                 <p class="v4-lender-group">${lender.group}</p>
-                <dl class="v4-specs">${specMarkup(lender.specs)}<div class="v4-conveni"><dt>利用コンビニ</dt><dd><img src="./images/convini.webp" width="240" height="80" alt="主要コンビニATM" loading="lazy"></dd></div></dl>
+                <dl class="v4-specs">${specMarkup(lender.specs)}<div class="v4-conveni"><dt>利用コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div></dl>
               </div>
             </div>
             <section class="v4-recommend" aria-label="ここがオススメ">

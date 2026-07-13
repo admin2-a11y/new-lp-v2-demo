@@ -41,7 +41,7 @@
 		
 		
 		<link rel="stylesheet" type="text/css" href="./css/style-main-green.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css?v=f12" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css?v=f13" media="all">
 		<link rel="stylesheet" type="text/css" href="./css/colorbox.css">
 		
 		
@@ -226,7 +226,7 @@
                                 <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.3</p><h3><a target="_blank" href="./redirect.php?item=acom">アコム</a></h3><p class="v3-result-lender-group">三菱UFJフィナンシャル・グループ</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>スマホから申込条件を確認しやすい候補です</li><li>Web申込、来店不要、カードレス契約も選べます</li><li>はじめての契約なら無利息期間も確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>融資時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>借入限度額</dt><dd>1万円〜800万円</dd></div><div><dt>実質年率</dt><dd>2.4%〜17.9%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>融資時間</dt><dd>最短20分<span class="caution">※2</span></dd></div><div><dt>借入限度額</dt><dd>1万円〜800万円</dd></div><div><dt>実質年率</dt><dd>2.4%〜17.9%</dd></div><div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div></dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>申込前に条件や必要書類を確認でき、スマホで進めやすかったという声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
                             <a target="_blank" href="./redirect.php?item=acom" class="v3-result-lender-cta">公式サイトで申込条件を確認する</a>
@@ -238,7 +238,7 @@
                                 <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.4</p><h3><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3><p class="v3-result-lender-group">SMBCコンシューマーファイナンス株式会社</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>スマホからスピード重視で進めたい方に向いています</li><li>郵送物なし、カードレスで進めたい方も確認できます</li><li>30日間無利息の条件も申込前に確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短3分</dd></div><div><dt>融資時間</dt><dd>最短3分</dd></div><div><dt>借入限度額</dt><dd>最大500万円</dd></div><div><dt>実質年率</dt><dd>2.5%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>最短3分</dd></div><div><dt>融資時間</dt><dd>最短3分</dd></div><div><dt>借入限度額</dt><dd>最大500万円</dd></div><div><dt>実質年率</dt><dd>2.5%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div></dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>スマホで比較しながら、返済額や無利息期間を確認できたという声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
                             <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
@@ -250,7 +250,7 @@
                                 <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.2</p><h3><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3><p class="v3-result-lender-group">アイフル株式会社</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>申込前に1秒診断で目安を確認したい方に向いています</li><li>Web申込、来店不要、カードレスで進めたい方も確認できます</li><li>急ぎの借入を検討する前に条件を確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div></dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>申込前に診断で目安を確認でき、条件を比較しやすかったという声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
                             <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
@@ -262,7 +262,7 @@
                                 <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.1</p><h3><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3><p class="v3-result-lender-group">三井住友カード株式会社</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>WEB完結で進めたい方に向いています</li><li>電話連絡や郵送物を抑えたい場合に確認しやすい候補です</li><li>カードレスで使いたい方も条件を確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>10秒簡易審査</dd></div><div><dt>融資時間</dt><dd>最短15分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" width="240" height="80" src="./images/convini.webp" alt="主要コンビニATM"></dd></div></dl>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>10秒簡易審査</dd></div><div><dt>融資時間</dt><dd>最短15分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div></dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>Webで手続きを進められる点や、郵送物を抑えられる点を重視する声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
                             <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-cta">公式サイトで条件を確認する</a>

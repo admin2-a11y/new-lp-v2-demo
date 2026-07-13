@@ -41,7 +41,7 @@
 		
 		
 		<link rel="stylesheet" type="text/css" href="./css/style-main-green.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css?v=f12" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css?v=f13" media="all">
 		<link rel="stylesheet" type="text/css" href="./css/colorbox.css">
 		
 		
@@ -559,7 +559,7 @@
 					<div><dt>借入限度額</dt><dd>最大800万円</dd></div>
 					<div><dt>融資時間</dt><dd>最短20分※1</dd></div>
 					<div><dt>審査時間</dt><dd>最短20分※1</dd></div>
-					<div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
 				<a target="_blank" href="./redirect.php?item=acom" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
 				<p class="v3-lender-note">【PR】Sponsored by アコム株式会社<br>※1 お申込時間や審査によりご希望に添えない場合がございます。<br>※アコムでのご契約がはじめてのお客さまはご契約の翌日から30日間金利0円。<br>※一例であり、結果を保証するものではありません。</p>
@@ -587,7 +587,7 @@
 					<div><dt>借入限度額</dt><dd>最大500万円</dd></div>
 					<div><dt>融資時間</dt><dd>最短3分</dd></div>
 					<div><dt>審査時間</dt><dd>最短3分</dd></div>
-					<div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
 				<a target="_blank" href="./redirect.php?item=promise" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
 				<p class="v3-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※お申込時間や審査によりご希望に添えない場合がございます。<br>※無利息期間30日を適用する場合は、メールアドレス登録とWeb明細利用の登録が必要です。<br>※一例であり、結果を保証するものではありません。</p>
@@ -615,7 +615,7 @@
 					<div><dt>借入限度額</dt><dd>最大800万円</dd></div>
 					<div><dt>融資時間</dt><dd>WEBで最短14分※</dd></div>
 					<div><dt>審査時間</dt><dd>WEBで最短14分※</dd></div>
-					<div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
 				<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
 				<p class="v3-lender-note">【PR】Sponsored by アイフル株式会社<br>※お申込時間や審査状況によりご希望に添えない場合があります。<br>※システムメンテナンスの時間帯や一部金融機関を除きます。<br>※一例であり、結果を保証するものではありません。</p>
@@ -643,7 +643,7 @@
 					<div><dt>借入限度額</dt><dd>最大800万円</dd></div>
 					<div><dt>融資時間</dt><dd>最短15分※</dd></div>
 					<div><dt>審査時間</dt><dd>10秒簡易審査</dd></div>
-					<div><dt>コンビニ</dt><dd><img class="v3-conveni-logos" loading="lazy" height="80" width="240" src="./images/convini.webp" alt="セブン-イレブン、ファミリーマート、ローソン、ミニストップ"></dd></div>
+					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
 				<a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
 				<p class="v3-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br>※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。<br>※一例であり、結果を保証するものではありません。</p>
@@ -1595,7 +1595,11 @@
 	</div>
 	<a href="#top" class="nav arroe_top"></a>
 	<div id="follow-banner" style="display: none;">
-		<img loading="lazy" height="170" width="170" src="./images/btn_follow_beginner.png" alt="検索box" id="btn-follow">
+		<button type="button" id="btn-follow" class="v3-follow-diagnosis v3-follow-diagnosis--beginner" aria-label="簡単10秒 カードローン診断">
+      <span class="v3-follow-diagnosis__time">簡単10秒</span>
+      <span class="v3-follow-diagnosis__main"><span>カードローン</span><strong>診断</strong></span>
+      <span class="v3-follow-diagnosis__arrow" aria-hidden="true">⌄</span>
+    </button>
 	</div>
 	<script src="./js/follow_banner.js" defer></script>
 	
