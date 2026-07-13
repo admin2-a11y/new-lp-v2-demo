@@ -466,14 +466,16 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   }
 }
 
-/* Give the two primary borrowing questions stronger visual priority. */
+/* Keep the three primary borrowing questions on the same column grid. */
 .beginner #search_box ul.select_box > li:has(#select_s2),
-.beginner #search_box ul.select_box > li:has(#select_s1) {
+.beginner #search_box ul.select_box > li:has(#select_s1),
+.beginner #search_box ul.select_box > li:has(#select_s4) {
   min-height: 74px !important;
 }
 
 .beginner #search_box ul.select_box > li:has(#select_s2) > label,
-.beginner #search_box ul.select_box > li:has(#select_s1) > label {
+.beginner #search_box ul.select_box > li:has(#select_s1) > label,
+.beginner #search_box ul.select_box > li:has(#select_s4) > label {
   position: absolute !important;
   top: 50% !important;
   left: 12px !important;
@@ -488,7 +490,8 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
 }
 
 .beginner #search_box ul.select_box > li:has(#select_s2) > p,
-.beginner #search_box ul.select_box > li:has(#select_s1) > p {
+.beginner #search_box ul.select_box > li:has(#select_s1) > p,
+.beginner #search_box ul.select_box > li:has(#select_s4) > p {
   position: absolute !important;
   top: 50% !important;
   left: 52% !important;
@@ -505,12 +508,14 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
 
 @media screen and (max-width: 374px) {
   .beginner #search_box ul.select_box > li:has(#select_s2),
-  .beginner #search_box ul.select_box > li:has(#select_s1) {
+  .beginner #search_box ul.select_box > li:has(#select_s1),
+  .beginner #search_box ul.select_box > li:has(#select_s4) {
     min-height: 82px !important;
   }
 
   .beginner #search_box ul.select_box > li:has(#select_s2) > label,
-  .beginner #search_box ul.select_box > li:has(#select_s1) > label {
+  .beginner #search_box ul.select_box > li:has(#select_s1) > label,
+  .beginner #search_box ul.select_box > li:has(#select_s4) > label {
     top: 14px !important;
     left: 14px !important;
     transform: none !important;
@@ -519,7 +524,8 @@ body.beginner.search-results #search_box ul.select_box > li.v3-current-question 
   }
 
   .beginner #search_box ul.select_box > li:has(#select_s2) > p,
-  .beginner #search_box ul.select_box > li:has(#select_s1) > p {
+  .beginner #search_box ul.select_box > li:has(#select_s1) > p,
+  .beginner #search_box ul.select_box > li:has(#select_s4) > p {
     top: 39px !important;
     left: 14px !important;
     transform: none !important;
