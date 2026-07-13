@@ -41,7 +41,7 @@
 		
 		
 		<link rel="stylesheet" type="text/css" href="./css/style-main-green.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add-green.css?v=f12" media="all">
 		<link rel="stylesheet" type="text/css" href="./css/colorbox.css">
 		
 		
@@ -746,7 +746,16 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png" alt="アコム利用者の口コミ例"></li>
+                    <li class="legacy-review-card">
+  <figure class="legacy-review-person">
+    <img loading="lazy" width="180" height="180" src="./images/review-acom-v2.png" alt="アコム利用者のイラスト">
+    <figcaption>職業：バイト<br>年齢：25歳<span class="legacy-review-rating" aria-label="5点満点中5点">★★★★★ <b>5</b></span></figcaption>
+  </figure>
+  <div class="legacy-review-body">
+    <div class="legacy-review-facts"><span>借入額：100万～300万円未満</span><span>借入までの時間：1時間以内</span></div>
+    <p>金利0円期間に魅力を感じ申し込みました。カードローンは初めてでしたが審査もスムーズでした。スマホで完結できるので電話連絡や郵送物もなく周りにバレずに借入でき本当に助かりました。</p>
+  </div>
+</li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -839,7 +848,16 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png" alt="SMBCモビット利用者の口コミ例"></li>
+                    <li class="legacy-review-card">
+  <figure class="legacy-review-person">
+    <img loading="lazy" width="180" height="180" src="./images/review-mobit-v2.png" alt="SMBCモビット利用者のイラスト">
+    <figcaption>職業：派遣<br>年齢：47歳<span class="legacy-review-rating" aria-label="5点満点中5点">★★★★★ <b>5</b></span></figcaption>
+  </figure>
+  <div class="legacy-review-body">
+    <div class="legacy-review-facts"><span>借入額：50万～100万円未満</span><span>借入までの時間：1時間以内</span></div>
+    <p>事前に身分証明書を準備して申し込み。審査もスムーズに進みました。すべてスマホで完結できたので、誰にもバレずにすぐ着金。もっと早く利用すれば良かったです。</p>
+  </div>
+</li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -924,7 +942,16 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png" alt="プロミス利用者の口コミ例"></li>
+                    <li class="legacy-review-card">
+  <figure class="legacy-review-person">
+    <img loading="lazy" width="180" height="180" src="./images/review-promise-v2.png" alt="プロミス利用者のイラスト">
+    <figcaption>職業：会社員<br>年齢：33歳<span class="legacy-review-rating" aria-label="5点満点中5点">★★★★★ <b>5</b></span></figcaption>
+  </figure>
+  <div class="legacy-review-body">
+    <div class="legacy-review-facts"><span>借入額：50万円未満</span><span>借入までの時間：1時間以内</span></div>
+    <p>スマホで完結できるので審査から借入までがとにかく早い。誰にもバレずに借りることができました。返済も月1,000円からで良いのも助かっています。</p>
+  </div>
+</li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -1203,7 +1230,16 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png" alt="アコム利用者の口コミ例"></li>
+                    <li class="legacy-review-card">
+  <figure class="legacy-review-person">
+    <img loading="lazy" width="180" height="180" src="./images/review-acom-v2.png" alt="アコム利用者のイラスト">
+    <figcaption>職業：バイト<br>年齢：25歳<span class="legacy-review-rating" aria-label="5点満点中5点">★★★★★ <b>5</b></span></figcaption>
+  </figure>
+  <div class="legacy-review-body">
+    <div class="legacy-review-facts"><span>借入額：100万～300万円未満</span><span>借入までの時間：1時間以内</span></div>
+    <p>金利0円期間に魅力を感じ申し込みました。カードローンは初めてでしたが審査もスムーズでした。スマホで完結できるので電話連絡や郵送物もなく周りにバレずに借入でき本当に助かりました。</p>
+  </div>
+</li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
@@ -1296,7 +1332,16 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_mobit1.png" alt="SMBCモビット利用者の口コミ例"></li>
+                    <li class="legacy-review-card">
+  <figure class="legacy-review-person">
+    <img loading="lazy" width="180" height="180" src="./images/review-mobit-v2.png" alt="SMBCモビット利用者のイラスト">
+    <figcaption>職業：派遣<br>年齢：47歳<span class="legacy-review-rating" aria-label="5点満点中5点">★★★★★ <b>5</b></span></figcaption>
+  </figure>
+  <div class="legacy-review-body">
+    <div class="legacy-review-facts"><span>借入額：50万～100万円未満</span><span>借入までの時間：1時間以内</span></div>
+    <p>事前に身分証明書を準備して申し込み。審査もスムーズに進みました。すべてスマホで完結できたので、誰にもバレずにすぐ着金。もっと早く利用すれば良かったです。</p>
+  </div>
+</li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -1381,7 +1426,16 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0; padding-left:0;"> <img loading="lazy" height="256" width="600" src="./images/kuchikomi_promise1.png" alt="プロミス利用者の口コミ例"></li>
+                    <li class="legacy-review-card">
+  <figure class="legacy-review-person">
+    <img loading="lazy" width="180" height="180" src="./images/review-promise-v2.png" alt="プロミス利用者のイラスト">
+    <figcaption>職業：会社員<br>年齢：33歳<span class="legacy-review-rating" aria-label="5点満点中5点">★★★★★ <b>5</b></span></figcaption>
+  </figure>
+  <div class="legacy-review-body">
+    <div class="legacy-review-facts"><span>借入額：50万円未満</span><span>借入までの時間：1時間以内</span></div>
+    <p>スマホで完結できるので審査から借入までがとにかく早い。誰にもバレずに借りることができました。返済も月1,000円からで良いのも助かっています。</p>
+  </div>
+</li>
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>
                 </ul>
             </div>
@@ -1485,7 +1539,16 @@
             </div>
             <div class="kuchikomi_content">
                 <ul>
-                    <li style="margin-left:0;padding-left:0;"> <img loading="lazy" height="204" width="547" src="./images/kuchikomi_acom1.png" alt="アコム利用者の口コミ例"></li>
+                    <li class="legacy-review-card">
+  <figure class="legacy-review-person">
+    <img loading="lazy" width="180" height="180" src="./images/review-acom-v2.png" alt="アコム利用者のイラスト">
+    <figcaption>職業：バイト<br>年齢：25歳<span class="legacy-review-rating" aria-label="5点満点中5点">★★★★★ <b>5</b></span></figcaption>
+  </figure>
+  <div class="legacy-review-body">
+    <div class="legacy-review-facts"><span>借入額：100万～300万円未満</span><span>借入までの時間：1時間以内</span></div>
+    <p>金利0円期間に魅力を感じ申し込みました。カードローンは初めてでしたが審査もスムーズでした。スマホで完結できるので電話連絡や郵送物もなく周りにバレずに借入でき本当に助かりました。</p>
+  </div>
+</li>
                     
                     
                     <p style="font-size:75%;color:#999;">※一例であり、結果を保証するものではありません。</p>

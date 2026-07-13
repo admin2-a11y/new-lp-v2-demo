@@ -1936,3 +1936,33 @@ h2.content3_ttl {
     background-size: 20px;
   }
 }
+
+/* Accessible replacement for legacy photo-based review images. */
+.legacy-review-card {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin: 0 !important;
+  padding: 8px !important;
+  border: 1px solid #76b84a;
+  border-radius: 6px;
+  background: #fff;
+  list-style: none;
+}
+.legacy-review-person { margin: 0; text-align: center; }
+.legacy-review-person img { display: block; width: 82px; height: 82px; object-fit: cover; border: 1px solid #d6dce2; border-radius: 4px; }
+.legacy-review-person figcaption { margin-top: 4px; color: #333; font-size: 10px; font-weight: 700; line-height: 1.35; }
+.legacy-review-rating { display: block; color: #eeb400; font-size: 10px; white-space: nowrap; }
+.legacy-review-rating b { color: #222; }
+.legacy-review-body { min-width: 0; }
+.legacy-review-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; margin-bottom: 6px; }
+.legacy-review-facts span { padding: 4px 5px; border: 1px solid #76b84a; color: #333; font-size: 10px; line-height: 1.25; }
+.legacy-review-body > p { position: relative; margin: 0; padding: 10px 12px; border: 1px solid #76b84a; border-radius: 7px; background: #f7fff4; color: #222; font-size: 13px; font-weight: 600; line-height: 1.65; }
+.legacy-review-body > p::before { content: ""; position: absolute; top: 16px; left: -8px; width: 14px; height: 14px; border-bottom: 1px solid #76b84a; border-left: 1px solid #76b84a; background: #f7fff4; transform: rotate(45deg); }
+@media (max-width: 374px) {
+  .legacy-review-card { grid-template-columns: 72px minmax(0, 1fr); gap: 7px; padding: 6px !important; }
+  .legacy-review-person img { width: 70px; height: 70px; }
+  .legacy-review-facts { grid-template-columns: 1fr; gap: 2px; }
+  .legacy-review-body > p { padding: 8px 9px; font-size: 12px; }
+}

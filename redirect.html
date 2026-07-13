@@ -41,7 +41,7 @@
 		
 		
 		<link rel="stylesheet" type="text/css" href="./css/style-main.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/style_add.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/style_add.css?v=f12" media="all">
 		<link rel="stylesheet" type="text/css" href="./css/colorbox.css">
 		
 		
