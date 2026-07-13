@@ -45,7 +45,7 @@
     : "experienced";
   const isTopContext = mount.dataset.v4Context === "top";
   const variantOrder = resultVariant === "beginner"
-    ? ["mobit", "aiful", "acom"]
+    ? ["mobit", "aiful", "promise"]
     : ["mobit", "aiful", "promise"];
   const lendersByKey = new Map(lenders.map((lender) => [lender.key, lender]));
   const rankedLenders = variantOrder.map((key) => lendersByKey.get(key)).filter(Boolean);
