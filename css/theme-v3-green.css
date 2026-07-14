@@ -6153,6 +6153,44 @@ body.beginner.search-results .rentbtn button[type="submit"] i {
     display: none !important;
 }
 
+/* Keep the beginner result retry survey on the beginner green palette. */
+body.beginner.search-results.result-v2 #search_box {
+  border-color: #b8d99a !important;
+  background: #f1f8eb !important;
+  box-shadow: 0 5px 14px rgba(113, 176, 54, .12) !important;
+}
+
+body.beginner.search-results.result-v2 #search_box h2.ttl01 {
+  background: #71B036 !important;
+}
+
+body.beginner.search-results.result-v2 #search_box h2.ttl01::after {
+  border-color: #71B036 transparent transparent transparent !important;
+}
+
+body.beginner.search-results.result-v2 #search_box ul.survey-list > li.v3-current-question,
+body.beginner.search-results.result-v2 #search_box ul.survey-list > li.selected {
+  border-color: #71B036 !important;
+  background: #f8fcf4 !important;
+}
+
+body.beginner.search-results.result-v2 #search_box ul.survey-list > li::before {
+  border-right-color: #71B036 !important;
+  border-bottom-color: #71B036 !important;
+}
+
+body.beginner.search-results.result-v2 #search_box #search_table button[type="submit"],
+body.beginner.search-results.result-v2 .rentbtn button[type="submit"] {
+  background: #71B036 !important;
+  box-shadow: 0 5px 0 #4f7f25 !important;
+  color: #fff !important;
+}
+
+body.beginner.search-results.result-v2 #search_box #search_table button[type="submit"] i,
+body.beginner.search-results.result-v2 .rentbtn button[type="submit"] i {
+  color: #fff !important;
+}
+
 .beginner .v3-beginner-quick-ranking {
     width: min(100%, 720px);
     margin: 0 auto;
