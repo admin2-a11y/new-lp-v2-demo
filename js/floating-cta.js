@@ -7,6 +7,7 @@
   if (!banner || !trigger || !target) return;
 
   const exclusions = [document.getElementById("hikaku"), document.getElementById("flow")].filter(Boolean);
+  let revealed = false;
   let visible = false;
   let scheduled = false;
 
@@ -17,12 +18,12 @@
 
   const apply = () => {
     scheduled = false;
-    if (visible) return;
-    const shouldShow = window.scrollY > 400 && !exclusions.some(overlapsViewport);
-    if (!shouldShow) return;
-    visible = true;
-    banner.hidden = false;
-    banner.style.display = "block";
+    if (!revealed && window.scrollY > 400) revealed = true;
+    const shouldShow = revealed && !exclusions.some(overlapsViewport);
+    if (visible === shouldShow) return;
+    visible = shouldShow;
+    banner.hidden = !shouldShow;
+    banner.style.display = shouldShow ? "block" : "none";
   };
 
   const schedule = () => {

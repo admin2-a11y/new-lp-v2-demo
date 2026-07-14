@@ -435,7 +435,7 @@ body.beginner .v4-spec-ring dd {
 .v4-points-more[open] .v4-more-close { display: inline; }
 .v4-points-more[open] { display: flex; flex-direction: column; }
 .v4-points-more[open] .v4-points { order: 1; }
-.v4-points-more[open] summary { display: none; }
+.v4-points-more[open] summary { order: 2; margin-top: 4px; }
 .v4-recommend:has(.v4-points-more[open]) { padding-bottom: 8px; }
 .v4-more-close::before { content: "↑ "; }
 .v4-points-more .v4-points { text-align: left; }
@@ -585,7 +585,7 @@ body.beginner .v4-spec-ring dd {
 .v4-review-more[open] .v4-more-close { display: inline; }
 .v4-review-more[open] { display: flex; flex-direction: column; }
 .v4-review-more[open] .v4-review { order: 1; }
-.v4-review-more[open] summary { display: none; }
+.v4-review-more[open] summary { order: 2; margin-top: 4px; }
 .v4-review-more[open] .v4-review {
   box-sizing: border-box;
   width: 100%;

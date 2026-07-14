@@ -37,7 +37,7 @@
 
 		
 		
-<script src="./js/param-keeper.js?v=1" defer></script>
+<script src="./js/param-keeper.js?v=all-query1" defer></script>
 		<meta name='robots' content='noindex, nofollow' />
 		<link rel="icon" href="./images/icon.png?v=mnavi9" />
 		<link rel="apple-touch-icon" href="./images/icon.png?v=mnavi9" />
@@ -174,33 +174,21 @@
         return destinationCatalog[requested] || destinationCatalog[defaultDestination];
     };
 
-    const readSavedTracking = () => {
-        const combined = new URLSearchParams();
+    const readCurrentParams = () => window.location.search.replace(/^\?/, "");
 
-        ["moneyLoanTrackingParams", "queryParams"].forEach((storageKey) => {
-            const stored = window.localStorage.getItem(storageKey);
-            if (!stored) {
-                return;
-            }
-
-            new URLSearchParams(stored.replace(/^\?/, "")).forEach((value, key) => {
-                combined.set(key, value);
-            });
-        });
-
-        return combined.toString();
-    };
-
-    const appendTracking = (baseUrl, query) => {
+    const appendCurrentParams = (baseUrl, query) => {
         if (!query) {
             return baseUrl;
         }
 
-        const separator = baseUrl.includes("?")
-            ? (/[?&]$/.test(baseUrl) ? "" : "&")
+        const hashIndex = baseUrl.indexOf("#");
+        const hash = hashIndex >= 0 ? baseUrl.slice(hashIndex) : "";
+        const urlWithoutHash = hashIndex >= 0 ? baseUrl.slice(0, hashIndex) : baseUrl;
+        const separator = urlWithoutHash.includes("?")
+            ? (/[?&]$/.test(urlWithoutHash) ? "" : "&")
             : "?";
 
-        return `${baseUrl}${separator}${query}`;
+        return `${urlWithoutHash}${separator}${query}${hash}`;
     };
 
     const renderTransfer = (destination, targetUrl) => {
@@ -238,7 +226,7 @@
 
     const beginTransfer = () => {
         const destination = resolveDestination();
-        const targetUrl = appendTracking(destination.url, readSavedTracking());
+        const targetUrl = appendCurrentParams(destination.url, readCurrentParams());
 
         renderTransfer(destination, targetUrl);
         window.setTimeout(() => window.location.assign(targetUrl), 1000);

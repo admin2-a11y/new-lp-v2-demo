@@ -38,7 +38,7 @@
 
 		
 		
-<script src="./js/param-keeper.js?v=1" defer></script>
+<script src="./js/param-keeper.js?v=all-query1" defer></script>
 		<meta name='robots' content='index, follow' />
 		<link rel="icon" href="./images/icon-green.png?v=mnavi9" />
 		<link rel="apple-touch-icon" href="./images/icon-green.png?v=mnavi9" />
@@ -1352,7 +1352,7 @@
       <span class="v3-follow-diagnosis__arrow" aria-hidden="true">⌄</span>
     </button>
 	</div>
-	<script src="./js/floating-cta.js?v=1" defer></script>
+	<script src="./js/floating-cta.js?v=exclusion-hide1" defer></script>
 	
 	<script src="./js/deadline-timer.js?v=f20" defer></script>
 		<footer id="footer" class="v3-footer">

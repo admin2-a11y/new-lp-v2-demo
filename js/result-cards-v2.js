@@ -240,6 +240,15 @@
     if (!countdownStopped && !countdownFrame) countdownFrame = window.requestAnimationFrame(runCountdown);
   });
 
+  document.querySelectorAll(".v4-points-more > summary, .v4-review-more > summary").forEach((summary) => {
+    summary.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " " && event.key !== "Spacebar") return;
+      event.preventDefault();
+      const details = summary.parentElement;
+      details.open = !details.open;
+    });
+  });
+
   document.querySelectorAll(".v4-recommend, .v4-review-box").forEach((box) => {
     box.addEventListener("click", (event) => {
       if (event.target.closest("summary")) return;

@@ -37,7 +37,7 @@
 
 		
 		
-<script src="./js/param-keeper.js?v=1" defer></script>
+<script src="./js/param-keeper.js?v=all-query1" defer></script>
 		<meta name='robots' content='noindex, nofollow' />
 		<link rel="icon" href="./images/icon.png?v=mnavi9" />
 		<link rel="apple-touch-icon" href="./images/icon.png?v=mnavi9" />
