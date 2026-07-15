@@ -164,6 +164,8 @@ for (const name of ["redirect.html", "redirect.php"]) {
 const pages = fs.readdirSync(root).filter((name) => /\.(?:html|php)$/.test(name));
 const pageSources = new Map(pages.map((name) => [name, fs.readFileSync(path.join(root, name), "utf8")]));
 assert.equal([...pageSources.values()].filter((source) => source.includes("param-keeper.js?v=deliveryfix1")).length, 17);
+assert.equal([...pageSources.values()].filter((source) => source.includes("survey.js?v=searchloading1")).length, 2);
+assert.equal([...pageSources.values()].filter((source) => source.includes("top-question-pulse.css?v=searchloading1")).length, 2);
 const countVersionedPages = (asset) => [...pageSources.values()].filter((source) => source.includes(`${asset}?v=deliverydetail1`)).length;
 assert.equal(countVersionedPages("theme-v3.css"), 9);
 assert.equal([...pageSources.values()].filter((source) => source.includes("theme-v3.css?v=topdeadline1")).length, 1);
@@ -193,6 +195,9 @@ const surveySource = fs.readFileSync(path.join(root, "js", "survey.js"), "utf8")
 assert.match(surveySource, /document\.createElement\("button"\)/);
 assert.match(surveySource, /select\.setAttribute\("tabindex", "-1"\)/);
 assert.match(surveySource, /select\.setAttribute\("aria-hidden", "true"\)/);
+assert.match(surveySource, /あなたに合ったカードローンを検索中…/);
+assert.match(surveySource, /self\.loadingComplete = true/);
+assert.match(surveySource, /}, 1100\)/);
 
 const schedulerSource = fs.readFileSync(path.join(root, "js", "countdown-scheduler.js"), "utf8");
 assert.equal(schedulerSource.includes("requestAnimationFrame"), false);

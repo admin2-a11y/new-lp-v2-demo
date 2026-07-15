@@ -159,6 +159,9 @@
     this.transitioning = false;
     this.submitting = false;
     this.requestingSubmit = false;
+    this.loadingComplete = false;
+    this.loadingTimer = null;
+    this.searchLoadingNode = null;
   }
 
   SurveyController.prototype.selectedOptionText = function (select, fallback) {
@@ -361,6 +364,50 @@
     this.requestingSubmit = false;
   };
 
+  SurveyController.prototype.ensureSearchLoading = function () {
+    if (this.searchLoadingNode) return this.searchLoadingNode;
+    var overlay = document.createElement("div");
+    overlay.className = "loan-search-loading";
+    overlay.hidden = true;
+    overlay.setAttribute("role", "status");
+    overlay.setAttribute("aria-live", "polite");
+    overlay.setAttribute("aria-label", "あなたに合ったカードローンを検索中");
+    overlay.innerHTML = [
+      '<div class="loan-search-loading__panel">',
+      '  <span class="loan-search-loading__spinner" aria-hidden="true"></span>',
+      '  <strong>あなたに合ったカードローンを検索中…</strong>',
+      '  <span>ご希望の条件を照らし合わせています</span>',
+      '</div>'
+    ].join("");
+    document.body.appendChild(overlay);
+    this.searchLoadingNode = overlay;
+    return overlay;
+  };
+
+  SurveyController.prototype.showSearchLoading = function () {
+    var overlay = this.ensureSearchLoading();
+    overlay.hidden = false;
+    this.form.setAttribute("aria-busy", "true");
+    toArray(this.form.querySelectorAll('button[type="submit"], input[type="submit"]')).forEach(function (control) {
+      control.disabled = true;
+      control.setAttribute("aria-disabled", "true");
+    });
+  };
+
+  SurveyController.prototype.resetSearchLoading = function () {
+    if (this.loadingTimer !== null) window.clearTimeout(this.loadingTimer);
+    this.loadingTimer = null;
+    this.submitting = false;
+    this.requestingSubmit = false;
+    this.loadingComplete = false;
+    this.form.removeAttribute("aria-busy");
+    toArray(this.form.querySelectorAll('button[type="submit"], input[type="submit"]')).forEach(function (control) {
+      control.disabled = false;
+      control.removeAttribute("aria-disabled");
+    });
+    if (this.searchLoadingNode) this.searchLoadingNode.hidden = true;
+  };
+
   SurveyController.prototype.updateResultSummary = function () {
     var form = this.form;
 
@@ -483,13 +530,32 @@
     this.modal.addEventListener("keydown", this.trapFocus.bind(this));
 
     this.form.addEventListener("submit", function (event) {
-      if (self.submitting && !self.requestingSubmit) {
+      if (self.loadingComplete) {
+        self.submitting = true;
+        return;
+      }
+      if (self.submitting) {
         event.preventDefault();
         return;
       }
+      event.preventDefault();
       self.submitting = true;
-      window.setTimeout(function () { self.submitting = false; }, 1800);
+      self.showSearchLoading();
+      self.loadingTimer = window.setTimeout(function () {
+        self.loadingTimer = null;
+        self.loadingComplete = true;
+        self.submitting = false;
+        self.requestingSubmit = true;
+        var submitter = self.form.querySelector('button[type="submit"], input[type="submit"]');
+        if (typeof self.form.requestSubmit === "function") {
+          submitter ? self.form.requestSubmit(submitter) : self.form.requestSubmit();
+        } else {
+          self.form.submit();
+        }
+        self.requestingSubmit = false;
+      }, 1100);
     });
+    window.addEventListener("pageshow", function () { self.resetSearchLoading(); });
     this.form.addEventListener("change", function (event) {
       if (event.target.matches('.loan-check input[name="current_loans[]"]')) self.updateResultSummary();
     });
