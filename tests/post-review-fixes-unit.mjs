@@ -164,6 +164,13 @@ for (const name of ["redirect.html", "redirect.php"]) {
 const pages = fs.readdirSync(root).filter((name) => /\.(?:html|php)$/.test(name));
 const pageSources = new Map(pages.map((name) => [name, fs.readFileSync(path.join(root, name), "utf8")]));
 assert.equal([...pageSources.values()].filter((source) => source.includes("param-keeper.js?v=deliveryfix1")).length, 17);
+const countVersionedPages = (asset) => [...pageSources.values()].filter((source) => source.includes(`${asset}?v=deliverydetail1`)).length;
+assert.equal(countVersionedPages("theme-v3.css"), 10);
+assert.equal(countVersionedPages("theme-v3-green.css"), 7);
+assert.equal(countVersionedPages("mobit-compare2.css"), 4);
+assert.equal(countVersionedPages("result-cards-v2.css"), 4);
+assert.equal(countVersionedPages("result-cards-v2.js"), 4);
+assert.equal(countVersionedPages("deadline-timer.js"), 13);
 
 for (const [name, source] of pageSources) {
   const blankLinks = source.match(/<a\b[^>]*target="_blank"[^>]*>/gi) || [];
@@ -235,6 +242,11 @@ const deadlineSource = fs.readFileSync(path.join(root, "js", "deadline-timer.js"
 assert.equal(deadlineSource.includes("requestAnimationFrame"), false);
 assert.match(deadlineSource, /MoneyLoanCountdownScheduler\.add\(draw\)/);
 assert.match(deadlineSource, /return active \? 50 : 1000/);
+assert.match(deadlineSource, /いま申込で/);
+assert.match(deadlineSource, /最短10時/);
+assert.match(deadlineSource, /に借入完了も！/);
+assert.equal(deadlineSource.includes("本日のお申し込みで"), false);
+assert.equal(deadlineSource.includes("に借入れ可能性"), false);
 
 const cardScript = fs.readFileSync(path.join(root, "js", "result-cards-v2.js"), "utf8");
 assert.equal(cardScript.includes("data-v4-sort-status"), false);
@@ -244,5 +256,21 @@ assert.equal(cardScript.includes("requestAnimationFrame"), false);
 assert.match(cardScript, /MoneyLoanCountdownScheduler\.add\(updateCountdowns\)/);
 assert.match(cardScript, /review-male-v2-180\.webp/);
 assert.match(cardScript, /review-male-v2-360\.webp/);
+assert.match(cardScript, /すぐにお金が必要だけど家族や会社にバレたくないし/);
+assert.match(cardScript, /そんなあなたにこちらのカードローンがおすすめです！/);
+assert.match(cardScript, /いま申込で/);
+assert.match(cardScript, /最短10時/);
+assert.match(cardScript, /に借入完了も！/);
+assert.equal(cardScript.includes("すぐにお金が必要だけど周りにバレたくないし"), false);
+assert.equal(cardScript.includes("そんな方にはこちらのカードローンがおすすめです！"), false);
+
+const compareCss = fs.readFileSync(path.join(root, "css", "mobit-compare2.css"), "utf8");
+assert.match(compareCss, /body\.experience \.v3-compare2-title-image img[\s\S]*?transform: none;/);
+assert.equal(compareCss.includes("translateY(-18.2%)"), false);
+
+const cardCss = fs.readFileSync(path.join(root, "css", "result-cards-v2.css"), "utf8");
+assert.match(cardCss, /\.v4-points-more\[open\] summary[\s\S]*?align-self: center;/);
+assert.match(cardCss, /\.v4-points-more\[open\] summary[\s\S]*?min-width: 132px;/);
+assert.match(cardCss, /\.v4-final-pick \.v4-recommend-intro h2[\s\S]*?color: #102a43 !important;/);
 
 console.log("Post-review fix unit checks passed");

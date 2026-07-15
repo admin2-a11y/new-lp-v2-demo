@@ -505,7 +505,7 @@
 }
 
 
-/* Crop the white canvas around the supplied experience comparison banner. */
+/* Show the optimized experience comparison banner without clipping its frame. */
 body.experience .v3-compare2 {
   margin-top: 12px;
   margin-bottom: 18px;
@@ -516,20 +516,17 @@ body.experience .v3-compare2 > .v3-compare-index {
 }
 
 body.experience .v3-compare2-title-image {
-  position: relative;
   width: 100%;
-  aspect-ratio: 1660 / 500;
   margin: 0 auto 8px;
-  overflow: hidden;
+  overflow: visible;
 }
 
+body.experience .v3-compare2-title-image picture,
 body.experience .v3-compare2-title-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
   width: 100%;
   height: auto;
-  transform: translateY(-18.2%);
+  transform: none;
 }
 
 /* Double evaluation rings, except Aiful monthly repayment. */

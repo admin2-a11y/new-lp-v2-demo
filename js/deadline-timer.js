@@ -48,9 +48,8 @@
     setDisplay(output, "flex");
     setDisplay(extra, "none");
     if (!active) {
-      setDisplay(label, "block");
-      setText(label, "本日のお申し込みで");
-      setHtml(element, '<div class="timerTopNext"><strong>10時</strong><b>に借入れ可能性</b></div>');
+      setDisplay(label, "none");
+      setHtml(element, '<div class="timerTopNext"><span class="nextMorningLead">いま申込で</span><strong>最短10時</strong><span class="nextMorningSuffix">に借入完了も！</span></div>');
       return;
     }
     const { hours, minutes, seconds, centiseconds } = value;
@@ -67,9 +66,8 @@
     setDisplay(output, "block");
     if (extra && extra !== output) setDisplay(extra, "none");
     if (!active) {
-      setDisplay(label, "block");
-      setText(label, "本日のお申し込みで");
-      setHtml(element, '<span class="nextMorningTime">10時</span>に借入れ可能性');
+      setDisplay(label, "none");
+      setHtml(element, '<span class="nextMorningMessage"><span class="nextMorningLead">いま申込で</span><span class="nextMorningTime">最短10時</span><span class="nextMorningSuffix">に借入完了も！</span></span>');
       return;
     }
     const { hours, minutes, seconds, centiseconds } = value;
@@ -88,8 +86,8 @@
     if (box.style.display) box.style.removeProperty("display");
     if (!active) {
       const label = box.querySelector(".v3-result-deadline-label");
-      setText(label, "本日のお申し込みで");
-      setHtml(output, '<span class="nextMorningTime">10時</span>に借入れ可能性');
+      setDisplay(label, "none");
+      setHtml(output, '<span class="nextMorningMessage"><span class="nextMorningLead">いま申込で</span><span class="nextMorningTime">最短10時</span><span class="nextMorningSuffix">に借入完了も！</span></span>');
       return;
     }
     const label = box.querySelector(".v3-result-deadline-label");

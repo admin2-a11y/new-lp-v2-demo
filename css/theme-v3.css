@@ -7317,6 +7317,7 @@ body.search-results .v3-result-lender-cta::after {
 
 .deadline-box:has(#timerTop) #timerTop .timerTopNext {
   display: inline-flex !important;
+  flex-wrap: wrap;
   gap: 6px !important;
   align-items: center !important;
   justify-content: center !important;
@@ -7339,10 +7340,30 @@ body.search-results .v3-result-lender-cta::after {
   animation: nextMorningTimePulse 1.8s ease-in-out infinite;
 }
 
-.deadline-box:has(#timerTop) #timerTop .timerTopNext b {
+.deadline-box:has(#timerTop) #timerTop .timerTopNext .nextMorningLead,
+.deadline-box:has(#timerTop) #timerTop .timerTopNext .nextMorningSuffix {
   color: #1b1b18 !important;
   font-size: 14px !important;
   font-weight: 800 !important;
+}
+
+.deadline-box .nextMorningMessage,
+.v3-result-deadline .nextMorningMessage {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.deadline-box .nextMorningLead,
+.deadline-box .nextMorningSuffix,
+.v3-result-deadline .nextMorningLead,
+.v3-result-deadline .nextMorningSuffix {
+  color: #1b1b18 !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  white-space: nowrap;
 }
 
 .v3-result-deadline.is-ended {

@@ -183,9 +183,10 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 .v4-final-pick .v4-recommend-intro h2 {
   margin: 0;
   padding: 10px 8px;
-  background: #ffa348;
-  color: #fff;
+  background: #ffb45f;
+  color: #102a43 !important;
   font-size: clamp(22px, 5vw, 30px);
+  font-weight: 900;
   line-height: 1.2;
 }
 .v4-final-pick .v4-recommend-intro > p:last-child {
@@ -218,7 +219,7 @@ body.beginner.result-v2 .v4-result-heading { color: #0d5949; }
 body.beginner.result-v2 .v4-recommend-intro {
   background: #f7fff2;
 }
-body.beginner.result-v2 .v4-recommend-intro h2 { color: #0d5949; }
+body.beginner.result-v2 .v4-recommend-intro h2 { color: #102a43 !important; }
 
 @media (max-width: 600px) {
   .v4-recommend-intro { margin-bottom: 9px; padding: 9px 8px 10px; }
@@ -666,12 +667,20 @@ body.experience .v4-review-meta {
   background: #fff9df;
 }
 .v4-countdown.is-next-morning > span { color: #5a3a12; }
-.v4-countdown.is-next-morning b { color: #5a3a12; }
+.v4-countdown.is-next-morning b {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: #5a3a12;
+}
 .v4-countdown.is-next-morning strong {
   display: inline-block;
   margin: 0 2px;
-  color: #e55216;
-  font-size: 19px;
+  padding: 3px 7px 4px;
+  border-radius: 5px;
+  background: #fff36a;
+  color: #d71920;
+  font-size: 20px;
   font-weight: 900;
   line-height: 1;
   animation: v4-morning-time-pulse 1.8s ease-in-out infinite;
@@ -939,6 +948,23 @@ body.result-v2 .v4-result-cards {
   margin: 8px auto 0;
 }
 
+/* Match the expanded recommendation close control to the compact review toggle. */
+.v4-points-more[open] summary {
+  align-self: center;
+  left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: fit-content;
+  min-width: 132px;
+  min-height: 28px;
+  margin: 8px auto 0;
+  padding: 4px 20px;
+  transform: none;
+  text-align: center;
+}
+
 .v4-review-box:not(:has(.v4-review-more[open])) .v4-review-layout {
   max-height: none;
   overflow: visible;
@@ -1001,6 +1027,13 @@ body.result-v2 .v4-result-cards {
     padding: 3px 18px;
     font-size: 10px;
     transform: translateX(-36px);
+  }
+
+  .v4-points-more[open] summary {
+    min-width: 126px;
+    min-height: 26px;
+    padding: 3px 18px;
+    font-size: 10px;
   }
 
   .v4-review-box:not(:has(.v4-review-more[open])) .v4-review-layout {

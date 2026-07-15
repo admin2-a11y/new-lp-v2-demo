@@ -5208,6 +5208,56 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   content: none !important;
 }
 
+/* Keep the post-21:00 message consistent with the experienced pages and cards. */
+.deadline-box:has(#timerTop) #timerTop .timerTopNext,
+.deadline-box .nextMorningMessage,
+.v3-result-deadline .nextMorningMessage {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px !important;
+}
+
+.deadline-box:has(#timerTop) #timerTop .timerTopNext strong,
+.deadline-box .nextMorningTime,
+.v3-result-deadline.is-ended .nextMorningTime {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px 3px !important;
+  border-radius: 5px;
+  background: #fff36a !important;
+  color: #d71920 !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  animation: nextMorningTimePulseGreen 1.8s ease-in-out infinite;
+}
+
+.deadline-box .nextMorningLead,
+.deadline-box .nextMorningSuffix,
+.v3-result-deadline .nextMorningLead,
+.v3-result-deadline .nextMorningSuffix {
+  color: #1b1b18 !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  white-space: nowrap;
+}
+
+@keyframes nextMorningTimePulseGreen {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(215, 25, 32, 0); transform: scale(1); }
+  50% { box-shadow: 0 0 0 4px rgba(215, 25, 32, .14); transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deadline-box:has(#timerTop) #timerTop .timerTopNext strong,
+  .deadline-box .nextMorningTime,
+  .v3-result-deadline.is-ended .nextMorningTime {
+    animation: none;
+  }
+}
+
 @media screen and (max-width: 360px) {
   .deadline-box {
     column-gap: 10px !important;

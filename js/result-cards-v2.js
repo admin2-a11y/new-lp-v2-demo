@@ -74,7 +74,7 @@
         <div class="v4-recommend-intro">
           <p class="v4-recommend-intro-label">＼ おすすめ ／</p>
           <h2><span>即日で借りたいなら</span><span>このカードローン</span></h2>
-          <p>すぐにお金が必要だけど周りにバレたくないし<br class="v4-recommend-intro-break">できればおトクに借りたい…！<br>そんな方にはこちらのカードローンがおすすめです！</p>
+          <p>すぐにお金が必要だけど家族や会社にバレたくないし<br>できればおトクに借りたい…！<br>そんなあなたにこちらのカードローンがおすすめです！</p>
         </div>
         <div data-v4-final-mobit></div>
       </section>`;
@@ -150,7 +150,7 @@
   const pad = (value) => String(value).padStart(2, "0");
   const countdowns = Array.from(document.querySelectorAll("[data-v4-countdown]"));
   const activeCountdownMarkup = '<span>本日中に借りるなら</span><b>残り <i data-v4-hours>00</i>時間<i data-v4-minutes>00</i>分<i data-v4-seconds>00</i>秒<i data-v4-centiseconds>00</i></b>';
-  const nextMorningMarkup = '<span>本日のお申し込みで</span><b><strong>10時</strong>に借入れ可能性</b>';
+  const nextMorningMarkup = '<span>いま申込で</span><b><strong>最短10時</strong>に借入完了も！</b>';
   const setCountdownPart = (countdown, selector, value) => {
     const element = countdown.querySelector(selector);
     if (element && element.textContent !== value) element.textContent = value;

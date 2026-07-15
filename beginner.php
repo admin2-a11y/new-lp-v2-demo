@@ -121,7 +121,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css?v=deliveryfix1" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=deliverydetail1" type="text/css" media="screen">
 	</head>
 <body class="beginner">
 <header>
@@ -1333,7 +1333,7 @@
 	<script src="./js/floating-cta.js?v=exclusion-hide1" defer></script>
 	
 	<script src="./js/countdown-scheduler.js?v=deliveryfix1" defer></script>
-<script src="./js/deadline-timer.js?v=deliveryfix1" defer></script>
+<script src="./js/deadline-timer.js?v=deliverydetail1" defer></script>
 		<footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
