@@ -2,25 +2,7 @@
 <html lang="ja">
 
 	<head>
-		
-		<script>
-			(function(w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({
-					'gtm.start': new Date().getTime(),
-					event: 'gtm.js'
-				});
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != 'dataLayer' ? '&l=' + l : '';
-				j.async = true;
-				j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
-		</script>
-		
-		<meta charset="utf-8">
+<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>マネーローンナビ</title>
@@ -38,7 +20,7 @@
 
 		
 		
-<script src="./js/param-keeper.js?v=all-query1" defer></script>
+<script src="./js/param-keeper.js?v=deliveryfix1" defer></script>
 		<meta name='robots' content='index, follow' />
 		<link rel="icon" href="./images/icon-green.png?v=mnavi9" />
 		<link rel="apple-touch-icon" href="./images/icon-green.png?v=mnavi9" />
@@ -139,13 +121,9 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css?v=f23" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=deliveryfix1" type="text/css" media="screen">
 	</head>
 <body class="beginner">
-	
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
 <header>
     <div id="headerinner">
         <div class="headerLeft">
@@ -289,10 +267,10 @@
 		<h2 class="v3-section-title">初めての方におすすめのカードローン</h2>
 		<div class="v3-lender-card-list">
 			<section class="v3-lender-card">
-				<h3><span class="v3-lender-rank">1</span><a target="_blank" href="./redirect.php?item=acom">アコム</a></h3>
+				<h3><span class="v3-lender-rank">1</span><a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener">アコム</a></h3>
 				<p class="v3-lender-point"><span>POINT</span>初めてでもWebから申込条件を確認しやすい定番カードローンです。</p>
 				<div class="v3-lender-main">
-					<a target="_blank" href="./redirect.php?item=acom" class="v3-lender-banner">
+					<a target="_blank" href="./redirect.php?item=acom" class="v3-lender-banner" rel="sponsored noopener">
 						<img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
 					</a>
 					<ul class="v3-lender-tags">
@@ -312,15 +290,15 @@
 					<div><dt>審査時間</dt><dd>最短20分※1</dd></div>
 					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
-				<a target="_blank" href="./redirect.php?item=acom" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+				<a target="_blank" href="./redirect.php?item=acom" class="v3-lender-cta" rel="sponsored noopener">公式サイトで申込条件を確認する</a>
 				<p class="v3-lender-note">【PR】Sponsored by アコム株式会社<br>※1 お申込時間や審査によりご希望に添えない場合がございます。<br>※アコムでのご契約がはじめてのお客さまはご契約の翌日から30日間金利0円。<br>※一例であり、結果を保証するものではありません。</p>
 			</section>
 
 			<section class="v3-lender-card">
-				<h3><span class="v3-lender-rank">2</span><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3>
+				<h3><span class="v3-lender-rank">2</span><a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">プロミス</a></h3>
 				<p class="v3-lender-point"><span>POINT</span>郵送物なし＆カードレスで進めたい方におすすめです。</p>
 				<div class="v3-lender-main">
-					<a target="_blank" href="./redirect.php?item=promise" class="v3-lender-banner">
+					<a target="_blank" href="./redirect.php?item=promise" class="v3-lender-banner" rel="sponsored noopener">
 						<img loading="lazy" height="250" width="300" src="images/banner_promise.jpg" alt="プロミス公式サイトへ">
 					</a>
 					<ul class="v3-lender-tags">
@@ -340,15 +318,15 @@
 					<div><dt>審査時間</dt><dd>最短3分</dd></div>
 					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
-				<a target="_blank" href="./redirect.php?item=promise" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+				<a target="_blank" href="./redirect.php?item=promise" class="v3-lender-cta" rel="sponsored noopener">公式サイトで申込条件を確認する</a>
 				<p class="v3-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※お申込時間や審査によりご希望に添えない場合がございます。<br>※無利息期間30日を適用する場合は、メールアドレス登録とWeb明細利用の登録が必要です。<br>※一例であり、結果を保証するものではありません。</p>
 			</section>
 
 			<section class="v3-lender-card">
-				<h3><span class="v3-lender-rank">3</span><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3>
+				<h3><span class="v3-lender-rank">3</span><a target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener">アイフル</a></h3>
 				<p class="v3-lender-point"><span>POINT</span>1秒診断で、申込前に目安をすばやく確認できます。</p>
 				<div class="v3-lender-main">
-					<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-banner">
+					<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-banner" rel="sponsored noopener">
 						<img loading="lazy" height="250" width="300" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ">
 					</a>
 					<ul class="v3-lender-tags">
@@ -368,15 +346,15 @@
 					<div><dt>審査時間</dt><dd>WEBで最短14分※</dd></div>
 					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
-				<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+				<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-cta" rel="sponsored noopener">公式サイトで申込条件を確認する</a>
 				<p class="v3-lender-note">【PR】Sponsored by アイフル株式会社<br>※お申込時間や審査状況によりご希望に添えない場合があります。<br>※システムメンテナンスの時間帯や一部金融機関を除きます。<br>※一例であり、結果を保証するものではありません。</p>
 			</section>
 
 			<section class="v3-lender-card">
-				<h3><span class="v3-lender-rank">4</span><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3>
+				<h3><span class="v3-lender-rank">4</span><a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">SMBCモビット</a></h3>
 				<p class="v3-lender-point"><span>POINT</span>WEB完結で、周囲に知られにくく進めたい方におすすめです。</p>
 				<div class="v3-lender-main">
-					<a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-banner">
+					<a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-banner" rel="sponsored noopener">
 						<img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
 					</a>
 					<ul class="v3-lender-tags">
@@ -396,7 +374,7 @@
 					<div><dt>審査時間</dt><dd>10秒簡易審査</dd></div>
 					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
-				<a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+				<a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-cta" rel="sponsored noopener">公式サイトで申込条件を確認する</a>
 				<p class="v3-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br>※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。<br>※一例であり、結果を保証するものではありません。</p>
 			</section>
 		</div>
@@ -446,7 +424,7 @@
         
         <div class="rank-title is-flex is-align-center">
             <h3 class="crown">
-                <a target="_blank" href="./redirect.php?item=acom">アコム</a>
+                <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener">アコム</a>
             </h3>
         </div>
         <div class="subcatch"><div class="v3-point">アコムはスピードと使いやすさで選びやすい定番カードローンです</div></div>
@@ -455,7 +433,7 @@
     <div class="basic is-flex is-align-start reco_item">
         
         <div class="img reco">
-            <a target="_blank" href="./redirect.php?item=acom">
+            <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener">
                 <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
             </a>
         </div>
@@ -526,13 +504,13 @@
 </div>
     
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                             <BR>
             <span class="catch_top_recommend v3-catch-text">とりあえず迷ったらココ！</span>
-                <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+                <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -553,7 +531,7 @@
         <div class="rank-title is-flex is-align-center">
             <span>位</span>
             <h3 class="crown2">
-                <a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a>
+                <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">SMBCモビット</a>
             </h3>
         </div>
         <div class="subcatch"><div class="v3-point">SMBCモビットはWEB完結で電話連絡や郵送物を抑えたい方に向いています</div></div>
@@ -562,7 +540,7 @@
     <div class="basic is-flex is-align-start reco_item">
         
         <div class="img reco">
-            <a target="_blank" href="./redirect.php?item=mobit">
+            <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">
                 <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
             </a>
         </div>
@@ -625,12 +603,12 @@
     </div>
 </div>    
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=mobit">詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                     <span>事前に融資可能か10秒簡易審査</span>
-                        <a target="_blank" href="./redirect.php?item=mobit"> 詳細はこちら<i
+                        <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -644,7 +622,7 @@
         <div class="rank-title is-flex is-align-center">
             <span>位</span>
             <h3 class="crown3">
-                <a target="_blank" href="./redirect.php?item=promise">プロミス</a>
+                <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">プロミス</a>
             </h3>
         </div>
         <div class="subcatch"><div class="v3-point">プロミスはスマホからスピード重視で進めたい方に向いています</div></div>
@@ -653,7 +631,7 @@
     <div class="basic is-flex is-align-start reco_item">
         
         <div class="img reco">
-            <a target="_blank" href="./redirect.php?item=promise">
+            <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">
                 <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg" alt="プロミス公式サイトへ">
             </a>
         </div>
@@ -719,12 +697,12 @@
     </div>
 </div>    
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=promise">詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                     <span>事前に融資可能か1秒で診断</span>
-                        <a target="_blank" href="./redirect.php?item=promise"> 詳細はこちら<i
+                        <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -755,21 +733,21 @@
                         <tr>
                             <th></th>
                                                             <td>
-                                    <a target="_blank" href="./redirect.php?item=acom">
+                                    <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener">
                                                                                     <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム">
                                         <br>
                                         <span>アコム</span>
                                     </a>
                                 </td>
                                                             <td>
-                                    <a target="_blank" href="./redirect.php?item=mobit">
+                                    <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">
                                                                                     <img loading="lazy" height="333" width="400" src="./images/banner_mobit.jpg" alt="SMBCモビット">
                                         <br>
                                         <span>SMBCモビット</span>
                                     </a>
                                 </td>
                                                             <td>
-                                    <a target="_blank" href="./redirect.php?item=promise">
+                                    <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">
                                                                                     <img loading="lazy" height="300" width="300" src="./images/promise.gif" alt="プロミス">
                                         <br>
                                         <span>プロミス</span>
@@ -823,13 +801,13 @@
                                                     <tr>
                                 <th>公式HP</th>
                                                                                                             <td class="">
-                                            <a target="_blank" href="./redirect.php?item=acom" class="c-button">詳細</a>
+                                            <a target="_blank" href="./redirect.php?item=acom" class="c-button" rel="sponsored noopener">詳細</a>
                                         </td>
                                                                                                                                                 <td class="">
-                                            <a target="_blank" href="./redirect.php?item=mobit" class="c-button">詳細</a>
+                                            <a target="_blank" href="./redirect.php?item=mobit" class="c-button" rel="sponsored noopener">詳細</a>
                                         </td>
                                                                                                                                                 <td class="">
-                                            <a target="_blank" href="./redirect.php?item=promise" class="c-button">詳細</a>
+                                            <a target="_blank" href="./redirect.php?item=promise" class="c-button" rel="sponsored noopener">詳細</a>
                                         </td>
                                                                                                 </tr>
                                             </tbody>
@@ -858,28 +836,28 @@
             </div>
             <div class="v3-beginner-rank-panels">
                 <div class="ranking2_container active" data-beginner-rank-panel="rate">
-                    <span class="ranking2_content active"><p class="crown">アコム</p><a target="_blank" href="./redirect.php?item=acom"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown2">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown3">プロミス</p><a target="_blank" href="./redirect.php?item=promise"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown4">アイフル</p><a target="_blank" href="./redirect.php?item=aiful"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown">アコム</p><a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown2">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown3">プロミス</p><a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown4">アイフル</p><a target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
                 </div>
                 <div class="ranking2_container" data-beginner-rank-panel="speed">
-                    <span class="ranking2_content active"><p class="crown">プロミス</p><a target="_blank" href="./redirect.php?item=promise"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown2">アイフル</p><a target="_blank" href="./redirect.php?item=aiful"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown3">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown4">アコム</p><a target="_blank" href="./redirect.php?item=acom"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown">プロミス</p><a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown2">アイフル</p><a target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown3">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown4">アコム</p><a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
                 </div>
                 <div class="ranking2_container" data-beginner-rank-panel="privacy">
-                    <span class="ranking2_content active"><p class="crown">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown2">アコム</p><a target="_blank" href="./redirect.php?item=acom"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown3">プロミス</p><a target="_blank" href="./redirect.php?item=promise"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown4">アイフル</p><a target="_blank" href="./redirect.php?item=aiful"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown2">アコム</p><a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown3">プロミス</p><a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown4">アイフル</p><a target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
                 </div>
                 <div class="ranking2_container" data-beginner-rank-panel="popular">
-                    <span class="ranking2_content active"><p class="crown">アコム</p><a target="_blank" href="./redirect.php?item=acom"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown2">プロミス</p><a target="_blank" href="./redirect.php?item=promise"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown3">アイフル</p><a target="_blank" href="./redirect.php?item=aiful"><p>詳細はこちら</p></a></span>
-                    <span class="ranking2_content active"><p class="crown4">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown">アコム</p><a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown2">プロミス</p><a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown3">アイフル</p><a target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
+                    <span class="ranking2_content active"><p class="crown4">SMBCモビット</p><a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener"><p>詳細はこちら</p></a></span>
                 </div>
             </div>
         </div>
@@ -930,7 +908,7 @@
         
         <div class="rank-title is-flex is-align-center">
             <h3 class="crown">
-                <a target="_blank" href="./redirect.php?item=acom">アコム</a>
+                <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener">アコム</a>
             </h3>
         </div>
         <div class="subcatch"><div class="v3-point">アコムはスピードと使いやすさで選びやすい定番カードローンです</div></div>
@@ -939,7 +917,7 @@
     <div class="basic is-flex is-align-start reco_item">
         
         <div class="img reco">
-            <a target="_blank" href="./redirect.php?item=acom">
+            <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener">
                 <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
             </a>
         </div>
@@ -1010,13 +988,13 @@
 </div>
     
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                             <BR>
             <span class="catch_top_recommend v3-catch-text">とりあえず迷ったらココ！</span>
-                <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+                <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -1037,7 +1015,7 @@
         <div class="rank-title is-flex is-align-center">
             <span>位</span>
             <h3 class="crown2">
-                <a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a>
+                <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">SMBCモビット</a>
             </h3>
         </div>
         <div class="subcatch"><div class="v3-point">SMBCモビットはWEB完結で電話連絡や郵送物を抑えたい方に向いています</div></div>
@@ -1046,7 +1024,7 @@
     <div class="basic is-flex is-align-start reco_item">
         
         <div class="img reco">
-            <a target="_blank" href="./redirect.php?item=mobit">
+            <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">
                 <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
             </a>
         </div>
@@ -1109,12 +1087,12 @@
     </div>
 </div>    
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=mobit">詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                     <span>事前に融資可能か10秒簡易審査</span>
-                        <a target="_blank" href="./redirect.php?item=mobit"> 詳細はこちら<i
+                        <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -1128,7 +1106,7 @@
         <div class="rank-title is-flex is-align-center">
             <span>位</span>
             <h3 class="crown3">
-                <a target="_blank" href="./redirect.php?item=promise">プロミス</a>
+                <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">プロミス</a>
             </h3>
         </div>
         <div class="subcatch"><div class="v3-point">プロミスはスマホからスピード重視で進めたい方に向いています</div></div>
@@ -1137,7 +1115,7 @@
     <div class="basic is-flex is-align-start reco_item">
         
         <div class="img reco">
-            <a target="_blank" href="./redirect.php?item=promise">
+            <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">
                 <img loading="lazy" height="250" width="300" src="images/banner_promise.jpg" alt="プロミス公式サイトへ">
             </a>
         </div>
@@ -1203,12 +1181,12 @@
     </div>
 </div>    
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=promise">詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                     <span>事前に融資可能か1秒で診断</span>
-                        <a target="_blank" href="./redirect.php?item=promise"> 詳細はこちら<i
+                        <a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -1239,7 +1217,7 @@
         
         <div class="rank-title is-flex is-align-center">
             <h3 class="crown">
-                <a target="_blank" href="./redirect.php?item=acom">アコム</a>
+                <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener">アコム</a>
             </h3>
         </div>
         <div class="subcatch"><div class="v3-point">アコムはスピードと使いやすさで選びやすい定番カードローンです</div></div>
@@ -1248,7 +1226,7 @@
     <div class="basic is-flex is-align-start reco_item">
         
         <div class="img reco">
-            <a target="_blank" href="./redirect.php?item=acom">
+            <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener">
                 <img loading="lazy" height="250" width="300" src="./images/banner_acom2.jpg" alt="アコム公式サイトへ">
             </a>
         </div>
@@ -1319,13 +1297,13 @@
 </div>
     
     <div class="transition pc">
-        <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+        <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="transition mobile">
                             <BR>
             <span class="catch_top_recommend v3-catch-text">とりあえず迷ったらココ！</span>
-                <a target="_blank" href="./redirect.php?item=acom"> 詳細はこちら<i
+                <a target="_blank" href="./redirect.php?item=acom" rel="sponsored noopener"> 詳細はこちら<i
                 class="fas fa-arrow-circle-right"></i></a>
     </div>
     <div class="remarksbox" style="padding-top: 10px;">
@@ -1354,7 +1332,8 @@
 	</div>
 	<script src="./js/floating-cta.js?v=exclusion-hide1" defer></script>
 	
-	<script src="./js/deadline-timer.js?v=f20" defer></script>
+	<script src="./js/countdown-scheduler.js?v=deliveryfix1" defer></script>
+<script src="./js/deadline-timer.js?v=deliveryfix1" defer></script>
 		<footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
         <div class="v3-footer-brand">
@@ -1423,7 +1402,7 @@
     </div>
 </footer>
 <div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>
-<script src="./js/survey.js?v=f23" defer></script>
+<script src="./js/survey.js?v=deliveryfix1" defer></script>
 <script src="./js/v3-accessibility-cvr.js?v=f21" defer></script>
 </body>
 

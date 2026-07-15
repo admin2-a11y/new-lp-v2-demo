@@ -2,25 +2,7 @@
 <html lang="ja">
 
 	<head>
-
-		<script>
-			(function(w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({
-					'gtm.start': new Date().getTime(),
-					event: 'gtm.js'
-				});
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != 'dataLayer' ? '&l=' + l : '';
-				j.async = true;
-				j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
-		</script>
-
-		<meta charset="utf-8">
+<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>マネーローンナビ</title>
@@ -37,7 +19,7 @@
 
 
 
-<script src="./js/param-keeper.js?v=all-query1" defer></script>
+<script src="./js/param-keeper.js?v=deliveryfix1" defer></script>
 		<meta name='robots' content='index, follow' />
 		<link rel="icon" href="./images/icon.png?v=mnavi9" />
 		<link rel="apple-touch-icon" href="./images/icon.png?v=mnavi9" />
@@ -138,7 +120,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3.css?v=f23" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=deliveryfix1" type="text/css" media="screen">
         <link rel="stylesheet" href="./css/experience-retry-survey.css?v=2" type="text/css" media="screen">
 	    <script src="./js/mobit.js?v=f20" defer></script>
         <link rel="stylesheet" href="./css/mobit-layout.css?v=mnavi1" type="text/css" media="screen">
@@ -149,10 +131,6 @@
 	<link rel="stylesheet" href="./css/experience-final-pick.css?v=mnavi1" type="text/css" media="screen">
 </head>
 <body class="experience">
-
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
 <header>
     <div id="headerinner">
         <div class="headerLeft">
@@ -224,9 +202,8 @@
                             <option id="loan_speed_4" value="a3_4">1週間以内に借りたい</option>
                         </select>
                     </li><li class=" form_sliders">
-                        <label for="slider">Q3.いくら借りたい？</label>
+                        <label for="q-amount">Q3.いくら借りたい？</label>
                         <p class="slider_value">こだわらない</p>
-                        <input type="range" id="slider" min="0" max="4" step="1" value="0" hidden>
                         <select name="amount" id="q-amount">
                             <option value="">こだわらない</option>
                             <option id="borrow_limit_1" value="a2_1">10万円以下</option>
@@ -245,7 +222,6 @@
                     </li><li class="form_sliders">
                         <label for="q-income">Q5.現在の年収は？</label>
                         <p class="slider_value">未回答</p>
-                        <input type="range" id="slider" min="0" max="4" step="1" value="0" hidden>
                         <select name="income" data-id="income" id="q-income">
                             <option value="">未回答</option>
                             <option id="annual_income_1" value="a5_1">120万円未満</option>
@@ -322,10 +298,10 @@
           <th scope="col" class="v3-compare2-label">会社名</th>
           <th scope="col" class="v3-compare2-product is-featured">
             <span class="v3-compare2-recommend">おすすめ</span>
-            <a target="_blank" href="./redirect.php?item=mobit"><img loading="lazy" width="400" height="333" src="./images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ"><b>SMBCモビット</b></a>
+            <a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener"><img loading="lazy" width="400" height="333" src="./images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ"><b>SMBCモビット</b></a>
           </th>
-          <th scope="col" class="v3-compare2-product"><a target="_blank" href="./redirect.php?item=aiful"><img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ"><b>アイフル</b></a></th>
-          <th scope="col" class="v3-compare2-product"><a target="_blank" href="./redirect.php?item=promise"><img loading="lazy" width="300" height="250" src="./images/banner_promise.jpg" alt="プロミス公式サイトへ"><b>プロミス</b></a></th>
+          <th scope="col" class="v3-compare2-product"><a target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener"><img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ"><b>アイフル</b></a></th>
+          <th scope="col" class="v3-compare2-product"><a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener"><img loading="lazy" width="300" height="250" src="./images/banner_promise.jpg" alt="プロミス公式サイトへ"><b>プロミス</b></a></th>
         </tr>
       </thead>
       <tbody>
@@ -333,7 +309,7 @@
         <tr><th scope="row" class="v3-compare2-label">即日融資</th><td class="is-featured"><span class="v3-compare2-value is-ring">最短即日も可</span></td><td><span class="v3-compare2-value is-ring">最短即日も可<small>※1</small></span></td><td><span class="v3-compare2-value is-ring">最短即日も可<small>※1</small></span></td></tr>
         <tr><th scope="row" class="v3-compare2-label">返済</th><td class="is-featured"><span class="v3-compare2-value is-ring">月1,000円〜</span></td><td><span class="v3-compare2-value is-ring">月4,000円〜</span></td><td><span class="v3-compare2-value is-ring">月1,000円〜</span></td></tr>
         <tr><th scope="row" class="v3-compare2-label">金利</th><td class="is-featured"><span class="v3-compare2-value is-ring">3.0%〜18.0%</span></td><td><span class="v3-compare2-value is-ring">3.0%〜18.0%</span></td><td><span class="v3-compare2-value is-ring">2.5%〜18.0%</span></td></tr>
-        <tr><th scope="row" class="v3-compare2-label">公式HP</th><td class="is-featured"><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=mobit">詳細はこちら</a></td><td><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=aiful">詳細はこちら</a></td><td><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=promise">詳細はこちら</a></td></tr>
+        <tr><th scope="row" class="v3-compare2-label">公式HP</th><td class="is-featured"><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">詳細はこちら</a></td><td><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener">詳細はこちら</a></td><td><a class="v3-compare2-cta" target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">詳細はこちら</a></td></tr>
       </tbody>
     </table>
   </div>
@@ -346,12 +322,12 @@
             <div class="v3-result-lender-list v3-recommend-result-list">
                         <article class="v3-result-lender-card is-first">
                             <div class="v3-result-lender-head">
-                                <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-banner">
+                                <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-banner" rel="sponsored noopener">
                                     <img loading="lazy" width="400" height="333" src="./images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
                                 </a>
                                 <div class="v3-result-lender-summary">
                                     <p class="v3-result-lender-rank">おすすめ順 No.1</p>
-                                    <h3><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3>
+                                    <h3><a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">SMBCモビット</a></h3>
                                     <p class="v3-result-lender-group">三井住友カード株式会社</p>
                                 </div>
                             </div>
@@ -375,18 +351,18 @@
                                 <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
                                 <div class="v3-result-deadline-timer" aria-live="polite"></div>
                             </div>
-                            <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
+                            <a target="_blank" href="./redirect.php?item=mobit" class="v3-result-lender-cta" rel="sponsored noopener">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※お申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
 
                         <article class="v3-result-lender-card">
                             <div class="v3-result-lender-head">
-                                <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner">
+                                <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner" rel="sponsored noopener">
                                     <img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ">
                                 </a>
                                 <div class="v3-result-lender-summary">
                                     <p class="v3-result-lender-rank">おすすめ順 No.2</p>
-                                    <h3><a target="_blank" href="./redirect.php?item=aiful">アイフル</a></h3>
+                                    <h3><a target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener">アイフル</a></h3>
                                     <p class="v3-result-lender-group">アイフル株式会社</p>
                                 </div>
                             </div>
@@ -410,18 +386,18 @@
                                 <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
                                 <div class="v3-result-deadline-timer" aria-live="polite"></div>
                             </div>
-                            <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
+                            <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta" rel="sponsored noopener">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by アイフル株式会社<br>※システムメンテナンスの時間帯や一部金融機関を除きます。※一例であり、結果を保証するものではありません。</p>
                         </article>
 
                         <article class="v3-result-lender-card">
                             <div class="v3-result-lender-head">
-                                <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-banner">
+                                <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-banner" rel="sponsored noopener">
                                     <img loading="lazy" width="300" height="250" src="./images/banner_promise.jpg" alt="プロミス公式サイトへ">
                                 </a>
                                 <div class="v3-result-lender-summary">
                                     <p class="v3-result-lender-rank">おすすめ順 No.3</p>
-                                    <h3><a target="_blank" href="./redirect.php?item=promise">プロミス</a></h3>
+                                    <h3><a target="_blank" href="./redirect.php?item=promise" rel="sponsored noopener">プロミス</a></h3>
                                     <p class="v3-result-lender-group">SMBCコンシューマーファイナンス株式会社</p>
                                 </div>
                             </div>
@@ -445,7 +421,7 @@
                                 <div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div>
                                 <div class="v3-result-deadline-timer" aria-live="polite"></div>
                             </div>
-                            <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-cta">公式サイトで条件を確認する</a>
+                            <a target="_blank" href="./redirect.php?item=promise" class="v3-result-lender-cta" rel="sponsored noopener">公式サイトで条件を確認する</a>
                             <p class="v3-result-lender-note">【PR】Sponsored by SMBCコンシューマーファイナンス株式会社<br>※無利息期間の適用には条件があります。※一例であり、結果を保証するものではありません。</p>
                         </article>
                     </div>
@@ -469,10 +445,10 @@
   <h2 id="experience-final-pick-title" class="v3-sr-only">SMBCモビット</h2>
   <div class="v3-lender-card-list">
     <section class="v3-lender-card">
-                        <h3><span class="v3-lender-rank">1</span><a target="_blank" href="./redirect.php?item=mobit">SMBCモビット</a></h3>
+                        <h3><span class="v3-lender-rank">1</span><a target="_blank" href="./redirect.php?item=mobit" rel="sponsored noopener">SMBCモビット</a></h3>
                         <p class="v3-lender-point"><span>POINT</span>WEB完結で周囲に知られにくく進めたい人におすすめ！</p>
                         <div class="v3-lender-main">
-                            <a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-banner">
+                            <a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-banner" rel="sponsored noopener">
                                 <img loading="lazy" height="333" width="400" src="images/banner_mobit.jpg" alt="SMBCモビット公式サイトへ">
                             </a>
                             <ul class="v3-lender-tags">
@@ -492,7 +468,7 @@
                             <div><dt>審査時間</dt><dd>10秒簡易審査</dd></div>
                             <div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
                         </dl>
-                        <a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-cta">公式サイトで申込条件を確認する</a>
+                        <a target="_blank" href="./redirect.php?item=mobit" class="v3-lender-cta" rel="sponsored noopener">公式サイトで申込条件を確認する</a>
                         <p class="v3-lender-note">【PR】Sponsored by 三井住友カード株式会社<br>※他社ご利用の方でも審査可能ですが、お客様のご状況によってご利用いただけない場合もございます。<br>※申込の曜日、時間帯によっては翌日以降の取扱となる場合があります。<br>※一例であり、結果を保証するものではありません。</p>
                     </section>
   </div>
@@ -507,7 +483,8 @@
         </div>
         <a href="#top" class="nav to-top"></a>
     </div>
-    <script src="./js/deadline-timer.js?v=f20" defer></script>
+    <script src="./js/countdown-scheduler.js?v=deliveryfix1" defer></script>
+<script src="./js/deadline-timer.js?v=deliveryfix1" defer></script>
     <script src="./js/floating-cta.js?v=exclusion-hide1" defer></script>
         <footer id="footer" class="v3-footer">
     <div class="v3-footer-inner">
@@ -576,7 +553,7 @@
         </div>
     </div>
 </footer>
-<div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>    <script src="./js/survey.js?v=f23" defer></script>
+<div id="page_top" style="display: none;"><a href="#">PAGE TOP</a></div>    <script src="./js/survey.js?v=deliveryfix1" defer></script>
     <script src="./js/v3-accessibility-cvr-mobit.js?v=f21" defer></script>
 </body>
 

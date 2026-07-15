@@ -757,9 +757,9 @@ ul.survey-list .slider_value {
   padding: 18px 20px 22px !important;
 }
 
-#survey-modal .modal-body p.choice-btn,
-#survey-modal .modal-body p.step-back,
-#survey-modal .modal-body p.step-submit {
+#survey-modal .modal-body .choice-btn,
+#survey-modal .modal-body .step-back,
+#survey-modal .modal-body .step-submit {
   min-height: 52px;
   margin: 8px 0 0 !important;
   padding: 13px 16px !important;
@@ -774,14 +774,14 @@ ul.survey-list .slider_value {
   justify-content: center;
 }
 
-#survey-modal .modal-body p.choice-btn:hover,
-#survey-modal .modal-body p.choice-btn:active {
+#survey-modal .modal-body .choice-btn:hover,
+#survey-modal .modal-body .choice-btn:active {
   border-color: var(--v3-accent) !important;
   background: var(--v3-accent-weak) !important;
   color: var(--v3-accent-strong) !important;
 }
 
-#survey-modal .modal-body p.choice-btn[aria-pressed="true"] {
+#survey-modal .modal-body .choice-btn[aria-pressed="true"] {
   border-color: var(--v3-accent) !important;
   background: var(--v3-accent-weak) !important;
   color: var(--v3-accent-strong) !important;
@@ -1728,9 +1728,57 @@ details[open] .kuchikomi_header::after {
 }
 
 .v3-operation-card h1 {
-  margin: 0 0 22px;
+  margin: 0 0 12px;
   color: var(--v3-text);
   font-size: clamp(28px, 5vw, 38px);
+}
+
+.v3-operation-kicker {
+  margin: 0 0 6px;
+  color: var(--v3-accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.v3-operation-lead {
+  margin: 0 0 26px;
+  color: var(--v3-text-sub);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.v3-operation-section {
+  padding: 24px 0;
+  border-top: 1px solid var(--v3-border);
+}
+
+.v3-operation-section h2 {
+  margin: 0 0 14px;
+  color: var(--v3-text);
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.v3-operation-section p {
+  margin: 0;
+  color: var(--v3-text);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.v3-operation-section p + p {
+  margin-top: 12px;
+}
+
+.v3-operation-card a[href^="mailto:"] {
+  display: inline;
+  min-height: 0;
+  color: var(--v3-accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .v3-operation-card dl {
@@ -1767,6 +1815,18 @@ details[open] .kuchikomi_header::after {
 
   .v3-operation-card {
     padding: 20px;
+  }
+
+  .v3-operation-lead {
+    margin-bottom: 20px;
+  }
+
+  .v3-operation-section {
+    padding: 20px 0;
+  }
+
+  .v3-operation-section h2 {
+    font-size: 19px;
   }
 
   .v3-operation-card dl > div {
@@ -4860,14 +4920,6 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   }
 }
 
-/* ==== Remove duplicated recommendation card blocks ==== */
-.experience #content1.ranking,
-.experience #content1.ranking + .ht40,
-.experience #content0,
-.experience #recommend {
-  display: none !important;
-}
-
 /* ==== Tabbed vertical comparison table ==== */
 .hikaku_box .v3-tab-compare {
   width: min(100%, 430px) !important;
@@ -6513,9 +6565,7 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   }
 }
 
-/* ==== Hide duplicated old recommendation block only ==== */
-body.experience #content1.ranking,
-body.experience #content1.ranking + .ht40,
+/* ==== Keep the retired recommendation container out of the active route ==== */
 body.experience #recommend2 {
   display: none !important;
   height: 0 !important;
@@ -7259,6 +7309,57 @@ body.search-results .v3-result-lender-cta::after {
 #search_box .deadline-box.is-countdown-hidden,
 .deadline-box.is-countdown-hidden:has(#timerTop) {
   display: none !important;
+}
+
+.deadline-box.is-next-morning:has(#timerTop) {
+  display: grid !important;
+}
+
+.deadline-box:has(#timerTop) #timerTop .timerTopNext {
+  display: inline-flex !important;
+  gap: 6px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1b1b18 !important;
+}
+
+.deadline-box:has(#timerTop) #timerTop .timerTopNext strong,
+.deadline-box .nextMorningTime,
+.v3-result-deadline.is-ended .nextMorningTime {
+  display: inline-flex;
+  padding: 2px 8px 3px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  background: #fff36a;
+  color: #e60012;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+  animation: nextMorningTimePulse 1.8s ease-in-out infinite;
+}
+
+.deadline-box:has(#timerTop) #timerTop .timerTopNext b {
+  color: #1b1b18 !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+.v3-result-deadline.is-ended {
+  display: flex !important;
+}
+
+@keyframes nextMorningTimePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(230, 0, 18, 0); transform: scale(1); }
+  50% { box-shadow: 0 0 0 4px rgba(230, 0, 18, .14); transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deadline-box:has(#timerTop) #timerTop .timerTopNext strong,
+  .deadline-box .nextMorningTime,
+  .v3-result-deadline.is-ended .nextMorningTime {
+    animation: none;
+  }
 }
 
 .deadline-box:has(#timerTop) #timerTop em {

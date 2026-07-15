@@ -2,25 +2,7 @@
 <html lang="ja">
 
 	<head>
-		
-		<script>
-			(function(w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({
-					'gtm.start': new Date().getTime(),
-					event: 'gtm.js'
-				});
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != 'dataLayer' ? '&l=' + l : '';
-				j.async = true;
-				j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
-		</script>
-		
-		<meta charset="utf-8">
+<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>マネーローンナビ</title>
@@ -37,11 +19,10 @@
 
 		
 		
-<script src="./js/param-keeper.js?v=all-query1" defer></script>
-		<meta name='robots' content='noindex, nofollow' />
+<script src="./js/param-keeper.js?v=deliveryfix1" defer></script>
+		<meta name="robots" content="noindex, nofollow, noarchive" />
 		<link rel="icon" href="./images/icon.png?v=mnavi9" />
 		<link rel="apple-touch-icon" href="./images/icon.png?v=mnavi9" />
-		<meta name='robots' content='max-image-preview:large' />
 		<link rel='dns-prefetch' href='https://use.fontawesome.com/' />
 		
 		<link rel='stylesheet' id='font-awesome-official-css'
@@ -138,7 +119,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3.css?v=f23" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=deliveryfix1" type="text/css" media="screen">
 	</head>
 <script type="text/javascript">
 (() => {
@@ -146,35 +127,48 @@
 
     const destinationCatalog = Object.freeze({
         acom: {
-            url: "__AFFILIATE_URL_ACOM__",
+            url: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=09c6577e",
             banner: "./images/banner_acom.jpg",
             label: "アコム"
         },
         promise: {
-            url: "__AFFILIATE_URL_PROMISE__",
+            url: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=r56c91bf",
             banner: "./images/banner_promise.jpg",
             label: "プロミス"
         },
         mobit: {
-            url: "__AFFILIATE_URL_MOBIT__",
+            url: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=6dcl109c",
             banner: "./images/banner_mobit.jpg",
             label: "SMBCモビット"
         },
         aiful: {
-            url: "__AFFILIATE_URL_AIFUL__",
+            url: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=3ef9fcfc",
             banner: "./images/banner_aiful.jpg",
             label: "アイフル"
         }
     });
 
-    const defaultDestination = "acom";
+    const trackingKeys = new Set([
+        "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id",
+        "utm_source_platform", "utm_creative_format", "utm_marketing_tactic",
+        "gclid", "dclid", "wbraid", "gbraid", "fbclid", "msclkid", "yclid", "ttclid", "srsltid"
+    ]);
 
     const resolveDestination = () => {
         const requested = new URLSearchParams(window.location.search).get("item");
-        return destinationCatalog[requested] || destinationCatalog[defaultDestination];
+        return requested && Object.hasOwn(destinationCatalog, requested)
+            ? destinationCatalog[requested]
+            : null;
     };
 
-    const readCurrentParams = () => window.location.search.replace(/^\?/, "");
+    const readTrackingParams = () => {
+        const current = new URLSearchParams(window.location.search);
+        const tracking = new URLSearchParams();
+        current.forEach((value, key) => {
+            if (trackingKeys.has(key)) tracking.append(key, value);
+        });
+        return tracking.toString();
+    };
 
     const appendCurrentParams = (baseUrl, query) => {
         if (!query) {
@@ -224,9 +218,31 @@
         }
     };
 
+    const renderInvalidDestination = () => {
+        const status = document.getElementById("transfer-status");
+        const spinner = document.querySelector(".v3-spinner");
+        const bannerHost = document.getElementById("transfer-banner");
+        const fallbackCopy = document.getElementById("transfer-fallback-copy");
+        const fallbackLink = document.getElementById("transfer-fallback-link");
+
+        if (status) status.textContent = "移動先を確認できませんでした。";
+        if (spinner) spinner.hidden = true;
+        if (bannerHost) bannerHost.hidden = true;
+        if (fallbackCopy && fallbackLink) {
+            fallbackLink.href = "./index.html";
+            fallbackLink.textContent = "カードローン比較ページへ戻る";
+            fallbackCopy.replaceChildren(fallbackLink);
+            fallbackCopy.hidden = false;
+        }
+    };
+
     const beginTransfer = () => {
         const destination = resolveDestination();
-        const targetUrl = appendCurrentParams(destination.url, readCurrentParams());
+        if (!destination) {
+            renderInvalidDestination();
+            return;
+        }
+        const targetUrl = appendCurrentParams(destination.url, readTrackingParams());
 
         renderTransfer(destination, targetUrl);
         window.setTimeout(() => window.location.assign(targetUrl), 1000);
@@ -242,10 +258,6 @@
 
 
 <body class="beginner search-results">
-    
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
 <header>
     <div id="headerinner">
         <div class="headerLeft">

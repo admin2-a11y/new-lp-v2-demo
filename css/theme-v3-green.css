@@ -739,9 +739,9 @@ ul.survey-list .slider_value {
   padding: 18px 20px 22px !important;
 }
 
-#survey-modal .modal-body p.choice-btn,
-#survey-modal .modal-body p.step-back,
-#survey-modal .modal-body p.step-submit {
+#survey-modal .modal-body .choice-btn,
+#survey-modal .modal-body .step-back,
+#survey-modal .modal-body .step-submit {
   min-height: 52px;
   margin: 8px 0 0 !important;
   padding: 13px 16px !important;
@@ -756,14 +756,14 @@ ul.survey-list .slider_value {
   justify-content: center;
 }
 
-#survey-modal .modal-body p.choice-btn:hover,
-#survey-modal .modal-body p.choice-btn:active {
+#survey-modal .modal-body .choice-btn:hover,
+#survey-modal .modal-body .choice-btn:active {
   border-color: var(--v3-accent) !important;
   background: var(--v3-accent-weak) !important;
   color: var(--v3-accent-strong) !important;
 }
 
-#survey-modal .modal-body p.choice-btn[aria-pressed="true"] {
+#survey-modal .modal-body .choice-btn[aria-pressed="true"] {
   border-color: var(--v3-accent) !important;
   background: var(--v3-accent-weak) !important;
   color: var(--v3-accent-strong) !important;
@@ -6478,6 +6478,20 @@ body.beginner:not(.search-results) #search_box ul.survey-list > li.v3-current-qu
         outline: 3px solid rgba(255, 118, 36, .24);
     }
 }
+
+@media (min-width: 350px) and (max-width: 400px) {
+    body.beginner:not(.search-results) #search_box ul.survey-list label {
+        font-size: 12.5px !important;
+        white-space: nowrap;
+    }
+}
+
+/* Keep the lower recommendation arrow inside the mobile viewport. */
+.beginner #recommend2-ranking.btm_arrow02::after {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+
 /* Comparison-table CTA push motion */
 .v3-compare2-cta,
 .beginner .v3-beginner-experience-compare .v3-tab-compare-cta,

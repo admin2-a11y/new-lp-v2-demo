@@ -1,7 +1,38 @@
 (() => {
   "use strict";
 
-  const collectCurrent = () => new URLSearchParams(window.location.search);
+  const trackingKeys = Object.freeze([
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+    "utm_id",
+    "utm_source_platform",
+    "utm_creative_format",
+    "utm_marketing_tactic",
+    "gclid",
+    "dclid",
+    "wbraid",
+    "gbraid",
+    "fbclid",
+    "msclkid",
+    "yclid",
+    "ttclid",
+    "srsltid"
+  ]);
+  const trackingKeySet = new Set(trackingKeys);
+
+  const collectAllowed = (includeItem) => {
+    const current = new URLSearchParams(window.location.search);
+    const allowed = new URLSearchParams();
+    current.forEach((value, key) => {
+      if (trackingKeySet.has(key) || (includeItem && key === "item")) {
+        allowed.append(key, value);
+      }
+    });
+    return allowed;
+  };
 
   const decorateLinks = (params) => {
     if (!params.size) return;
@@ -36,13 +67,14 @@
   };
 
   const initialize = () => {
-    const params = collectCurrent();
+    const params = collectAllowed(true);
     decorateLinks(params);
     decorateForms(params);
   };
 
-  window.moneyLoanCurrentParams = () => collectCurrent().toString();
-  window.moneyLoanTrackingParams = window.moneyLoanCurrentParams;
+  window.moneyLoanCurrentParams = () => collectAllowed(true).toString();
+  window.moneyLoanTrackingParams = () => collectAllowed(false).toString();
+  window.moneyLoanTrackingKeys = trackingKeys.slice();
 
   if (document.readyState === "complete") {
     initialize();

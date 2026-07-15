@@ -20,38 +20,62 @@
     return { hours, minutes, seconds, centiseconds: Math.floor(rest / 10) };
   };
 
+  const setText = (element, text) => {
+    if (element && element.textContent !== text) element.textContent = text;
+  };
+
+  const setHtml = (element, html) => {
+    if (element && element.innerHTML !== html) element.innerHTML = html;
+  };
+
+  const setDisplay = (element, display) => {
+    if (element && element.style.display !== display) element.style.display = display;
+  };
+
   const toggleWrap = (element, active) => {
     const wrap = element.closest(".deadline-box");
     if (!wrap) return;
-    wrap.classList.toggle("is-countdown-hidden", !active);
-    if (active) wrap.style.removeProperty("display");
-    else wrap.style.setProperty("display", "none", "important");
+    if (wrap.classList.contains("is-countdown-hidden")) wrap.classList.remove("is-countdown-hidden");
+    if (wrap.classList.contains("is-next-morning") === active) wrap.classList.toggle("is-next-morning", !active);
+    if (wrap.style.display) wrap.style.removeProperty("display");
   };
 
   const renderTop = (element, value, active) => {
     toggleWrap(element, active);
-    if (!active) return;
-    const { hours, minutes, seconds, centiseconds } = value;
     const label = element.parentElement?.previousElementSibling;
     const output = element.parentElement;
     const extra = output?.nextElementSibling;
-    if (label) { label.style.display = "block"; label.textContent = "今日中に借りるなら"; }
-    if (output) output.style.display = "flex";
-    if (extra) extra.style.display = "none";
-    element.innerHTML = `<div class="timerTopParts"><small>あと</small><span class="timerTopNum">${pad(hours)}</span><em>時間</em><span class="timerTopNum">${pad(minutes)}</span><em>分</em><span class="timerTopNum">${pad(seconds)}</span><em>秒</em><span class="timerTopNum timerTopCenti">${pad(centiseconds)}</span><b>以内に申し込み</b></div>`;
+    setDisplay(output, "flex");
+    setDisplay(extra, "none");
+    if (!active) {
+      setDisplay(label, "block");
+      setText(label, "本日のお申し込みで");
+      setHtml(element, '<div class="timerTopNext"><strong>10時</strong><b>に借入れ可能性</b></div>');
+      return;
+    }
+    const { hours, minutes, seconds, centiseconds } = value;
+    setDisplay(label, "block");
+    setText(label, "今日中に借りるなら");
+    setHtml(element, `<div class="timerTopParts"><small>あと</small><span class="timerTopNum">${pad(hours)}</span><em>時間</em><span class="timerTopNum">${pad(minutes)}</span><em>分</em><span class="timerTopNum">${pad(seconds)}</span><em>秒</em><span class="timerTopNum timerTopCenti">${pad(centiseconds)}</span><b>以内に申し込み</b></div>`);
   };
 
   const renderLegacy = (element, value, active) => {
     toggleWrap(element, active);
-    if (!active) { element.textContent = ""; return; }
-    const { hours, minutes, seconds, centiseconds } = value;
     const label = element.parentElement?.previousElementSibling;
     const output = element.parentElement;
     const extra = output?.parentElement?.lastElementChild;
-    if (label) { label.style.display = "block"; label.innerHTML = "<span>本日中</span>に借入をする場合"; }
-    if (output) output.style.display = "block";
-    if (extra && extra !== output) extra.style.display = "none";
-    element.innerHTML = `残り<span>${pad(hours)}</span>時間 <span>${pad(minutes)}</span>分 <span>${pad(seconds)}</span>秒<span class="cs">${pad(centiseconds)}</span>`;
+    setDisplay(output, "block");
+    if (extra && extra !== output) setDisplay(extra, "none");
+    if (!active) {
+      setDisplay(label, "block");
+      setText(label, "本日のお申し込みで");
+      setHtml(element, '<span class="nextMorningTime">10時</span>に借入れ可能性');
+      return;
+    }
+    const { hours, minutes, seconds, centiseconds } = value;
+    setDisplay(label, "block");
+    setHtml(label, "<span>本日中</span>に借入をする場合");
+    setHtml(element, `残り<span>${pad(hours)}</span>時間 <span>${pad(minutes)}</span>分 <span>${pad(seconds)}</span>秒<span class="cs">${pad(centiseconds)}</span>`);
   };
 
   const renderDeadline = (box, now) => {
@@ -59,38 +83,46 @@
     if (!output) return;
     const duration = remainingToday(now, Number(box.dataset.deadlineHour || 20), Number(box.dataset.deadlineMinute || 59), Number(box.dataset.deadlineSecond || 59));
     const active = duration > 0;
-    box.hidden = !active;
-    box.classList.toggle("is-ended", !active);
-    if (!active) { box.style.setProperty("display", "none", "important"); output.textContent = ""; return; }
-    box.style.removeProperty("display");
+    box.hidden = false;
+    if (box.classList.contains("is-ended") === active) box.classList.toggle("is-ended", !active);
+    if (box.style.display) box.style.removeProperty("display");
+    if (!active) {
+      const label = box.querySelector(".v3-result-deadline-label");
+      setText(label, "本日のお申し込みで");
+      setHtml(output, '<span class="nextMorningTime">10時</span>に借入れ可能性');
+      return;
+    }
+    const label = box.querySelector(".v3-result-deadline-label");
+    setHtml(label, "<span>本日中</span>に借入をする場合");
     const value = parts(duration);
-    output.innerHTML = `残り <span class="h">${pad(value.hours)}</span><em>時間</em><span class="m">${pad(value.minutes)}</span><em>分</em><span class="s">${pad(value.seconds)}</span><em>秒</em><span class="cs">${pad(value.centiseconds)}</span>`;
+    setHtml(output, `残り <span class="h">${pad(value.hours)}</span><em>時間</em><span class="m">${pad(value.minutes)}</span><em>分</em><span class="s">${pad(value.seconds)}</span><em>秒</em><span class="cs">${pad(value.centiseconds)}</span>`);
   };
 
-  const renderFlow = (value) => {
+  const renderFlow = (elements, value) => {
     const text = `${pad(value.hours)}時間${pad(value.minutes)}分${pad(value.seconds)}秒${pad(value.centiseconds)}`;
-    document.querySelectorAll(".js-flow-countdown").forEach((element) => { element.textContent = text; });
+    elements.forEach((element) => setText(element, text));
   };
 
-  let frame = 0;
-  const draw = () => {
-    const now = new Date();
+  const top = document.getElementById("timerTop");
+  const legacyTimers = Array.from(document.querySelectorAll(".timer"));
+  const deadlineBoxes = Array.from(document.querySelectorAll("[data-v3-sameday-deadline]"));
+  const flowTimers = Array.from(document.querySelectorAll(".js-flow-countdown"));
+  if (!top && !legacyTimers.length && !deadlineBoxes.length && !flowTimers.length) return;
+
+  const draw = (now) => {
     const duration = remainingToday(now);
     const active = duration > 0;
     const value = parts(duration);
-    const top = document.getElementById("timerTop");
     if (top) renderTop(top, value, active);
-    document.querySelectorAll(".timer").forEach((element) => renderLegacy(element, value, active));
-    document.querySelectorAll("[data-v3-sameday-deadline]").forEach((box) => renderDeadline(box, now));
-    renderFlow(value);
-    frame = window.requestAnimationFrame(draw);
+    legacyTimers.forEach((element) => renderLegacy(element, value, active));
+    deadlineBoxes.forEach((box) => renderDeadline(box, now));
+    renderFlow(flowTimers, value);
+    return active ? 50 : 1000;
   };
 
-  const resume = () => {
-    if (document.hidden) { if (frame) window.cancelAnimationFrame(frame); frame = 0; return; }
-    if (!frame) frame = window.requestAnimationFrame(draw);
-  };
-
-  document.addEventListener("visibilitychange", resume);
-  resume();
+  if (window.MoneyLoanCountdownScheduler) {
+    window.MoneyLoanCountdownScheduler.add(draw);
+  } else {
+    draw(new Date());
+  }
 })();

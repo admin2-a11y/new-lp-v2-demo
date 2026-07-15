@@ -55,12 +55,18 @@
 
   function makeButtonLike(element, handler) {
     element.dataset.v3A11yReady = "1";
-    element.setAttribute("role", "button");
-    element.setAttribute("tabindex", "0");
+    var isNativeButton = element.tagName === "BUTTON";
+    if (isNativeButton) {
+      element.type = "button";
+    } else {
+      element.setAttribute("role", "button");
+      element.setAttribute("tabindex", "0");
+    }
     element.addEventListener("click", function (event) {
       event.preventDefault();
       handler(event);
     });
+    if (isNativeButton) return;
     element.addEventListener("keydown", function (event) {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
@@ -238,7 +244,7 @@
   };
 
   SurveyController.prototype.createControl = function (className, text, handler) {
-    var control = document.createElement("p");
+    var control = document.createElement("button");
     control.className = className;
     control.textContent = text;
     makeButtonLike(control, handler);
@@ -283,16 +289,26 @@
     this.render();
     this.modal.classList.add("active");
     this.modal.setAttribute("aria-hidden", "false");
+    this.items.forEach(function (item, itemIndex) {
+      item.setAttribute("aria-expanded", itemIndex === index ? "true" : "false");
+    });
     this.updateProgress();
     var firstChoice = this.modalBody.querySelector(".choice-btn");
-    if (firstChoice) window.requestAnimationFrame(function () { firstChoice.focus({ preventScroll: true }); });
+    if (firstChoice) {
+      var focusFirstChoice = function () { firstChoice.focus({ preventScroll: true }); };
+      focusFirstChoice();
+      window.setTimeout(focusFirstChoice, 0);
+    }
   };
 
   SurveyController.prototype.close = function () {
     if (!this.modal) return;
     this.modal.classList.remove("active");
     this.modal.setAttribute("aria-hidden", "true");
-    this.items.forEach(function (item) { item.classList.remove("v3-current-question"); });
+    this.items.forEach(function (item) {
+      item.classList.remove("v3-current-question");
+      item.setAttribute("aria-expanded", "false");
+    });
     if (this.lastFocused && typeof this.lastFocused.focus === "function") {
       this.lastFocused.focus({ preventScroll: true });
     }
@@ -392,7 +408,9 @@
       return;
     }
     if (event.key !== "Tab" || !this.modal.classList.contains("active")) return;
-    var controls = toArray(this.modal.querySelectorAll('[tabindex="0"], button, a[href], input, select'));
+    var controls = toArray(this.modal.querySelectorAll('[tabindex="0"], button, a[href], input, select')).filter(function (control) {
+      return control.getAttribute("aria-hidden") !== "true" && !control.disabled && control.offsetParent !== null;
+    });
     if (!controls.length) return;
     var first = controls[0];
     var last = controls[controls.length - 1];
@@ -419,6 +437,8 @@
     this.items.forEach(function (item, index) {
       item.setAttribute("role", "button");
       item.setAttribute("tabindex", "0");
+      item.setAttribute("aria-haspopup", "dialog");
+      item.setAttribute("aria-expanded", "false");
       item.addEventListener("click", function (event) {
         if (event.target.closest("select, input, button, a")) return;
         self.open(index, false);
@@ -430,6 +450,8 @@
       });
       var select = item.querySelector("select");
       if (select) {
+        select.setAttribute("tabindex", "-1");
+        select.setAttribute("aria-hidden", "true");
         select.addEventListener("change", function () {
           item.dataset.surveyVisited = "1";
           self.syncItem(item);

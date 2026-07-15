@@ -2,25 +2,7 @@
 <html lang="ja">
 
 	<head>
-		
-		<script>
-			(function(w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({
-					'gtm.start': new Date().getTime(),
-					event: 'gtm.js'
-				});
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != 'dataLayer' ? '&l=' + l : '';
-				j.async = true;
-				j.src =
-					'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');
-		</script>
-		
-		<meta charset="utf-8">
+<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no" />
 		<title>マネーローンナビ</title>
@@ -37,11 +19,10 @@
 
 		
 		
-<script src="./js/param-keeper.js?v=all-query1" defer></script>
-		<meta name='robots' content='noindex, nofollow' />
+<script src="./js/param-keeper.js?v=deliveryfix1" defer></script>
+		<meta name="robots" content="noindex, nofollow, noarchive" />
 		<link rel="icon" href="./images/icon.png?v=mnavi9" />
 		<link rel="apple-touch-icon" href="./images/icon.png?v=mnavi9" />
-		<meta name='robots' content='max-image-preview:large' />
 		<link rel='dns-prefetch' href='https://use.fontawesome.com/' />
 		
 		<link rel='stylesheet' id='font-awesome-official-css'
@@ -138,13 +119,9 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3.css?v=f23" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3.css?v=deliveryfix1" type="text/css" media="screen">
 	</head>
 <body class="">
-    
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
 <header>
     <div id="headerinner">
         <div class="headerLeft">
@@ -156,31 +133,55 @@
         <main class="operation_info v3-operation">
             <a class="v3-back-link" href="./index.html">← トップに戻る</a>
             <section class="v3-operation-card">
-                <h1>運営会社情報</h1>
-                <dl>
-                    <div>
-                        <dt>運営会社</dt>
-                        <dd>マネーローンナビ運営事務局</dd>
-                    </div>
-                    <div>
-                        <dt>住所</dt>
-                        <dd>正式公開時に運営会社情報へ差し替え予定</dd>
-                    </div>
-                    <div>
-                        <dt>事業内容</dt>
-                        <dd>カードローン比較情報の企画・編集・運営</dd>
-                    </div>
-                    <div>
-                        <dt>設立</dt>
-                        <dd>正式公開時に記載予定</dd>
-                    </div>
-                    <div>
-                        <dt>お問い合わせ</dt>
-                        <dd>当サイトに関するお問い合わせは以下にお願いいたします。<br>
-                            <span>正式公開時にお問い合わせ先を記載予定</span>
-                        </dd>
-                    </div>
-                </dl>
+                <p class="v3-operation-kicker">Operator Information</p>
+                <h1>運営者情報</h1>
+                <p class="v3-operation-lead">当サイトの運営方針、掲載情報の取り扱い、免責事項などをまとめています。</p>
+
+                <section class="v3-operation-section" aria-labelledby="operation-basic-title">
+                    <h2 id="operation-basic-title">基本情報</h2>
+                    <dl>
+                        <div>
+                            <dt>運営者名</dt>
+                            <dd>マネーローンナビ運営事務局</dd>
+                        </div>
+                        <div>
+                            <dt>お問い合わせ先</dt>
+                            <dd><a href="mailto:info@moneyloan-navi.com">info@moneyloan-navi.com</a><br>当サイトに関するお問い合わせは、上記メールアドレスまでご連絡ください。内容を確認のうえ、順次対応させていただきます。</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <section class="v3-operation-section" aria-labelledby="operation-site-title">
+                    <h2 id="operation-site-title">当サイトについて</h2>
+                    <p>当サイトは、アフィリエイトプログラムを利用して、各種サービス・商品に関する情報をご紹介しております。アフィリエイトプログラムとは、商品やサービスの提供元と提携し、それらを紹介することで紹介料を受け取る仕組みです。</p>
+                    <p>当サイトで掲載している商品・サービスは、当サイトが直接販売・提供しているものではありません。お申し込みやご契約、ご利用に関する詳細は、各サービス提供元の公式サイトにてご確認ください。商品・サービスに関するご質問やご要望についても、各提供元へ直接お問い合わせください。</p>
+                </section>
+
+                <section class="v3-operation-section" aria-labelledby="operation-copyright-title">
+                    <h2 id="operation-copyright-title">著作権・コンテンツの利用について</h2>
+                    <p>当サイトに掲載している文章、画像、デザイン、構成等の著作物に関する権利は、当サイトまたは正当な権利を有する第三者に帰属します。これらの内容について、無断で転載、複製、改変、配布等を行うことを禁止します。</p>
+                </section>
+
+                <section class="v3-operation-section" aria-labelledby="operation-disclaimer-title">
+                    <h2 id="operation-disclaimer-title">免責事項</h2>
+                    <p>当サイトでは、掲載情報についてできる限り正確かつ最新の内容を掲載するよう努めておりますが、その正確性、完全性、有用性、最新性等を保証するものではありません。商品・サービスの内容、料金、条件、キャンペーン情報等は、予告なく変更される場合があります。必ず各サービス提供元の公式サイトで最新情報をご確認ください。</p>
+                    <p>契約・申込・購入等は、ユーザーご自身の判断と責任において行っていただくものとします。当サイトの利用または掲載情報に基づいて生じた損害・トラブル等について、当サイトでは責任を負いかねます。</p>
+                </section>
+
+                <section class="v3-operation-section" aria-labelledby="operation-privacy-title">
+                    <h2 id="operation-privacy-title">プライバシーポリシー</h2>
+                    <p>当サイトでは、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に十分配慮して運営を行っております。お問い合わせ等の際にご提供いただいた個人情報は、お問い合わせへの対応、必要なご連絡、サービス向上のために利用し、適切に管理します。法令に基づく場合を除き、ご本人の同意なく第三者へ開示・提供することはありません。</p>
+                </section>
+
+                <section class="v3-operation-section" aria-labelledby="operation-cookie-title">
+                    <h2 id="operation-cookie-title">Cookie等の利用について</h2>
+                    <p>当サイトでは、利便性の向上、広告配信、アクセス解析等のために、Cookieその他これに類する技術を使用する場合があります。ユーザーはブラウザの設定により、Cookieの受け取り拒否や保存済みCookieの削除が可能です。ただし、Cookieを無効にした場合、一部機能が正常に利用できなくなる場合があります。</p>
+                </section>
+
+                <section class="v3-operation-section" aria-labelledby="operation-ad-title">
+                    <h2 id="operation-ad-title">広告配信について</h2>
+                    <p>当サイトでは、第三者配信事業者が提供する広告配信サービスを利用する場合があります。これらの事業者は、ユーザーの興味・関心に応じた広告を表示するため、Cookie等を利用して当サイトへの訪問情報を取得することがあります。これらの情報には、氏名、住所、メールアドレス、電話番号等の個人を特定する情報は含まれません。</p>
+                </section>
             </section>
         </main>
     </div>

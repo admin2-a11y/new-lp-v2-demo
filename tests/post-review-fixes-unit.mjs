@@ -14,56 +14,34 @@ const runParamKeeper = ({ search, existingNames = [] }) => {
   const fields = [];
   const form = {
     elements: existingNames.map((name) => ({ name })),
-    append(field) {
-      fields.push(field);
-    }
+    append(field) { fields.push(field); },
   };
   const document = {
     readyState: "interactive",
-    addEventListener(name, handler) {
-      listeners.set(name, handler);
-    },
-    createElement() {
-      return {};
-    },
+    addEventListener(name, handler) { listeners.set(name, handler); },
+    createElement() { return {}; },
     querySelectorAll(selector) {
       if (selector === "a[href]") return anchors;
       if (selector === "form") return [form];
       return [];
-    }
+    },
   };
   const location = {
     href: `https://example.test/lp/result_v2.html${search}`,
     origin: "https://example.test",
-    search
-  };
-  const localStorage = {
-    getItem() { throw new Error("localStorage must not be read"); },
-    setItem() { throw new Error("localStorage must not be written"); },
-    removeItem() { throw new Error("localStorage must not be changed"); }
+    search,
   };
   const window = { location };
-  const sandbox = {
-    URL,
-    URLSearchParams,
-    document,
-    localStorage,
-    window
-  };
 
-  vm.runInNewContext(source, sandbox, { filename: "param-keeper.js" });
+  vm.runInNewContext(source, { URL, URLSearchParams, document, window }, { filename: "param-keeper.js" });
 
   const internalAnchor = {
     href: "https://example.test/lp/redirect.html?item=mobit",
-    getAttribute(name) {
-      return name === "href" ? "./redirect.html?item=mobit" : null;
-    }
+    getAttribute(name) { return name === "href" ? "./redirect.html?item=mobit" : null; },
   };
   const externalAnchor = {
     href: "https://outside.example/path?fixed=1",
-    getAttribute(name) {
-      return name === "href" ? "https://outside.example/path?fixed=1" : null;
-    }
+    getAttribute(name) { return name === "href" ? "https://outside.example/path?fixed=1" : null; },
   };
   anchors.push(internalAnchor, externalAnchor);
   listeners.get("DOMContentLoaded")();
@@ -71,111 +49,200 @@ const runParamKeeper = ({ search, existingNames = [] }) => {
   return { internalAnchor, externalAnchor, fields, window };
 };
 
-const incomingSearch = "?utm_source=new&fbclid=fresh&answer=kept&dup=first&dup=&dup=%E4%B8%89%E3%81%A4%E7%9B%AE&empty=&jp=%E6%97%A5%E6%9C%AC%E8%AA%9E+%E5%80%A4&symbol=%26%3D%2B%25%2F%3F%23&amount=source-amount&variant=experienced&item=incoming-item";
-const currentOnly = runParamKeeper({
-  search: incomingSearch,
-  existingNames: ["amount", "variant"]
-});
+const forbiddenAnswers = [
+  "current_loans[]",
+  "amount",
+  "speed",
+  "method",
+  "income",
+  "job",
+  "company_size",
+  "duration",
+  "priority",
+  "variant",
+  "answer",
+];
+const incomingSearch = "?utm_source=new&utm_campaign=summer&gclid=g-1&fbclid=f-1&item=incoming-item&current_loans%5B%5D=a1_1&amount=30&speed=today&method=web&income=500&job=employee&company_size=large&duration=5&priority=speed&variant=experienced&answer=secret";
+const currentOnly = runParamKeeper({ search: incomingSearch, existingNames: ["amount", "variant"] });
 const decorated = new URL(currentOnly.internalAnchor.href);
 assert.deepEqual(decorated.searchParams.getAll("item"), ["mobit"]);
 assert.equal(decorated.searchParams.get("utm_source"), "new");
-assert.equal(decorated.searchParams.get("fbclid"), "fresh");
-assert.equal(decorated.searchParams.get("answer"), "kept");
-assert.deepEqual(decorated.searchParams.getAll("dup"), ["first", "", "三つ目"]);
-assert.equal(decorated.searchParams.has("empty"), true);
-assert.equal(decorated.searchParams.get("empty"), "");
-assert.equal(decorated.searchParams.get("jp"), "日本語 値");
-assert.equal(decorated.searchParams.get("symbol"), "&=+%/?#");
+assert.equal(decorated.searchParams.get("utm_campaign"), "summer");
+assert.equal(decorated.searchParams.get("gclid"), "g-1");
+assert.equal(decorated.searchParams.get("fbclid"), "f-1");
+forbiddenAnswers.forEach((key) => assert.equal(decorated.searchParams.has(key), false, `internal link leaked ${key}`));
 assert.equal(currentOnly.externalAnchor.href, "https://outside.example/path?fixed=1");
 
-const fieldValues = (name) => currentOnly.fields.filter((field) => field.name === name).map((field) => field.value);
-assert.deepEqual(fieldValues("utm_source"), ["new"]);
-assert.deepEqual(fieldValues("dup"), ["first", "", "三つ目"]);
-assert.deepEqual(fieldValues("empty"), [""]);
-assert.deepEqual(fieldValues("item"), ["incoming-item"]);
-assert.deepEqual(fieldValues("amount"), []);
-assert.deepEqual(fieldValues("variant"), []);
-assert.equal(fs.readFileSync(path.join(root, "js", "param-keeper.js"), "utf8").includes("localStorage"), false);
-assert.deepEqual(
-  [...new URLSearchParams(currentOnly.window.moneyLoanCurrentParams()).entries()],
-  [...new URLSearchParams(incomingSearch).entries()]
-);
-assert.equal(currentOnly.window.moneyLoanTrackingParams(), currentOnly.window.moneyLoanCurrentParams());
+const fieldNames = currentOnly.fields.map((field) => field.name);
+assert.deepEqual(fieldNames.sort(), ["fbclid", "gclid", "item", "utm_campaign", "utm_source"].sort());
+forbiddenAnswers.forEach((key) => assert.equal(fieldNames.includes(key), false, `form leaked ${key}`));
+
+const currentParams = new URLSearchParams(currentOnly.window.moneyLoanCurrentParams());
+assert.equal(currentParams.get("item"), "incoming-item");
+assert.equal(currentParams.get("utm_source"), "new");
+forbiddenAnswers.forEach((key) => assert.equal(currentParams.has(key), false, `current params leaked ${key}`));
+const trackingParams = new URLSearchParams(currentOnly.window.moneyLoanTrackingParams());
+assert.equal(trackingParams.has("item"), false);
+assert.equal(trackingParams.get("gclid"), "g-1");
+forbiddenAnswers.forEach((key) => assert.equal(trackingParams.has(key), false, `tracking params leaked ${key}`));
 
 const emptyCurrent = runParamKeeper({ search: "" });
-assert.equal(new URL(emptyCurrent.internalAnchor.href).searchParams.has("gclid"), false);
 assert.equal(emptyCurrent.fields.length, 0);
 
-for (const name of ["redirect.html", "redirect.php"]) {
-  const source = fs.readFileSync(path.join(root, name), "utf8");
-  assert.equal(source.includes("trackingKeys"), false, `${name}: tracking allowlist remains`);
-  assert.equal(source.includes("localStorage"), false, `${name}: localStorage dependency remains`);
-  assert.match(source, /window\.location\.search\.replace\(\/\^\\\?\//);
-  assert.match(source, /appendCurrentParams\(destination\.url, readCurrentParams\(\)\)/);
+const affiliateUrls = {
+  acom: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=09c6577e",
+  promise: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=r56c91bf",
+  mobit: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=6dcl109c",
+  aiful: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=3ef9fcfc",
+};
 
-  const runnable = source.replace("__AFFILIATE_URL_MOBIT__", "https://aff.example/path?fixed=base#frag");
-  const catalogIndex = runnable.indexOf("const destinationCatalog");
-  const scriptStart = runnable.lastIndexOf("(() => {", catalogIndex);
-  const scriptEnd = runnable.indexOf("})();", catalogIndex) + "})();".length;
+const extractRedirectScript = (source, name) => {
+  const catalogIndex = source.indexOf("const destinationCatalog");
+  const scriptStart = source.lastIndexOf("(() => {", catalogIndex);
+  const scriptEnd = source.indexOf("})();", catalogIndex) + "})();".length;
   assert.ok(catalogIndex >= 0 && scriptStart >= 0 && scriptEnd > scriptStart, `${name}: redirect script not found`);
+  return source.slice(scriptStart, scriptEnd);
+};
 
+const runRedirect = (script, search) => {
   const nodes = {
     "transfer-status": { textContent: "" },
     "transfer-banner": { hidden: true, replaceChildren() {} },
-    "transfer-fallback-link": { href: "" },
-    "transfer-fallback-copy": { hidden: true }
+    "transfer-fallback-link": { href: "", textContent: "" },
+    "transfer-fallback-copy": { hidden: true, replaceChildren(...children) { this.children = children; } },
   };
+  const spinner = { hidden: false };
   let assigned = "";
-  const redirectWindow = {
-    location: {
-      search: "?item=mobit&foo=first&foo=&foo=%E4%B8%89%E3%81%A4%E7%9B%AE&empty=&jp=%E6%97%A5%E6%9C%AC%E8%AA%9E+%E5%80%A4&symbol=%26%3D%2B%25%2F%3F%23",
-      assign(value) { assigned = value; }
-    },
-    setTimeout(callback) { callback(); }
+  const window = {
+    location: { search, assign(value) { assigned = value; } },
+    setTimeout(callback) { callback(); },
   };
-  const redirectDocument = {
+  const document = {
     readyState: "complete",
     getElementById(id) { return nodes[id] || null; },
-    createElement() { return { append() {} }; }
+    querySelector(selector) { return selector === ".v3-spinner" ? spinner : null; },
+    createElement() { return { append() {} }; },
   };
-  vm.runInNewContext(runnable.slice(scriptStart, scriptEnd), {
-    document: redirectDocument,
-    URLSearchParams,
-    window: redirectWindow
-  }, { filename: name });
 
-  const target = new URL(nodes["transfer-fallback-link"].href);
-  assert.equal(target.searchParams.get("fixed"), "base");
-  assert.deepEqual(target.searchParams.getAll("item"), ["mobit"]);
-  assert.deepEqual(target.searchParams.getAll("foo"), ["first", "", "三つ目"]);
-  assert.equal(target.searchParams.has("empty"), true);
-  assert.equal(target.searchParams.get("jp"), "日本語 値");
-  assert.equal(target.searchParams.get("symbol"), "&=+%/?#");
-  assert.equal(target.hash, "#frag");
-  assert.equal(assigned, nodes["transfer-fallback-link"].href);
+  vm.runInNewContext(script, { document, Object, URLSearchParams, window }, { filename: "redirect-inline.js" });
+  return { assigned, nodes, spinner };
+};
+
+for (const name of ["redirect.html", "redirect.php"]) {
+  const source = fs.readFileSync(path.join(root, name), "utf8");
+  assert.equal(source.includes("localStorage"), false, `${name}: localStorage dependency remains`);
+  assert.equal(source.includes("defaultDestination"), false, `${name}: silent fallback remains`);
+  assert.match(source, /const trackingKeys = new Set/);
+  Object.entries(affiliateUrls).forEach(([item, url]) => {
+    assert.ok(source.includes(`${item}: {\n            url: "${url}"`), `${name}: ${item} affiliate URL mismatch`);
+  });
+
+  const script = extractRedirectScript(source, name);
+  for (const [item, expectedBase] of Object.entries(affiliateUrls)) {
+    const result = runRedirect(script, `?item=${item}&utm_source=test&gclid=g-2&amount=50&income=600&job=employee&company_size=large&duration=10&current_loans%5B%5D=a1_1`);
+    assert.ok(result.assigned, `${name}: ${item} did not redirect`);
+    const target = new URL(result.assigned);
+    const expected = new URL(expectedBase);
+    assert.equal(`${target.origin}${target.pathname}`, `${expected.origin}${expected.pathname}`);
+    assert.equal(target.searchParams.get("bId"), expected.searchParams.get("bId"));
+    assert.equal(target.searchParams.get("utm_source"), "test");
+    assert.equal(target.searchParams.get("gclid"), "g-2");
+    assert.equal(target.searchParams.has("item"), false);
+    forbiddenAnswers.forEach((key) => assert.equal(target.searchParams.has(key), false, `${name}: affiliate URL leaked ${key}`));
+  }
+
+  for (const search of ["", "?item=unknown&utm_source=test"]) {
+    const result = runRedirect(script, search);
+    assert.equal(result.assigned, "", `${name}: invalid item redirected`);
+    assert.equal(result.nodes["transfer-status"].textContent, "移動先を確認できませんでした。");
+    assert.equal(result.nodes["transfer-fallback-link"].href, "./index.html");
+    assert.equal(result.nodes["transfer-fallback-copy"].hidden, false);
+    assert.equal(result.spinner.hidden, true);
+  }
 }
 
 const pages = fs.readdirSync(root).filter((name) => /\.(?:html|php)$/.test(name));
-const pageSources = pages.map((name) => fs.readFileSync(path.join(root, name), "utf8"));
-assert.equal(pageSources.filter((source) => source.includes("param-keeper.js?v=all-query1")).length, 17);
-assert.equal(pageSources.some((source) => source.includes("param-keeper.js?v=url-only1")), false);
-assert.equal(pageSources.some((source) => source.includes("param-keeper.js?v=1")), false);
-assert.equal(pageSources.filter((source) => source.includes("floating-cta.js?v=exclusion-hide1")).length, 5);
-assert.equal(pageSources.filter((source) => source.includes("result-cards-v2.css?v=keyboard-close1")).length, 4);
-assert.equal(pageSources.filter((source) => source.includes("result-cards-v2.js?v=keyboard-close1")).length, 4);
+const pageSources = new Map(pages.map((name) => [name, fs.readFileSync(path.join(root, name), "utf8")]));
+assert.equal([...pageSources.values()].filter((source) => source.includes("param-keeper.js?v=deliveryfix1")).length, 17);
 
-const floatingSource = fs.readFileSync(path.join(root, "js", "floating-cta.js"), "utf8");
-assert.match(floatingSource, /let revealed = false/);
-assert.equal(floatingSource.includes("if (visible) return"), false);
+for (const [name, source] of pageSources) {
+  const blankLinks = source.match(/<a\b[^>]*target="_blank"[^>]*>/gi) || [];
+  blankLinks.forEach((link) => assert.match(link, /rel="sponsored noopener"/, `${name}: target=_blank missing rel`));
+}
 
-const cardCss = fs.readFileSync(path.join(root, "css", "result-cards-v2.css"), "utf8");
-assert.equal(/\[open\] summary\s*\{\s*display:\s*none/.test(cardCss), false);
-assert.match(cardCss, /\.v4-points-more\[open\] summary \{ order: 2; margin-top: 4px; \}/);
-assert.match(cardCss, /\.v4-review-more\[open\] summary \{ order: 2; margin-top: 4px; \}/);
+const indexSource = pageSources.get("index.html");
+const beginnerTopSource = pageSources.get("mobit_beginner.html");
+assert.equal(indexSource.includes('class="v3-lender-card-list"'), false);
+assert.equal(beginnerTopSource.includes('class="v3-lender-card-list"'), false);
+assert.equal((pageSources.get("result_v2.html").match(/<h1\b/g) || []).length, 1);
+assert.equal((pageSources.get("beginner_result_v2.html").match(/<h1\b/g) || []).length, 1);
+
+const surveySource = fs.readFileSync(path.join(root, "js", "survey.js"), "utf8");
+assert.match(surveySource, /document\.createElement\("button"\)/);
+assert.match(surveySource, /select\.setAttribute\("tabindex", "-1"\)/);
+assert.match(surveySource, /select\.setAttribute\("aria-hidden", "true"\)/);
+
+const schedulerSource = fs.readFileSync(path.join(root, "js", "countdown-scheduler.js"), "utf8");
+assert.equal(schedulerSource.includes("requestAnimationFrame"), false);
+assert.match(schedulerSource, /document\.hidden/);
+assert.match(schedulerSource, /prefers-reduced-motion/);
+
+const schedulerListeners = new Map();
+const scheduledTimers = new Map();
+let timerId = 0;
+let clearedTimerCount = 0;
+let schedulerDrawCount = 0;
+const schedulerDocument = {
+  hidden: false,
+  addEventListener(name, handler) { schedulerListeners.set(name, handler); },
+};
+const schedulerWindow = {
+  matchMedia() { return { matches: false, addEventListener() {} }; },
+  setTimeout(callback, delay) {
+    const id = ++timerId;
+    scheduledTimers.set(id, { callback, delay });
+    return id;
+  },
+  clearTimeout(id) {
+    if (scheduledTimers.delete(id)) clearedTimerCount += 1;
+  },
+};
+vm.runInNewContext(schedulerSource, {
+  document: schedulerDocument,
+  Math,
+  Number,
+  Object,
+  window: schedulerWindow,
+}, { filename: "countdown-scheduler.js" });
+const stopSchedulerTask = schedulerWindow.MoneyLoanCountdownScheduler.add(() => {
+  schedulerDrawCount += 1;
+  return 50;
+});
+assert.equal(schedulerDrawCount, 1, "scheduler did not draw immediately");
+assert.equal(scheduledTimers.size, 1, "scheduler did not arm one shared timer");
+schedulerDocument.hidden = true;
+schedulerListeners.get("visibilitychange")();
+assert.equal(scheduledTimers.size, 0, "hidden tab kept a timer alive");
+assert.equal(clearedTimerCount, 1, "hidden tab did not clear the active timer");
+schedulerDocument.hidden = false;
+schedulerListeners.get("visibilitychange")();
+assert.equal(schedulerDrawCount, 2, "visible tab did not refresh immediately");
+assert.equal(scheduledTimers.size, 1, "visible tab did not re-arm the timer");
+stopSchedulerTask();
+assert.equal(scheduledTimers.size, 0, "removing the final task left a timer alive");
+
+const deadlineSource = fs.readFileSync(path.join(root, "js", "deadline-timer.js"), "utf8");
+assert.equal(deadlineSource.includes("requestAnimationFrame"), false);
+assert.match(deadlineSource, /MoneyLoanCountdownScheduler\.add\(draw\)/);
+assert.match(deadlineSource, /return active \? 50 : 1000/);
 
 const cardScript = fs.readFileSync(path.join(root, "js", "result-cards-v2.js"), "utf8");
-assert.match(cardScript, /event\.key !== "Enter"/);
-assert.match(cardScript, /event\.key !== " "/);
-assert.match(cardScript, /details\.open = !details\.open/);
+assert.equal(cardScript.includes("data-v4-sort-status"), false);
+assert.equal(cardScript.includes("normalizeSort"), false);
+assert.equal(cardScript.includes("speedMinutes"), false);
+assert.equal(cardScript.includes("requestAnimationFrame"), false);
+assert.match(cardScript, /MoneyLoanCountdownScheduler\.add\(updateCountdowns\)/);
+assert.match(cardScript, /review-male-v2-180\.webp/);
+assert.match(cardScript, /review-male-v2-360\.webp/);
 
 console.log("Post-review fix unit checks passed");
