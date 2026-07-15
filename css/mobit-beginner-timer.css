@@ -660,6 +660,19 @@ body.beginner > header .pr_text {
   white-space: nowrap;
 }
 
+/* Active TOP countdown: one centered row after removing the redundant lead. */
+body.beginner:not(.search-results) #search_box .top-deadline-box:has(#timerTop) {
+  padding: 8px !important;
+}
+
+body.beginner:not(.search-results) #search_box .top-deadline-box:has(#timerTop) .timerbox,
+body.beginner:not(.search-results) #search_box .top-deadline-box:has(#timerTop) #timerTop {
+  display: flex !important;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 374px) {
   body.beginner > header,
   body.beginner > header #headerinner {

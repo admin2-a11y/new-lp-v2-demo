@@ -8632,3 +8632,16 @@ body.search-results .v3-result-lender-cta::after {
     will-change: auto;
   }
 }
+
+/* Active TOP countdown: one centered row after removing the redundant lead. */
+body.experience #search_box .top-deadline-box:has(#timerTop) {
+  padding: 10px 8px !important;
+}
+
+body.experience #search_box .top-deadline-box:has(#timerTop) .timerbox,
+body.experience #search_box .top-deadline-box:has(#timerTop) #timerTop {
+  display: flex !important;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+}

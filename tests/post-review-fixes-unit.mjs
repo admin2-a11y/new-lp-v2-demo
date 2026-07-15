@@ -165,7 +165,8 @@ const pages = fs.readdirSync(root).filter((name) => /\.(?:html|php)$/.test(name)
 const pageSources = new Map(pages.map((name) => [name, fs.readFileSync(path.join(root, name), "utf8")]));
 assert.equal([...pageSources.values()].filter((source) => source.includes("param-keeper.js?v=deliveryfix1")).length, 17);
 const countVersionedPages = (asset) => [...pageSources.values()].filter((source) => source.includes(`${asset}?v=deliverydetail1`)).length;
-assert.equal(countVersionedPages("theme-v3.css"), 10);
+assert.equal(countVersionedPages("theme-v3.css"), 9);
+assert.equal([...pageSources.values()].filter((source) => source.includes("theme-v3.css?v=topdeadline1")).length, 1);
 assert.equal(countVersionedPages("theme-v3-green.css"), 7);
 assert.equal(countVersionedPages("mobit-compare2.css"), 4);
 assert.equal(countVersionedPages("result-cards-v2.css"), 4);
@@ -181,6 +182,10 @@ const indexSource = pageSources.get("index.html");
 const beginnerTopSource = pageSources.get("mobit_beginner.html");
 assert.equal(indexSource.includes('class="v3-lender-card-list"'), false);
 assert.equal(beginnerTopSource.includes('class="v3-lender-card-list"'), false);
+assert.equal(indexSource.includes("今日中に借りるなら"), false);
+assert.equal(beginnerTopSource.includes("今日中に借りるなら"), false);
+assert.equal(indexSource.includes('class="deadline-box top-deadline-box"'), true);
+assert.equal(beginnerTopSource.includes('class="deadline-box top-deadline-box"'), true);
 assert.equal((pageSources.get("result_v2.html").match(/<h1\b/g) || []).length, 1);
 assert.equal((pageSources.get("beginner_result_v2.html").match(/<h1\b/g) || []).length, 1);
 
