@@ -54,8 +54,8 @@
     }
     const { hours, minutes, seconds, centiseconds } = value;
     setDisplay(label, "block");
-    setText(label, "今日中に借りるなら");
-    setHtml(element, `<div class="timerTopParts"><strong class="timerTopLead">今日中に借りるなら</strong><small>あと</small><span class="timerTopNum">${pad(hours)}</span><em>時間</em><span class="timerTopNum">${pad(minutes)}</span><em>分</em><span class="timerTopNum">${pad(seconds)}</span><em>秒</em><span class="timerTopNum timerTopCenti">${pad(centiseconds)}</span><b>以内に申し込み</b></div>`);
+    setText(label, "本日中に借りるなら");
+    setHtml(element, `<div class="timerTopParts"><strong class="timerTopLead">本日中に借りるなら</strong><small>あと</small><span class="timerTopNum">${pad(hours)}</span><em>時間</em><span class="timerTopNum">${pad(minutes)}</span><em>分</em><span class="timerTopNum">${pad(seconds)}</span><em>秒</em><span class="timerTopNum timerTopCenti">${pad(centiseconds)}</span><b>以内に申し込み</b></div>`);
   };
 
   const renderLegacy = (element, value, active) => {

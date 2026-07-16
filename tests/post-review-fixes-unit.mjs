@@ -173,7 +173,7 @@ assert.equal(countVersionedPages("mobit-compare2.css"), 4);
 assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.css?v=cardtoggle1")).length, 4);
 assert.equal(countVersionedPages("result-cards-v2.js"), 0);
 assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.js?v=cardtoggle1")).length, 4);
-assert.equal([...pageSources.values()].filter((source) => source.includes("deadline-timer.js?v=todaylead1")).length, 13);
+assert.equal([...pageSources.values()].filter((source) => source.includes("deadline-timer.js?v=todaylead2")).length, 13);
 
 for (const [name, source] of pageSources) {
   const blankLinks = source.match(/<a\b[^>]*target="_blank"[^>]*>/gi) || [];
@@ -216,7 +216,7 @@ const cardsCss = fs.readFileSync(path.join(root, "css", "result-cards-v2.css"), 
 const deadlineTimerSource = fs.readFileSync(path.join(root, "js", "deadline-timer.js"), "utf8");
 assert.match(cardsSource, /pointMarkup\(lender\.points\)/);
 assert.match(cardsCss, /\.v4-recommend:has\(\.v4-points-more\[open\]\) \.v4-points-preview \{ display: none; \}/);
-assert.match(deadlineTimerSource, /class="timerTopLead">今日中に借りるなら/);
+assert.match(deadlineTimerSource, /class="timerTopLead">本日中に借りるなら/);
 assert.match(deadlineTimerSource, /class="timerTopNext"><span class="nextMorningLead">いま申込で/);
 
 const schedulerSource = fs.readFileSync(path.join(root, "js", "countdown-scheduler.js"), "utf8");
