@@ -2883,6 +2883,28 @@ details.kuchikomi:not([open]) .kuchikomi_header p {
   }
 }
 
+/* Show the same-day lead only while the live countdown is active. */
+body.beginner .deadline-box:has(#timerTop) #timerTop .timerTopLead {
+  margin-right: 3px;
+  color: #1b1b18;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 374px) {
+  body.beginner .deadline-box:has(#timerTop) #timerTop > div.timerTopParts {
+    flex-wrap: wrap !important;
+  }
+
+  body.beginner .deadline-box:has(#timerTop) #timerTop .timerTopLead {
+    flex-basis: 100%;
+    margin: 0 0 2px;
+    text-align: center;
+  }
+}
+
 /* ==== round4 fixes ==== */
 @media screen and (max-width: 768px) {
   #mainvisual.v3-hero.v3-hero-experience,

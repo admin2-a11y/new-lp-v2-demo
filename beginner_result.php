@@ -121,7 +121,7 @@
 				});
 			});
 		</script>
-		<link rel="stylesheet" href="./css/theme-v3-green.css?v=deliverydetail1" type="text/css" media="screen">
+		<link rel="stylesheet" href="./css/theme-v3-green.css?v=cardtoggle1" type="text/css" media="screen">
 	</head>
 <body class="beginner search-results">
 <header>
@@ -1026,7 +1026,7 @@
 </body>
 
 <script src="./js/countdown-scheduler.js?v=deliveryfix1" defer></script>
-<script src="./js/deadline-timer.js?v=deliverydetail1" defer></script>
+<script src="./js/deadline-timer.js?v=todaylead1" defer></script>
 
 
 </html>

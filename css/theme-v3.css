@@ -8645,3 +8645,25 @@ body.experience #search_box .top-deadline-box:has(#timerTop) #timerTop {
   align-items: center;
   justify-content: center;
 }
+
+/* Show the same-day lead only while the live countdown is active. */
+.deadline-box:has(#timerTop) #timerTop .timerTopLead {
+  margin-right: 3px;
+  color: #1b1b18;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 374px) {
+  .deadline-box:has(#timerTop) #timerTop > div.timerTopParts {
+    flex-wrap: wrap !important;
+  }
+
+  .deadline-box:has(#timerTop) #timerTop .timerTopLead {
+    flex-basis: 100%;
+    margin: 0 0 2px;
+    text-align: center;
+  }
+}

@@ -167,14 +167,13 @@ assert.equal([...pageSources.values()].filter((source) => source.includes("param
 assert.equal([...pageSources.values()].filter((source) => source.includes("survey.js?v=searchloading1")).length, 2);
 assert.equal([...pageSources.values()].filter((source) => source.includes("top-question-pulse.css?v=searchloading1")).length, 2);
 const countVersionedPages = (asset) => [...pageSources.values()].filter((source) => source.includes(`${asset}?v=deliverydetail1`)).length;
-assert.equal(countVersionedPages("theme-v3.css"), 9);
-assert.equal([...pageSources.values()].filter((source) => source.includes("theme-v3.css?v=topdeadline1")).length, 1);
-assert.equal(countVersionedPages("theme-v3-green.css"), 7);
+assert.equal([...pageSources.values()].filter((source) => source.includes("theme-v3.css?v=cardtoggle1")).length, 10);
+assert.equal([...pageSources.values()].filter((source) => source.includes("theme-v3-green.css?v=cardtoggle1")).length, 7);
 assert.equal(countVersionedPages("mobit-compare2.css"), 4);
-assert.equal(countVersionedPages("result-cards-v2.css"), 4);
+assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.css?v=cardtoggle1")).length, 4);
 assert.equal(countVersionedPages("result-cards-v2.js"), 0);
-assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.js?v=aiful9min1")).length, 4);
-assert.equal(countVersionedPages("deadline-timer.js"), 13);
+assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.js?v=cardtoggle1")).length, 4);
+assert.equal([...pageSources.values()].filter((source) => source.includes("deadline-timer.js?v=todaylead1")).length, 13);
 
 for (const [name, source] of pageSources) {
   const blankLinks = source.match(/<a\b[^>]*target="_blank"[^>]*>/gi) || [];
@@ -211,6 +210,14 @@ assert.match(deliveryTextSources, /banner_aiful-9min\.webp/);
 assert.match(deliveryTextSources, /最短9分/);
 assert.equal(fs.existsSync(path.join(root, "images", retiredAifulBanner)), false);
 assert.equal(fs.statSync(path.join(root, "images", "banner_aiful-9min.webp")).size, 15070);
+
+const cardsSource = fs.readFileSync(path.join(root, "js", "result-cards-v2.js"), "utf8");
+const cardsCss = fs.readFileSync(path.join(root, "css", "result-cards-v2.css"), "utf8");
+const deadlineTimerSource = fs.readFileSync(path.join(root, "js", "deadline-timer.js"), "utf8");
+assert.match(cardsSource, /pointMarkup\(lender\.points\)/);
+assert.match(cardsCss, /\.v4-recommend:has\(\.v4-points-more\[open\]\) \.v4-points-preview \{ display: none; \}/);
+assert.match(deadlineTimerSource, /class="timerTopLead">今日中に借りるなら/);
+assert.match(deadlineTimerSource, /class="timerTopNext"><span class="nextMorningLead">いま申込で/);
 
 const schedulerSource = fs.readFileSync(path.join(root, "js", "countdown-scheduler.js"), "utf8");
 assert.equal(schedulerSource.includes("requestAnimationFrame"), false);

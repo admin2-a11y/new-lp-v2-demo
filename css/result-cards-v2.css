@@ -412,12 +412,18 @@ body.beginner .v4-spec-ring dd {
 }
 .v4-points-more { text-align: left; }
 .v4-points-more summary {
-  display: table;
+  display: flex;
   position: relative;
-  left: 50%;
+  left: auto;
   z-index: 2;
-  margin: -3px 0 4px;
-  padding: 4px 22px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: fit-content;
+  min-width: 132px;
+  min-height: 28px;
+  margin: 7px auto 4px;
+  padding: 4px 20px;
   border: 1px solid #d7d7d7;
   background: #fff;
   color: #333;
@@ -425,18 +431,16 @@ body.beginner .v4-spec-ring dd {
   font-weight: 700;
   cursor: pointer;
   list-style: none;
-  transform: translateX(-50%);
-  transition: left 260ms ease, transform 260ms ease, background-color 180ms ease;
+  text-align: center;
 }
 .v4-points-more summary::-webkit-details-marker { display: none; }
-.v4-points-more summary::after { content: "…"; }
-.v4-points-more[open] summary::after { content: ""; }
 .v4-more-close { display: none; }
 .v4-points-more[open] .v4-more-open { display: none; }
 .v4-points-more[open] .v4-more-close { display: inline; }
 .v4-points-more[open] { display: flex; flex-direction: column; }
 .v4-points-more[open] .v4-points { order: 1; }
-.v4-points-more[open] summary { order: 2; margin-top: 4px; }
+.v4-points-more[open] summary { order: 2; margin: 8px auto 0; }
+.v4-recommend:has(.v4-points-more[open]) .v4-points-preview { display: none; }
 .v4-recommend:has(.v4-points-more[open]) { padding-bottom: 8px; }
 .v4-more-close::before { content: "↑ "; }
 .v4-points-more .v4-points { text-align: left; }
@@ -948,7 +952,7 @@ body.result-v2 .v4-result-cards {
   margin: 8px auto 0;
 }
 
-/* Match the expanded recommendation close control to the compact review toggle. */
+/* Keep recommendation and review toggles visually identical in both states. */
 .v4-points-more[open] summary {
   align-self: center;
   left: auto;
@@ -1030,6 +1034,13 @@ body.result-v2 .v4-result-cards {
   }
 
   .v4-points-more[open] summary {
+    min-width: 126px;
+    min-height: 26px;
+    padding: 3px 18px;
+    font-size: 10px;
+  }
+
+  .v4-points-more summary {
     min-width: 126px;
     min-height: 26px;
     padding: 3px 18px;

@@ -102,7 +102,7 @@
               <ul class="v4-points v4-points-preview">${pointMarkup(lender.points.slice(0, 2))}</ul>
               <details class="v4-points-more">
                 <summary><span class="v4-more-open">もっと見る</span><span class="v4-more-close">閉じる</span></summary>
-                <ul class="v4-points">${pointMarkup(lender.points.slice(2))}</ul>
+                <ul class="v4-points">${pointMarkup(lender.points)}</ul>
               </details>
             </section>
             <section class="v4-review-box" aria-label="利用者の口コミ">
