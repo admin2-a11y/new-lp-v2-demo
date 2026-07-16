@@ -173,7 +173,7 @@ assert.equal([...pageSources.values()].filter((source) => source.includes("mobit
 assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.css?v=cardtoggle3")).length, 4);
 assert.equal(countVersionedPages("result-cards-v2.js"), 0);
 assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.js?v=cardtoggle4")).length, 4);
-assert.equal([...pageSources.values()].filter((source) => source.includes("deadline-timer.js?v=todaylead2")).length, 13);
+assert.equal([...pageSources.values()].filter((source) => source.includes("deadline-timer.js?v=todaylead3")).length, 13);
 
 for (const [name, source] of pageSources) {
   const blankLinks = source.match(/<a\b[^>]*target="_blank"[^>]*>/gi) || [];
