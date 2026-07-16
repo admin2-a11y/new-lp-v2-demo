@@ -143,7 +143,7 @@
         },
         aiful: {
             url: "https://whatsmyasp.com/3k701mem558983c8/cl/?bId=3ef9fcfc",
-            banner: "./images/banner_aiful.jpg",
+            banner: "./images/banner_aiful-9min.webp",
             label: "アイフル"
         }
     });

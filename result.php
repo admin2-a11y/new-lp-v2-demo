@@ -263,7 +263,7 @@
                         <article class="v3-result-lender-card">
                             <div class="v3-result-lender-head">
                                 <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner" rel="sponsored noopener">
-                                    <img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ">
+                                    <img loading="lazy" width="300" height="250" src="./images/banner_aiful-9min.webp" alt="アイフル公式サイトへ">
                                 </a>
                                 <div class="v3-result-lender-summary">
                                     <p class="v3-result-lender-rank">おすすめ順 No.4</p>
@@ -280,8 +280,8 @@
                                 </ul>
                             </div>
                             <dl class="v3-result-lender-spec">
-                                <div><dt>審査時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div>
-                                <div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div>
+                                <div><dt>審査時間</dt><dd>WEBで最短9分<span class="caution">※</span></dd></div>
+                                <div><dt>融資時間</dt><dd>WEBで最短9分<span class="caution">※</span></dd></div>
                                 <div><dt>借入限度額</dt><dd>最大800万円</dd></div>
                                 <div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div>
                                 <div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>

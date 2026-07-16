@@ -327,7 +327,7 @@
 				<p class="v3-lender-point"><span>POINT</span>1秒診断で、申込前に目安をすばやく確認できます。</p>
 				<div class="v3-lender-main">
 					<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-banner" rel="sponsored noopener">
-						<img loading="lazy" height="250" width="300" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ">
+						<img loading="lazy" height="250" width="300" src="./images/banner_aiful-9min.webp" alt="アイフル公式サイトへ">
 					</a>
 					<ul class="v3-lender-tags">
 						<li>来店不要</li>
@@ -342,8 +342,8 @@
 					<div><dt>金利</dt><dd>3.0%～18.0%</dd></div>
 					<div><dt>無利息期間</dt><dd>最大30日</dd></div>
 					<div><dt>借入限度額</dt><dd>最大800万円</dd></div>
-					<div><dt>融資時間</dt><dd>WEBで最短14分※</dd></div>
-					<div><dt>審査時間</dt><dd>WEBで最短14分※</dd></div>
+					<div><dt>融資時間</dt><dd>WEBで最短9分※</dd></div>
+					<div><dt>審査時間</dt><dd>WEBで最短9分※</dd></div>
 					<div><dt>コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div>
 				</dl>
 				<a target="_blank" href="./redirect.php?item=aiful" class="v3-lender-cta" rel="sponsored noopener">公式サイトで申込条件を確認する</a>

@@ -183,11 +183,11 @@
                         </article>
                         <article class="v3-result-lender-card rank-2">
                             <div class="v3-result-lender-head">
-                                <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner" rel="sponsored noopener"><img loading="lazy" width="300" height="250" src="./images/banner_aiful.jpg" alt="アイフル公式サイトへ"></a>
+                                <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-banner" rel="sponsored noopener"><img loading="lazy" width="300" height="250" src="./images/banner_aiful-9min.webp" alt="アイフル公式サイトへ"></a>
                                 <div class="v3-result-lender-summary"><p class="v3-result-lender-rank">おすすめ順 No.2</p><h3><a target="_blank" href="./redirect.php?item=aiful" rel="sponsored noopener">アイフル</a></h3><p class="v3-result-lender-group">アイフル株式会社</p></div>
                             </div>
                             <div class="v3-result-lender-point"><span>はじめて向けポイント</span><ul><li>申込前に1秒診断で目安を確認したい方に向いています</li><li>Web申込、来店不要、カードレスで進めたい方も確認できます</li><li>急ぎの借入を検討する前に条件を確認できます</li></ul></div>
-                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>融資時間</dt><dd>WEBで最短14分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div></dl>
+                            <dl class="v3-result-lender-spec"><div><dt>審査時間</dt><dd>WEBで最短9分<span class="caution">※</span></dd></div><div><dt>融資時間</dt><dd>WEBで最短9分<span class="caution">※</span></dd></div><div><dt>借入限度額</dt><dd>最大800万円</dd></div><div><dt>実質年率</dt><dd>3.0%〜18.0%</dd></div><div><dt>利用可能コンビニ</dt><dd><span class="v3-atm-text">セブン-イレブン / ローソン / ファミリーマート等の提携ATM</span></dd></div></dl>
                             <div class="v3-result-review"><b>口コミ例</b><p>申込前に診断で目安を確認でき、条件を比較しやすかったという声があります。</p></div>
                             <div class="v3-result-deadline" data-v3-sameday-deadline><div class="v3-result-deadline-label"><span>本日中</span>に借入をする場合</div><div class="v3-result-deadline-timer" aria-live="polite"></div></div>
                             <a target="_blank" href="./redirect.php?item=aiful" class="v3-result-lender-cta" rel="sponsored noopener">公式サイトで条件を確認する</a>

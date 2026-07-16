@@ -36,7 +36,7 @@
         Array.prototype.forEach.call(card.querySelectorAll('img'), function(image) {
             var src = image.getAttribute('src') || '';
             if (src.indexOf('banner_promise') !== -1) {
-                image.setAttribute('src', './images/banner_aiful.jpg');
+                image.setAttribute('src', './images/banner_aiful-9min.webp');
                 image.setAttribute('alt', 'アイフル公式サイトへ');
                 image.setAttribute('width', '300');
                 image.setAttribute('height', '250');
@@ -52,7 +52,7 @@
             ['2.5％~18.0％', '3.0％～18.0％'],
             ['2.5%～18.0%', '3.0%～18.0%'],
             ['最大500万円', '最大800万円'],
-            ['最短3分', 'WEBで最短14分※'],
+            ['最短3分', 'WEBで最短9分※'],
             ['郵送物なし＆カードレスで進めたい人におすすめ！', 'WEB完結でスピードを重視したい人におすすめ！'],
             ['郵送物無し&カードレス', 'WEB完結で来店不要'],
             ['郵送物なし、カードレスで進めたい方も確認できます', 'Web申込、来店不要、カードレスで進めたい方も確認できます'],
