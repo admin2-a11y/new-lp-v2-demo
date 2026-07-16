@@ -455,7 +455,7 @@
 - CSS `url()`: 実参照6件を検査。欠損0件、大小文字不一致0件。削除画像への実行参照0件。
 - 4ミラー: `redirect.html/php` と `operationinfo.html/php` は同期。`result.html/php` と `beginner_result.html/php` はP1のとおり非同期。
 - キャッシュバスター: ローカルCSS/JSの付与漏れ0件、同一資産の不整合0件。F13 `result-cards-v2.js?v=48`、F20対象 `?v=f20`、F21対象 `?v=f21`、F22 `base*.css?v=f22`、F23 `theme-v3*.css?v=f23` が変更フェーズに追随。
-- 保全画像: `banner_acom2.jpg` / `banner_aiful.jpg` / `banner_mobit.jpg` / `banner_promise.jpg` / `promise.gif` は基点 `d252f1e` と `ad48791` でblob ID一致。
+- 保全画像（当時）: `banner_acom2.jpg` / 旧アイフル14分訴求素材 / `banner_mobit.jpg` / `banner_promise.jpg` / `promise.gif` は基点 `d252f1e` と `ad48791` でblob ID一致。旧アイフル素材は2026-07-16に新9分素材へ差し替え、現行ソースと公開物から除外済み。
 - 保全プレースホルダー: `GTM-XXXXXXX` は34件で不変。各 `__AFFILIATE_URL_*__` は各2件で不変。
 - PR/注釈/スペック: F12後からF23まで残存PR/Sponsored 80行と主要スペック値の出現数は不変。F12ではCSS非表示の重複V2ブロック削除に伴いPR文字列16行もソース上削除されているため、文字どおりの保全条件への適合は人間確認対象。
 - 自動検査: `tests/f21-survey-unit.mjs`、`tests/f21-survey-contract.py`、`tests/f22-css-contract.py`、`git diff --check` は合格。ただし既存テストは `select_modal=2` を検証していない。

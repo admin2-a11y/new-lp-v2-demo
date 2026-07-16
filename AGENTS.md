@@ -59,7 +59,7 @@
 
 ## 5. 変更禁止対象
 
-- 公式ASP素材: `banner_acom2.jpg`, `banner_aiful.jpg`, `banner_mobit.jpg`, `banner_promise.jpg`, `promise.gif`
+- 公式ASP素材: `banner_acom2.jpg`, `banner_aiful-9min.webp`, `banner_mobit.jpg`, `banner_promise.jpg`, `promise.gif`
 - PR表記、Sponsored表記、注釈、広告文言
 - `GTM-XXXXXXX` と `__AFFILIATE_URL_*__`
 - 各社の金利、融資時間、限度額、無利息期間等のスペック値と商品コピー

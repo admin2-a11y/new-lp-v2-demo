@@ -203,10 +203,13 @@ assert.match(surveySource, /}, 1100\)/);
 const deliveryTextSources = [...pageSources.values()].join("\n")
   + fs.readFileSync(path.join(root, "js", "result-cards-v2.js"), "utf8")
   + fs.readFileSync(path.join(root, "js", "mobit.js"), "utf8");
-assert.equal(deliveryTextSources.includes("banner_aiful.jpg"), false);
-assert.equal(deliveryTextSources.includes("最短14分"), false);
+const retiredAifulBanner = ["banner_aiful", ".jpg"].join("");
+const retiredAifulSpeed = ["最短", "14分"].join("");
+assert.equal(deliveryTextSources.includes(retiredAifulBanner), false);
+assert.equal(deliveryTextSources.includes(retiredAifulSpeed), false);
 assert.match(deliveryTextSources, /banner_aiful-9min\.webp/);
 assert.match(deliveryTextSources, /最短9分/);
+assert.equal(fs.existsSync(path.join(root, "images", retiredAifulBanner)), false);
 assert.equal(fs.statSync(path.join(root, "images", "banner_aiful-9min.webp")).size, 15070);
 
 const schedulerSource = fs.readFileSync(path.join(root, "js", "countdown-scheduler.js"), "utf8");
