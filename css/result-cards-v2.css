@@ -841,6 +841,16 @@ body.result-v2 .osusume_btn_area { display: none !important; }
   }
 }
 
+/* Remove the legacy top spacer only where comparison directly precedes cards. */
+body.experience #hikaku2 {
+  margin-bottom: 0 !important;
+}
+
+body.experience #hikaku2 + #content1.ranking {
+  margin-top: 8px !important;
+  padding-top: 0 !important;
+}
+
 @media (max-width: 350px) {
   .v4-review-box:not(:has(.v4-review-more[open])) .v4-review-layout {
     grid-template-columns: 58px minmax(0, 1fr);
@@ -1066,6 +1076,39 @@ body.result-v2 .v4-result-cards {
 @media (max-width: 350px) {
   .v4-review-more summary {
     transform: translateX(-33px);
+  }
+}
+
+/* Lock both disclosure controls to the same compact button geometry. */
+.v4-points-more > summary,
+.v4-review-more > summary,
+.v4-points-more[open] > summary,
+.v4-review-more[open] > summary {
+  box-sizing: border-box !important;
+  width: 132px !important;
+  min-width: 132px !important;
+  max-width: 132px !important;
+  min-height: 28px !important;
+  padding: 4px 20px !important;
+  border: 1px solid #d7d7d7 !important;
+  background: #fff !important;
+  color: #333 !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 600px) {
+  .v4-points-more > summary,
+  .v4-review-more > summary,
+  .v4-points-more[open] > summary,
+  .v4-review-more[open] > summary {
+    width: 126px !important;
+    min-width: 126px !important;
+    max-width: 126px !important;
+    min-height: 26px !important;
+    padding: 3px 18px !important;
+    font-size: 10px !important;
   }
 }
 

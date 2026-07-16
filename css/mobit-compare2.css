@@ -191,14 +191,14 @@
 }
 
 .v3-compare2-notes {
-  margin-top: 8px;
+  margin-top: 5px;
   color: #7d7d7d;
   font-size: 9px;
-  line-height: 1.65;
+  line-height: 1.4;
 }
 
 .v3-compare2-notes p {
-  margin: 0 0 2px;
+  margin: 0;
 }
 
 @media screen and (max-width: 480px) {
@@ -266,9 +266,19 @@
   }
 
   .v3-compare2-notes {
-    padding: 0 6px;
+    padding: 0 4px;
     font-size: 8px;
+    line-height: 1.35;
   }
+}
+
+/* Keep the experienced TOP comparison and recommendation visually connected. */
+body.experience #hikaku2 {
+  margin-bottom: 0 !important;
+}
+
+body.experience #hikaku2 + #content1.ranking {
+  margin-top: 12px !important;
 }
 
 /* ==== Vivid comparison presentation ==== */

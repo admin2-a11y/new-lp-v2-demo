@@ -189,23 +189,14 @@
   }
 
   document.querySelectorAll(".v4-points-more > summary, .v4-review-more > summary").forEach((summary) => {
-    summary.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " " && event.key !== "Spacebar") return;
-      event.preventDefault();
+    summary.addEventListener("click", (event) => {
       const details = summary.parentElement;
-      details.open = !details.open;
-    });
-  });
-
-  document.querySelectorAll(".v4-recommend, .v4-review-box").forEach((box) => {
-    box.addEventListener("click", (event) => {
-      if (event.target.closest("summary")) return;
-      if (event.target.closest("a, button, input, select, textarea, label")) return;
-      const details = box.querySelector("details");
-      if (!details) return;
-      const selection = window.getSelection();
-      if (selection && selection.toString()) return;
-      details.open = !details.open;
+      const nextOpen = !details.open;
+      event.preventDefault();
+      event.stopPropagation();
+      window.setTimeout(() => {
+        details.open = nextOpen;
+      }, 0);
     });
   });
 })();
