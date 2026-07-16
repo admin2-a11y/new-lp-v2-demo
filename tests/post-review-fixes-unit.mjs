@@ -169,7 +169,7 @@ assert.equal([...pageSources.values()].filter((source) => source.includes("top-q
 const countVersionedPages = (asset) => [...pageSources.values()].filter((source) => source.includes(`${asset}?v=deliverydetail1`)).length;
 assert.equal([...pageSources.values()].filter((source) => source.includes("theme-v3.css?v=cardtoggle1")).length, 10);
 assert.equal([...pageSources.values()].filter((source) => source.includes("theme-v3-green.css?v=cardtoggle1")).length, 7);
-assert.equal([...pageSources.values()].filter((source) => source.includes("mobit-compare2.css?v=comparefix1")).length, 4);
+assert.equal([...pageSources.values()].filter((source) => source.includes("mobit-compare2.css?v=comparefix2")).length, 4);
 assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.css?v=cardtoggle3")).length, 4);
 assert.equal(countVersionedPages("result-cards-v2.js"), 0);
 assert.equal([...pageSources.values()].filter((source) => source.includes("result-cards-v2.js?v=cardtoggle4")).length, 4);
@@ -215,6 +215,7 @@ assert.equal(fs.statSync(path.join(root, "images", "banner_aiful-9min.webp")).si
 
 const cardsSource = fs.readFileSync(path.join(root, "js", "result-cards-v2.js"), "utf8");
 const cardsCss = fs.readFileSync(path.join(root, "css", "result-cards-v2.css"), "utf8");
+const compareTableCss = fs.readFileSync(path.join(root, "css", "mobit-compare2.css"), "utf8");
 const deadlineTimerSource = fs.readFileSync(path.join(root, "js", "deadline-timer.js"), "utf8");
 assert.match(cardsSource, /pointMarkup\(lender\.points\)/);
 assert.match(cardsSource, /summary\.addEventListener\("click", \(event\) => \{/);
@@ -222,6 +223,7 @@ assert.match(cardsSource, /window\.setTimeout\(\(\) => \{/);
 assert.match(cardsSource, /details\.open = nextOpen/);
 assert.equal(cardsSource.includes('document.querySelectorAll(".v4-recommend, .v4-review-box")'), false);
 assert.match(cardsCss, /\.v4-recommend:has\(\.v4-points-more\[open\]\) \.v4-points-preview \{ display: none; \}/);
+assert.match(compareTableCss, /\.v3-compare2-table thead \.is-featured \{[\s\S]*border-bottom: 1px solid #d4d7db !important;/);
 assert.match(deadlineTimerSource, /class="timerTopLead">本日中に借りるなら/);
 assert.match(deadlineTimerSource, /class="timerTopNext"><span class="nextMorningLead">いま申込で/);
 

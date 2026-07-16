@@ -465,6 +465,7 @@ body.experience #hikaku2 + #content1.ranking {
 
 .v3-compare2-table thead .is-featured {
   border-top-color: transparent !important;
+  border-bottom: 1px solid #d4d7db !important;
 }
 
 .v3-compare2-table tbody tr:last-child .is-featured {
