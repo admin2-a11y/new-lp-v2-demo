@@ -20,6 +20,10 @@
     section h2 { margin: 0; padding: 15px 18px; color: #fff; font-size: 21px; }
     .acom h2 { background: #1769aa; }
     .mobit h2 { background: #08785f; }
+    .shared h2 { background: #596477; }
+    .acom-four { grid-column: 1 / -1; border-color: #d5463f; }
+    .acom-four h2 { background: #c7352e; }
+    .acom-four ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .final-adjustment { grid-column: 1 / -1; border-color: #f0b429; }
     .final-adjustment h2 { background: #d98900; }
     .final-adjustment ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -43,6 +47,7 @@
     @media (max-width: 640px) {
       main { padding-top: 20px; }
       .versions { grid-template-columns: 1fr; }
+      .acom-four ul { grid-template-columns: 1fr; }
       .final-adjustment ul { grid-template-columns: 1fr; }
     }
   </style>
@@ -50,8 +55,17 @@
 <body>
   <main>
     <h1>マネーローンナビ デモ一覧</h1>
-    <p class="lead">アコム先頭版・モビット先頭版と共通TOPを確認できます。</p>
+    <p class="lead">アコム向け4社比較LP・既存デモ・共通TOPを確認できます。</p>
     <div class="versions">
+      <section class="acom-four">
+        <h2>アコム向け4社比較LP</h2>
+        <ul>
+          <li><a href="https://admin2-a11y.github.io/money-loan-navi-acom-ranking-20260716/index.html?select_modal=2&amp;v=final2"><span>経験者向け TOP<small>アコム追加4社のアンケート・比較導線</small></span></a></li>
+          <li><a href="https://admin2-a11y.github.io/money-loan-navi-acom-ranking-20260716/result_v2.html?variant=experienced&amp;v=final2"><span>経験者向け 結果 V2<small>アコム追加4社の商品カード・比較結果</small></span></a></li>
+          <li><a href="https://admin2-a11y.github.io/money-loan-navi-acom-ranking-20260716/mobit_beginner.html?v=final2"><span>はじめて向け TOP<small>アコム追加4社の初心者向けアンケート</small></span></a></li>
+          <li><a href="https://admin2-a11y.github.io/money-loan-navi-acom-ranking-20260716/beginner_result_v2.html?variant=beginner&amp;v=final2"><span>はじめて向け 結果 V2<small>アコム追加4社の商品カード・比較結果</small></span></a></li>
+        </ul>
+      </section>
       <section class="final-adjustment">
         <h2>最終調整2</h2>
         <ul>
